@@ -1,0 +1,76 @@
+%! Author = Len Washington III
+%! Date = 8/25/2023
+
+% Preamble
+\documentclass[12pt]{report}
+
+\newcommand{\recnumber}{1}
+\usepackage{cs430recitation}
+
+% Document
+\begin{document}
+
+\subsection{After Lecture 01 \& 02} -- Answer any questions on HW1
+Practice Problems (all taken from previous exams)
+\begin{enumerate}[label=\arabic*.]
+    \item Which of the following is not true of improved bubble sort (keep track of last swap position on the inner loop and use that to reduce outer loop iterations) on the case on input elements sorted?
+	\begin{enumerate}[label=\alph*)]
+	    \item It is stable
+		\item Consumes less memory
+		\item Detects whether the input is already sorted
+		\item Consumes less time
+	\end{enumerate}
+	\item~
+	\begin{enumerate}[label=Statement \arabic*:]
+	    \item In insertion sort, after $m$ passes through the array, the first $m$ elements are in sorted order.
+			  \item And these elements are the $m$ smallest elements in the array.
+	\end{enumerate}
+	\begin{enumerate}[label=\alph*)]
+	    \item Both of the statements are true.
+		\item Statement 1 is true but statement 2 is false
+		\item Statement 1 is false but statement 2 is true
+		\item Both of the statements are false
+	\end{enumerate}
+	\item Consider the following program that attempts to locate an element $x$ in a sorted array $a[]$ using binary search. The program is erroneous. Under what conditions does the program fail?
+\begin{algorithm}[H]
+		\caption{Erroneous Binary Search}\label{alg:}
+		\begin{algorithmic}[1]
+		\Function{BS}{}
+			\State int i=1, j=100, k, x\Comment{assume x is assigned a value to search for}
+		\EndFunction
+		\end{algorithmic}
+	\end{algorithm}% TODO: Write this psuedocode
+\begin{enumerate}[label=\alph*)]
+    \item $x$ is the last element of the array $a[]$
+    \item $x$ is greater than all elements of the array $a[]$
+	\item \answer{Both of the Above}
+	\item $x$ is less than the last element of the array $a[]$
+\end{enumerate}
+	\item What's the worst case of insertion sort if the correct position for inserting element is calculated using binary search?
+	\begin{enumerate}[label=\alph*)]
+	    \item $O\left( \log n \right)$
+	    \item $O\left( n \right)$
+	    \item $O\left( n\log n \right)$
+	    \item \answer{$O\left( n^{2} \right)$}
+	\end{enumerate}
+	\item The following routine takes as input a list of $n$ numbers, and returns the first value of $i$ for which $L[i] < L[i-1]$, or $n$ if no such number exists.
+\begin{lstlisting}[language=C,label={lst:first-decrease}]
+int firstDecrease(int* L, int n){
+	for(int i=2; i <= n && L[i] >= L[i-1]; i++){}
+	return i;
+}
+\end{lstlisting}
+	\begin{enumerate}[label=\arabic{enumi}\alph*)]
+	    \item What is the big-O runtime for the routine, measured as a function of its return value $i$?
+		\item If the numbers are chosen independently at random, then the probability that firstDecrease($L$) returns $i$ is $\frac{i-1}{i!}$, except for the special case of $i=n+1$ for which the probability is $\frac{1}{n!}$ Use this fact to write an expression for the expected value returned by the algorithm. (Your answer can be expressed as a sum, it does not have to be solved in closed form. Do not use O-notation.) Use expectation
+		\item What is the big-O average case running time of the routine? Hint: Simplify the previous summation until you see a common taylor series.
+	\end{enumerate}
+	\item Some sorting algorithms are NOT stable. However if every key in $A[i]$ is changed to $A[i]*n+i-1$ (assume $1 \leq i \leq n$) then all the new elements are distinct (and therefore stability is no longer a concern). After sorting, what transformation will restore the keys back to their original values? What is the effect on the runtime of any of the sorting algorithm \_\_ add this transformation before executing the sort and un-transformation after the sort?\answer{\begin{equation*}
+	\begin{aligned}
+		A[i] \rightarrow A[i]*n+i-1
+	\end{aligned}
+	\end{equation*}}
+	\item Use psuedocode to specify a brute-force algorithm that determines when a sequence of $n$ positive integers is given as input, wheteher thaere are two distinct terms of the sequence that have as sum a third term. The
+\end{enumerate}
+
+\end{document}

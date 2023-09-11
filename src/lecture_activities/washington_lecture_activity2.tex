@@ -1,0 +1,105 @@
+%! Author = Len Washington III
+%! Date = 8/12/2023
+
+% Preamble
+\documentclass[12pt]{report}
+
+% Packages
+\newcommand{\lectureactivity}{2}
+\usepackage{cs430lecture}
+
+% Document
+\begin{document}
+
+\section{Asymptotic Analysis}\label{sec:asymptotic-analysis}
+\begin{itemize}
+	\item To simplify comparing the resource usage of different algorithms for the same problem.
+	\item Ignore machine dependent constants; look at the growth of $T(n)$ as $n\rightarrow\infty$.
+	\item As you double $n$, what does $T(n)$ do?? Double?? Square??
+\end{itemize}
+
+\noindent Theta ($\Theta$) Notation (more details in future lectures)
+\begin{itemize}
+	\item Drop lower order terms;
+	\item Ignore leading constants
+	\item Concentrates on the growth
+	\item \notes{Tight bound on growth}
+\end{itemize}
+
+\noindent \notes{$\Omega$ is lowerbound, O (read as Big-O) is upperbound}
+
+\begin{enumerate}[label=\arabic*.]
+    \item For your best case, average cast, worst case $T(n)$ functions from above, give the asymptotic function ($\Theta$ notation) \answer{\[ T(n)=c_{1}n+c_{2}(n-1)+c_{3}\sum_{i=1}^{n-1}t_{i}+c_{4}\sum_{1}^{n-1}(t_{i}-1)  \] \[ \mbox{Worst case: } t_{i}=i \rightarrow O(n^{2}) \] \[ \mbox{Best case: } t_{i}=i \rightarrow O(n) \]}
+	\item Given the problem sizes and worst case runtime for one of the problem sizes, and what you know about each algorithm, predict the missing runtimes. \begin{table}[H]
+	    \centering
+	    \begin{threeparttable}
+			\label{tab:runtimes}
+			\begin{tabular}{|l|c|c|c|c|}
+				\toprule
+				& $n=100 $& $n=200$ & $n=400$ & $n=800$\\
+				\midrule
+				Linear search~\notes{$O(n)$} & 10 seconds & \answer{20} & \answer{40} & \answer{80} \\
+				\midrule
+				Binary search~\notes{$O(\lg n)$}& \answer{7} & 8 seconds & \answer{9} & \answer{10} \\
+				\midrule
+				Insertion Sort~\notes{$O(n^{2})$} & \answer{20} & \answer{80} & 320 seconds & \answer{1,280} \\
+				\bottomrule
+			\end{tabular}
+			\begin{tablenotes}
+				\small
+				\item \notes{For \emph{Binary search}, the steps increase logarithmically, meaning that for each iteration, the solution is cut in half. This means that (starting with $n=200$), after one iteration the size has been cut in half, which would give you the $n=100$ problem. So the time would only increase with 1 iteration for doubling the size. The 1-second increase was an estimation for how long each iteration was.}
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{table}
+\end{enumerate}
+
+\section{Opening Questions - Average Case Runtime}\label{sec:opening-questions---average-case-runtime}
+\begin{enumerate}[label=\arabic*.,start=3]
+    \item How did we approach case runtime analysis of iterative algorithms previously? How can we improve on this? \answer{Insertion sort -- more or less, the inner loop needs to walk half way down on every other iteration.}
+\end{enumerate}
+
+\section{Expectation of a Random Variable}\label{sec:expectation-of-a-random-variable}
+A random variable is a variable that maps an outcome of a random process to a number. Examples:
+\begin{itemize}
+	\item Flipping a coin. If heads: $X=1$, if tails: $X=0$
+	\item $Y=$sum of 7 rolls of a fair die \notes{(there is only 1-way to get a sum of 7, get 1's on every roll. But there are multiple ways you could get a sum of 12, so this would be a random variable.)}
+	\item $Z=$in insertion sort, the number of swaps needed to move the $i$th item to its correct position in items 1 through $(i-1)$. \notes{Range$(Z)=[0,i-1]$ (assuming all equally likely)}
+\end{itemize}
+The expected value of a random variable $X$ is the sum over all outcomes of the value of the outcome times the probability of the outcome. \[ E(X)=\sum_{s\in S} X\left(s\right)p\left(s\right) \]
+\notes{\begin{itemize}
+	\item $s$ is the outcome
+	\item $X$ is the random variable (assigning a number to a certain outcome.)
+	\item $p$ is the probability
+\end{itemize}}
+
+\begin{enumerate}[label=\arabic*., start=4]
+    \item What is the expected outcome when you roll a fair die once? What about a loaded die where the probability of a side coming up is the value of the side divided by 21? \answer{\[ 1\left(\frac{1}{6}\right) + 2\left(\frac{1}{6}\right) + 3\left(\frac{1}{6}\right) + 4\left(\frac{1}{6}\right) + 5\left(\frac{1}{6}\right) + 6\left(\frac{1}{6}\right) = \frac{21}{6} = 3.5  \] \[ 1\left( \frac{1}{21} \right) + 2\left( \frac{2}{21} \right) + 3\left( \frac{3}{21} \right) + 4\left( \frac{4}{21} \right) + 5\left( \frac{5}{21} \right) + 6\left( \frac{6}{21} \right) = \frac{1+4+9+16+25+36}{21} = \frac{91}{21}=\frac{13}{3}= 4.\bar{3}  \] } % FIXME: Repetition for .3 not showing
+	\item Calculate the expected outcome when you roll a fair die twice and sum the results. Do this two different ways. \answer{There are 36 possible combinations of rolls. $2=(\{1,1\})=\frac{1}{36},3=(\{1,2\};\{2,1\}\})=\frac{2}{36},\dots$}
+\end{enumerate}
+
+\noindent Now let's use expectation of a random variable to improve our average case runtime for insertion sort (similar for bubble sort or selection sort).
+\begin{itemize}
+	\item Sort $n$ distinct elements using insertion sort
+	\item $X_{i}$ is the random variable equal to the number of comparisons used to insert $a_{i}$ into the proper position after the first $i-1$ elements have already been sorted. $1 \leq X_{i} \leq i-1$
+\end{itemize}
+$E(X_{i})$ is the expected number of comparisons to insert $a_{i}$ into the proper position after the first $i-1$ elements have been sorted.\\
+
+\noindent $E(X)=E(X_{2})+E(X_{3})+\dots+E(X_{n})$ is the expected number of comparisons to complete the sort (our new average case runtime function).
+
+\begin{enumerate}[label=\arabic*., start=6]
+    \item Write equations for the following and simplify. \notes{\[ \sum_{j=1}^{n}j=\frac{(n)(n+1)}{2}  \]}
+	\begin{itemize}
+		\item $E(X_{i})$\answer{Outcomes: $1, 2, 3,\dots, (i-1)$, Probability for each: $\frac{1}{i-1}$ \begin{equation*}
+		\begin{aligned}
+			E(X_{i})&=\left( \frac{1}{i-1} \right)1+\left( \frac{1}{i-1} \right)2+\left( \frac{1}{i-1} \right)3+\dots+\left( \frac{1}{i-1} \right)(i-1)\\
+					&=\left( \frac{1}{i-1} \right)\sum_{j=1}^{i-1}j\\
+					&=\left( \frac{1}{i-1} \right) \left[ \frac{(i)(i+1)}{2}-i \right] \\
+					&= \frac{(i)(i+1)}{2(i-1)}-\frac{i}{i-1}  \\
+		\end{aligned}
+		\end{equation*}}
+		\item $E(X)$ \answer{\[ \sum_{i=2}^{n}\left( \frac{i}{2} \right)=O(n^{2})  \]}	% TODO: Get these papers and write this out
+	\end{itemize}
+	\item What if the data is not random?
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,101 @@
+%! Author = Len Washington III
+%! Date = 8/12/2023
+
+% Preamble
+\documentclass[12pt]{report}
+
+% Packages
+\newcommand{\lectureactivity}{5}
+\usepackage{cs430lecture}
+
+% Document
+\begin{document}
+
+\section{Opening Questions}\label{sec:opening-questions}
+\begin{enumerate}[label=\arabic*.]
+    \item Define Big-O, Omega and Theta notation
+	\item In your own words explain what a recurrence relation is, what do we use recurrence relations for, why do we solve recurrence relations?
+\end{enumerate}
+
+\section{Recurrence Relation Solution Approach—Guess and prove by induction}\label{sec:recurrence-relation-solution-approach----guess-and-prove-by-induction}
+Guess (or are given Hint) at form of solution, probe it is the solution
+\begin{itemize}
+	\item Using definition of BIG-O or $\theta$
+	\item Using induction
+	\begin{itemize}
+		\item Probe Base Case (if boundary condition given)
+		\item Assume true for some $n$
+		\item Prove true for a larger $n$
+	\end{itemize}
+\end{itemize}
+
+Example:\begin{equation*}
+\begin{aligned}
+	T(n)=4T(n/2)+2 &\mbox{ guess }T(n)=O(n^{3})\mbox{ ??}\\
+	\mbox{Assume } T(k) \leq ck^{3}\mbox{ for some }k<n&\mbox{, use assumption with }k=n/2\mbox{, then prove it for }k=n\\
+	T(n/2) \leq c(n/2)^{3} \mbox{  merge with recurrence}\\
+	T(n) &\leq  4 c(n/2)^{3} + n\\
+	T(n) &\leq \frac{c}{2n^{3}} + n\\
+	T(n) &\leq cn^{3} – \left( \frac{c}{2n^{3}} – n \right)    \\
+	               &\mbox{ }\left( \frac{c}{2n^{3}} – n \right) >0\mbox{ if }c\geq 2\mbox{ and }n>1\\
+	T(n) &\leq cn^{3} \mbox{ – }(\mbox{something positive})\\
+	T(n) &\leq cn^{3}\\
+	T(n) &=O(n^{3})
+\end{aligned}
+\end{equation*}
+
+\begin{enumerate}[label=\arabic*.]
+    \item \[ T(n) = 4T(n/2) + n^{3}    \mbox{     guess }T(n)=\Theta(n^{3}) ?? \]
+	\item \[ T(n) = 4T(n/2) + n    \mbox{     guess } T(n)=O(n^{2}) ?? \]
+\end{enumerate}
+
+\section{Recurrence Relation Solution Approach - Iteration Method (repeated substitution)}\label{sec:recurrence-relation-solution-approach---iteration-method-(repeated-substitution)}
+Convert the recurrence relation to summation using repeated substitution (Iterations)
+\begin{itemize}
+	\item Keys to Iteration Method
+	\begin{itemize}
+		\item \# of times iterated to get $T(1)$
+		\item Find the pattern in terms and simplify to summation
+	\end{itemize}
+\end{itemize}
+EXAMPLE
+\begin{equation*}
+\begin{aligned}
+	T(n) &= 4T\left( \frac{n}{2} \right) + n\\
+	T(n) &= n + 4T\left( \frac{n}{2} \right) \\
+		 &= n + 4\left( 4T\left( \frac{n}{4} \right) + \frac{n}{2}\right) \\
+		 &= n + 4\left( \frac{n}{2} + 4\left(\frac{n}{4} + 4T\left( \frac{n}{8} \right) \right) \right) \\
+		 &= (n + 2n + 4n + 64)T\left( \frac{n}{8} \right)\\
+	T(n) &= n + 2n + 4n + \dots + 4^{\lg_{2}(n)}T(1)\\
+		 &= n \sum_{k=0}^{\lg(n-1)}2^{k}+\theta(n^{2})\\
+		 &= n\left( \frac{2^{\lg(n)}-1}{2-1} \right)\\
+	T(n) &= n^{2} - n\\
+		 &= O(n^{2})
+\end{aligned}
+\end{equation*}
+
+\begin{enumerate}[label=\arabic*., start=3]
+    \item \[ T(n) = 3T(n/3) + \lg n \mbox{   proof by iteration/repeated substitution} \]
+	\item \[ T(n)=T\left( \frac{n}{3} \right) + T\left( \frac{2n}{3} \right) + n \]
+	\item \[ T(n)=T\left( \frac{n}{4} \right) + T\left( \frac{n}{2} \right) + n^{2} \]
+	\item \[ T(n)=T(n-1) + n \]
+\end{enumerate}
+
+\section{Recurrence Relation Solution Approach -- Master Method}\label{sec:recurrence-relation-solution-approach-master-method}
+For solving recurrences of the form $T(n)=aT\left(\frac{n}{b}\right)+f(n)$
+\begin{itemize}
+	\item Compare growth of $f(n)$ to $n^{\log_{b}(a)}$		% TODO Check if the b is a base of log or raised to the a power.
+	\begin{enumerate}[label=Case \arabic*)]
+	    \item \[ f(n) \leq cn^{\log_{b}(a)} \mbox{     } T(n)=\Theta(n^{\log_{b}(a)})\]
+	    \item \[ c_{1}n^{\log_{b}(a)} \leq f(n) \leq c_{2}n^{\log_{b}(a)} \mbox{     } T(n)=\Theta(n^{\log_{b}(a)}\lg(n))\]
+	    \item \[ f(n) \geq cn^{\log_{b}(a)} \mbox{     } T(n)=\Theta(f(n))\]
+	\end{enumerate}
+\end{itemize}
+
+\begin{enumerate}[label=\arabic*., start=7]
+    \item \[ T(n)=2T\left(\frac{n}{2}\right) + O(n)\]
+	\item \[ T(n)=7T\left( \frac{n}{2} \right) + O(n^{2}) \]
+	\item \[ T(n)=4T\left( \frac{n}{2} \right) + n^{3} \]
+\end{enumerate}
+
+\end{document}

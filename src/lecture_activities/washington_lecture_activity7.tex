@@ -1,0 +1,59 @@
+%! Author = Len Washington III
+%! Date = 8/12/2023
+
+% Preamble
+\documentclass[12pt]{report}
+
+% Packages
+\newcommand{\lectureactivity}{7}
+\usepackage{cs430lecture}
+\newcommand{\sep}{\mbox{   }}
+
+% Document
+\begin{document}
+\section{Opening Questions}\label{sec:opening-questions}
+\begin{enumerate}[label=\arabic*.]
+    \item Explain the difference between the Binary Search Tree Parent-Child value relationship and the Heap Property Parent-Child value relationship. \answer{BST: the right node is larger than the parent node and the left node is smaller than the parent node. In Heaps, the parent is either larger than both children (MaxHeap) or smaller than both children (MinHeap).}
+	\item Binary search trees are a dynamic data structure that uses left-child and right-child pointers to represent the tree. How is this different from a heap? \answer{In  a heap, you can take the index of a node, apply $\lfloor \frac{\mbox{node}}{2} \rfloor$ to get the parent node. So you can wall up or down a heap whereas a binary tree can only walk down.}
+\end{enumerate}
+
+\section{Heaps}\label{sec:heaps}
+\noindent Since a heap is a nearly complete binary tree and will always grow and shrink the rightmost bottom leaf, you can implement a head with an array instead of needing pointers (as is needed for a binary search tree which can grow/shrink at any node. Example of a MaxHeap showing array implementation:
+
+\begin{enumerate}[label=\arabic*.]
+    \item At what index position is the largest element in a MaxHeap? We have to know how to easily move around a Heap. Can you devise a formula to relate the index of a parent to the indexes of its children? How about a formula for the index of a child to the index of its parent? \answer{The largest element in a Max Heap is at index 1 (given 1-based indexing). The formula is $\mbox{index\_parent}=\bigg\lfloor \frac{\mbox{child\_index}}{2} \bigg\rfloor$.}
+	\item\label{prb:2} If a heap was one larger, where does the tree have to gain a node from when done? If a heap was one smaller, where does the three have to lose a node when done?
+	\item Considering your answer to \hyperref[prb:2]{\#2}, try to devise a way to ExtractMax from this maxheap. What is the runtime in terms of heapsize?\answer{\begin{algorithm}[H]
+			\caption{ExtractMax}\label{alg:extractmax}
+			\begin{algorithmic}[1]
+			\Function{ExtractMax}{$heap$}\Comment{1 based indexing, not 0}
+				\State Save the value at the root
+				\State Move $heap[heapsize]$ to $heap[1]$
+				\State \Call{Maxheapify}{heap}
+			\EndFunction
+			\end{algorithmic}
+		\end{algorithm} Save the current value at the root. Then move 5 (which is at the heapsize index) to the root, and then heapify.}
+	\item Considering your answer to \hyperref[prb:2]{\#2}, try to devise a way to Insert$(20)$ into this maxheap. What is the runtime in terms of heapsize?
+\end{enumerate}
+
+\noindent Both the above ExtractMax and Insert assumed we already had a heap. To efficiently build a heap, we put all the items to insert in an array. Call MaxHeapify (walk value down) from index $\frac{\mbox{heapsize}}{2}$ up to the root (index 1).
+\begin{enumerate}[label=\arabic*.,start=5]
+    \item Write pseudocode for this BuildHeap algorithm and demonstrate on this data. What is the runtime in terms of $n$, the size of $B$? $B=[15 \sep 8 \sep 4 \sep 9 \sep 3 \sep 16]$ \answer{$B$ is not a max heap.\begin{algorithm}[H]
+    		\caption{BuildHeap}\label{alg:buildheap}
+    		\begin{algorithmic}[1]
+    		\Function{BuildHeap}{$heap$}
+				\State \Call{MaxHeapify}{heap, 1, $\frac{heapsize}{2}$}\Comment{Precondition: Both children of that index are valid max heaps}
+				\State \Comment{Any index position larger than $\frac{heapsize}{2}$ is a leaf$\rightarrow$ valid max heap}
+    		\EndFunction
+    		\end{algorithmic}
+    	\end{algorithm} Runtime: must call $MaxHeapify$: $\frac{heapsize}{2}$ times. $MaxHeapify$ in the worst case runs at $O(\lg heapsize) = O(\lg n)$. However, working at $heapsize$, at most $MaxHeapify$ works once (incase the only child is larger than the node).\begin{equation*}
+    	\begin{aligned}
+    		\theta(n) &= \lg(n) + 2\lg(n-1) + 4\lg(n-2) + \dots + \left( \frac{n}{4} \right)(1) + \frac{n}{2}(0)\\
+					  &= \mbox{linear time.}
+    	\end{aligned}
+    	\end{equation*}}
+	\item Write the loop invariant for BuildHeap and prove that it works.\answer{After the $j$th iteration (index of the item we call MaxHeapify on: (range $\frac{n}{2}\rightarrow 1$). Before call on MaxHeapify on $j$th iindex in the heap $\frac{n}{2} \rightarrow 1$, $\frac{n}{2}+1\rightarrow n$ are max heaps, which means child of $j$ index are max heaps.\\\textbf{INIT}: We know all index positions $> n/2$ are leafs or empty, therefore, they are already maxheaps.\\\textbf{MAINT}: If $p(j) \rightarrow p(next\_j)$}
+	\item How can we use a maxHeap and extractMax to sort? \answer{Build the heap in $O(n)$ time, then extractMax which saves the root, then sorts the heap. The initially saved root gets moved to another array into the index $heapsize-1$. Then extract max is run again, and the saved value is moved into $heapsize-2$. The runtime is $O(n\lg n)$.}
+\end{enumerate}
+
+\end{document}

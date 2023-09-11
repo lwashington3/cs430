@@ -1,0 +1,142 @@
+%! Author = Len Washington III
+%! Date = 8/25/2023
+
+% Preamble
+\documentclass[12pt]{report}
+
+\newcommand{\recnumber}{2}
+\usepackage{cs430recitation}
+\usepackage{algpseudocode}
+\newcommand{\choicelabel}{\alph*)}
+
+% Document
+\begin{document}
+
+\subsection{After Lecture 03 \& 04} -- Answer any questions on HW1\\
+Practice Problems (all taken from previous exams)
+\begin{enumerate}[label=\arabic*.]
+    \item Which of the following is time complexity of fun()?
+	\begin{lstlisting}[language=C,label={lst:fun}]
+int fun(int n){
+	int count = 0;
+	for(int i = 0; i < n; i++){
+		for(int j = i; j > 0; j--){
+			count = count + 1;
+		}
+	}
+	return count;
+}
+	\end{lstlisting}
+	\begin{enumerate}[label=\choicelabel]
+	    \item $O(n)$
+	    \item \answer{$O(n^{2})$}
+	    \item $O(n\log n)$
+	    \item $O(n\log(n)\log(n))$
+	\end{enumerate}
+	\item Consider the following function. What is the returned value of the above function?
+	\begin{lstlisting}[language=C,label={lst:unknown}]
+int unknown(int n){
+	int i, j, k=0;
+	for(i = n/2; i <= n; i++){
+		for(j=2; j <= n; j=j*2){
+			k = k + n/2;
+		}
+	}
+	return k;
+}
+	\end{lstlisting}
+	\begin{enumerate}[label=\choicelabel]
+	    \item $\Theta(n^{2})$
+	    \item \answer{$\Theta(n^{2}\log n)$}
+	    \item $\Theta(n^{3})$
+	    \item $\Theta(n^{3}\log n)$
+	\end{enumerate}
+	\item What is the worst-case auxiliary space complexity (including stack space for recursion) of merge sort?
+	\begin{enumerate}[label=\choicelabel]
+	    \item $O(1)$
+	    \item $O(\log n)$
+	    \item \answer{$O(n)$}
+	    \item $O(n\log n)$
+	\end{enumerate}
+	\item Choose the incorrect statement about merge sort from the following:
+	\begin{enumerate}[label=\choicelabel]
+	    \item It is a comparison-based sort.
+		\item \answer{It's runtime is dependent on input order.}
+		\item It is not an in-place (all the operations are on the original array) algorithm.
+		\item It is a stable algorithm.
+	\end{enumerate}
+	\item Use the definition of big-O to prove or disprove.
+	\begin{enumerate}[label=\arabic{enumi}\choicelabel]
+	    \item is $2^{n+1}?=?O\left( 2^{n} \right)$\answer{True: \begin{equation*}
+	    \begin{aligned}
+	    	2^{n+1}&=C2^{n}\\
+	    	2&=C\mbox{ if c }\geq 2\\
+	    \end{aligned}
+	    \end{equation*}}
+	    \item is $2^{2n}?=?O\left( 2^{n} \right)$\answer{False: \begin{equation*}
+	    \begin{aligned}
+	    	2^{2n}&=C2^{n}\\
+	    	2^{n}&=C\\
+			\mbox{However } 2^{n} \mbox{ has an infinite range so it cannot be upperbounded}
+	    \end{aligned}
+	    \end{equation*}}
+	\end{enumerate}
+	\item Although merge sort runs in $\Theta(n\lg n)$ worst-case time and insertion sort runs in $\Theta(n^{2})$ worst-case time, the constant factors in insertion sort make it faster for small $n$. Thus, it makes sense to use insertion sort within merge sort when sub-problems become sufficiently small. Consider a modification to merge sort in which $n/k$ sub-lists of length $k$ are sorted using insertion sort and then merged using the standard merging mechanism, where $k$ is a value to be determined.
+	\begin{enumerate}[label=\arabic{enumi}\choicelabel]
+	    \item Show the $n/k$ sub-lists; each of length $k$, can be sorted by insertion sort in $\Theta(nk)$ worst-case time.\answer{\begin{equation*}
+	    \begin{aligned}
+	    	k &\rightarrow \Theta\left( k^{2} \right)\\
+			\frac{n}{k} &\rightarrow \Theta\left( \frac{n}{k} \times k^{2} \right)=\Theta(nk)\\
+	    \end{aligned}
+	    \end{equation*}}
+		\item Show that the sub-lists can be merged in $\Theta(n\lg \left( \frac{n}{k} \right))$ worst-case time.\answer{\begin{equation*}
+		\begin{aligned}
+			\frac{n}{k} \rightarrow \Theta\left( \frac{n}{2k} \right)\mbox{ for merging}\\
+			\Theta(2k) \mbox{ m?? for } 2k \mbox{ elements}\\
+			\Theta\left( \frac{n}{2k}\times2k \right)=\Theta\left( n \right)
+			\Theta\left( \frac{n}{4k}\times4k \right)=\Theta\left( n \right)
+		\end{aligned}
+		\end{equation*}}
+		\item Given that the modified algorithm runs in $\Theta(nk+n\lg\left( \frac{n}{k} \right))$ worst-case time, what is the largest asymptotic ($\Theta$-notation) value of $k$ as a function of $n$ for which the modified algorithm has the same asymptotic running time as standard merge sort?
+		\item How should $k$ be chosen in practice?
+	\end{enumerate}
+	\item The Fibonacci sequence 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, $\dots$ is defined recursively as
+\begin{algorithm}[H]
+	\caption{The Fibonacci sequence}\label{alg:fib}
+	\begin{algorithmic}[1]
+	\Function{FIB}{$n$}\Comment{This mathematical definition leads naturally to a recursive algorithm}
+		\If{n $\leq$ 1}
+			\Return n
+		\EndIf
+		\State \Return \Call{FIB}{n-1} + \Call{FIB}{n-2}
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+	\begin{enumerate}[label=\arabic{enumi}\choicelabel]
+	    \item Write the recurrence relation, $T(n)$, for the asymptotic runtime for procedure FIB($n$) shown above, and solve the recurrence relation to show that $T(n)=O\left( 2^{n-2} \right)$.
+		\item Another recursive procedure which computes the $n$th Fibonacci number is below. \begin{algorithm}[H]
+				\caption{}\label{alg:fib1}
+				\begin{algorithmic}[1]
+				\Function{F1}{n}
+					\If{n $<$ 2}
+						\Return n
+					\Else~\Return \Call{F2}{2, n, 1, 1}
+					\EndIf
+				\EndFunction\\
+				\Function{F2}{i,n,x,y}
+					\If{i $\leq$ n}
+						\State \Call{F2}{i+1, n, y, x+y}
+					\EndIf
+					\State \Return x
+				\EndFunction
+				\end{algorithmic}
+			\end{algorithm}
+		\noindent Trace out the algorithm as it computes $F1(1)$, $F1(2)$, $F1(3)$, $F1(4)$, explain how the algorithm works, and then compare its asymptotic runtime to the time for procedure FIB$(n)$.
+	\end{enumerate}
+	\item Use mathematical induction to show that when $n$ is an exact power $2$, the solution of the recurrence \[ T(n)=\left\{ \begin{array}{ll}
+		2&$\mbox{ if }$ n=2\\
+		2T(n/2)+n&$\mbox{ if }$ n=2^{k},\mbox{ for }k>1
+	\end{array} \right. \] is $T(n)=n\lg n$
+\end{enumerate}
+
+\end{document}

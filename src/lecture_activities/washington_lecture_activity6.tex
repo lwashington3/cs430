@@ -1,0 +1,142 @@
+%! Author = Len Washington III
+%! Date = 8/12/2023
+
+% Preamble
+\documentclass[12pt]{report}
+
+% Packages
+\newcommand{\lectureactivity}{6}
+\usepackage{cs430lecture}
+\usepackage{algpseudocode}
+
+% Document
+\begin{document}
+
+\listofalgorithms
+
+\section{Opening Questions}\label{sec:opening-questions}
+\begin{enumerate}[label=\arabic*.]
+    \item Mergesort is $\Theta(O(n\lg n))$ runtime in best case, worst case and average case. How much memory is needed for Mergesort on input size $n$? \answer{$O(n)$}
+	\item Mergesort does all the work of sorting items in the Merge function, after recursively splitting the collection down to the base case. Briefly explain the difference with Quicksort.\answer{All the work for Mergesort is being done after the recurrsive calls, where as Quicksort does the work before the recurrsive calls.}
+\end{enumerate}
+
+\section{Quicksort}\label{sec:quicksort}
+\noindent A recursive divide and conquer algorithm.
+\begin{itemize}
+	\item base case: a list of length one element is sorted.
+	\item Divide ``Partition'' array into 2 sub-arrays with small \#'s in the beginning, large \#'s in second and known index dividing them\answer{ What defines small and large? The dividing index may not be the middle.}
+	\item Conquer - recursively sort each sub-array
+	\item Combine - Nothing to do
+\end{itemize}
+\begin{enumerate}[label=\arabic*.]
+    \item Write pseudocode for Quicksort (similar to Mergesort).\begin{algorithm}[H]
+    		\caption{Quicksort}\label{alg:quicksort}
+    		\begin{algorithmic}[1]
+    		\Function{QSort}{A, p, r}\Comment{The initial call is QSort(A, 1, n)}
+				\If{p $<$ r}
+					\State q $\gets$ Partition(A, p, r)\Comment{Moves small to left and large to right, q is the seperator}
+					\State \Call{QSort}{A, p, q-1}\Comment{The value at A[q] is the pivot, q is the idnex}
+					\State \Call{QSort}{A, q+1, r}
+				\EndIf
+    		\EndFunction
+    		\end{algorithmic}
+    	\end{algorithm}
+\end{enumerate}
+
+\noindent Partition idea (you should be able to do this in place): pick the last element in the current array as the ``pivot'', the number used to decide large or small. Then make a single pass of the array to move the ``small'' numbers before the ``large'' numbers and keep the ``large'' numbers after the ``small'' numbers. Then put the ``pivot'' between the two subarrays and return the location of the pivot.
+\begin{enumerate}[label=\arabic*.,start=2]
+    \item Write iterative pseudocode for Partition. How much memory is needed?\begin{algorithm}[H]
+    		\caption{Partition: Worst case runtime $O(n)$}\label{alg:partition}
+    		\begin{algorithmic}[1]
+    		\Function{Partition}{A,p,r}
+    			\State pivot $\gets$ A[r]
+    			\State i $\gets p-1$
+				\For{j=p to r-1}
+					\If{A[j] $\leq$ pivot}
+						\State Swap A[i+1] with A[j]
+						\State increment i
+					\EndIf
+				\EndFor
+			\State Swap A[i+1] with A[r]
+			\State \Return i+1
+    		\EndFunction
+    		\end{algorithmic}
+    	\end{algorithm} \hyperref[alg:quicksort]{Quicksort} Runtime: \begin{equation*}
+    	\begin{aligned}
+    		T(n) &= O(n) + T(\mbox{small items}) + T(\mbox{large items})\\
+			T(1) &= O(1) + (O \leftrightarrow n-1) + (n-1 \leftrightarrow O)\\
+			\mbox{If All Items} &< \mbox{Pivot}\\
+				T(n) &= O(n) + T(n-1) + T(0)\\
+					 &= O(1) + T(1-1) + O(1)\\
+					 &= O(1) + T(0) + O(1)\\
+					 &= O(1) \\
+				T(n) &= O(n) + T(n-1)\\
+					 &= O(n) + O(n-1) + T(n-2)\\
+					 &= O(n) + O(n-1) + O(n-2) + T(n-3)\\
+					 &= O(n) + O(n-1) + O(n-2) + O(n-3) + \dots + T(1)\\
+					 &= O(n) + O(n-1) + O(n-2) + O(n-3) + \dots + O(1)\\
+					 &= O\left( n^{2} \right)\\
+			\mbox{If Pivot is Median}\\
+				T(n) &= O(n) + 2T\left( \frac{n}{2} \right)\\
+					 &(\mbox{Master method: } a=2, b=2, f(n)=O(n))\\
+					 &= n^{\log_{b}(a)}\\
+					 &= n^{\log_{2}(2)}\\
+					 &= n^{1}\\
+					 &= O(n\lg n)\\
+			\mbox{What if pivot divides items} &\frac{1}{10} \mbox{ on oneside and } \frac{9}{10} \mbox{ on other}\\
+				T(n) &= T\left( \frac{n}{10} \right) + T\left( \frac{n}{10} \right) + O(n)\\ % TODO: Do bubble method
+					 & \dots\\
+					 &= \log_{\frac{10}{9}}(n)\\
+					 &= O(n\lg n)
+    	\end{aligned}
+    	\end{equation*} \answer{As long as the split is some sort of ratio, you get $O(n\lg n)$ as the runtime for quicksort. Only in the rare case of all the data being on one side of the partition that gives $O(n^{2})$ as the partition. To fix this, pick 3 items randomly, chose the middle of those 3, swap that middle with the last index and you'll be guaranteed to have $O(n\ln n)$.}\begin{algorithm}[H]
+    		\caption{Partition Improved}\label{alg:partition-improved}
+    		\begin{algorithmic}[1]
+    		\Function{PartitionI}{A,p,r}
+				\State $b$, $c$, $d$ are random indexes from A.
+				\State Swap A[r] with \Call{Median}{A[b], A[c], A[d]}
+				\State pivot $\gets$ A[r]
+    			\State i $\gets p-1$
+				\For{j=p to r-1}
+					\If{A[j] $\leq$ pivot}
+						\State Swap A[i+1] with A[j]
+						\State increment i
+					\EndIf
+				\EndFor
+			\State Swap A[i+1] with A[r]
+			\State \Return i+1
+    		\EndFunction
+    		\end{algorithmic}
+    	\end{algorithm}
+%    		\caption{Partition}\label{alg:partition}
+%    		\begin{algorithmic}[1]
+%    		\Function{Partition}{A, i, r}
+%				\For{i $\gets$ 1:n}
+%					\State pivot $\gets$ A[r]
+%					\If{A[j] $>$ pivot}
+%						\State increment j
+%					\EndIf
+%					\If{A[j] $\leq$ pivot}
+%						\State Swap A[i+1] with A[j]
+%						\State increment i
+%						\State increment j
+%					\EndIf
+%				\EndFor
+%				\State Move pivot between small \& large
+%    		\EndFunction
+%    		\end{algorithmic}
+%    	\end{algorithm}
+	\item Demonstrate Partition on this array.
+	\item What do you think the best possible outcome would be for a call to Partition, and why? What about worst possible outcome?
+	\item Write (and solve) recurrence relations for Quicksort in the best case partition and worst case partition.
+	\item What is there is a pretty bad, but not awful, partition at every call. Try always a 9 to 1 split from partition. Write and solve recurrence relation.
+\end{enumerate}
+
+\noindent With all the other sorts we could describe a particular input order that would yield worst case run time.
+\begin{enumerate}[label=\arabic*.,start=7]
+	\item How can we avoid a particular input order yielding worst case run time for quicksort? % TODO: We answered all of these questions above, organize the answers down.
+\end{enumerate}
+
+\noindent Visual Sorting Software By A. Alegoz, previous CS430 student (1.8Mb zipped, Win only)\url{http://www.cs.iit.edu/~cs430/IITSort.zip}
+
+\end{document}
