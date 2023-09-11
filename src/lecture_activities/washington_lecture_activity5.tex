@@ -5,13 +5,13 @@
 \documentclass[12pt]{report}
 
 % Packages
-\newcommand{\lectureactivity}{5}
 \usepackage{cs430lecture}
 
 % Document
 \begin{document}
-
-\section{Opening Questions}\label{sec:opening-questions}
+%<*Lecture-Activity-5>
+\setcounter{lecture}{5}
+\section{Opening Questions}\label{sec:opening-questions-5}
 \begin{enumerate}[label=\arabic*.]
     \item Define Big-O, Omega and Theta notation
 	\item In your own words explain what a recurrence relation is, what do we use recurrence relations for, why do we solve recurrence relations?
@@ -97,5 +97,5 @@ For solving recurrences of the form $T(n)=aT\left(\frac{n}{b}\right)+f(n)$
 	\item \[ T(n)=7T\left( \frac{n}{2} \right) + O(n^{2}) \]
 	\item \[ T(n)=4T\left( \frac{n}{2} \right) + n^{3} \]
 \end{enumerate}
-
+%</Lecture-Activity-5>
 \end{document}

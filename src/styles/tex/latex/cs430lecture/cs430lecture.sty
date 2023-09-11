@@ -5,50 +5,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{cs430lecture}[2023/08/22 Len Washington III's Package]
 
-\RequirePackage[margin=0.8in]{geometry}
-\RequirePackage{index}
-\RequirePackage{enumerate}
-\RequirePackage{enumitem}
-\RequirePackage{threeparttable}
-\RequirePackage{listings}
-\RequirePackage{float}
-\RequirePackage{booktabs}
+\newcounter{lecture}
 
-\RequirePackage{index}
-\makeindex{}
-
-\RequirePackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\textbf{CS 430 - Lecture Activity \#\lectureactivity}}
-\fancyhead[R]{\theauthor\ - \thepage}
-
-\RequirePackage{graphicx}
-\graphicspath{{images}}
-
-\RequirePackage{titlesec}
-\RequirePackage{ulem}
-\titleformat{\section}
-{\normalfont\large\bfseries}	% format
-{}	% label
-{0em}	% sec
-{}	% before-code
-[] % after-code
-
-\titleformat{\subsection}	% TODO: Find out how the resume.sty has the subsubsections inline with the text
-{\normalfont\bfseries}	% format
-{}	% label
-{0em}	% sec
-{}	% before-code
-[] % after-code
-
-\RequirePackage[x11names]{xcolor}
-\definecolor{url-blue}{RGB}{0, 0, 238}
-\newcommand{\answer}[1]{\textcolor{blue}{#1}}
-\newcommand{\notes}[1]{\textcolor{red}{#1}}
-
-\usepackage{titling}
-\title{CS 430 - Lecture Activity \lectureactivity}
+\RequirePackage{titling}
+\title{CS 430 - Lecture Activity \arabic{lecture}}
 \author{Len Washington III}
 \date{\today}
 \RequirePackage{amsmath}
@@ -65,10 +25,49 @@
 	colorlinks=true,
 	urlcolor=url-blue]{hyperref}
 
-%\RequirePackage{algorithm2e}
+\RequirePackage[margin=0.8in]{geometry}
+\RequirePackage{index}
+\RequirePackage{enumerate}
+\RequirePackage{enumitem}
+\RequirePackage{threeparttable}
+\RequirePackage{listings}
+\RequirePackage{float}
+\RequirePackage{booktabs}
+
+\RequirePackage{index}
+\makeindex{}
+
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{CS 430 - Lecture Activity \arabic{lecture}}}
+\fancyhead[R]{\theauthor\ - \thepage}
+
+\RequirePackage{graphicx}
+\graphicspath{{images}}
+
+\RequirePackage{titlesec}
+\RequirePackage{ulem}
+\titleformat{\section}
+{\normalfont\large\bfseries}	% format
+{}	% label
+{0em}	% sec
+{}	% before-code
+[] % after-code
+
+\titleformat{\subsection}[runin]
+{\normalfont\bfseries}	% format
+{}	% label
+{0em}	% sec
+{}	% before-code
+[] % after-code
+
+\RequirePackage[x11names]{xcolor}
+\definecolor{url-blue}{RGB}{0, 0, 238}
+\newcommand{\answer}[1]{\textcolor{blue}{#1}}
+\newcommand{\notes}[1]{\textcolor{red}{#1}}
+
 \RequirePackage{algorithm}
 \RequirePackage{algpseudocode}
 \RequirePackage{graphicx}
 \RequirePackage{tikz-qtree}
-%\RequirePackage{algorithmic}
-%\RequirePackage{algorithmicx}

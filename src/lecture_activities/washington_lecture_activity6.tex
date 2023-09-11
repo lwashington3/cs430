@@ -5,7 +5,6 @@
 \documentclass[12pt]{report}
 
 % Packages
-\newcommand{\lectureactivity}{6}
 \usepackage{cs430lecture}
 \usepackage{algpseudocode}
 
@@ -13,7 +12,8 @@
 \begin{document}
 
 \listofalgorithms
-
+%<*Lecture-Activity-6>
+\setcounter{lecture}{6}
 \section{Opening Questions}\label{sec:opening-questions}
 \begin{enumerate}[label=\arabic*.]
     \item Mergesort is $\Theta(O(n\lg n))$ runtime in best case, worst case and average case. How much memory is needed for Mergesort on input size $n$? \answer{$O(n)$}
@@ -138,5 +138,5 @@
 \end{enumerate}
 
 \noindent Visual Sorting Software By A. Alegoz, previous CS430 student (1.8Mb zipped, Win only)\url{http://www.cs.iit.edu/~cs430/IITSort.zip}
-
+%</Lecture-Activity-6>
 \end{document}
