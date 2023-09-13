@@ -1,0 +1,16 @@
+auxil/
+
+*venv/
+
+*.tlog
+*.recipe
+
+Codes/.vs
+Codes/Codes/x64/*
+*.sln
+
+desktop.ini
+
+.idea
+*synctex.gz
+.gitignore

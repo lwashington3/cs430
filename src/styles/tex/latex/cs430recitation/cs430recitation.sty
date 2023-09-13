@@ -5,62 +5,11 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{cs430recitation}[2023/08/22 Len Washington III's Package]
 
-\RequirePackage[margin=0.8in]{geometry}
-\RequirePackage{index}
-\RequirePackage{enumerate}
-\RequirePackage{enumitem}
-\RequirePackage{threeparttable}
-\RequirePackage{listings}
-\RequirePackage{float}
-\RequirePackage{booktabs}
-\RequirePackage{algorithm}
-\RequirePackage{algpseudocode}
+\RequirePackage{titling}
+\newcounter{recitation}
 
+\title{CS 430 - Recitation \arabic{recitation}}
+\RequirePackage{cs430}
 
-\RequirePackage{index}
-\makeindex{}
-
-\RequirePackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{CS 430 - Recitation \#\recnumber}
-\fancyhead[R]{\theauthor\ - \thepage}
-
-\RequirePackage{titlesec}
-\RequirePackage{ulem}
-\titleformat{\section}
-{\normalfont\large\bfseries}	% format
-{}	% label
-{0em}	% sec
-{}	% before-code
-[] % after-code
-
-\titleformat{\subsection}[runin]
-{\normalfont\bfseries}	% format
-{}	% label
-{0em}	% sec
-{}	% before-code
-[] % after-code
-
-\RequirePackage[x11names]{xcolor}
-\definecolor{url-blue}{RGB}{0, 0, 238}
-\newcommand{\answer}[1]{\textcolor{blue}{#1}}
-\newcommand{\notes}[1]{\textcolor{red}{#1}}
-
-\usepackage{titling}
-\title{CS 430 - Recitation \#\recnumber}
-\author{Len Washington III}
-\date{\today}
-\RequirePackage{amsmath}
-\RequirePackage[pdftex,
-	bookmarks=false,
-	unicode=false,
-	pdftoolbar=false,
-	pdfmenubar=true,
-	pdffitwindow=false,
-	pdfstartview={FitH},
-	pdfauthor={\theauthor},
-	pdftitle={\thetitle},
-	pdfsubject={CS 430 - Introduction to Algorithms},
-	colorlinks=true,
-	urlcolor=url-blue]{hyperref}
+\fancyhead[L]{CS 430 - Recitation \arabic{recitation}}
+\newcommand{\choicelabel}{\alph*)}
