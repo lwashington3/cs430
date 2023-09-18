@@ -5,12 +5,11 @@
 \documentclass[12pt]{report}
 
 % Packages
-\usepackage{cs430lecture}
+\usepackage[4]{cs430lecture}
 
 % Document
 \begin{document}
 %<*Lecture-Activity-4>
-\setcounter{lecture}{4}
 \newcommand{\sectiontype}{\section}
 \begin{enumerate}[label=\arabic*.]
     \item A recurrence relation describes runtime function recursively for a recursive algorithm. Write a recurrence relation for the Merge sort algorithm. HINT: try to count the number of executions of each statement and the cost of each \answer{Recurrence relations for \hyperref[alg:merge-sort]{merge sort} lines: $2=c_{1},3=c_{2},4=5=T\left( \frac{n}{2} \right)$ and $O(n)$ as the runtime for merge\begin{equation*}
@@ -37,8 +36,7 @@
 				[.\sout{$T\left( \frac{n}{2} \right)$}$\theta(n)$ ]
 				[.\sout{$T\left( \frac{n}{2} \right)$}$\theta(n)$
 				% TODO: Finish the tree
-
-			]
+			]]
 			\end{tikzpicture}
 \end{enumerate}
 
@@ -58,7 +56,7 @@ Not all problems can be solved with the divide and conquer approach. Maybe sub-p
 				\If{i $\leq$ j}\Comment{Handle Base case not found}
 	    			\State k $\gets$ $\lfloor \frac{i+j}{2} \rfloor$
 					\If{A[k] == key}
-						\Return key
+						\State \Return key
 					\EndIf
 				\EndIf
     		\EndFunction
@@ -97,7 +95,7 @@ Not all problems can be solved with the divide and conquer approach. Maybe sub-p
 					\State mid $\gets$ (from+to)/2
 					\State x $\gets$ Find\_Count(A, from, mid, char)
 					\State y $\gets$ Find\_Count(A, mid+1, to, char)
-					\Return x + y
+					\State \Return x + y
     			\Else\Comment{1 character left}
 					\If{S[from]==char}
 						\Return 1

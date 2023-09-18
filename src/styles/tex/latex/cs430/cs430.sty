@@ -11,7 +11,6 @@
 \newcommand{\notes}[1]{\textcolor{red}{#1}}
 
 \RequirePackage[margin=0.8in]{geometry}
-\RequirePackage{index}
 \RequirePackage{enumerate}
 \RequirePackage{enumitem}
 \RequirePackage{threeparttable}
@@ -22,7 +21,6 @@
 \RequirePackage{algpseudocode}
 \RequirePackage{tikz-qtree}
 \RequirePackage{lipsum}
-\RequirePackage{graphicx}
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
 
@@ -60,7 +58,7 @@
 	pdffitwindow=false,
 	pdfstartview={FitH},
 	pdfauthor={\theauthor},
-	pdftitle={\thetitle},
+	pdftitle={\mytitle},
 	pdfsubject={\thesubject},
 	colorlinks=true,
 	urlcolor=url-blue]{hyperref}
@@ -68,5 +66,6 @@
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
+\fancyhead[L]{\mytitle}
 \fancyhead[R]{\theauthor\ - \thepage}
 \setlength{\headheight}{14.49998pt}

@@ -5,11 +5,21 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{cs430lecture}[2023/08/22 Len Washington III's Package]
 
-\newcounter{lecture}
-
+\RequirePackage{xifthen}
 \RequirePackage{titling}
-\title{CS 430 - Lecture Activity \arabic{lecture}}
+
+\DeclareOption*{
+	\ifnum0=\CurrentOption
+		\newcommand{\mytitle}{CS 430 - Lecture Activity Notes}
+		%\fancyhead[L]{\textbf{CS 430 - Lecture Activity Notes}}
+	\else
+		\setcounter{chapter}{\CurrentOption}
+		\newcommand{\mytitle}{CS 430 - Lecture Activity \arabic{chapter}}
+		%\fancyhead[L]{\textbf{CS 430 - Lecture Activity \arabic{chapter}}}
+	\fi
+}
+\ProcessOptions
+\title{\mytitle}
+
 \RequirePackage{cs430}
 
-
-\fancyhead[L]{\textbf{CS 430 - Lecture Activity \arabic{lecture}}}
