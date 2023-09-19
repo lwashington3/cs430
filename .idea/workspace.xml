@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added Lecture Activity 9, figured out how to pass the lecture number as an option to the cs430 lecture package.">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/9.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/9.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/9.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/9.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/9.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/9.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/9.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/9.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/9.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/9.developing-the-recurrence.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity9.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity9.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430lecture/cs430lecture.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430lecture/cs430lecture.sty" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class Notes" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Len Washington III &lt;77632128+lwashington3@users.noreply.github.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;lwashington3&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1d29c264-b63f-40f5-909e-7b7f048042c1" />
+        <option name="url" value="https://github.com/lwashington3/cs430.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2Tu94tiKO5oXJ0BR3sxnzfq6EEB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "public",
+    "last_opened_file_path": "/mnt/d/Academic/cs430/src/lecture_activities/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editing.templates",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/lecture_activities/images" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Codes/Codes" />
+      <recent name="$PROJECT_DIR$/src/styles/tex/latex" />
+      <recent name="$PROJECT_DIR$/src/recitations/images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/homework/images" />
+      <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\auxil\homework" />
+      <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
+    </key>
+  </component>
+  <component name="RunManager" selected="LaTeX.Lecture Activity 10">
+    <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>true</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Homework 1" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Homework">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file />
+        <output-path>$PROJECT_DIR$/out/homework</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/homework</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Homework 2" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Homework">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file />
+        <output-path>$PROJECT_DIR$/out/homework</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/homework</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Homework 3" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Homework">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file />
+        <output-path>$PROJECT_DIR$/out/homework</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/homework</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Homework 4" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Homework">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file />
+        <output-path>$PROJECT_DIR$/out/homework</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/homework</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Homework 5" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Homework">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file />
+        <output-path>$PROJECT_DIR$/out/homework</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/homework</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Homework 6" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Homework">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file />
+        <output-path>$PROJECT_DIR$/out/homework</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/homework</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Homework 7" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Homework">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file />
+        <output-path>$PROJECT_DIR$/out/homework</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/homework</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 1" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities" temporary="true">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity1.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 10" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 11" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity11.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 12" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity12.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 13" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity13.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 14" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity14.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 15" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity15.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 16" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity16.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 17" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity17.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 18" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity18.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 19" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity19.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 2" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity2.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 20" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity20.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 21" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity21.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 22" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity22.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 23" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity23.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 24" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity24.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 25" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity25.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 26" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity26.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 27" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity27.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 28" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity28.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 29" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity29.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 3" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity3.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 4" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity4.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 5" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity5.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 6" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity6.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 7" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity7.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 8" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity8.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lecture Activity 9" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity9.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Recitation 1" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation1.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/recitation</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/recitation</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Recitation 2" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation2.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/recitation</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/recitation</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Recitation 3" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation3.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/recitation</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/recitation</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Recitation 4" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file />
+        <output-path>$PROJECT_DIR$/out/recitation</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/recitation</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <main-file />
+        <output-path>{projectDir}/out</output-path>
+        <auxil-path>{projectDir}/auxil</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>false</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="MAKEINDEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
+      <texify-makeindex>
+        <program>MAKEINDEX</program>
+        <main-file />
+        <command-line-args />
+        <work-dir />
+      </texify-makeindex>
+      <method v="2" />
+    </configuration>
+    <configuration name="washington_lecture_activity1 makeindex" type="MAKEINDEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
+      <texify-makeindex>
+        <program>MAKEINDEX</program>
+        <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity1.tex</main-file>
+        <command-line-args />
+        <work-dir />
+      </texify-makeindex>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="LaTeX.Homework 1" />
+      <item itemvalue="LaTeX.Homework 2" />
+      <item itemvalue="LaTeX.Homework 3" />
+      <item itemvalue="LaTeX.Homework 4" />
+      <item itemvalue="LaTeX.Homework 5" />
+      <item itemvalue="LaTeX.Homework 6" />
+      <item itemvalue="LaTeX.Homework 7" />
+      <item itemvalue="LaTeX.Lecture Activity 2" />
+      <item itemvalue="LaTeX.All Lecture Activities" />
+      <item itemvalue="LaTeX.Lecture Activity 3" />
+      <item itemvalue="LaTeX.Lecture Activity 4" />
+      <item itemvalue="LaTeX.Lecture Activity 5" />
+      <item itemvalue="LaTeX.Lecture Activity 6" />
+      <item itemvalue="LaTeX.Lecture Activity 7" />
+      <item itemvalue="LaTeX.Lecture Activity 8" />
+      <item itemvalue="LaTeX.Lecture Activity 9" />
+      <item itemvalue="LaTeX.Lecture Activity 10" />
+      <item itemvalue="LaTeX.Lecture Activity 11" />
+      <item itemvalue="LaTeX.Lecture Activity 12" />
+      <item itemvalue="LaTeX.Lecture Activity 13" />
+      <item itemvalue="LaTeX.Lecture Activity 14" />
+      <item itemvalue="LaTeX.Lecture Activity 15" />
+      <item itemvalue="LaTeX.Lecture Activity 16" />
+      <item itemvalue="LaTeX.Lecture Activity 17" />
+      <item itemvalue="LaTeX.Lecture Activity 18" />
+      <item itemvalue="LaTeX.Lecture Activity 19" />
+      <item itemvalue="LaTeX.Lecture Activity 20" />
+      <item itemvalue="LaTeX.Lecture Activity 21" />
+      <item itemvalue="LaTeX.Lecture Activity 22" />
+      <item itemvalue="LaTeX.Lecture Activity 23" />
+      <item itemvalue="LaTeX.Lecture Activity 24" />
+      <item itemvalue="LaTeX.Lecture Activity 25" />
+      <item itemvalue="LaTeX.Lecture Activity 26" />
+      <item itemvalue="LaTeX.Lecture Activity 27" />
+      <item itemvalue="LaTeX.Lecture Activity 28" />
+      <item itemvalue="LaTeX.Lecture Activity 29" />
+      <item itemvalue="LaTeX.Lecture Activity 1" />
+      <item itemvalue="LaTeX.Recitation 1" />
+      <item itemvalue="LaTeX.Recitation 2" />
+      <item itemvalue="LaTeX.Recitation 3" />
+      <item itemvalue="LaTeX.Recitation 4" />
+      <item itemvalue="Makeindex.washington_lecture_activity1 makeindex" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="LaTeX.Lecture Activity 1" />
+        <item itemvalue="LaTeX.Homework 1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\silve\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="" />
+      <created>1691881912391</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691881912391</updated>
+      <workItem from="1691881915230" duration="8556000" />
+      <workItem from="1692294866073" duration="951000" />
+      <workItem from="1692295927880" duration="128000" />
+      <workItem from="1692429020951" duration="195000" />
+      <workItem from="1692429229957" duration="213000" />
+      <workItem from="1692610636867" duration="681000" />
+      <workItem from="1692624312208" duration="5115000" />
+      <workItem from="1692766553556" duration="2514000" />
+      <workItem from="1692797383287" duration="3714000" />
+      <workItem from="1692802753469" duration="753000" />
+      <workItem from="1692890461625" duration="1389000" />
+      <workItem from="1692971905415" duration="2642000" />
+      <workItem from="1692979073496" duration="18000" />
+      <workItem from="1693093786077" duration="5085000" />
+      <workItem from="1693229965403" duration="4216000" />
+      <workItem from="1693241451640" duration="75000" />
+      <workItem from="1693241552701" duration="17000" />
+      <workItem from="1693317988801" duration="2739000" />
+      <workItem from="1693402583457" duration="4362000" />
+      <workItem from="1693536500937" duration="1592000" />
+      <workItem from="1693577005926" duration="2665000" />
+      <workItem from="1693968511202" duration="3844000" />
+      <workItem from="1694007263723" duration="4081000" />
+      <workItem from="1694135175388" duration="5849000" />
+      <workItem from="1694181785393" duration="2259000" />
+      <workItem from="1694211249534" duration="6589000" />
+      <workItem from="1694222971769" duration="4807000" />
+      <workItem from="1694386887393" duration="367000" />
+      <workItem from="1694409036692" duration="902000" />
+      <workItem from="1694440015797" duration="2681000" />
+      <workItem from="1694444785070" duration="657000" />
+      <workItem from="1694445458417" duration="1462000" />
+      <workItem from="1694446950950" duration="3294000" />
+      <workItem from="1694573809601" duration="683000" />
+      <workItem from="1694612689829" duration="3282000" />
+      <workItem from="1694892797361" duration="16000" />
+      <workItem from="1695000180346" duration="2843000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit.">
+      <option name="closed" value="true" />
+      <created>1694447379214</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694447379214</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Merged all the note pdfs into a singular document.">
+      <option name="closed" value="true" />
+      <created>1694458952073</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694458952073</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial commit for the private repo.">
+      <option name="closed" value="true" />
+      <created>1694574089865</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694574089865</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Initial commit for the private repo.">
+      <option name="closed" value="true" />
+      <created>1694574349360</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694574349360</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Created template for Recitation 4.">
+      <option name="closed" value="true" />
+      <created>1694751127754</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694751127754</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Saving progress for Homework 2. Updated the table of contents for all the lecture activities, fixed some spelling mistakes in Lecture Activity 4.">
+      <option name="closed" value="true" />
+      <created>1694820872237</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694820872237</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit." />
+    <MESSAGE value="Merged all the note pdfs into a singular document." />
+    <MESSAGE value="Initial commit for the private repo." />
+    <MESSAGE value="Updated Lecture Activity 8, simplified the .sty files to remove redundancies." />
+    <MESSAGE value="Created template for Recitation 4." />
+    <MESSAGE value="Saving progress for Homework 2. Updated the table of contents for all the lecture activities, fixed some spelling mistakes in Lecture Activity 4." />
+    <MESSAGE value="Added Lecture Activity 9, figured out how to pass the lecture number as an option to the cs430 lecture package." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Lecture Activity 9, figured out how to pass the lecture number as an option to the cs430 lecture package." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/homework/homework2.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$conf.coverage" NAME="conf Coverage Results" MODIFIED="1692803501177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$homework2.coverage" NAME="homework2 Coverage Results" MODIFIED="1694756360935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />
+  </component>
+</project>
