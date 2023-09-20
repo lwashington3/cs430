@@ -7,8 +7,8 @@
     <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added Lecture Activity 9, figured out how to pass the lecture number as an option to the cs430 lecture package.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activites/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activites/washington_lecture_activity.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activites/washington_lecture_activity10.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activites/washington_lecture_activity10.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" afterDir="false" />
     </list>
@@ -80,7 +80,6 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/mnt/d/Academic/cs430/src/lecture_activities/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -106,8 +105,6 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/homework/images" />
-      <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\auxil\homework" />
-      <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
   <component name="RunManager" selected="LaTeX.All Lecture Activities">
@@ -121,8 +118,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>true</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -289,8 +286,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity1.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -310,8 +307,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -331,8 +328,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity11.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -352,8 +349,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity12.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -373,8 +370,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity13.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -394,8 +391,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity14.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -415,8 +412,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity15.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -436,8 +433,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity16.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -457,8 +454,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity17.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -478,8 +475,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity18.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -499,8 +496,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity19.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -520,8 +517,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity2.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -541,8 +538,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity20.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -562,8 +559,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity21.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -583,8 +580,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity22.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -604,8 +601,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity23.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -625,8 +622,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity24.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -646,8 +643,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity25.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -667,8 +664,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity26.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -688,8 +685,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity27.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -709,8 +706,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity28.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -730,8 +727,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity29.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -751,8 +748,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity3.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -772,8 +769,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity4.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -793,8 +790,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity5.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -814,8 +811,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity6.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -835,8 +832,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity7.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -856,8 +853,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity8.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
@@ -877,8 +874,8 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity9.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/lecture_activites</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/lecture_activites</auxil-path>
+        <output-path>$PROJECT_DIR$/out/lecture_activities</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/lecture_activities</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
         <latex-distribution>MIKTEX</latex-distribution>
