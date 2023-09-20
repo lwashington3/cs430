@@ -170,36 +170,42 @@ The length of the path from the root $r$ to a node $x$ is the depth of $x$ in $T
 Local operation in a search tree that maintains the BST property and possibly alters the height of the BST.\\
 
 $x$ and $y$ are nodes; $a$, $b$, $c$ are sub trees
-\tikzset{every tree node/.style={minimum width=2em},
-         blank/.style={draw=none},
-         edge from parent/.style=
-         {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
-         level distance=1cm}
-\begin{tikzpicture}
-	\begin{scope}
-		\begin{tikzpicture}
-		\Tree
-		[.$x$
-			[.$a$ (l1) ]
-			[.$y$
-				[.$b$ ]
-				[.$c$ ]
-		]]
-		\end{tikzpicture}
-	\end{scope}
-	\begin{scope}[xshift=40cm]
-		\begin{tikzpicture}
-		\Tree
-		[.$y$
-			[.$x$
-				[.$a$ ]
-				[.$b$ ]
-			]
-			[.$c$ ]
-		]
-		\end{tikzpicture}
-	\end{scope}
-\end{tikzpicture}		% TODO: Fix this
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{10.tmp}
+	\label{fig:}
+\end{figure}
+
+%\tikzset{every tree node/.style={minimum width=2em},
+%         blank/.style={draw=none},
+%         edge from parent/.style=
+%         {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
+%         level distance=1cm}
+%\begin{tikzpicture}
+%	\begin{scope}
+%		\begin{tikzpicture}
+%		\Tree
+%		[.$x$
+%			[.$a$ (l1) ]
+%			[.$y$
+%				[.$b$ ]
+%				[.$c$ ]
+%		]]
+%		\end{tikzpicture}
+%	\end{scope}
+%	\begin{scope}[xshift=40cm]
+%		\begin{tikzpicture}
+%		\Tree
+%		[.$y$
+%			[.$x$
+%				[.$a$ ]
+%				[.$b$ ]
+%			]
+%			[.$c$ ]
+%		]
+%		\end{tikzpicture}
+%	\end{scope}
+%\end{tikzpicture}		% TODO: Fix this
 
 \begin{enumerate}[label=\arabic*.,start=5]
     \item Write pseudocode for LeftRotate (or RightRotate). What is the worst case runtime?\answer{\begin{algorithm}[H]
