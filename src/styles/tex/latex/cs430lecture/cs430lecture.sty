@@ -6,20 +6,17 @@
 \ProvidesPackage{cs430lecture}[2023/08/22 Len Washington III's Package]
 
 \RequirePackage{xifthen}
-\RequirePackage{titling}
 
 \DeclareOption*{
 	\ifnum0=\CurrentOption
-		\newcommand{\mytitle}{CS 430 - Lecture Activity Notes}
-		%\fancyhead[L]{\textbf{CS 430 - Lecture Activity Notes}}
+		\RequirePackage[CS 430 - Lecture Activity Notes]{cs430}
 	\else
 		\setcounter{chapter}{\CurrentOption}
-		\newcommand{\mytitle}{CS 430 - Lecture Activity \arabic{chapter}}
-		%\fancyhead[L]{\textbf{CS 430 - Lecture Activity \arabic{chapter}}}
+		\RequirePackage[CS 430 - Lecture Activity \arabic{chapter}]{cs430}
 	\fi
 }
+
 \ProcessOptions
-\title{\mytitle}
 \setlength{\parindent}{0pt}
 
 \RequirePackage{cs430}

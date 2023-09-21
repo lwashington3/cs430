@@ -4,13 +4,14 @@
 % Preamble
 \documentclass[12pt]{report}
 
-\newcommand{\recnumber}{1}
-\usepackage{cs430recitation}
+\usepackage[1]{cs430recitation}
+\usepackage{listings}
 
 % Document
 \begin{document}
 
-\subsection{After Lecture 01 \& 02} -- Answer any questions on HW1
+%<*Recitation-1>
+\subsection{After Lecture 01 \& 02} -- Answer any questions on HW1\\
 Practice Problems (all taken from previous exams)
 \begin{enumerate}[label=\arabic*.]
     \item Which of the following is not true of improved bubble sort (keep track of last swap position on the inner loop and use that to reduce outer loop iterations) on the case on input elements sorted?
@@ -53,13 +54,7 @@ Practice Problems (all taken from previous exams)
 	    \item $O\left( n\log n \right)$
 	    \item \answer{$O\left( n^{2} \right)$}
 	\end{enumerate}
-	\item The following routine takes as input a list of $n$ numbers, and returns the first value of $i$ for which $L[i] < L[i-1]$, or $n$ if no such number exists.
-\begin{lstlisting}[language=C,label={lst:first-decrease}]
-int firstDecrease(int* L, int n){
-	for(int i=2; i <= n && L[i] >= L[i-1]; i++){}
-	return i;
-}
-\end{lstlisting}
+	\item The following routine takes as input a list of $n$ numbers, and returns the first value of $i$ for which $L[i] < L[i-1]$, or $n$ if no such number exists. \lstinputlisting[language=C,label={lst:first-decrease}]{1_first-decrease.c}
 	\begin{enumerate}[label=\arabic{enumi}\alph*)]
 	    \item What is the big-O runtime for the routine, measured as a function of its return value $i$?
 		\item If the numbers are chosen independently at random, then the probability that firstDecrease($L$) returns $i$ is $\frac{i-1}{i!}$, except for the special case of $i=n+1$ for which the probability is $\frac{1}{n!}$ Use this fact to write an expression for the expected value returned by the algorithm. (Your answer can be expressed as a sum, it does not have to be solved in closed form. Do not use O-notation.) Use expectation
@@ -70,7 +65,8 @@ int firstDecrease(int* L, int n){
 		A[i] \rightarrow A[i]*n+i-1
 	\end{aligned}
 	\end{equation*}}
-	\item Use psuedocode to specify a brute-force algorithm that determines when a sequence of $n$ positive integers is given as input, wheteher thaere are two distinct terms of the sequence that have as sum a third term. The
+	\item Use pseudocode to specify a brute-force algorithm that determines when a sequence of $n$ positive integers is given as input, whether there are two distinct terms of the sequence that have as sum a third term. The
 \end{enumerate}
+%</Recitation-1>
 
 \end{document}

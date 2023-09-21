@@ -4,47 +4,24 @@
 % Preamble
 \documentclass[12pt]{report}
 
-\newcommand{\recnumber}{2}
-\usepackage{cs430recitation}
+\usepackage[2]{cs430recitation}
 \usepackage{algpseudocode}
-\newcommand{\choicelabel}{\alph*)}
 
 % Document
 \begin{document}
 
+%<*Recitation-2>
 \subsection{After Lecture 03 \& 04} -- Answer any questions on HW1\\
 Practice Problems (all taken from previous exams)
 \begin{enumerate}[label=\arabic*.]
-    \item Which of the following is time complexity of fun()?
-	\begin{lstlisting}[language=C,label={lst:fun}]
-int fun(int n){
-	int count = 0;
-	for(int i = 0; i < n; i++){
-		for(int j = i; j > 0; j--){
-			count = count + 1;
-		}
-	}
-	return count;
-}
-	\end{lstlisting}
+    \item Which of the following is time complexity of fun()? \lstinputlisting[language=C,label={lst:fun}]{2_fun.c}
 	\begin{enumerate}[label=\choicelabel]
 	    \item $O(n)$
 	    \item \answer{$O(n^{2})$}
 	    \item $O(n\log n)$
 	    \item $O(n\log(n)\log(n))$
 	\end{enumerate}
-	\item Consider the following function. What is the returned value of the above function?
-	\begin{lstlisting}[language=C,label={lst:unknown}]
-int unknown(int n){
-	int i, j, k=0;
-	for(i = n/2; i <= n; i++){
-		for(j=2; j <= n; j=j*2){
-			k = k + n/2;
-		}
-	}
-	return k;
-}
-	\end{lstlisting}
+	\item Consider the following function. What is the returned value of the above function? \lstinputlisting[language=C,label={lst:unknown}]{2_unknown.c}
 	\begin{enumerate}[label=\choicelabel]
 	    \item $\Theta(n^{2})$
 	    \item \answer{$\Theta(n^{2}\log n)$}
@@ -138,5 +115,6 @@ int unknown(int n){
 		2T(n/2)+n&$\mbox{ if }$ n=2^{k},\mbox{ for }k>1
 	\end{array} \right. \] is $T(n)=n\lg n$
 \end{enumerate}
+%</Recitation-2>
 
 \end{document}
