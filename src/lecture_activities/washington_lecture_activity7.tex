@@ -18,7 +18,7 @@
 \end{enumerate}
 
 \section{Heaps}\label{sec:heaps}
-\noindent Since a heap is a nearly complete binary tree and will always grow and shrink the rightmost bottom leaf, you can implement a head with an array instead of needing pointers (as is needed for a binary search tree which can grow/shrink at any node. Example of a MaxHeap showing array implementation:
+\noindent Since a heap is a nearly complete binary tree and will always grow and shrink the rightmost bottom leaf, you can implement a heap with an array instead of needing pointers (as is needed for a binary search tree which can grow/shrink at any node. Example of a MaxHeap showing array implementation:
 
 \begin{enumerate}[label=\arabic*.]
     \item At what index position is the largest element in a MaxHeap? We have to know how to easily move around a Heap. Can you devise a formula to relate the index of a parent to the indexes of its children? How about a formula for the index of a child to the index of its parent? \answer{The largest element in a Max Heap is at index 1 (given 1-based indexing). The formula is $\mbox{index\_parent}=\bigg\lfloor \frac{\mbox{child\_index}}{2} \bigg\rfloor$.}

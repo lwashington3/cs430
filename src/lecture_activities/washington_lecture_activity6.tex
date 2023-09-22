@@ -16,14 +16,14 @@
 \section{Opening Questions}\label{sec:opening-questions}
 \begin{enumerate}[label=\arabic*.]
     \item Mergesort is $\Theta(O(n\lg n))$ runtime in best case, worst case and average case. How much memory is needed for Mergesort on input size $n$? \answer{$O(n)$}
-	\item Mergesort does all the work of sorting items in the Merge function, after recursively splitting the collection down to the base case. Briefly explain the difference with Quicksort.\answer{All the work for Mergesort is being done after the recurrsive calls, where as Quicksort does the work before the recurrsive calls.}
+	\item Mergesort does all the work of sorting items in the Merge function, after recursively splitting the collection down to the base case. Briefly explain the difference with Quicksort. \answer{All the work for Mergesort is being done after the recursive calls, where as Quicksort does the work before the recursive calls.}
 \end{enumerate}
 
 \section{Quicksort}\label{sec:quicksort}
 \noindent A recursive divide and conquer algorithm.
 \begin{itemize}
 	\item base case: a list of length one element is sorted.
-	\item Divide ``Partition'' array into 2 sub-arrays with small \#'s in the beginning, large \#'s in second and known index dividing them\answer{ What defines small and large? The dividing index may not be the middle.}
+	\item Divide ``Partition'' array into 2 sub-arrays with small \#'s in the beginning, large \#'s in second and known index dividing them \answer{What defines small and large? The dividing index may not be the middle.}
 	\item Conquer - recursively sort each sub-array
 	\item Combine - Nothing to do
 \end{itemize}
@@ -69,20 +69,28 @@
 					 &= O(1) + T(1-1) + O(1)\\
 					 &= O(1) + T(0) + O(1)\\
 					 &= O(1) \\
+				\end{aligned}
+				\end{equation*}
+				\begin{equation*}
+				\begin{aligned}
 				T(n) &= O(n) + T(n-1)\\
 					 &= O(n) + O(n-1) + T(n-2)\\
 					 &= O(n) + O(n-1) + O(n-2) + T(n-3)\\
 					 &= O(n) + O(n-1) + O(n-2) + O(n-3) + \dots + T(1)\\
 					 &= O(n) + O(n-1) + O(n-2) + O(n-3) + \dots + O(1)\\
 					 &= O\left( n^{2} \right)\\
+			\end{aligned}
+			\end{equation*}
+			\begin{equation*}
+			\begin{aligned}
 			\mbox{If Pivot is Median}\\
 				T(n) &= O(n) + 2T\left( \frac{n}{2} \right)\\
-					 &(\mbox{Master method: } a=2, b=2, f(n)=O(n))\\
+					 &(\mbox{\hyperref[sec:recurrence-relation-solution-approach-master-method]{Master method:} } a=2, b=2, f(n)=O(n))\\
 					 &= n^{\log_{b}(a)}\\
 					 &= n^{\log_{2}(2)}\\
 					 &= n^{1}\\
 					 &= O(n\lg n)\\
-			\mbox{What if pivot divides items} &\frac{1}{10} \mbox{ on oneside and } \frac{9}{10} \mbox{ on other}\\
+			\mbox{What if pivot divides items } &\frac{1}{10} \mbox{ on oneside and } \frac{9}{10} \mbox{ on other}\\
 				T(n) &= T\left( \frac{n}{10} \right) + T\left( \frac{n}{10} \right) + O(n)\\ % TODO: Do bubble method
 					 & \dots\\
 					 &= \log_{\frac{10}{9}}(n)\\

@@ -6,18 +6,18 @@
 \ProvidesPackage{cs430lecture}[2023/08/22 Len Washington III's Package]
 
 \RequirePackage{xifthen}
+\RequirePackage{titling}
 
 \DeclareOption*{
 	\ifnum0=\CurrentOption
-		\RequirePackage[CS 430 - Lecture Activity Notes]{cs430}
+		\title{CS 430 - Lecture Activity Notes}
 	\else
 		\setcounter{chapter}{\CurrentOption}
-		\RequirePackage[CS 430 - Lecture Activity \arabic{chapter}]{cs430}
+		\title{CS 430 - Lecture Activity \arabic{chapter}}
 	\fi
 }
-
 \ProcessOptions
 \setlength{\parindent}{0pt}
 
-\RequirePackage{cs430}
+\RequirePackage[mytitle=\thetitle,leftlabel={CS 430 - Lecture Activity\ }]{cs430}
 \usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}

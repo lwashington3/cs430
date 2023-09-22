@@ -55,8 +55,8 @@
 
 
 	For a more descriptive analysis we need to consider the various generic execution flows and input structures that result in those generic execution flows. There are 3 more descriptive resource use analyses: 1) worst case (usually used)  2) average case (sometimes used)  3) best case (hardly ever used)
-	\item For your T(n) function from above determine the best case, worst case and average case T(n)s.
-		Best Case ($t_{i}=1$):\begin{equation*}
+	\item For your T(n) function from above determine the best case, worst case and average case T(n)s.\\
+		\answer{Best Case ($t_{i}=1$):\begin{equation*}
 	\begin{aligned}
 		T(n)&=nc_{1}+(n-1)c_{2}+c_{3}\sum_{i=1}^{n-1}t_{i}+\sum_{i=1}^{n-1}(t_{i}-1)\left[ c_{4}+c_{2} \right]\\
 			&=nc_{1}+(n-1)c_{2}+c_{3}\sum_{i=1}^{n-1}(1)+\sum_{i=1}^{n-1}(1-1)\left[ c_{4}+c_{2} \right]\\
@@ -70,7 +70,7 @@
 		T(n)&=nc_{1}+(n-1)c_{2}+c_{3}\sum_{i=1}^{n-1}t_{i}+\sum_{i=1}^{n-1}(t_{i}-1)\left[ c_{4}+c_{2} \right]\\
 			&=nc_{1}+(n-1)c_{2}+c_{3}\sum_{i=1}^{n-1}i+\sum_{i=1}^{n-1}(i-1)\left[ c_{4}+c_{2} \right]\\
 	\end{aligned}
-	\end{equation*}
+	\end{equation*}}
 \end{enumerate}
 %</Lecture-Activity-1>
 
