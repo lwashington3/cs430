@@ -8,18 +8,16 @@
 \RequirePackage{xifthen}
 \RequirePackage{titling}
 
-\newcounter{recitation}
-
 \DeclareOption*{
 	\ifnum0=\CurrentOption
 		\title{CS 430 - Recitation Notes}
 	\else
-		\setcounter{recitation}{\CurrentOption}
-		\title{CS 430 - Recitation \arabic{recitation}}
+		\setcounter{chapter}{\CurrentOption}
+		\title{CS 430 - Recitation \arabic{chapter}}
 	\fi
 }
 \ProcessOptions
-\RequirePackage[mytitle=\thetitle]{cs430}
+\RequirePackage[mytitle=\thetitle,leftlabel={CS 430 - Recitation\ }]{cs430}
 % \fancyhead[L]{CS 430 - Recitation \arabic{recitation}}
 
 \newcommand{\choicelabel}{\alph*)}

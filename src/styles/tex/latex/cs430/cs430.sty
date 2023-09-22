@@ -12,6 +12,10 @@
 	\newcommand{\mytitle}{#1}
 	\title{\mytitle}
 }
+\DeclareOptionX{leftlabel}{
+	\newcommand{\leftlabel}{#1}
+	\title{\mytitle}
+}
 \ProcessOptionsX\relax
 
 \RequirePackage[x11names]{xcolor}
@@ -78,6 +82,6 @@
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\mytitle}
+\fancyhead[L]{\leftlabel\arabic{chapter}}
 \fancyhead[R]{\theauthor\ - \thepage}
 \setlength{\headheight}{14.49998pt}

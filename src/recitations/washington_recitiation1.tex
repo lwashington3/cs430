@@ -37,10 +37,24 @@ Practice Problems (all taken from previous exams)
 		\caption{Erroneous Binary Search}\label{alg:}
 		\begin{algorithmic}[1]
 		\Function{BS}{}
-			\State int i=1, j=100, k, x\Comment{assume x is assigned a value to search for}
+			\State int $i \gets 1$, $j \gets 100$, $k$, $x$\Comment{assume x is assigned a value to search for}
+			\State int[] $a \gets$ new int[100]; \Comment{assume values loaded in sorted order}
+			\Repeat
+				\State $k \gets \frac{i+j}{2}$
+				\If{$a$[$k$] $< x$}
+					\State $i \gets k$;
+				\Else
+					\State $j \gets k$;
+				\EndIf
+			\Until{ (($a$[$k$] == $x$) $||$ ($i \geq j$)) }
+			\If{$a$[$k$] == $x$}
+				\State System.out.println(``x is in the array'')
+			\Else
+				\State System.out.println(``x is not in the array'')
+			\EndIf
 		\EndFunction
 		\end{algorithmic}
-	\end{algorithm}% TODO: Write this psuedocode
+	\end{algorithm}
 \begin{enumerate}[label=\alph*)]
     \item $x$ is the last element of the array $a[]$
     \item $x$ is greater than all elements of the array $a[]$
@@ -60,12 +74,18 @@ Practice Problems (all taken from previous exams)
 		\item If the numbers are chosen independently at random, then the probability that firstDecrease($L$) returns $i$ is $\frac{i-1}{i!}$, except for the special case of $i=n+1$ for which the probability is $\frac{1}{n!}$ Use this fact to write an expression for the expected value returned by the algorithm. (Your answer can be expressed as a sum, it does not have to be solved in closed form. Do not use O-notation.) Use expectation
 		\item What is the big-O average case running time of the routine? Hint: Simplify the previous summation until you see a common taylor series.
 	\end{enumerate}
-	\item Some sorting algorithms are NOT stable. However if every key in $A[i]$ is changed to $A[i]*n+i-1$ (assume $1 \leq i \leq n$) then all the new elements are distinct (and therefore stability is no longer a concern). After sorting, what transformation will restore the keys back to their original values? What is the effect on the runtime of any of the sorting algorithm \_\_ add this transformation before executing the sort and un-transformation after the sort?\answer{\begin{equation*}
+	\item Some sorting algorithms are NOT stable. However if every key in $A[i]$ is changed to $A[i]*n+i-1$ (assume $1 \leq i \leq n$) then all the new elements are distinct (and therefore stability is no longer a concern). After sorting, what transformation will restore the keys back to their original values? What is the effect on the runtime of any of the sorting algorithm if you add this transformation before executing the sort and un-transformation after the sort?\answer{\begin{equation*}
 	\begin{aligned}
 		A[i] \rightarrow A[i]*n+i-1
 	\end{aligned}
 	\end{equation*}}
-	\item Use pseudocode to specify a brute-force algorithm that determines when a sequence of $n$ positive integers is given as input, whether there are two distinct terms of the sequence that have as sum a third term. The
+	\item
+	\begin{enumerate}[label=\choicelabel]
+	    \item Use pseudocode to specify a brute-force algorithm that determines when a sequence of $n$ positive integers is given as input, whether there are two distinct terms of the sequence that have as sum a third term. The algorithm should loop through all triples of the sequence, checking whether the sum of the first two terms equals the third.
+		\item Give a big-O estimate for the complexity of the brute-force algorithm from part (a).
+		\item Devise a more efficient algorithm for solving the problem that first sorts the input sequence and then checks for each pair of terms whether their sum is in the sequence.
+		\item Give a big-O estimate for the complexity of this algorithm. Is it more efficient than the brute-force algorithm?
+	\end{enumerate}
 \end{enumerate}
 %</Recitation-1>
 

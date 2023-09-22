@@ -39,7 +39,7 @@ Practice Problems (all taken from previous exams)
 	\begin{enumerate}[label=\choicelabel]
 	    \item It is a comparison-based sort.
 		\item \answer{It's runtime is dependent on input order.}
-		\item It is not an in-place (all the operations are on the original array) algorithm.
+		\item It is not an in-place algorithm (all the operations are on the original array).
 		\item It is a stable algorithm.
 	\end{enumerate}
 	\item Use the definition of big-O to prove or disprove.
@@ -83,32 +83,34 @@ Practice Problems (all taken from previous exams)
 	\begin{algorithmic}[1]
 	\Function{FIB}{$n$}\Comment{This mathematical definition leads naturally to a recursive algorithm}
 		\If{n $\leq$ 1}
-			\Return n
+			\State \Return n
+		\Else
+			\State \Return \Call{FIB}{n-1} + \Call{FIB}{n-2}
 		\EndIf
-		\State \Return \Call{FIB}{n-1} + \Call{FIB}{n-2}
 	\EndFunction
 	\end{algorithmic}
 \end{algorithm}
 	\begin{enumerate}[label=\arabic{enumi}\choicelabel]
-	    \item Write the recurrence relation, $T(n)$, for the asymptotic runtime for procedure FIB($n$) shown above, and solve the recurrence relation to show that $T(n)=O\left( 2^{n-2} \right)$.
+	    \item Write the recurrence relation, $T(n)$, for the asymptotic runtime for procedure \Call{FIB}{$n$} shown above, and solve the recurrence relation to show that $T(n)=O\left( 2^{n-2} \right)$.
 		\item Another recursive procedure which computes the $n$th Fibonacci number is below. \begin{algorithm}[H]
 				\caption{}\label{alg:fib1}
 				\begin{algorithmic}[1]
-				\Function{F1}{n}
-					\If{n $<$ 2}
-						\Return n
-					\Else~\Return \Call{F2}{2, n, 1, 1}
+				\Function{F1}{$n$}
+					\If{$n < 2$}
+						\State \Return $n$
+					\Else
+						\State \Return \Call{F2}{2, $n$, 1, 1}
 					\EndIf
 				\EndFunction\\
-				\Function{F2}{i,n,x,y}
-					\If{i $\leq$ n}
-						\State \Call{F2}{i+1, n, y, x+y}
+				\Function{F2}{$i,n,x,y$}
+					\If{$i \leq n$}
+						\State \Call{F2}{$i+1$, $n$, $y$, $x+y$}
 					\EndIf
 					\State \Return x
 				\EndFunction
 				\end{algorithmic}
 			\end{algorithm}
-		\noindent Trace out the algorithm as it computes $F1(1)$, $F1(2)$, $F1(3)$, $F1(4)$, explain how the algorithm works, and then compare its asymptotic runtime to the time for procedure FIB$(n)$.
+		\noindent Trace out the algorithm as it computes \Call{F1}{1}, \Call{F1}{2}, \Call{F1}{3}, \Call{F1}{4}, explain how the algorithm works, and then compare its asymptotic runtime to the time for procedure \Call{FIB}{$n$}.
 	\end{enumerate}
 	\item Use mathematical induction to show that when $n$ is an exact power $2$, the solution of the recurrence \[ T(n)=\left\{ \begin{array}{ll}
 		2&$\mbox{ if }$ n=2\\
