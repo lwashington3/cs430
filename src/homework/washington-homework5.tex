@@ -1,0 +1,30 @@
+%! Author = Len Washington III
+%! Date = 8/12/2023
+
+% Preamble
+\documentclass[12pt]{report}
+
+% Packages
+\usepackage[5]{cs430homework}
+
+% Document
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}[label=\arabic*.]
+	\item (6 points) As stated, in dynamic programming we first solve the sub problems and then choose which of them to use in an optimal solution to the problem. Professor Capulet claims that it is not always necessary to solve all the sub problems in order to find an optimal solution. She suggests that an optimal solution to the matrix-chain multiplication problem can be found by always choosing the matrix $A_{k}$ at which to split the sub product $A_{i}\mbox{ } A_{i+1}\mbox{ } A_{j}$ (by selecting $k$ to minimize the quantity $p_{i-1}\mbox{ } p_{k}\mbox{ }  p_{j}$) before solving the sub problems. Find an instance of the matrix-chain multiplication problem for which this greedy approach yields a suboptimal solution.
+	\item (7 points) Show how to compute the length of an LCS using only $2\cdotp\min(m, n)$ entries in the $c$ table plus $O(1)$ additional space. Then show how to do this using $\min(m, n)$ entries plus $O(1)$ additional space. What about the original solution is missing by saving memory?
+	\item (6 points) Construct an optimal binary search tree for the keys $A, B, C, D, E, F$ with respective search probabilities 0.22, 0.13, 0.21, 0.20, 0.08, and 0.16 by computing entries for the tables ``$A$'' and ``$r$''.
+	\item (7 points) Professor Stewart is consulting for the president of a corporation that is planning a company party. The company has a hierarchical structure; that is, the supervisor relation forms a tree rooted at the president. The personnel office has ranked each employee with a conviviality rating, which is a real number. In order to make the party fun for all attendees, the president does not want both an employee and his or her immediate supervisor to attend.\\
+
+	Professor Stewart is given the tree that describes the structure of the corporation. Each node of the tree holds, in addition to the pointers to its children, the name of an employee and that employee's conviviality ranking. Describe an algorithm to make up a guest list that maximizes the sum of the conviviality ratings of the guests. Analyze the running time of your algorithm.
+	\item (7 points) We consider the problem of placing towers along a straight road, so that every building on the road receives cellular service. Assume that a building receives cellular service if it is within one mile of a tower. Buildings can be at any location along the road, cellular towers can be at any location along the road and neither are restricted to be at whole number locations.
+	\begin{enumerate}[label=\arabic{enumi}\alph*)]
+	    \item Devise an algorithm that uses the minimum number of towers possible to provide cell service to $d$ buildings located at positions $x_{1}, x_{2}, \dots, x_{d}$ from the start of the road.
+		\item Use mathematical induction to prove that the algorithm you devised produces an optimal solution, that is, that it uses the fewest towers possible to provide cellular service to all buildings.
+	\end{enumerate}
+	\item (7 points) For the Activity Selector Problem, suppose that instead of always selecting the first activity to finish, we instead select the last activity to start that is compatible with all previously selected activities. Describe how this approach is a greedy algorithm, and prove that it yields an optimal solution.
+\end{enumerate}
+
+\end{document}
