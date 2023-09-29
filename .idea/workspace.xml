@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added the Templates for Homework 3 and Lectures 11 and 12.">
-      <change afterPath="$PROJECT_DIR$/src/homework/washington-homework1.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/washington-homework2.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/washington-homework4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/washington-homework5.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/washington-homework6.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homework/washington-homework7.tex" afterDir="false" />
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added templates for all homeworks.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/homework/washington-homework3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/homework/washington-homework3.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homework/washington-homework3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/homework/washington-homework3.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430homework/cs430homework.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430homework/cs430homework.sty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitiation4.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,35 +71,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;public&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/d/Academic/cs430/.idea/workspace.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "public",
+    "last_opened_file_path": "/mnt/d/Academic/cs430/src/recitations",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editing.templates",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/recitations" />
       <recent name="$PROJECT_DIR$/src/lecture_activities/images" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Codes/Codes" />
       <recent name="$PROJECT_DIR$/src/styles/tex/latex" />
-      <recent name="$PROJECT_DIR$/src/recitations/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/out/recitations" />
@@ -115,13 +108,13 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.Homework 2">
+  <component name="RunManager" selected="LaTeX.Recitation 6">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -163,7 +156,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -184,7 +177,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -205,7 +198,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -226,7 +219,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -247,7 +240,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -268,7 +261,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -289,7 +282,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -310,7 +303,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -331,7 +324,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -352,7 +345,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -373,7 +366,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -394,7 +387,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -415,7 +408,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -436,7 +429,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -457,7 +450,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -478,7 +471,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -499,7 +492,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -520,7 +513,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -541,7 +534,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -562,7 +555,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -583,7 +576,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -604,7 +597,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -625,7 +618,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -646,7 +639,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -667,7 +660,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -688,7 +681,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -709,7 +702,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -730,7 +723,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -751,7 +744,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -772,7 +765,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -793,7 +786,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -814,7 +807,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -835,7 +828,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -856,7 +849,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -877,7 +870,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -898,7 +891,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -919,7 +912,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -940,7 +933,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -961,7 +954,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -982,11 +975,32 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation4.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/recitations</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Recitation 6" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>NONE</pdf-viewer>
+        <viewer-command>opener</viewer-command>
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation6.tex</main-file>
         <output-path>$PROJECT_DIR$/out/recitations</output-path>
         <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
         <compile-twice>false</compile-twice>
@@ -1003,7 +1017,7 @@
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
-        <pdf-viewer>BUILT-IN-PDF-VIEWER</pdf-viewer>
+        <pdf-viewer>NONE</pdf-viewer>
         <viewer-command />
         <compiler-arguments />
         <envs />
@@ -1079,6 +1093,7 @@
       <item itemvalue="LaTeX.Recitation 2" />
       <item itemvalue="LaTeX.Recitation 3" />
       <item itemvalue="LaTeX.Recitation 4" />
+      <item itemvalue="LaTeX.Recitation 6" />
       <item itemvalue="LaTeX.All Recitations" />
       <item itemvalue="Makeindex.washington_lecture_activity1 makeindex" />
     </list>
@@ -1139,7 +1154,8 @@
       <workItem from="1695000180346" duration="2843000" />
       <workItem from="1695348664740" duration="10559000" />
       <workItem from="1695614133822" duration="113000" />
-      <workItem from="1695614790288" duration="761000" />
+      <workItem from="1695614790288" duration="962000" />
+      <workItem from="1695967822718" duration="2377000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1213,7 +1229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695614227249</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added templates for all homeworks.">
+      <option name="closed" value="true" />
+      <created>1695615685338</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695615685338</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1240,7 +1264,8 @@
     <MESSAGE value="Added Lecture Activity 9, figured out how to pass the lecture number as an option to the cs430 lecture package." />
     <MESSAGE value="Added Recitation 4, all recitations for the exam on 9/22 have had their templates uploaded into one file." />
     <MESSAGE value="Added the Templates for Homework 3 and Lectures 11 and 12." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the Templates for Homework 3 and Lectures 11 and 12." />
+    <MESSAGE value="Added templates for all homeworks." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added templates for all homeworks." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

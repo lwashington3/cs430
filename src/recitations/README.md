@@ -1,0 +1,1 @@
+There is no Recitation 5, the first exam was taken during this time.
