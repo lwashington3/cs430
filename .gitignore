@@ -1,17 +1,20 @@
 *venv/
 
+*.xcf
+
 *.tlog
 *.recipe
 
 .idea/markdown.xml
-.idea/jupyter.xml
+.idea/jupyter-settings.xml
 .idea/inspectionProfiles/*
 .idea/.gitignore
 .idea/misc.xml
 .idea/vcs.xml
 .idea/shelf
 
-desktop.ini
+*desktop.ini
+
 ### VisualStudioCode template
 .vscode/*
 !.vscode/settings.json
