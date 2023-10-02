@@ -1,16 +1,183 @@
 %! Author = Len Washington III
-%! Date = 9/12/2023
+%! Date = 10/1/2023
 
 % Preamble
 \documentclass[12pt]{report}
 
 % Packages
 \usepackage[13]{cs430lecture}
+\usepackage{algpseudocode}
 
 % Document
 \begin{document}
 
 %<*Lecture-Activity-13>
+\newcommand{\keysize}[2]{$\frac{#1}{#2}$}
+\section{Opening Questions}\label{sec:opening-questions-13}
+Previously we discussed the order-statistic selection problem: given a collection of data, find the $k$th largest element. We saw that this is possible in $O(n)$ time for each $k$th element you are trying to find. The na\"{\i}ve method would just be to sort the data in $O(n\lg n)$ and then access each $k$th element in $O(1)$ time.
+
+\begin{enumerate}[label=\arabic*.]
+	\item Which of these two methods would you use if you knew you would be asked to find multiple $k$th largest elements from a set of static data? \answer{If you're doing $\geq\lg n$ queries, it would be better to sort the data and then constantly choose the value based off of the index. If you're doing $<\lg n$, it would be better to run the $O(n)$ each time.}
+	\item What if our collection of data is changing (dynamic), would either of these approaches work efficiently for a collection of data that has inserts and deletes happening? \answer{No, you would have to re-run either algorithm for either.}
+\end{enumerate}
+
+\section{Augmenting Data Structures}\label{sec:augmenting-data-structures}
+For particular applications, it is useful to modify a standard data structure to support additional functionality. Sometimes the modification is as simple as by storing additional information in it, and by modifying the ordinary operations of the data structure to maintain the additional information.
+
+\section{Dynamic Order-Statistic Trees (Augmenting Balanced Trees)}\label{sec:dynamic-order-statistic-trees-(augmenting-balanced-trees)}
+\begin{enumerate}[label=\arabic*.]
+	\item What can we do with a binary search tree (and more efficiently with a balanced binary search tree)? \answer{We can insert and delete items, and if it's balanced, we can do that in $O(\lg n)$.}
+	\item Consider the na\"{\i}ve method of finding the $k$th largest item is to sort the array and then access the $k$th item in $O(1)$ time. Can we do this with a (balanced) BST? What is we augment it (HINT: recall how counting sort worked)? \answer{A BST can do this by keeping track of the size of the subtree.}
+	\item What is the recursive formula to find the size of a subtree at node $x$?\answer{\begin{algorithm}[H]
+			\caption{Size of a subtree at a node}\label{alg:subtree-size}
+			\begin{algorithmic}[1]
+			\Function{SubtreeSize}{$node$}\Comment{The size of null leaves is 0.}
+				\State $size \gets 1$
+				\If{$node.left \neq null$}
+					\State $size \gets size + $ \Call{SubtreeSize}{$node.left$}
+				\EndIf
+				\If{$node.right \neq null$}
+					\State $size \gets size + $ \Call{SubtreeSize}{$node.right$}
+				\EndIf
+				\State \Return size
+			\EndFunction
+			\end{algorithmic}
+		\end{algorithm}
+		\globaltikzset
+		\begin{figure}[H]
+		   \centering
+		   \begin{tikzpicture}
+			\Tree
+			[.\node[black]{ \keysize{26}{20} };
+				[.\node[red]{ \keysize{17}{12} };
+					[.\node[black]{ \keysize{14}{7} };
+						[.\node[red]{ \keysize{10}{4} };
+							[.\node[black]{ \keysize{7}{2} };
+								[.\node[red]{ \keysize{3}{1} }; ]
+								\edge[blank];\node[blank]{ };
+							]
+							[.\node[black]{ \keysize{12}{1} }; ]
+						]
+						[.\node[black]{ \keysize{16}{2} };
+							[.\node[red]{ \keysize{14}{1} }; ]
+							\edge[blank];\node[blank]{ };
+						]
+					]
+					[.\node[black]{ \keysize{21}{4} };
+						[.\node[black]{ \keysize{19}{2} };
+							\edge[blank];\node[blank]{ };
+							[.\node[red]{ \keysize{20}{1} }; ]
+						]
+						[.\node[black]{ \keysize{21}{1} }; ]
+					]
+				]
+				[.\node[black]{ \keysize{41}{7} };
+					[.\node[red]{ \keysize{30}{5} };
+						[.\node[black]{ \keysize{28}{1} }; ]
+						[.\node[black]{ \keysize{38}{3} };
+							[.\node[red]{ \keysize{35}{1} }; ]
+							[.\node[red]{ \keysize{39}{1} }; ]
+						]
+					]
+					[.\node[black]{ \keysize{47}{1} }; ]
+				]
+			]
+			\end{tikzpicture}
+		   \caption{An order-statistic tree, which is an augmented red-black tree. In addition to its usual attributes, each node $x$ has an attribute $x.size$, which is the number of nodes, other than the sentinel, in the subtree rooted at $x$.}
+		   \label{fig:augmented-red-black-tree}
+	\end{figure}
+	}
+	\item Discuss in detail how would you keep the size at a node correct when you insert a new node, and possibly rotate to keep the tree balanced?\\
+	\makebox[\textwidth]{\makebox[\paperwidth]{
+		\begin{minipage}[H]{0.5\paperwidth}
+		\begin{algorithm}[H]
+			\caption{Left Rotation of a BST}\label{alg:left-rotate}
+			\begin{algorithmic}[1]
+			\Function{Left-Rotate}{$T$, $x$}
+				\State $y \gets x.right$\Comment{Set $y$}
+				\State $x.right \gets y.left$\Comment{Turn $y$'s left subtree into $x$'s right subtree}
+				\If{$y.left \neq T.nil$}
+					\State $y.left.p \gets x$
+				\EndIf
+				\State $y.p \gets x.p$\Comment{link $x$'s parent to $y$}
+				\If{x.p == T.nil}
+					\State $T.root \gets y$
+				\ElsIf{$x == x.p.left$}
+					\State $x.p.left \gets y$
+				\Else
+					\State $x.p.right \gets y$
+				\EndIf
+				\State $y.left \gets x$ \Comment{Put $x$ on $y$'s left}
+				\State $x.p \gets y$
+			\EndFunction
+			\State
+			\State
+			\end{algorithmic}
+		\end{algorithm}
+	\end{minipage}
+		\begin{minipage}[H]{0.55\paperwidth}
+			\begin{algorithm}[H]
+			\caption{Insert a node into a BST}\label{alg:tree-insert}
+			\begin{algorithmic}[1]
+			\Function{Tree-Insert}{$T$, $z$}
+				\State $y \gets$ null
+				\State $x \gets$ $T.root$
+				\While{$x \neq$ null}
+					\State $y \gets x$
+					\If{$z.key < x.key$}
+						\State $x = x.left$
+					\Else
+						\State $x = x.right$
+					\EndIf
+				\EndWhile
+			\State $z.p \gets y$
+			\If{$y == $ null}
+				\State $T.root \gets z$\Comment{Tree $T$ was empty}
+			\ElsIf{$z.key < y.key$}
+				\State $y.left \gets z$
+			\Else
+				\State $y.right \gets z$
+			\EndIf
+			\EndFunction
+			\end{algorithmic}
+		\end{algorithm}
+		\end{minipage}}}
+		\answer{After you would add or delete the node from the BST, when you go back up the recursion, you can re-count the sizes after any rotations that may be necessary. (In any rotations, the only sizes that need to get updated are the nodes that are rotating, the size of the parent would stay the same.)}
+	\item Discuss in general how would you keep the size at a node correct when you delete a node, and possibly rotate to keep the tree balanced? \answer{You can maintain these sizes on deletions and rotations. As the \hyperref[sec:red-black-tree-delete]{Red-Black deletion rules} says, if the node you're deleting has 0 or 1 children, then the node was in the search path. If the node has two children, you would have to find the successor and update the search path.}
+	\item How can we use the augmented data at each node (size) in a balanced binary search tree to solve the $k$th largest item problem? \answer{We can use the size of a node to check how many values are less than or greater than it (by subtracting the size of the subtree from the size of the root), which can help us determine if the required rank is within that subtree. If not, we can cut out that subtree to reduce the runtime.}
+	\item How can we use the augmented data at each node (size) in a balanced binary search tree so when given a pointer to a node in the tree, we can determine its rank (the index position of the node of the tree data in sorted order)?\answer{\begin{algorithm}[H]
+			\caption{Order Statistic with a BST for the $i$th smallest}\label{alg:bst-select-smallest}
+			\begin{algorithmic}[1]
+			\Function{SelectSmallest}{$x$:Node, $i$:int}\Comment{Initial call: \Call{SelectSmallest}{$tree.root$, $i$}}
+				\State $y \gets $ \Call{\hyperref[alg:subtree-size]{SubtreeSize}}{$x.left$} $ + 1$
+				\If{$i == y$}
+					\State \Return $x.value$
+				\ElsIf{$i < y$}
+					\State \Call{SelectSmallest}{$x.left$, $i$}
+				\Else
+					\State \Call{SelectSmallest}{$x.right$, $i-y$}
+				\EndIf
+			\EndFunction
+			\end{algorithmic}
+		\end{algorithm}
+		\begin{algorithm}[H]
+			\caption{Order Statistic with a BST for the $k$th largest}\label{alg:bst-select-largest}
+			\begin{algorithmic}[1]
+			\Function{SelectLargest}{$x$:Node, $k$:int}\Comment{Equivalent to \Call{\hyperref[alg:bst-select-smallest]{SelectSmallest}}{$x$, $n-k$}}
+				\State $y \gets $ \Call{\hyperref[alg:subtree-size]{SubtreeSize}}{$x.right$} $ + 1$
+				\If{$k == y$}
+					\State \Return $x.value$
+				\ElsIf{$k < y$}
+					\State \Call{SelectLargest}{$x.right$, $k$}
+				\Else
+					\State \Call{SelectLargest}{$x.left$, $k-y$}
+				\EndIf
+			\EndFunction
+			\end{algorithmic}
+		\end{algorithm}}
+	\item Why not just use this approach always (not just with dynamically changing data) instead of the $O(n)$ one? \answer{The runtime to build and insert into the initial BST would be $O(n\lg n)$.}
+	\item Can we use this approach on a regular BST? \answer{No, we need a balanced BST.}
+\end{enumerate}
 
 %</Lecture-Activity-13>
 

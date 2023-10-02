@@ -56,13 +56,13 @@ If we do not use comparison of keys to sort data, how can we sort data? It seems
     	\caption{Counting Sort}\label{alg:counting-sort}
     	\begin{algorithmic}[1]
     	\Function{CountingSort}{$A$}\Comment{$A$=original array, $B$=size-$k$ counters, $C$=size-$n$ sorted data}
-			\For{$i=1$ to $n$}
+			\For{$i=1\dots n$}
 				\State $B$[$A$[$i$]]++					\Comment{counters}
 			\EndFor
-			\For{$j=1$ to $k$}
+			\For{$j=1\dots k$}
 				\State $B$[$j$] = $B$[$j$] + $B$[$j-1$]	\Comment{$\leq$ counters}
 			\EndFor
-			\For{$i=n$ to 1}
+			\For{$i=n\dots 1$}
 				\State $C$[$B$[$A$[i]]] = $A$[i]
 				\State $B$[$A$[i]]{-}{-}
 			\EndFor

@@ -31,15 +31,31 @@
 \RequirePackage{listings}
 \RequirePackage{float}
 \RequirePackage{booktabs}
-\RequirePackage{algorithm}
+\RequirePackage[chapter]{algorithm}
 \RequirePackage{algpseudocode}
-\RequirePackage{tikz-qtree}
-\RequirePackage{tikz}
-\usetikzlibrary{scopes}
 \RequirePackage{lipsum}
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
 \RequirePackage{catchfilebetweentags}
+
+\RequirePackage{tikz-qtree}
+\RequirePackage{tikz}
+\usetikzlibrary{scopes,trees,positioning,graphs}
+%\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
+\newcommand{\globaltikzset}{
+\tikzset{every node/.style={minimum width=2em,draw,circle},
+         blank/.style={draw=none},
+         edge from parent/.style=
+         {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
+         level distance=1cm,
+		sibling distance=5mm}
+}
+
+\tikzset{
+stdNode/.style={draw, color=white, circle, minimum width=2em},
+black/.style={stdNode, fill=black!80!white},
+red/.style={stdNode, fill=red!80!white},
+}
 
 \RequirePackage{graphicx}
 \graphicspath{{images}}
