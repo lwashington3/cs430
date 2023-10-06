@@ -1,0 +1,50 @@
+%! Author = Len Washington III
+%! Date = 10/05/2023
+
+% Preamble
+\documentclass[12pt]{report}
+
+\usepackage[7]{cs430recitation}
+\usepackage{algpseudocode}
+
+% Document
+\begin{document}
+
+%<*Recitation-7>
+\subsection{After Lecture 13 \& 14}
+Practice Problems (all taken from previous exams)
+\begin{enumerate}[label=\arabic*.]
+	\item If you want to create in order-statistic tree (which needs the size of each subtree rooted at each node), from an already created red-black tree, you can:
+	\begin{enumerate}[label=\choicelabel]
+	    \item perform a pre-order traversal of the order-statistic tree and sum the sizes of each subtree of a node and add one to get the size of each node (nodes with no children assigned size=1)
+		\item perform an in-order traversal of the order-statistic tree and sum the sizes of each subtree of a node and add one to get the size of each node (nodes with no children assigned size=1)
+		\item perform a post-order traversal of the order-statistic tree and sum the sizes of each subtree of a node and add one to get the size of each node (nodes with no children assigned size=1)
+	\end{enumerate}
+	\item How does an augmented data structure differ from a traditional data structure?
+	\begin{enumerate}[label=\choicelabel]
+	    \item Augmented data structures have an asymptotically higher memory overhead.
+	    \item Augmented data structures worsen the asymptotic runtime of basic operations.
+	    \item Augmented data structures offer additional operations or information.
+	    \item Augmented data structures have a faster runtime complexity than the non-augmented data structure.
+	\end{enumerate}
+	\item If a problem can be broken into sub-problems which are reused several times, the problem has \_\_\_\_\_.
+	\begin{enumerate}[label=\choicelabel]
+	    \item Overlapping subproblems
+		\item Optimal substructure
+		\item Memoization
+		\item Greedy
+	\end{enumerate}
+	\item What is the space complexity of the dynamic programming implementation of the matrix chain problem?
+	\begin{enumerate}[label=\choicelabel]
+	    \item $O(1)$
+	    \item $O(n)$
+	    \item $O(n^{2})$
+	    \item $O(n^{3})$
+	\end{enumerate}
+	\item Given an element $x$ in an $n$-node order statistic tree and a natural number $i$, how can we determine the $i$th successor of $x$ in the linear order of the tree in $O(\lg n)$ time? So $x$ is a key in the tree and we want to find the $i$th key after $x$ in linear order. \orderstatistictree
+	\item Suppose that the dimensions of the matrices $A$, $B$, $C$, and $D$ are $8\times5$, $5\times11$, $11\times6$, and $6\times9$ respectively, and that we want to parenthesize the product $ABCD$ in a way that minimizes the number of scalar multiplications. Find the $m$ and $s$ tables computed by MATRIX-CHAIN-ORDER to solve this problem and show the optimal parenthesization.
+	\item Let $R(i,j)$ be the number of times that table entry $m[i,j]$ is referenced while computing other table entries in a call of MATRIX-CHAIN-ORDER. Show that the total number of references for the entire table is \[ \sum_{i=1}^{n}\sum_{j=i}^{n} R(i,j) = \frac{n^{3} - n}{3} \]
+\end{enumerate}
+%</Recitation-7>
+
+\end{document}

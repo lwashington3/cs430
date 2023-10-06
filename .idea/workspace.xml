@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Updated Lecture Activity 13, figured out how to properly write binary trees (check l.a. 13).">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees were malformed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity11.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity11.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity12.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity12.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitiation6.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity11.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity11.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity12.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity12.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity4.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity13.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity13.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation6.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitiation6.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,28 +73,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/mnt/d/Academic/cs430/src/recitations",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editing.templates",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;public&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/d/Academic/cs430/src/recitations&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/recitations" />
@@ -118,14 +110,14 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.All Lecture Activities">
+  <component name="RunManager" selected="LaTeX.Recitation 7">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command />
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex</main-file>
@@ -335,7 +327,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command />
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex</main-file>
@@ -356,7 +348,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command />
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity11.tex</main-file>
@@ -797,7 +789,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command />
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity4.tex</main-file>
@@ -1022,6 +1014,27 @@
       </texify>
       <method v="2" />
     </configuration>
+    <configuration name="Recitation 7" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>NONE</pdf-viewer>
+        <viewer-command>opener</viewer-command>
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation7.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/recitations</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -1104,6 +1117,7 @@
       <item itemvalue="LaTeX.Recitation 3" />
       <item itemvalue="LaTeX.Recitation 4" />
       <item itemvalue="LaTeX.Recitation 6" />
+      <item itemvalue="LaTeX.Recitation 7" />
       <item itemvalue="LaTeX.All Recitations" />
       <item itemvalue="Makeindex.washington_lecture_activity1 makeindex" />
     </list>
@@ -1166,7 +1180,10 @@
       <workItem from="1695614133822" duration="113000" />
       <workItem from="1695614790288" duration="962000" />
       <workItem from="1695967822718" duration="2377000" />
-      <workItem from="1696282032417" duration="319000" />
+      <workItem from="1696282032417" duration="693000" />
+      <workItem from="1696293795573" duration="371000" />
+      <workItem from="1696303356169" duration="6000" />
+      <workItem from="1696567769057" duration="1849000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1248,7 +1265,39 @@
       <option name="project" value="LOCAL" />
       <updated>1695615685338</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees where malformed.">
+      <option name="closed" value="true" />
+      <created>1696282650049</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696282650049</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees where malformed.">
+      <option name="closed" value="true" />
+      <created>1696293854667</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696293854667</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees where malformed.">
+      <option name="closed" value="true" />
+      <created>1696293978909</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696293978909</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees were malformed.">
+      <option name="closed" value="true" />
+      <created>1696294011335</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696294011335</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1276,7 +1325,10 @@
     <MESSAGE value="Added Recitation 4, all recitations for the exam on 9/22 have had their templates uploaded into one file." />
     <MESSAGE value="Added the Templates for Homework 3 and Lectures 11 and 12." />
     <MESSAGE value="Added templates for all homeworks." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added templates for all homeworks." />
+    <MESSAGE value="Fixed most of the binary trees that were malformed within the Lecture Activities." />
+    <MESSAGE value="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees where malformed." />
+    <MESSAGE value="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees were malformed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees were malformed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1290,9 +1342,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MATH_252___Introduction_to_Differential_Equations$home.coverage" NAME="home Coverage Results" MODIFIED="1692818270194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />
-    <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$homework2.coverage" NAME="homework2 Coverage Results" MODIFIED="1694756360935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />
     <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$conf.coverage" NAME="conf Coverage Results" MODIFIED="1692803501177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/MATH_252___Introduction_to_Differential_Equations$conf.coverage" NAME="conf Coverage Results" MODIFIED="1694627412707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/MATH_252___Introduction_to_Differential_Equations$home.coverage" NAME="home Coverage Results" MODIFIED="1692818270194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />
+    <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$homework2.coverage" NAME="homework2 Coverage Results" MODIFIED="1694756360935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />
   </component>
 </project>

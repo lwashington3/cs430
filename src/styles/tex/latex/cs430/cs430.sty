@@ -43,7 +43,7 @@
 \usetikzlibrary{scopes,trees,positioning,graphs}
 %\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
 \newcommand{\globaltikzset}{
-\tikzset{every tree node/.style={minimum width=2em,draw,circle},
+\tikzset{every node/.style={minimum width=2em,draw,circle},
          blank/.style={draw=none},
          edge from parent/.style=
          {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
@@ -102,3 +102,47 @@ red/.style={stdNode, fill=red!80!white},
 \fancyhead[L]{\leftlabel\arabic{chapter}}
 \fancyhead[R]{\theauthor\ - \thepage}
 \setlength{\headheight}{14.49998pt}
+
+\newcommand{\keysize}[2]{$\frac{#1}{#2}$}
+\newcommand{\orderstatistictree}{\globaltikzset\begin{figure}[H]
+		   \centering
+		   \begin{tikzpicture}
+			\Tree
+			[.\node[black]{ \keysize{26}{20} };
+				[.\node[red]{ \keysize{17}{12} };
+					[.\node[black]{ \keysize{14}{7} };
+						[.\node[red]{ \keysize{10}{4} };
+							[.\node[black]{ \keysize{7}{2} };
+								[.\node[red]{ \keysize{3}{1} }; ]
+								\edge[blank];\node[blank]{ };
+							]
+							[.\node[black]{ \keysize{12}{1} }; ]
+						]
+						[.\node[black]{ \keysize{16}{2} };
+							[.\node[red]{ \keysize{14}{1} }; ]
+							\edge[blank];\node[blank]{ };
+						]
+					]
+					[.\node[black]{ \keysize{21}{4} };
+						[.\node[black]{ \keysize{19}{2} };
+							\edge[blank];\node[blank]{ };
+							[.\node[red]{ \keysize{20}{1} }; ]
+						]
+						[.\node[black]{ \keysize{21}{1} }; ]
+					]
+				]
+				[.\node[black]{ \keysize{41}{7} };
+					[.\node[red]{ \keysize{30}{5} };
+						[.\node[black]{ \keysize{28}{1} }; ]
+						[.\node[black]{ \keysize{38}{3} };
+							[.\node[red]{ \keysize{35}{1} }; ]
+							[.\node[red]{ \keysize{39}{1} }; ]
+						]
+					]
+					[.\node[black]{ \keysize{47}{1} }; ]
+				]
+			]
+			\end{tikzpicture}
+		   \caption{An order-statistic tree, which is an augmented red-black tree. In addition to its usual attributes, each node $x$ has an attribute $x.size$, which is the number of nodes, other than the sentinel, in the subtree rooted at $x$.}
+		   \label{fig:augmented-red-black-tree}
+	\end{figure}}
