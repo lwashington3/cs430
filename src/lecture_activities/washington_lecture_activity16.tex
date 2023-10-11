@@ -1,5 +1,5 @@
 %! Author = Len Washington III
-%! Date = 9/12/2023
+%! Date = 10/10/2023
 
 % Preamble
 \documentclass[12pt]{report}
@@ -11,6 +11,34 @@
 \begin{document}
 
 %<*Lecture-Activity-16>
+\section{Opening Questions}\label{sec:opening-questions-16}
+\begin{enumerate}[label=\arabic*.]
+    \item In the Optimal Binary Search Tree problem we are not just trying to balance the tree, instead we are trying to minimize what?
+    \item What is different about the 0-1 knapsack problem as compared to the other problems we solved with dynamic programming?
+\end{enumerate}
+
+\section{Optimal Binary Search Tree}\label{sec:optimal-binary-search-tree}
+The Optimal Binary Search Tree problem is a special case of a BST where the data is static (no inserts or deletes) and we know the probability of each key in the data being searched for. We want to minimize total expected search time for the BST. Recall expectation \[ E(X) = \sum_{s\in S} X(s)p(s) \]
+\begin{enumerate}[label=\arabic*.]
+    \item Apply the expectation formula to the Optimal Binary Search Tree problem with $n$ keys and $C(i)$ is how deep item $i$ is. $P(i)$ is probability of search for item $i$.
+    \item The brute force approach would be to find all possible BSTs, find the expected search time of each and pick the minimum one. How many BSTs are there?
+    \item Step 1: Generically define the structure of the optimal solution to the Optimal Binary Search Tree problem. The optimal binary search tree with $n$ keys and $C(i)$ is how deep item $i$ is and $P(i)$ is probability of search for item $i$ is:
+    \item\label{question:4} Step 2: Recursively define the optimal solution. Assume $A(i,j)$ is the optimal answer for keys $i$ to $j$. Make sure you include the base case.
+    \item Use proof by contradiction to show that Optimal Binary Search Tree problem has optimal substructure, i.e.\ the optimal answer to problem must contain optimal answers to sub-problems.
+    \item Step 3: Compute solution using a table bottom up for the Optimal Binary Search Tree problem. Use your answer to question \hyperref[question:4]{4} above. Note the overlapping sub-problems as you go.
+    \item Step 4: Construct Optimal solution \begin{table}[H]
+        \centering
+        \begin{threeparttable}
+            \label{tab:optimal-bst-example}
+    		\begin{tabular}{cccccc}
+    			$A$ & $B$ & $C$ & $D$ & $E$ & $F$\\
+                .2 & .16 & .08 & .22 & .21 & .13
+    		\end{tabular}
+    	\end{threeparttable}
+    \end{table}
+\end{enumerate}
+
+Optimal Binary Search Tree: \url{http://www.cse.yorku.ca/~aaw/Gubarenko/BSTAnimation.html}
 
 %</Lecture-Activity-16>
 

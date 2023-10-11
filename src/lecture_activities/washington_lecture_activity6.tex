@@ -50,7 +50,7 @@
     		\Function{Partition}{A,p,r}
     			\State pivot $\gets$ A[r]
     			\State i $\gets p-1$
-				\For{j=p$\dots$r-1}
+				\For{j=p}{r-1}
 					\If{A[j] $\leq$ pivot}
 						\State Swap A[i+1] with A[j]
 						\State increment i
@@ -104,7 +104,7 @@
 				\State Swap A[r] with \Call{Median}{A[b], A[c], A[d]}
 				\State pivot $\gets$ A[r]
     			\State i $\gets p-1$
-				\For{j=p $\dots $ r-1}
+				\For{j=p}{r-1}
 					\If{A[j] $\leq$ pivot}
 						\State Swap A[i+1] with A[j]
 						\State increment i
