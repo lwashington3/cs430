@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees were malformed.">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Created the template for Recitation 7.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity13.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity13.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation6.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitiation6.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1183,7 +1179,8 @@
       <workItem from="1696282032417" duration="693000" />
       <workItem from="1696293795573" duration="371000" />
       <workItem from="1696303356169" duration="6000" />
-      <workItem from="1696567769057" duration="1849000" />
+      <workItem from="1696567769057" duration="1915000" />
+      <workItem from="1696628844683" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1297,7 +1294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696294011335</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Created the template for Recitation 7.">
+      <option name="closed" value="true" />
+      <created>1696569665031</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1696569665031</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1328,7 +1333,8 @@
     <MESSAGE value="Fixed most of the binary trees that were malformed within the Lecture Activities." />
     <MESSAGE value="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees where malformed." />
     <MESSAGE value="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees were malformed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees were malformed." />
+    <MESSAGE value="Created the template for Recitation 7." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the template for Recitation 7." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
