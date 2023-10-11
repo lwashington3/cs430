@@ -18,32 +18,57 @@ Practice Problems (all taken from previous exams)
 	\begin{enumerate}[label=\choicelabel]
 	    \item perform a pre-order traversal of the order-statistic tree and sum the sizes of each subtree of a node and add one to get the size of each node (nodes with no children assigned size=1)
 		\item perform an in-order traversal of the order-statistic tree and sum the sizes of each subtree of a node and add one to get the size of each node (nodes with no children assigned size=1)
-		\item perform a post-order traversal of the order-statistic tree and sum the sizes of each subtree of a node and add one to get the size of each node (nodes with no children assigned size=1)
+		\item \answer{perform a post-order traversal of the order-statistic tree and sum the sizes of each subtree of a node and add one to get the size of each node (nodes with no children assigned size=1)}
 	\end{enumerate}
 	\item How does an augmented data structure differ from a traditional data structure?
 	\begin{enumerate}[label=\choicelabel]
 	    \item Augmented data structures have an asymptotically higher memory overhead.
 	    \item Augmented data structures worsen the asymptotic runtime of basic operations.
-	    \item Augmented data structures offer additional operations or information.
+	    \item \answer{Augmented data structures offer additional operations or information.}
 	    \item Augmented data structures have a faster runtime complexity than the non-augmented data structure.
 	\end{enumerate}
 	\item If a problem can be broken into sub-problems which are reused several times, the problem has \_\_\_\_\_.
 	\begin{enumerate}[label=\choicelabel]
-	    \item Overlapping subproblems
+	    \item \answer{Overlapping subproblems}
 		\item Optimal substructure
-		\item Memoization
+		\item Memoization\footnote{\textbf{Memoization} means that we should never try to compute the solution to the }
 		\item Greedy
 	\end{enumerate}
 	\item What is the space complexity of the dynamic programming implementation of the matrix chain problem?
 	\begin{enumerate}[label=\choicelabel]
 	    \item $O(1)$
 	    \item $O(n)$
-	    \item $O(n^{2})$
+	    \item \answer{$O(n^{2})$}
 	    \item $O(n^{3})$
 	\end{enumerate}
-	\item Given an element $x$ in an $n$-node order statistic tree and a natural number $i$, how can we determine the $i$th successor of $x$ in the linear order of the tree in $O(\lg n)$ time? So $x$ is a key in the tree and we want to find the $i$th key after $x$ in linear order. \orderstatistictree
-	\item Suppose that the dimensions of the matrices $A$, $B$, $C$, and $D$ are $8\times5$, $5\times11$, $11\times6$, and $6\times9$ respectively, and that we want to parenthesize the product $ABCD$ in a way that minimizes the number of scalar multiplications. Find the $m$ and $s$ tables computed by MATRIX-CHAIN-ORDER to solve this problem and show the optimal parenthesization.
-	\item Let $R(i,j)$ be the number of times that table entry $m[i,j]$ is referenced while computing other table entries in a call of MATRIX-CHAIN-ORDER. Show that the total number of references for the entire table is \[ \sum_{i=1}^{n}\sum_{j=i}^{n} R(i,j) = \frac{n^{3} - n}{3} \]
+	\item Given an element $x$ in an $n$-node order statistic tree and a natural number $i$, how can we determine the $i$th successor of $x$ in the linear order of the tree in $O(\lg n)$ time? So $x$ is a key in the tree and we want to find the $i$th key after $x$ in linear order. \orderstatistictree \answer{First we determine the rank of $x$ by calling \Call{OS-RANK}{$T$, $x$} and name this number $r$. Then the $i$th successor of $x$ is actually an element in the tree with rank $r+i$. Hence we call \Call{OS-SELECT}{$T.root$, $r+i$}. Both these calls require $O(\lg n)$ time which in total is again $O(\lg n)$.}
+	\item Suppose that the dimensions of the matrices $A$, $B$, $C$, and $D$ are $8\times5$, $5\times11$, $11\times6$, and $6\times9$ respectively, and that we want to parenthesize the product $ABCD$ in a way that minimizes the number of scalar multiplications. Find the $m$ and $s$ tables computed by MATRIX-CHAIN-ORDER to solve this problem and show the optimal parenthesization.\answer{\begin{table}[H]
+	    \centering
+	    \begin{threeparttable}
+			\caption{}
+			\label{tab:}
+			\begin{tabular}{lllll}
+				$m$ & 	$A$	& 	$B$ 	& 	$C$		& 	$D$\\
+				$A$ & 	0	&	$440$	&	$570$	& 	$960$\\
+				$B$ & 		&	$0$		&	$330$	& 	$600$\\
+				$B$ & 		&			&	$0$		& 	$594$\\
+				$B$ & 		&			&			& 	$0$\\
+			\end{tabular}
+			\begin{tablenotes}
+				\small
+				\item
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{table}
+	}
+	\item Let $R(i,j)$ be the number of times that table entry $m[i,j]$ is referenced while computing other table entries in a call of MATRIX-CHAIN-ORDER. Show that the total number of references for the entire table is \[ \sum_{i=1}^{n}\sum_{j=i}^{n} R(i,j) = \frac{n^{3} - n}{3} \] \answer{\begin{equation*}
+	\begin{aligned}
+		\sum_{i=1}^{n}\sum_{j=i}^{n} R(i,j) &= \sum_{l=2}^{n} \sum_{i=1}^{n-l+1} \sum_{k=i}^{i+l-2}2\\
+											&= \sum_{l=2}^{n} \sum_{i=1}^{n-l+1} 2(l-1)\\
+											&= \sum_{l=2}^{n} 2(l-1)(n-l+1)\\
+											&= \sum_{l=1}^{n-1} 2l(n-1)\\
+	\end{aligned}
+	\end{equation*}}
 \end{enumerate}
 %</Recitation-7>
 
