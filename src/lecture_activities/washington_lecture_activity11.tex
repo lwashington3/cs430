@@ -35,25 +35,25 @@ Red-Black Properties
 \answer{
 	\begin{tikzpicture} % TODO: Finish this tree
 		\Tree
-		[.$5$
-			[.$3$
-				[.$1$
-					[.null ]
-					[.null ]
+		[.\node{ $5$ };
+			[.\node{ $3$ };
+				[.\node{ $1$ };
+					[.\node{ null }; ]
+					[.\node{ null }; ]
 				]
-				[.$4$
-					[.null ]
-					[.null ]
+				[.\node{ $4$ };
+					[.\node{ null }; ]
+					[.\node{ null }; ]
 				]
 			]
-			[.$8$
-				[.null ]
-				[.$12$
-					[.null ]
-					[.$15$ ]
+			[.\node{ $8$ };
+				[.\node{ null }; ]
+				[.\node{ $12$ };
+					[.\node{ null }; ]
+					[.\node{ $15$ }; ]
 				]
 		]]
-		\end{tikzpicture}}
+		\end{tikzpicture}}\\
 
 black-height of a node\label{dfn:black-height} $bh(x)$ -- The number of black nodes on any path from, but not including, a node $x$ down to a null black leaf node. \answer{(Black height counts black nodes including null leaves, height doesn't count null nodes.)}
 \begin{enumerate}[label=\arabic*.]
@@ -67,8 +67,8 @@ black-height of a node\label{dfn:black-height} $bh(x)$ -- The number of black no
          {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
          level distance=2cm}\begin{tikzpicture}
 		\Tree
-		[.Root~$x$
-			[.null ]
+		[.\node{Root~$x$};
+			[.\node{ null }; ]
 		]
 		\end{tikzpicture}\\ This tree has $bh=1$, with the only internal node being the root. \begin{equation*}
 		\begin{aligned}

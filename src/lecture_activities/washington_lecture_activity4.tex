@@ -25,18 +25,32 @@
 
 \begin{enumerate}[label=\arabic*., start=2]
     \item Draw the recurrence tree for Mergesort \answer{$T(n)=2T\left( \frac{n}{2} \right)+\theta(n)$, $T(1)=O(1)$}\\
-	\tikzset{every tree node/.style={minimum width=2em,draw,circle},
-         blank/.style={draw=none},
-         edge from parent/.style=
-         {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
-         level distance=2.5cm}
+	\globaltikzset
+	\tikzset{level distance=2.5cm, minimum width=2em}
 			\begin{tikzpicture}
 			\Tree
-			[.\sout{$T(n)$}$\theta(n)$
-				[.\sout{$T\left( \frac{n}{2} \right)$}$\theta(n)$ ]
-				[.\sout{$T\left( \frac{n}{2} \right)$}$\theta(n)$
-				% TODO: Finish the tree
-			]]
+			[.\node{ \sout{$T(n)$}$\theta(n)$ };
+				[.\node{ \sout{$T(n/2)$}$\theta(n/2)$ };
+					[.\node{ \sout{$T(n/4)$}$\theta(n/4)$ };
+						\edge[dashed];\node{ \sout{$T(1)$}$\theta(1)$ };
+						\edge[dashed];\node{ \sout{$T(1)$}$\theta(1)$ };
+					]
+					[.\node{ \sout{$T(n/4)$}$\theta(n/4)$ };
+						\edge[dashed];\node{ \sout{$T(1)$}$\theta(1)$ };
+						\edge[dashed];\node{ \sout{$T(1)$}$\theta(1)$ };
+					]
+				]
+				[.\node{ \sout{$T(n/2)$}$\theta(n/2)$ };
+					[.\node{ \sout{$T(n/4)$}$\theta(n/4)$ };
+						\edge[dashed];\node{ \sout{$T(1)$}$\theta(1)$ };
+						\edge[dashed];\node{ \sout{$T(1)$}$\theta(1)$ };
+					]
+					[.\node{ \sout{$T(n/4)$}$\theta(n/4)$ };
+						\edge[dashed];\node{ \sout{$T(1)$}$\theta(1)$ };
+						\edge[dashed];\node{ \sout{$T(1)$}$\theta(1)$ };
+					]
+				]
+			]
 			\end{tikzpicture}
 \end{enumerate}
 
@@ -52,7 +66,7 @@ Not all problems can be solved with the divide and conquer approach. Maybe sub-p
     \item Write a recursive algorithm for Binary Search. Write and solve its recurrence relation.\answer{Divide \& Conquer \& Combine Runtime analysis: \begin{algorithm}[H]
     		\caption{Binary Search Algorithm}\label{alg:binary-search}
     		\begin{algorithmic}[1]
-    		\Function{BS}{$A$,key,$i,j$}\Comment{Initial call: BS(A (sorted), key, 1, n)}
+    		\Function{BS}{$A$,key,$i$,$j$}\Comment{Initial call: \Call{BS}{($A$ (sorted), $key$, 1, $n$)}}
 				\If{i $\leq$ j}\Comment{Handle Base case not found}
 	    			\State k $\gets$ $\lfloor \frac{i+j}{2} \rfloor$
 					\If{A[k] == key}

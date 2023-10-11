@@ -11,71 +11,64 @@
 \begin{document}
 
 %<*Lecture-Activity-10>
-\newcommand{\bsttree}{\tikzset{every tree node/.style={minimum width=2em,draw,circle},
-         blank/.style={draw=none},
-         edge from parent/.style=
-         {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
-         level distance=1cm}
+\newcommand{\bsttree}{\globaltikzset
 			\begin{tikzpicture}
 			\Tree
-			[.$15$
-				[.$6$
-					[.$3$
-						[.$2$ ]
-						[.$4$ ]
+			[.\node{ $15$ };
+				[.\node{ $6$ };
+					[.\node{ $3$ };
+						[.\node{ $2$ }; ]
+						[.\node{ $4$ }; ]
 					]
-					[.$7$
-						[.$13$
-							[.$9$ ]
+					[.\node{ $7$ };
+						\edge[blank];\node[blank]{ };
+						[.\node{ $13$ };
+							[.\node{ $9$ }; ]
+							\edge[blank];\node[blank]{ };
 						]
 					]
 				]
-				[.$18$
-					[.$17$ ]
-					[.$20$ ]
+				[.\node{ $18$ };
+					[.\node{ $17$ }; ]
+					[.\node{ $20$ }; ]
 			]]
 			\end{tikzpicture}}
 \section{Opening Questions}\label{sec:opening-questions-10}
 \begin{enumerate}[label=\arabic*.]
     \item In your own words explain how you insert a new key in a binary search tree. \answer{When you have a value, you compare the value you're inserting to the value in the node. If the inserting value is less than the value, you recursively call the Insert function with the left node. If the value was greater, you recursively call Insert on the right node.}
-	\item Give an example of a series of 5 keys inserted one at a time into a binary search tree that will yield a tree of height 5.\answer{\\\tikzset{every tree node/.style={minimum width=2em},
-         blank/.style={draw=none},
-         edge from parent/.style=
-         {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
-         level distance=1cm}
+	\item Give an example of a series of 5 keys inserted one at a time into a binary search tree that will yield a tree of height 5.\answer{\\\globaltikzset
 	\begin{tikzpicture}
 		\Tree
-		[.$5$
-			[.$7$
-				[.$9$
-					[.$8$
-						[.$8.5$ ]
+		[.\node{ $5$ };
+			\edge[blank];\node[blank]{ };
+			[.\node{ $7$ };
+				\edge[blank];\node[blank]{ };
+				[.\node{ $9$ };
+					[.\node{ $8$ };
+						\edge[blank];\node[blank]{ };
+						[.\node{ $8.5$ }; ]
 					]
+					\edge[blank];\node[blank]{ };
 				]
 		]]
-		\end{tikzpicture} The runtime of Insert is $O(h)$ where $h$ is the height of the tree.}
+		\end{tikzpicture} \\The runtime of Insert is $O(h)$ where $h$ is the height of the tree.}
 	\item If we do a left rotate on node $X$ below, explain which left and/or right child links need to be changed.\\
-\tikzset{every tree node/.style={minimum width=2em},
-         blank/.style={draw=none},
-         edge from parent/.style=
-         {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
-         level distance=1cm}
 	\begin{tikzpicture}
 		\Tree
-		[.$X$
-			[.$a$ ]
-			[.$Y$
-				[.$b$ ]
-				[.$c$ ]
+		[.\node{ $X$ };
+			[.\node{ $a$ }; ]
+			[.\node{ $Y$ };
+				[.\node{ $b$ }; ]
+				[.\node{ $c$ }; ]
 		]]
 		\end{tikzpicture}\answer{\begin{tikzpicture}
 		\Tree
-		[.$Y$
-			[.$X$
-				[.$a$ ]
-				[.$b$ ]
+		[.\node{ $Y$ };
+			[.\node{ $X$ };
+				[.\node{ $a$ }; ]
+				[.\node{ $b$ }; ]
 			]
-			[.$c$ ]
+			[.\node{ $c$ }; ]
 		]
 		\end{tikzpicture} This tree maintains the relationships of the first tree. $c$ was already larger than $Y$, which is maintained. $b$ was smaller than $Y$ but larger than $X$, which has also been maintained. But now the height of $C$ has been decreased by 1.}
 \end{enumerate}
@@ -176,32 +169,28 @@ $x$ and $y$ are nodes; $a$, $b$, $c$ are sub trees
 	\label{fig:}
 \end{figure}
 
-%\tikzset{every tree node/.style={minimum width=2em},
-%         blank/.style={draw=none},
-%         edge from parent/.style=
-%         {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
-%         level distance=1cm}
+%\globaltikzset
 %\begin{tikzpicture}
 %	\begin{scope}
 %		\begin{tikzpicture}
 %		\Tree
-%		[.$x$
-%			[.$a$ (l1) ]
-%			[.$y$
-%				[.$b$ ]
-%				[.$c$ ]
+%		[.\node{ $x$ };
+%			[.\node{ $a$ }; (l1) ]
+%			[.\node{ $y$ };
+%				[.\node{ $b$ }; ]
+%				[.\node{ $c$ }; ]
 %		]]
 %		\end{tikzpicture}
 %	\end{scope}
 %	\begin{scope}[xshift=40cm]
 %		\begin{tikzpicture}
 %		\Tree
-%		[.$y$
-%			[.$x$
-%				[.$a$ ]
-%				[.$b$ ]
+%		[.\node{ $y$ };
+%			[.\node{ $x$ };
+%				[.\node{ $a$  }; ]
+%				[.\node{ $b$ }; ]
 %			]
-%			[.$c$ ]
+%			[.\node{ $c$ }; ]
 %		]
 %		\end{tikzpicture}
 %	\end{scope}
