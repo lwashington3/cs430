@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added a command for the Lecture Activity Opening Questions to make it easier to manipulate how they all look.">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Worked on Homework 4.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/homework/washington-homework4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/homework/washington-homework4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation3.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation6.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation7.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation1.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation2.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation3.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation4.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation6.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation6.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation7.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation7.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation6.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation7.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +109,7 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.Recitation 8">
+  <component name="RunManager" selected="LaTeX.All Recitations">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -147,7 +137,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>opener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitation.tex</main-file>
@@ -546,7 +536,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>opener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity2.tex</main-file>
@@ -1356,13 +1346,13 @@
       <option name="project" value="LOCAL" />
       <updated>1697058210526</updated>
     </task>
-    <task id="LOCAL-00018" summary="Added a command for the Lecture Activity Opening Questions to make it easier to manipulate how they all look.">
+    <task id="LOCAL-00018" summary="Worked on Homework 4.">
       <option name="closed" value="true" />
-      <created>1697169835617</created>
+      <created>1697173689452</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1697169835617</updated>
+      <updated>1697173689452</updated>
     </task>
     <option name="localTasksCounter" value="19" />
     <servers />
@@ -1398,8 +1388,8 @@
     <MESSAGE value="Created the template for Recitation 7." />
     <MESSAGE value="Added Lecture Activity 15 (Fall Break) and template for Lecture Activity 16." />
     <MESSAGE value="Updated Homework Templates for 3 and 4." />
-    <MESSAGE value="Added a command for the Lecture Activity Opening Questions to make it easier to manipulate how they all look." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a command for the Lecture Activity Opening Questions to make it easier to manipulate how they all look." />
+    <MESSAGE value="Worked on Homework 4." />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on Homework 4." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
