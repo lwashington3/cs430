@@ -18,7 +18,7 @@ Practice Problems (all taken from previous exams)
 	\begin{enumerate}[label=\choicelabel]
 	    \item Saving value property
 		\item Storing value property
-		\item Memoization
+		\item \answer{Memoization}
 		\item Mapping
 	\end{enumerate}
 	\item What is the time complexity of the brute force algorithm used to find the longest common subsequence for sequence length $m$ and sequence length $n$ ($m < n$)?
@@ -30,16 +30,49 @@ Practice Problems (all taken from previous exams)
 	\end{enumerate}
 	\item When dynamic programming is used, it takes less time compared to algorithmic methods that don't utilize overlapping subproblems.
 	\begin{enumerate}[label=\choicelabel]
-	    \item True.
+	    \item \answer{True}.
 		\item False.
 	\end{enumerate}
 	\item Using the dynamic programming solution, determine an LCS of $\{ 1, 0, 0, 1, 0, 1, 0, 1 \}$ and $\{ 0, 1, 0, 1, 1, 0, 1, 1, 0 \}$. Show all your work.
 	\item Given a sequence of $n$ numbers $a_{1}$, $a_{2}$, $a_{3}$, $\dots$, $a_{n}$ (some of them might be negative) stored in an array, we want to find two indicies $i \leq j$ such that the sum of the numbers from $a_{i}$ to $a_{j}$ is maximum, among all possible $i$ $j$ pairs $1 \leq i \leq j \leq n$.
 	\begin{enumerate}[label=\arabic{enumi}\alph*)]
-	    \item Write pseudocode to sum each contiguous subsequence (from $a_{i}$ to $a_{j}$) and keep track of the maximum one. What is the runtime of your algorithm?
-		\item Now find an $O(n)$ algorithm. Give pseudocode.
+	    \item Write pseudocode to sum each contiguous subsequence (from $a_{i}$ to $a_{j}$) and keep track of the maximum one. What is the runtime of your algorithm? \answer{The runtime is $O(n^{2})$ \begin{algorithm}[H]
+	    		\caption{Maximum Subsequence}\label{alg:max-suqsequence}
+	    		\begin{algorithmic}[1]
+	    		\Function{MaxSubsequence}{}
+	    			\State $bestval \gets -\infty$
+					\For{$i\gets 1\dots n$}
+						\State $sumCurrent \gets a[i]$
+						\If{$sumCurrent > bestval$}
+							\State $bestval \gets sumCurrent$
+							\State $besti \gets i$
+							\State $bestj \gets i$
+						\EndIf
+						\For{$j\gets i+1\dots n$}
+							\State $sumCurrent \gets sumCurrent + a[j]$
+							\If{$sumCurrent > bestval$}
+								\State $bestval \gets sumCurrent$
+								\State $besti \gets i$
+								\State $bestj \gets j$
+							\EndIf
+						\EndFor
+					\EndFor
+					\State \Return $bestval$, $besti$, $bestj$
+	    		\EndFunction
+	    		\end{algorithmic}
+	    	\end{algorithm}}
+		\item Now find an $O(n)$ algorithm. Give pseudocode.\answer{\begin{algorithm}[H]
+				\caption{Improved Maximum Subsequence}\label{alg:improved-max-subsequence}
+				\begin{algorithmic}[1]
+				\Function{ImprovedMaximumSubsequence}{}
+					\State $M[j] \gets $ max sum over all contiguous sequences ending at $a[j]$
+					\State $a[j] \gets $ either extends the previous contiguous sequence, or $a[j]$ starts a new contiguous sequence
+					\State $M[j] \gets \max\{ M[j-1] + a[j], a[j] \}$
+				\EndFunction
+				\end{algorithmic}
+			\end{algorithm}}
 	\end{enumerate}
-	\item Prove that a binary tree that is not full (every node has 0 or 2 children) cannot correspond to an optimal prefix code.
+	\item Prove that a binary tree that is not full (every node has 0 or 2 children) cannot correspond to an optimal prefix code. \answer{An optimal prefix code is a predix code that gives the shortest possible encoded file length. If we have a prefix code that corresponds to a binary tree that is not full, let $n$ be a node that only has 1 child. Then we could form another binary tree by removing $n$ and moving up $n$'s child. The codewords of all the characters that were descendants of $n$ have now all be decreased by 1, and so the original binary tree could not correspond to an optimal prefix code.}
 \end{enumerate}
 %</Recitation-8>
 
