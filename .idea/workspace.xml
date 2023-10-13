@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added Lecture Activity 15 (Fall Break) and template for Lecture Activity 16." />
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Updated Homework Templates for 3 and 4.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/homework/washington-homework4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/homework/washington-homework4.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation2.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation3.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation4.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation6.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation7.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation3.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation4.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation6.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation6.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitiation7.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation7.tex" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,28 +83,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;public&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/d/Academic/cs430/src/recitations&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "public",
+    "last_opened_file_path": "/mnt/d/Academic/cs430/.idea/workspace.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editing.templates",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/recitations" />
@@ -104,7 +120,7 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.All Lecture Activities">
+  <component name="RunManager" selected="LaTeX.Recitation 8">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -135,7 +151,7 @@
         <viewer-command />
         <compiler-arguments />
         <envs />
-        <main-file />
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitation.tex</main-file>
         <output-path>$PROJECT_DIR$/out/recitations</output-path>
         <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
         <compile-twice>true</compile-twice>
@@ -216,7 +232,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>opener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/homework/washington-homework4.tex</main-file>
@@ -912,7 +928,7 @@
         <viewer-command />
         <compiler-arguments />
         <envs />
-        <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation1.tex</main-file>
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitation1.tex</main-file>
         <output-path>$PROJECT_DIR$/out/recitations</output-path>
         <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
         <compile-twice>false</compile-twice>
@@ -933,7 +949,7 @@
         <viewer-command />
         <compiler-arguments />
         <envs />
-        <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation2.tex</main-file>
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitation2.tex</main-file>
         <output-path>$PROJECT_DIR$/out/recitations</output-path>
         <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
         <compile-twice>false</compile-twice>
@@ -954,7 +970,7 @@
         <viewer-command />
         <compiler-arguments />
         <envs />
-        <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation3.tex</main-file>
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitation3.tex</main-file>
         <output-path>$PROJECT_DIR$/out/recitations</output-path>
         <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
         <compile-twice>false</compile-twice>
@@ -975,7 +991,7 @@
         <viewer-command />
         <compiler-arguments />
         <envs />
-        <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation4.tex</main-file>
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitation4.tex</main-file>
         <output-path>$PROJECT_DIR$/out/recitations</output-path>
         <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
         <compile-twice>false</compile-twice>
@@ -996,7 +1012,7 @@
         <viewer-command />
         <compiler-arguments />
         <envs />
-        <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation6.tex</main-file>
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitation6.tex</main-file>
         <output-path>$PROJECT_DIR$/out/recitations</output-path>
         <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
         <compile-twice>false</compile-twice>
@@ -1017,7 +1033,28 @@
         <viewer-command>opener</viewer-command>
         <compiler-arguments />
         <envs />
-        <main-file>$PROJECT_DIR$/src/recitations/washington_recitiation7.tex</main-file>
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitation7.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/recitations</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
+    <configuration name="Recitation 8" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>NONE</pdf-viewer>
+        <viewer-command>opener</viewer-command>
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitation8.tex</main-file>
         <output-path>$PROJECT_DIR$/out/recitations</output-path>
         <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
         <compile-twice>false</compile-twice>
@@ -1112,6 +1149,7 @@
       <item itemvalue="LaTeX.Recitation 4" />
       <item itemvalue="LaTeX.Recitation 6" />
       <item itemvalue="LaTeX.Recitation 7" />
+      <item itemvalue="LaTeX.Recitation 8" />
       <item itemvalue="LaTeX.All Recitations" />
       <item itemvalue="Makeindex.washington_lecture_activity1 makeindex" />
     </list>
@@ -1180,6 +1218,8 @@
       <workItem from="1696567769057" duration="1915000" />
       <workItem from="1696628844683" duration="48000" />
       <workItem from="1696995534030" duration="9538000" />
+      <workItem from="1697057085331" duration="1071000" />
+      <workItem from="1697167104534" duration="915000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1309,7 +1349,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697005020671</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Updated Homework Templates for 3 and 4.">
+      <option name="closed" value="true" />
+      <created>1697058210526</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1697058210526</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1342,7 +1390,8 @@
     <MESSAGE value="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees were malformed." />
     <MESSAGE value="Created the template for Recitation 7." />
     <MESSAGE value="Added Lecture Activity 15 (Fall Break) and template for Lecture Activity 16." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Lecture Activity 15 (Fall Break) and template for Lecture Activity 16." />
+    <MESSAGE value="Updated Homework Templates for 3 and 4." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Homework Templates for 3 and 4." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
