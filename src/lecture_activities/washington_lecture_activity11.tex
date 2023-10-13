@@ -16,7 +16,7 @@
          edge from parent/.style=
          {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
          level distance=1cm}
-\section{Opening Questions}\label{sec:opening-questions-11}
+\openingquestions
 \begin{enumerate}[label=\arabic*.]
     \item What is the main problem with Binary Search Trees that Red-Black Trees correct? Explain briefly (2--3 sentences) how Red-Black Trees correct this problem with Binary Search Trees. \answer{The biggest problem is that the tree may be a straight line that would cause the height to be $O(n)$. Red-Black trees maintain this balance by keeping track of the colors and allows the tree to be better balanced using a \hyperref[dfn:red-black-tree-properties]{specific set of rules}.}
 	\item For the balanced binary search trees, why is it important that we can show that a rotation at a node is $O(1)$ (i.e. not dependent on the size of the BST) \answer{We want to make fixes that are not dependent on the size of a binary tree.}

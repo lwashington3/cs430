@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Updated Homework Templates for 3 and 4.">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added a command for the Lecture Activity Opening Questions to make it easier to manipulate how they all look.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/homework/washington-homework4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/homework/washington-homework4.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitiation1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation1.pdf" afterDir="false" />
@@ -88,7 +88,6 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "public",
     "last_opened_file_path": "/mnt/d/Academic/cs430/.idea/workspace.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -1357,7 +1356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697058210526</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added a command for the Lecture Activity Opening Questions to make it easier to manipulate how they all look.">
+      <option name="closed" value="true" />
+      <created>1697169835617</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1697169835617</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1391,7 +1398,8 @@
     <MESSAGE value="Created the template for Recitation 7." />
     <MESSAGE value="Added Lecture Activity 15 (Fall Break) and template for Lecture Activity 16." />
     <MESSAGE value="Updated Homework Templates for 3 and 4." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Homework Templates for 3 and 4." />
+    <MESSAGE value="Added a command for the Lecture Activity Opening Questions to make it easier to manipulate how they all look." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a command for the Lecture Activity Opening Questions to make it easier to manipulate how they all look." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
