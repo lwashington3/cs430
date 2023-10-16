@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Uploading Recitation 8.">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Finished Homework 4.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" afterDir="false" />
@@ -109,7 +109,7 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.All Recitations">
+  <component name="RunManager" selected="LaTeX.All Lecture Activities">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -473,7 +473,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>opener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity17.tex</main-file>
@@ -494,7 +494,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>opener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity18.tex</main-file>
@@ -1403,9 +1403,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MATH_252___Introduction_to_Differential_Equations$home.coverage" NAME="home Coverage Results" MODIFIED="1692818270194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />
-    <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$homework2.coverage" NAME="homework2 Coverage Results" MODIFIED="1694756360935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />
     <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$conf.coverage" NAME="conf Coverage Results" MODIFIED="1692803501177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/MATH_252___Introduction_to_Differential_Equations$conf.coverage" NAME="conf Coverage Results" MODIFIED="1694627412707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/MATH_252___Introduction_to_Differential_Equations$home.coverage" NAME="home Coverage Results" MODIFIED="1692818270194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />
+    <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$homework2.coverage" NAME="homework2 Coverage Results" MODIFIED="1694756360935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />
   </component>
 </project>

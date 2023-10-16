@@ -12,6 +12,38 @@
 
 %<*Lecture-Activity-18>
 
+\section{Proving a Greedy Choice Property}\label{sec:proving-a-greedy-choice-property}
+To prove a Greedy Choice Property for a problem (that local optimal choice leads to global optimal solution) use the following ``cut and paste'' proof.
+
+\begin{itemize}
+    \item[ ]
+    \begin{enumerate}[label=\arabic*.]
+        \item Assume you have an optimal answer that does not contain the greedy choice you are trying to prove.
+        \item Show that you can ``cut'' something out of that optimal answer and ``paste'' in the greedy choice you are trying to prove. Therefore either the assumed optimal answer already contained the greedy choice, or you can make the assumed optimal contain the greedy choice.
+        \item Therefore there is always an optimal answer that contains the greedy choice (can be continued like an inductive proof).
+    \end{enumerate}
+\end{itemize}
+
+\vspace*{1em}
+\begin{enumerate}[label=\arabic*.]
+    \item Try various ``common sense'' greedy approaches that divide the problem into a sub-problem(s) and try to come up with counter-examples or prove te greedy choice is correct.
+\end{enumerate}
+
+\section{Does every Optimization Problem exhibit Optimal Substructure?}\label{sec:does-every-optimization-problem-exhibit-optimal-substructure?}
+Consider the following two problems in which we are given a directed graph $G = (V,E)$ and vertices $u, v \in V$.
+\begin{itemize}
+    \item[ ]
+    \begin{enumerate}[label=\arabic*.]
+        \item Un-weighted shortest path: Find a path from $u$ to $v$ consisting of the fewest edges.
+        \item Un-weighted longest simple path: Find a simple path from $u$ to $v$ consisting of the most edges.
+    \end{enumerate}
+\end{itemize}
+
+\begin{enumerate}[label=\arabic*.,start=2]
+    \item Try to prove Optimal Substructure for the above two problems.
+    \item Why does optimal substructure fail for some optimization problems?
+\end{enumerate}
+
 %</Lecture-Activity-18>
 
 \end{document}
