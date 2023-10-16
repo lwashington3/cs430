@@ -65,7 +65,33 @@ The Optimal Binary Search Tree problem is a special case of a BST where the data
     \end{aligned}
     \end{equation*}}
     \item Use proof by contradiction to show that Optimal Binary Search Tree problem has optimal substructure, i.e.\ the optimal answer to problem must contain optimal answers to sub-problems.
-    \item Step 3: Compute solution using a table bottom up for the Optimal Binary Search Tree problem. Use your answer to question \hyperref[question:4]{4} above. Note the overlapping sub-problems as you go. \answer{}
+    \item Step 3: Compute solution using a table bottom up for the Optimal Binary Search Tree problem. Use your answer to question \hyperref[question:4]{4} above. Note the overlapping sub-problems as you go. \answer{\newcommand{\element}[2]{$#1_{#2}$}\begin{table}[H]
+        \centering
+        \begin{threeparttable}
+    		\caption{}
+    		\label{tab:}
+    		\begin{tabular}{|c|c|c|c|c|c|c|}
+				\toprule
+					& $A$ 					& $B$ 			& $C$ 					& $D$ 					& $E$ 					& $F$\\
+				\midrule
+				$A$ & 		.2 				& \element{.52}{A}	&	\element{.72}{B}	&	\element{}{}	&	\element{}{}	&	\element{}{}	\\
+				\midrule
+				$B$ & 	\element{}{} 	&		.16			&	\element{}{}		&	\element{}{}	&			\element{}{}			&			\element{}{}			\\
+				\midrule
+				$C$ & 	\element{}{} 	& \element{}{}	&			.08			&	\element{}{}	&			\element{}{}			&			\element{}{}			\\
+				\midrule
+				$D$ & 	\element{}{} 	& \element{}{}	&	\element{}{}		&			.22			&			\element{}{}			&			\element{}{}			\\
+				\midrule
+				$E$ & 	\element{}{} 	& \element{}{}	&	\element{}{}		&	\element{}{}	&			.21			&			\element{}{}			\\
+				\midrule
+				$F$ & 	\element{}{} 	& \element{}{}	&	\element{}{}		&	\element{}{}	&			\element{}{}			&			.13			\\
+				\midrule
+				$$ & 	\element{}{} 	& \element{}{}	&	\element{}{}		&	\element{}{}	&			\element{}{}			&			\element{}{}			\\
+				\bottomrule
+    		\end{tabular}
+    	\end{threeparttable}
+    \end{table}
+    }
     \item Step 4: Construct Optimal solution \begin{table}[H]
         \centering
         \begin{threeparttable}

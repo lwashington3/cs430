@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Finished Homework 4.">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Uploaded Recitation 8.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity16.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity16.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity17.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity17.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation6.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation7.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity16.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity16.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity17.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity17.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +81,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;/mnt/d/Academic/cs430/.idea/workspace.xml&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -1209,6 +1213,7 @@
       <workItem from="1696995534030" duration="9538000" />
       <workItem from="1697057085331" duration="1071000" />
       <workItem from="1697167104534" duration="915000" />
+      <workItem from="1697464864300" duration="2811000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1403,9 +1408,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$conf.coverage" NAME="conf Coverage Results" MODIFIED="1692803501177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/MATH_252___Introduction_to_Differential_Equations$conf.coverage" NAME="conf Coverage Results" MODIFIED="1694627412707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/MATH_252___Introduction_to_Differential_Equations$home.coverage" NAME="home Coverage Results" MODIFIED="1692818270194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />
     <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$homework2.coverage" NAME="homework2 Coverage Results" MODIFIED="1694756360935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />
+    <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$conf.coverage" NAME="conf Coverage Results" MODIFIED="1692803501177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/MATH_252___Introduction_to_Differential_Equations$conf.coverage" NAME="conf Coverage Results" MODIFIED="1694627412707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
