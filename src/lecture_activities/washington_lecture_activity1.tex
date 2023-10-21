@@ -2,15 +2,16 @@
 %! Date = 8/12/2023
 
 % Preamble
-\documentclass[12pt]{report}
+\documentclass[1]{cs430lecture}
 
 % Packages
-\usepackage[1]{cs430lecture}
+
 
 % Document
 \begin{document}
 
 %<*Lecture-Activity-1>
+\maketitle
 \openingquestions
 \begin{enumerate}[label=\arabic*.]
 	\item Algorithm A takes 5 seconds to sort 1000 records, and Algorithm B takes 10 seconds to sort 1000 records. You have the code for both algorithms. When deciding which algorithm to use to sort up to 1,000,000 records, why might Algorithm B be the better choice? \answer{Algorithm B might grow slower than algorithm A when more data is added.}

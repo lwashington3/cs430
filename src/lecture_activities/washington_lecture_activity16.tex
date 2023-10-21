@@ -2,15 +2,16 @@
 %! Date = 10/10/2023
 
 % Preamble
-\documentclass[12pt]{report}
+\documentclass[16]{cs430lecture}
 
 % Packages
-\usepackage[16]{cs430lecture}
+
 
 % Document
 \begin{document}
 
 %<*Lecture-Activity-16>
+\maketitle
 \openingquestions
 \begin{enumerate}[label=\arabic*.]
     \item In the Optimal Binary Search Tree problem we are not just trying to balance the tree, instead we are trying to minimize what? \answer{We're trying to minimize expected search times.}
@@ -68,15 +69,15 @@ The Optimal Binary Search Tree problem is a special case of a BST where the data
     \item Step 3: Compute solution using a table bottom up for the Optimal Binary Search Tree problem. Use your answer to question \hyperref[question:4]{4} above. Note the overlapping sub-problems as you go. \answer{\newcommand{\element}[2]{$#1_{#2}$}\begin{table}[H]
         \centering
         \begin{threeparttable}
-    		\caption{}
+    		\caption{Optimal Binary Search Tree Table}
     		\label{tab:}
     		\begin{tabular}{|c|c|c|c|c|c|c|}
 				\toprule
-					& $A$ 					& $B$ 			& $C$ 					& $D$ 					& $E$ 					& $F$\\
+					& $A$ 				& $B$ 			& $C$ 					& $D$ 					& $E$ 					& $F$\\
 				\midrule
-				$A$ & 		.2 				& \element{.52}{A}	&	\element{.72}{B}	&	\element{}{}	&	\element{}{}	&	\element{}{}	\\
+				$A$ & 		.2 			& \hyperref[ba]{\element{.52}{A}}	&	\element{.72}{B}	&	\element{}{}	&	\element{}{}	&	\element{}{}	\\
 				\midrule
-				$B$ & 	\element{}{} 	&		.16			&	\element{}{}		&	\element{}{}	&			\element{}{}			&			\element{}{}			\\
+				$B$ & 	\element{}{} 	&		.16			&	\element{.32}{B}		&	\element{}{}	&			\element{}{}			&			\element{}{}			\\
 				\midrule
 				$C$ & 	\element{}{} 	& \element{}{}	&			.08			&	\element{}{}	&			\element{}{}			&			\element{}{}			\\
 				\midrule
@@ -90,7 +91,20 @@ The Optimal Binary Search Tree problem is a special case of a BST where the data
 				\bottomrule
     		\end{tabular}
     	\end{threeparttable}
-    \end{table}
+    \end{table}The tree: \globaltikzset
+			\begin{tikzpicture}
+			\Tree
+			[.\node{ $A$ };
+				\edge[blank];\node[blank]{ };
+				[.\node{ $B$ }; ]
+			]
+			\end{tikzpicture} would have the probability $(.2)(1) + (.16)(2)=.2 + .32 = .52$ while the tree \begin{tikzpicture}
+			\Tree
+			[.\node{ $B$ };
+				[.\node{ $A$ }; ]
+				\edge[blank];\node[blank]{ };
+			]
+			\end{tikzpicture} would have the probability $(.16)(1) + (.2)(2)= .16 + .4 = .56$, so we choose the lower value of .52\label{ba} with $A$ as the root.
     }
     \item Step 4: Construct Optimal solution \begin{table}[H]
         \centering

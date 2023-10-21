@@ -2,14 +2,15 @@
 %! Date = 8/12/2023
 
 % Preamble
-\documentclass[12pt]{report}
+\documentclass[4]{cs430lecture}
 
 % Packages
-\usepackage[4]{cs430lecture}
+
 
 % Document
 \begin{document}
 %<*Lecture-Activity-4>
+\maketitle
 \newcommand{\sectiontype}{\section}
 \begin{enumerate}[label=\arabic*.]
     \item A recurrence relation describes runtime function recursively for a recursive algorithm. Write a recurrence relation for the Merge sort algorithm. HINT: try to count the number of executions of each statement and the cost of each \answer{Recurrence relations for \hyperref[alg:merge-sort]{merge sort} lines: $2=c_{1},3=c_{2},4=5=T\left( \frac{n}{2} \right)$ and $O(n)$ as the runtime for merge\begin{equation*}

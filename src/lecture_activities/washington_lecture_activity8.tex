@@ -2,15 +2,16 @@
 %! Date = 9/12/2023
 
 % Preamble
-\documentclass[12pt]{report}
+\documentclass[8]{cs430lecture}
 
 % Packages
-\usepackage[8]{cs430lecture}
+
 
 % Document
 \begin{document}
 
 %<*Lecture-Activity-8>
+\maketitle
 \openingquestions
 \begin{itemize}
 	\item If we have 17 distinct items to sort, what is the height of the decision tree that represents all possible orderings of the 17 items? \answer{The height of the decision tree is $\lceil \log_{2}(17!) \rceil = \lceil 48.337603311133 \rceil = 49$ and the possible orderings of the 17 items is $17!$. However, $\log_{2}(n!) = \theta(n\lg n)$.}

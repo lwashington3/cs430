@@ -1,57 +1,44 @@
 %! Author = Len Washington III
 
 % Preamble
-\documentclass[12pt]{report}
+\documentclass[0]{cs430lecture} % title={CS 430 - Introduction to Algorithms Notes}
 
 % Packages
-\usepackage{titling}
-\title{CS 430 - Introduction to Algorithms Notes}
-\usepackage[0]{cs430lecture}
-\usepackage{catchfilebetweentags}
+\let\originalmaketitle\maketitle
 \renewcommand{\openingquestions}[1][]{\section{Opening Questions \arabic{chapter}\ifx#1\empty\else\ -- #1 \fi}\label{sec:opening-questions-\arabic{chapter}}}
+\renewcommand{\maketitle}{\chapter{Lecture \number\value{chapter}}\label{lecture:\number\value{chapter}}}
+\titleformat{\chapter}[block]
+{\LARGE\bfseries}	% format
+{}	% label
+{0em}	% sec
+{}	% before-code
+[] % after-code
 
 % Document
 \begin{document}
 
-\maketitle
+%\originalmaketitle % TODO: Figure out how why all chapters turn to 0 when originalmaketitle is called
 \tableofcontents
 \listofalgorithms
 
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity1]{Lecture-Activity-1}
-\stepcounter{chapter}
+\ExecuteMetaData[washington_lecture_activity1]{Lecture-Activity-1}
 \ExecuteMetaData[washington_lecture_activity2]{Lecture-Activity-2}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity3]{Lecture-Activity-3}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity4]{Lecture-Activity-4}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity5]{Lecture-Activity-5}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity6]{Lecture-Activity-6}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity7]{Lecture-Activity-7}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity8]{Lecture-Activity-8}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity9]{Lecture-Activity-9}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity10]{Lecture-Activity-10}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity11]{Lecture-Activity-11}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity12]{Lecture-Activity-12}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity13]{Lecture-Activity-13}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity14]{Lecture-Activity-14}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity15]{Lecture-Activity-15}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity16]{Lecture-Activity-16}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity17]{Lecture-Activity-17}
-\stepcounter{chapter}
 \ExecuteMetaData[washington_lecture_activity18]{Lecture-Activity-18}
 % \stepcounter{chapter}
 % \ExecuteMetaData[washington_lecture_activity19]{Lecture-Activity-19}
