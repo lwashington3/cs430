@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Uploaded Recitation 8.">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added titles to all Lecture Activities, changed the lecture_activity package into a class, changed the format of the full Lecture Activity Notes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity16.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity16.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity1.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" afterDir="false" />
@@ -35,12 +34,10 @@
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity4.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity5.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity5.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity6.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity6.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity7.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity7.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity8.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity8.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity9.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity9.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430lecture/cs430lecture.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430lecture/cs430lecture.sty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430lecture/cs430lecture.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430lecture/cs430lecture.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430recitation/cs430recitation.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430recitation/cs430recitation.sty" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +108,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "public",
-    "last_opened_file_path": "/mnt/d/Academic/cs430/src/recitations",
+    "last_opened_file_path": "/mnt/d/Academic/cs430/src/lecture_activities/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -129,8 +126,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/recitations" />
       <recent name="$PROJECT_DIR$/src/lecture_activities/images" />
+      <recent name="$PROJECT_DIR$/src/recitations" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Codes/Codes" />
       <recent name="$PROJECT_DIR$/src/styles/tex/latex" />
@@ -142,7 +139,7 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.All Recitations">
+  <component name="RunManager" selected="LaTeX.All Lecture Activities">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -548,7 +545,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>opener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity19.tex</main-file>
@@ -590,7 +587,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>opener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity20.tex</main-file>
@@ -1276,7 +1273,11 @@
       <workItem from="1697167104534" duration="915000" />
       <workItem from="1697464864300" duration="2811000" />
       <workItem from="1697483681585" duration="127000" />
-      <workItem from="1697777131307" duration="1379000" />
+      <workItem from="1697777131307" duration="1685000" />
+      <workItem from="1697779751872" duration="392000" />
+      <workItem from="1697928081698" duration="2157000" />
+      <workItem from="1697930247034" duration="1010000" />
+      <workItem from="1697995170765" duration="1451000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1422,7 +1423,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697173689452</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Uploaded the template for Recitation 9.">
+      <option name="closed" value="true" />
+      <created>1697778798119</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1697778798119</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added titles to all Lecture Activities, changed the lecture_activity package into a class, changed the format of the full Lecture Activity Notes.">
+      <option name="closed" value="true" />
+      <created>1697928675549</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1697928675549</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1457,7 +1474,9 @@
     <MESSAGE value="Added Lecture Activity 15 (Fall Break) and template for Lecture Activity 16." />
     <MESSAGE value="Updated Homework Templates for 3 and 4." />
     <MESSAGE value="Worked on Homework 4." />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked on Homework 4." />
+    <MESSAGE value="Uploaded the template for Recitation 9." />
+    <MESSAGE value="Added titles to all Lecture Activities, changed the lecture_activity package into a class, changed the format of the full Lecture Activity Notes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added titles to all Lecture Activities, changed the lecture_activity package into a class, changed the format of the full Lecture Activity Notes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

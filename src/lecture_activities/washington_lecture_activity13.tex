@@ -2,16 +2,15 @@
 %! Date = 10/1/2023
 
 % Preamble
-\documentclass[12pt]{report}
+\documentclass[13]{cs430lecture}
 
 % Packages
-\usepackage[13]{cs430lecture}
-\usepackage{algpseudocode}
 
 % Document
 \begin{document}
 
 %<*Lecture-Activity-13>
+\maketitle
 \openingquestions
 Previously we discussed the order-statistic selection problem: given a collection of data, find the $k$th largest element. We saw that this is possible in $O(n)$ time for each $k$th element you are trying to find. The na\"{\i}ve method would just be to sort the data in $O(n\lg n)$ and then access each $k$th element in $O(1)$ time.
 

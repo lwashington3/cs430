@@ -26,7 +26,6 @@
 
 \RequirePackage[margin=0.8in]{geometry}
 \RequirePackage{enumerate}
-\RequirePackage{enumitem}
 \RequirePackage{threeparttable}
 \RequirePackage{listings}
 \RequirePackage{float}
@@ -101,6 +100,13 @@ red/.style={stdNode, fill=red!80!white},
    \caption{An order-statistic tree, which is an augmented red-black tree. In addition to its usual attributes, each node $x$ has an attribute $x.size$, which is the number of nodes, other than the sentinel, in the subtree rooted at $x$.}
    \label{fig:augmented-red-black-tree}
 \end{figure}}
+
+\RequirePackage{enumitem}
+\setlist[enumerate, 1]
+{label=\arabic*.,}
+
+\setlist[enumerate, 2]
+{label=\alph*)}
 
 \RequirePackage{graphicx}
 \graphicspath{{images}}

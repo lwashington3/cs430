@@ -2,15 +2,15 @@
 %! Date = 9/12/2023
 
 % Preamble
-\documentclass[12pt]{report}
+\documentclass[17]{cs430lecture}
 
 % Packages
-\usepackage[17]{cs430lecture}
 
 % Document
 \begin{document}
 
 %<*Lecture-Activity-17>
+\maketitle
 
 \section{When can you use Dynamic Programming?}\label{sec:when-can-you-use-dynamic-programming?}
 DP computes recurrences efficiently by storing partial results. Thus DP can only be efficient when there are not too many partial results to compute. There are $n!$ permutations of an $n$-element set - we cannot use DP to store the best solution to each sub-permutation. There are $2^n$ subsets of an $n$-element set, we cannot use dynamic programming to store the best solution for each subset.\\

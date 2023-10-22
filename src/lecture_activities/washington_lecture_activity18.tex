@@ -2,46 +2,50 @@
 %! Date = 9/12/2023
 
 % Preamble
-\documentclass[12pt]{report}
+\documentclass[18]{cs430lecture}
 
 % Packages
-\usepackage[18]{cs430lecture}
 
 % Document
 \begin{document}
 
 %<*Lecture-Activity-18>
-
+\maketitle
 \section{Proving a Greedy Choice Property}\label{sec:proving-a-greedy-choice-property}
-To prove a Greedy Choice Property for a problem (that local optimal choice leads to global optimal solution) use the following ``cut and paste'' proof.
+To prove a Greedy Choice Property for a problem (that local optimal choice leads to global optimal solution) use the following ``cut and paste''\label{dfn:cut-and-paste} proof.
 
 \begin{itemize}
-    \item[ ]
-    \begin{enumerate}[label=\arabic*.]
-        \item Assume you have an optimal answer that does not contain the greedy choice you are trying to prove.
-        \item Show that you can ``cut'' something out of that optimal answer and ``paste'' in the greedy choice you are trying to prove. Therefore either the assumed optimal answer already contained the greedy choice, or you can make the assumed optimal contain the greedy choice.
-        \item Therefore there is always an optimal answer that contains the greedy choice (can be continued like an inductive proof).
-    \end{enumerate}
+	\item[ ]
+	\begin{enumerate}[label=\arabic*.]
+		\item Assume you have an optimal answer that does not contain the greedy choice you are trying to prove.
+		\item Show that you can ``cut'' something out of that optimal answer and ``paste'' in the greedy choice you are trying to prove. Therefore either the assumed optimal answer already contained the greedy choice, or you can make the assumed optimal contain the greedy choice.
+		\item Therefore there is always an optimal answer that contains the greedy choice (can be continued like an inductive proof).
+	\end{enumerate}
 \end{itemize}
+
+\answer{For the Activity Selector Problem, $\dots$, Assume you have an optimal answer that is a subset of meetings with $k$ \# of activities. $\dots$ I know I can remove the earliest end meeting from the optimal answer and paste in the greedy choice.}
 
 \vspace*{1em}
 \begin{enumerate}[label=\arabic*.]
-    \item Try various ``common sense'' greedy approaches that divide the problem into a sub-problem(s) and try to come up with counter-examples or prove te greedy choice is correct.
+	\item Try various ``common sense'' greedy approaches that divide the problem into a sub-problem(s) and try to come up with counter-examples or prove the greedy choice is correct. \answer{As stated before, the earliest end time/lastest start time methods are the only greedy choices that'll work.}
 \end{enumerate}
 
 \section{Does every Optimization Problem exhibit Optimal Substructure?}\label{sec:does-every-optimization-problem-exhibit-optimal-substructure?}
 Consider the following two problems in which we are given a directed graph $G = (V,E)$ and vertices $u, v \in V$.
 \begin{itemize}
-    \item[ ]
-    \begin{enumerate}[label=\arabic*.]
-        \item Un-weighted shortest path: Find a path from $u$ to $v$ consisting of the fewest edges.
-        \item Un-weighted longest simple path: Find a simple path from $u$ to $v$ consisting of the most edges.
-    \end{enumerate}
+	\item[ ]
+	\begin{enumerate}[label=\arabic*.]
+		\item Un-weighted shortest path: Find a path from $u$ to $v$ consisting of the fewest edges.
+		\item Un-weighted longest simple \answer{(doesn't go in a cycle) }path: Find a simple path from $u$ to $v$ consisting of the most edges.
+	\end{enumerate}
 \end{itemize}
 
 \begin{enumerate}[label=\arabic*.,start=2]
-    \item Try to prove Optimal Substructure for the above two problems.
-    \item Why does optimal substructure fail for some optimization problems?
+	\item Try to prove Optimal Substructure for the above two problems.\answer{\begin{enumerate}[label=\arabic*.]
+	    \item Assume there is an optimal answer $u\rightarrow v'\rightarrow v''\rightarrow\dots\rightarrow v^{k-1}\rightarrow v$ of $k$ edges. If $w$ is on the sortest path from $u$ to $v$, then along the path from $u$ to $w$ must be the shortest path from $u$ to $w$. Also, along that path from $w$ to $v$ must be the shortest path from $w$ to $v$.
+		\item Along the path from $u$ to $v$, the path from $u$ to $w$ that you would use to get to $v$ could go through $v$ on its way to $w$, but that would make it a cycle, so it wouldn't be simple.
+	\end{enumerate}}
+	\item Why does optimal substructure fail for some optimization problems? \answer{The path you're trying to optimize isn't summative in the overall problem.}
 \end{enumerate}
 
 %</Lecture-Activity-18>
