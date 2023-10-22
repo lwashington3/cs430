@@ -1,17 +1,80 @@
 %! Author = Len Washington III
-%! Date = 9/12/2023
+%! Date = 10/21/2023
 
 % Preamble
 \documentclass[20]{cs430lecture}
 
 % Packages
 
-
 % Document
 \begin{document}
 
 %<*Lecture-Activity-20>
+\definecolor{seagreen}{HTML}{008a87}
 \maketitle
+\openingquestions
+
+\begin{enumerate}
+	\item How do you think the allocated size growth of a dynamic array like Java's ArrayList is implemented?
+	How much bigger does it grow when needed?
+	What is the runtime for a sequence of $n$ insertions starting from a default size of 10 considering the worst individual insert?
+\end{enumerate}
+
+\section[Amortized Analysis]{Amortized (to pay off gradually) Analysis}\label{sec:amortized-(to-pay-off-gradually)-analysis}
+So far, we have analyzed best and wort case running times for an operation without considering its context.
+With amortized analysis, we study a sequence of operations rather than individual operations.
+An amortized analysis is any strategy for analyzing a sequence of operations to show that the average cost per operation is small, even though a single operation within the sequence might be expensive.
+
+\section{Aggregate Method of Amortized Analysis}\label{sec:aggregate-method-of-amortized-analysis}
+\begin{enumerate}
+    \item Can we do a better analysis by amortizing the cost over all inserts?
+	Starting with a table size one and doubling the size when necessary, make a table shoring the first 10 inserts and determine a formula for \Call{cost}{$i$} for the cost of the $i$th insert.
+	Then aggregate ``add up'' all the costs and divide by $n$ (aggregate analysis).
+\end{enumerate}
+
+\section{Accounting Method of Amortized Analysis}\label{sec:accounting-method-of-amortized-analysis}
+Figure out a specific amortized cost to be allocated to each operation to ensure you have enough ``balance'' to handle the bad operations.\\
+
+Charge $i$th operation a fictitious amortized cost $\hat{c}_{i}$, where \$1 pays for 1 unit of work (i.e., time).
+\begin{itemize}
+	\item This fee is consumed to perform the operation.
+	\item Any amount not immediately consumed is stored in the bank for use by subsequence operations.
+	\item The bank balance must not go negative! We must ensure that for all $n$ \textcolor{seagreen}{\[ \sum_{i=1}^{n}c_{i} \leq \sum_{i=1}^{n}\hat{c}_{i} \]}
+\end{itemize}
+Thus, the amortized costs provide an upper bound on the total true costs.
+
+\begin{enumerate}[start=2]
+    \item For the previous ArrayList example, determine the amortized cost $\hat{c}_{i}$ necessary.
+	\item \begin{minipage}{0.7\textwidth}
+	Consider, as a second example, a binary counter that is being implemented in hardware.
+	Assume that the machine on which it is being run can flip a bit as its basic operation.
+	We now want to analyze the cost of counting up from 0 to $n$ (using $k$ bits).\\
+
+	What is the naive worst-case analysis for how many bits we need to flip?
+	\end{minipage}\begin{minipage}{0.3\textwidth}
+		\begin{table}[H]
+		    \centering
+		    \begin{threeparttable}
+				\label{tab:}
+				\begin{tabular}{|c|c|}
+					\toprule
+					Decimal & Binary\\
+					1 & 000001\\
+					2 & 000010\\
+					3 & 000011\\
+					4 & 000100\\
+					5 & 000101\\
+					$\dots$ & $\dots$\\
+					$n$ & 100110 \\
+					\bottomrule
+				\end{tabular}
+			\end{threeparttable}
+		\end{table}
+
+	\end{minipage}
+	\item Use the \hyperref[sec:aggregate-method-of-amortized-analysis]{aggregate method} to perform a more careful analysis for $n$ increments of a binary counter.
+	\item Use the \hyperref[sec:accounting-method-of-amortized-analysis]{accounting method} to perform a more careful analysis for $n$ increments of a binary counter.
+\end{enumerate}
 
 %</Lecture-Activity-20>
 

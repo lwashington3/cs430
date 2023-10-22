@@ -28,3 +28,4 @@
 {CS 430 Lecture \number\value{chapter} Activities} % Text
 {lecture:\number\value{chapter}}% Name/Label
 \end{center}}
+
