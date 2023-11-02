@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Uploaded Lecture Activities 19 and 20.">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Uploaded Templates for Lecture Activities 21 and 22.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" afterDir="false" />
     </list>
@@ -75,7 +75,6 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
     "last_opened_file_path": "/mnt/d/Academic/cs430/src/recitations",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -1494,6 +1493,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$homework5.coverage" NAME="homework5 Coverage Results" MODIFIED="1698465647966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework/code" />
     <SUITE FILE_PATH="coverage/CS_430___Introduction_to_Algorithms$conf.coverage" NAME="conf Coverage Results" MODIFIED="1692803501177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/MATH_252___Introduction_to_Differential_Equations$conf.coverage" NAME="conf Coverage Results" MODIFIED="1694627412707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/MATH_252___Introduction_to_Differential_Equations$home.coverage" NAME="home Coverage Results" MODIFIED="1692818270194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/homework" />

@@ -31,6 +31,7 @@
 \RequirePackage{float}
 \RequirePackage{booktabs}
 \RequirePackage[chapter]{algorithm}
+\RequirePackage{algorithmicx}
 \RequirePackage{algpseudocode}
 \RequirePackage{lipsum}
 \RequirePackage{amssymb}
@@ -158,3 +159,6 @@ red/.style={stdNode, fill=red!80!white},
 \fancyhead[L]{\leftlabel\arabic{chapter}}
 \fancyhead[R]{\theauthor\ - \thepage}
 \setlength{\headheight}{14.49998pt}
+
+\RequirePackage{tablefootnote}
+\newcommand{\element}[2]{$#1_{#2}$}

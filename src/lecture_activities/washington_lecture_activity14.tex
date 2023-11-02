@@ -13,9 +13,39 @@
 \maketitle
 \openingquestions
 \begin{enumerate}[label=\arabic*.]
-    \item Briefly explain what two properties a problem must have so that a dynamic programming algorithm will work.
+    \item Briefly explain what two properties a problem must have so that a dynamic programming algorithm%
+	\footnote{Used for optimization problems.}%
+	\footnote{Have an expoential problem space/solution space.}
+	will work.\answer{\begin{itemize}
+		\item Optimal Substructure\label{optimal-substructure} \begin{itemize}
+			\item Optimal solution to the problem contains optimal solutions to subproblems.
+		\end{itemize}
+		\item Overlapping Subproblems\label{dfn:overlapping-subproblems}  \begin{itemize}
+			\item Those optimal solutions to subproblems are possibly used more than once.
+		\end{itemize}
+	\end{itemize}}
 	\item Previously we have learned that \hyperref[divide-and-conquer]{divide-and-conquer algorithms} partition a problem into independent sub-problems, solve each sub-problem recursively, and then combine their solutions to solve the original problem. Briefly, how are dynamic programming algorithms similar and how are they different from divide-and-conquer algorithms?
-	\item Why does it matter how we parenthesize a chain of matrix multiplications? We get the right answer any way we associate the matrices for multiplication. i.e.\ If $A$, $B$ and $C$ are matrices of correct dimensions for multiplication, then $(A\times B)C = A(B\times C)$.
+	\answer{Dynamic programming algorithms are optimization problems only, where divide and conquer algorithms could be used for more than optimization problems like sorting.
+	Another difference is that divide and conquer problems only need to solve the subproblems that the divide creates.
+	\subsubsection{Solving}
+		\begin{itemize}
+			\item What are all possible subproblems when sorting?
+			\item Mergesort creates 2 subproblems of length $\frac{n}{2}$.
+			\item Quicksort creates 2 subproblems where one partition holds items $\leq$ the pivot and the other partition contains $>$.
+			\item But you could also create a subproblem with 1 item on one side $n-1$ items in the other, or 2 items on one side and $n-2$ items on the other.
+		\end{itemize}
+	For sorting problems, you only need to choose one way to divide the problem, but dynammic programming requires that you consider all the ways to divide the problem; you only keep track to the answer of the optimal one due to optimal substructure.
+	Dynammic programming stores the optimal answers in a table to use later\footnote{Due to the \hyperref[dfn:overlapping-subproblems]{overlapping subproblems}.} while divide-and-conquer would recalculate the answer during each recursion.
+	}
+	\item Why does it matter how we parenthesize a chain of matrix multiplications?
+	We get the right answer any way we associate the matrices for multiplication. i.e.
+	If $A$, $B$ and $C$ are matrices of correct dimensions for multiplication, then $(A\times B)C = A(B\times C)$.
+	\answer{It matters which order we parenthesize a chain of matrix multiplications since the runtime might be larger for different configurations.
+	If $A$ has the dimensions $3\times4$, $B$ has the dimensions $4\times7$, and $C$ has the dimensions $7\times3$, multiplying the chain as $(AB)C$ would require 147 operations%
+	\footnote{Multiplying a $3\times4$ matrix by a $4\times7$ matrix results in a $3\times7$ that would be calculated in $3\times7\times4=84$ operations. Then doing the $(3\times7)(7\times3)$ would take $3\times7\times3=63$ operations. The initial 84 operations + 63 operations totals to 147 operations.}%
+	, whereas $A(BC)$ would take 120 operations%
+	\footnote{$(4\times7)\times(7\times3) \rightarrow 4\times7\times3 = 84$ operations and a resulting $4\times3$ matrix.
+	$(3\times4)(4\times3)\rightarrow3\times4\times3=36$ operations and a total of 120 operations.}, 27 operations less than $(AB)C$.}
 \end{enumerate}
 
 \section{Dynamic Programming}\label{sec:dynamic-programming}
@@ -28,12 +58,38 @@ Dynamic Programming Steps
 \end{enumerate}
 
 \subsection{Optimal Matrix Chain Multiplication (optimal parenthesization)}\label{subsec:optimal-matrix-chain-multiplication-(optimal-parenthesization)}
+\answer{(Minimize the work in the matrix multiplication which depends on matrix dimensions.)}
 \begin{enumerate}[label=\arabic*.]
     \item How many ways are there to parenthesize (two at a time multiplication) 4 matrices $A\times B\times C\times D$?
-	\item Step 1: Generically define the structure of the optimal solution to the Matrix Chain Multiplication problem. The optimal way to multiply $n$ matrices $A_{1}$ through $A_{n}$ is:
-	\item\label{prb:3} Step 2: Recursively define the optimal solution. Assume $P(1,n)$ is the optimal cost answer. Make sure you include the base case.
+	\answer{\begin{enumerate}[label=(\arabic*)]
+		\item $ABCD$
+		\item $(AB)(CD)$
+		\item $A((BC)D)$
+		\item $(A(BC))D$
+	\end{enumerate} The general form is the different permutations $(n-1)!$ of the order of multiplications, however, some of them are identical in the work to do the multiplications.}
+	\item Step 1: Generically define the structure of the optimal solution to the Matrix Chain Multiplication problem.
+	The optimal way to multiply $n$ matrices $A_{1}$ through $A_{n}$ is:
+	\answer{Problem: $A_{1}\times A_{2}\times A_{3}\times\dots\times A_{n}$.
+	Assumed optimal parenthesization (solution): $(A_{1}\dots A_{k})(A_{k+1}\dots A_{n})$ where the final multiplication is between these two subproblems, $1\leftarrow k \rightarrow n-1$.
+	%If we assume that there is an optimal answer such that this parentization will minimize the work to do the matrix multiplications.
+	%The largest subproblems that an optimial answer reveals what the last parenthesizetion is, which also says that the final parenthesization defines where the subproblems are.
+	%Assuming that the optimal solution is the multiplication between $(A_{1}\dots A_{k})(A_{k+1}\dots A_{n})$ matricies where $k$ can be $1 \leq k \leq n-1$
+	}
+	\item\label{prb:3} Step 2: Recursively define the optimal solution.
+	Assume $\Call{P}{1,n}$ is the optimal cost answer.
+	Make sure you include the base case.
+	\answer{
+%	The operation time would be the operation time of the first subproblem + the operation time of the second subproblem + $r_{1}\times c_{k}\times c_{n}$. \Call{P}{1,$n$} is the min number of operations to multiply matricies $1\leftrightarrow n$.
+%	\Call{P}{1, $n$} = \Call{P}{1, $k$} + \Call{P}{$k+1$, $n$} + $r_{1}c_{k}c_{n}$.
+%	You would need to do this equation for all possible values of $k$ in $1\leftarrow k\rightarrow n-1$ and take the min: $\min_{1\leftarrow k \rightarrow n-1}\left( \Call{P}{1, k} + \Call{P}{k+1, n} + r_{1}c_{k}c_{n} \right)$.
+%	The base case is that \Call{P}{i,i}=0.
+	$P(1,n) = \min_{1\leftarrow k\rightarrow n-1}\left\{ \Call{P}{1, k} + \Call{P}{k+1, n} + r_{1}c_{k}c_{n} \right\}$, $P(i,i)=0$.}
 	\item Use proof by contradiction to show that Matrix Chain Multiplication problem has optimal substructure, i.e. the optimal answer to the problem must contain optimal answers to sub-problems.
-	\item Step 3: Compute solution using a table bottom up for the Matrix Chain Multiplication problem. Use you answer to question \hyperref[prb:3]{3} above. Note the overlapping sub-problems as you go.
+	\answer{Problem $A_{1}\dots A_{n}$: what is optimal parenthezation?
+	Assume you have an optimal answer, as we've already stated, $(A_{1}\dots A_{k})(A_{k+1}\dots A_{n})$ for some $k$ between 1 and $n-1$.
+	If we have some other parenthesization such that $(A_{1}\dots A_{m})(A_{m+1}\dots A_{n})$ where $m\neq k$ that is a better parenthesizatino than $(A_{1}\dots A_{k})(A_{k+1}\dots A_{n})$.
+	This would contradict our assumption that we already have our most optimal solution at $(A_{1}\dots A_{k})(A_{k+1}\dots A_{n})$.}
+	\item Step 3: Compute solution using a table bottom up for the Matrix Chain Multiplication problem. Use your answer to question \hyperref[prb:3]{3} above. Note the overlapping sub-problems as you go.
 	\item Step 4: Construct Optimal solution
 	\begin{table}[H]
 	    \centering
@@ -45,7 +101,44 @@ Dynamic Programming Steps
 			\end{tabular}
 		\end{threeparttable}
 	\end{table}
-
+	\renewcommand{\element}[3]{\begin{minipage}{0.5in}%
+	{\centering$#1\tablefootnote{#2}$\\\ {\small${k=#3}$}}
+	\end{minipage}} \begin{table}[H] %$#1\tablefootnote{#2}_{k=#3}$
+        \centering
+		\caption{Optimal Binary Search Tree Table: Memory $O\left(\frac{n^{2}}{2}\right)$}
+		\label{tab:}
+		\begin{tabular}{|cc|c|c|c|c|c|c}
+			\toprule
+			& & 1 & 2	&	3	& 4 \\
+			\multicolumn{2}{c}{\Call{P}{row, col}}	& $A$	& $B$	&	$C$	& $D$ \\
+			\midrule
+			1 & $A$ 				& 0	& \element{48}{$2\times4\times6=48$\label{eq:ab}}{1}		&	\element{84}{\begin{equation*}
+			\begin{aligned}
+				A(BC)_{k=1} &= 0 + \hyperref[eq:bc]{72} + (2\times4\times3) &= 72 + 24 &= 96 \\
+				(AB)C_{k=2} &= \hyperref[eq:ab]{48} + 0 + (2\times6\times3) &= 48 + 36 &= 84\label{eq:abc}
+			\end{aligned}
+			\end{equation*}}{2}	& \element{126}{\begin{equation*}
+			\begin{aligned}
+				A(BCD)_{k=1} &= 0 + \hyperref[eq:bcd]{156} + (2\times4\times7) &= 156 + 56 &= 212 \\
+				(AB)(CD)_{k=2} &= \hyperref[eq:ab]{48} + \hyperref[eq:cd]{126} + (2\times6\times7) &= 48 + 126 + 84 &= 258\\
+				(ABC)D_{k=3} &= \hyperref[eq:abc]{84} + 0 + (2\times3\times7) &= 84 + 42 &= 126\\\label{eq:abcd}
+				%A(BC)D_{k=2} &= \hyperref[eq:ab]{48} + 0 + (2\times6\times3) &= 48 + 36 &= 84
+			\end{aligned}
+			\end{equation*}}{3}	\\
+			\midrule
+			2 & $B$					&		& 0		& \element{72}{$4\times6\times3=72$\label{eq:bc}}{2}	& \element{156}{\begin{equation*}
+			\begin{aligned}
+				B(CD)_{k=2} &= 0 + \hyperref[eq:cd]{126} + (4\times6\times7) &= 126 + 168 &= 294 \\
+				(BC)D_{k=3} &= \hyperref[eq:bc]{72} + 0 + (4\times3\times7) &= 72 + 84 &= 156\label{eq:bcd}
+			\end{aligned}
+			\end{equation*}}{3}	\\
+			\midrule
+			3 & $C$					&		&		&	0	& \element{126}{$6\times3\times7$=126\label{eq:cd}}{3}	\\
+			\midrule
+			4 & $D$					&		&		&		& 0	\\
+			\bottomrule
+		\end{tabular}
+    \end{table}
 \end{enumerate}
 %</Lecture-Activity-14>
 

@@ -29,3 +29,4 @@
 {lecture:\number\value{chapter}}% Name/Label
 \end{center}}
 
+\newcommand{\binomialqueueop}[1]{\subsection{#1}\label{subsec:#1}:}
