@@ -17,14 +17,14 @@
          {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
          level distance=1cm}
 \openingquestions
-\begin{enumerate}[label=\arabic*.]
+\begin{enumerate}
     \item What is the main problem with Binary Search Trees that Red-Black Trees correct? Explain briefly (2--3 sentences) how Red-Black Trees correct this problem with Binary Search Trees. \answer{The biggest problem is that the tree may be a straight line that would cause the height to be $O(n)$. Red-Black trees maintain this balance by keeping track of the colors and allows the tree to be better balanced using a \hyperref[dfn:red-black-tree-properties]{specific set of rules}.}
 	\item For the balanced binary search trees, why is it important that we can show that a rotation at a node is $O(1)$ (i.e. not dependent on the size of the BST) \answer{We want to make fixes that are not dependent on the size of a binary tree.}
 \end{enumerate}
 
 \section{Red-Black Trees}\label{sec:red-black-trees}
 Red-Black Properties
-\begin{enumerate}[label=\arabic*.]\label{dfn:red-black-tree-properties}
+\begin{enumerate}\label{dfn:red-black-tree-properties}
     \item\label{itm:red-black-tree-property1} Every node is colored either red or black
 	\item\label{itm:red-black-tree-property2} The root is black
 	\item\label{itm:red-black-tree-property3} Every null pointer descending from a leaf is considered to be a null black leaf node
@@ -33,7 +33,7 @@ Red-Black Properties
 \end{enumerate}
 
 \answer{
-	\begin{tikzpicture} % TODO: Finish this tree
+	\begin{tikzpicture}
 		\Tree
 		[.\node{ $5$ };
 			[.\node{ $3$ };
@@ -55,8 +55,9 @@ Red-Black Properties
 		]]
 		\end{tikzpicture}}\\
 
-black-height of a node\label{dfn:black-height} $bh(x)$ -- The number of black nodes on any path from, but not including, a node $x$ down to a null black leaf node. \answer{(Black height counts black nodes including null leaves, height doesn't count null nodes.)}
-\begin{enumerate}[label=\arabic*.]
+black-height of a node\label{dfn:black-height} $bh(x)$ -- The number of black nodes on any path from, but not including, a node $x$ down to a null black leaf node.
+\answer{(Black height counts black nodes including null leaves, height doesn't count null nodes.)}
+\begin{enumerate}
     \item If a node $x$ has $bh(x)=3$, what is its largest and smallest possible height (distance to the farthest leaf) in the BST? \answer{2--5}
 	\item Prove using induction and red-black tree properties. A red-black tree with $n$ internal nodes \answer{(nodes with values), none null nodes} ($n$ key values) has height at most $2\lg(n+1)$
 	\begin{enumerate}[label=Part \Alph*)]
@@ -77,13 +78,16 @@ black-height of a node\label{dfn:black-height} $bh(x)$ -- The number of black no
 								 &= 0\\
 		\end{aligned}
 		\end{equation*}
-		\textbf{Induction Step}: Assuming at least $2^{bh(x)}-1$ keys in some subtree rooted at $x$.\\If a node is \textcolor{red}{red}, $bh(\mbox(parent)) = bh(\mbox(child))$ else a node is \textcolor{black}{black}, then the $bh(\mbox(parent)) = bh(\mbox(child))+1$.\begin{equation*}
+		\textbf{Induction Step}: Assuming at least $2^{bh(x)}-1$ keys in some subtree rooted at $x$.\\
+		If a node is \textcolor{red}{red}, $bh(\mbox{parent}) = bh(\mbox{child})$ else a node is \textcolor{black}{black}, then the $bh(\mbox{parent}) = bh(\mbox{child})+1$.\begin{equation*}
 		\begin{aligned}
 			\left( 2^{bh(x)} - 1 \right) \left( 2^{bh(x)} - 1 \right) + 1 &= 2 \times \left( 2^{bh(x)} - 1 \right) + 1\\
 		\end{aligned}
 		\end{equation*}
 		}
-		\item Let $h$ be height of a Red-Black Tree, by \hyperref[itm:red-black-tree-property4]{property four}, at least half of the nodes on path from root to leaf are black \[ bh(root) \geq \frac{h}{2} \] Use that and \hyperref[prb:2a]{Part A} to show \[ h \leq 2\log(n+1) \] \answer{$bh(root)=k$ at least $2^{k}-1$.\begin{equation*}
+		\item Let $h$ be height of a Red-Black Tree, by \hyperref[itm:red-black-tree-property4]{property four}, at least half of the nodes on path from root to leaf are black \[ bh(root) \geq \frac{h}{2} \]
+		Use that and \hyperref[prb:2a]{Part A} to show \[ h \leq 2\log(n+1) \] \answer{$bh(root)=k$ at least $2^{k}-1$.
+			\begin{equation*}
 		\begin{aligned}
 			2^{bh(root)} - 1 &\leq n\\
 			2^{h/2} - 1 &\leq n\\
@@ -108,7 +112,7 @@ black-height of a node\label{dfn:black-height} $bh(x)$ -- The number of black no
 \end{enumerate}
 
 \section{Red-Black Tree Insert}\label{sec:red-black-tree-insert} Similar to \hyperref[alg:bst-insert]{BST Insert}, assume we start with a valid red-black tree.
-\begin{enumerate}[label=\arabic*.]
+\begin{enumerate}
     \item Locate leaf position to insert new node
 	\item Color new node red and create 2 new black null leafs below newly inserted red node
 	\item If parent of new insert was \_\_\_\_\_\_\_\_\_\_ (fill in the blank, black or red), then done. ELSE procedure to recolor nodes and perform rotations to maintain red-black-properties.

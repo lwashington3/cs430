@@ -15,9 +15,9 @@
 \begin{enumerate}[label=\arabic*.]
     \item Briefly explain what two properties a problem must have so that a dynamic programming algorithm%
 	\footnote{Used for optimization problems.}%
-	\footnote{Have an expoential problem space/solution space.}
+	\footnote{Have an exponetial problem space/solution space.}
 	will work.\answer{\begin{itemize}
-		\item Optimal Substructure\label{optimal-substructure} \begin{itemize}
+		\item Optimal Substructure\label{dfn:optimal-substructure} \begin{itemize}
 			\item Optimal solution to the problem contains optimal solutions to subproblems.
 		\end{itemize}
 		\item Overlapping Subproblems\label{dfn:overlapping-subproblems}  \begin{itemize}
@@ -85,16 +85,16 @@ Dynamic Programming Steps
 %	The base case is that \Call{P}{i,i}=0.
 	$P(1,n) = \min_{1\leftarrow k\rightarrow n-1}\left\{ \Call{P}{1, k} + \Call{P}{k+1, n} + r_{1}c_{k}c_{n} \right\}$, $P(i,i)=0$.}
 	\item Use proof by contradiction to show that Matrix Chain Multiplication problem has optimal substructure, i.e. the optimal answer to the problem must contain optimal answers to sub-problems.
-	\answer{Problem $A_{1}\dots A_{n}$: what is optimal parenthezation?
+	\answer{Problem $A_{1}\dots A_{n}$: what is optimal parenthesization?
 	Assume you have an optimal answer, as we've already stated, $(A_{1}\dots A_{k})(A_{k+1}\dots A_{n})$ for some $k$ between 1 and $n-1$.
-	If we have some other parenthesization such that $(A_{1}\dots A_{m})(A_{m+1}\dots A_{n})$ where $m\neq k$ that is a better parenthesizatino than $(A_{1}\dots A_{k})(A_{k+1}\dots A_{n})$.
+	If we have some other parenthesization such that $(A_{1}\dots A_{m})(A_{m+1}\dots A_{n})$ where $m\neq k$ that is a better parenthesization than $(A_{1}\dots A_{k})(A_{k+1}\dots A_{n})$.
 	This would contradict our assumption that we already have our most optimal solution at $(A_{1}\dots A_{k})(A_{k+1}\dots A_{n})$.}
 	\item Step 3: Compute solution using a table bottom up for the Matrix Chain Multiplication problem. Use your answer to question \hyperref[prb:3]{3} above. Note the overlapping sub-problems as you go.
 	\item Step 4: Construct Optimal solution
 	\begin{table}[H]
 	    \centering
 	    \begin{threeparttable}
-			\label{tab:}
+			\label{tab:14-1}
 			\begin{tabular}{llll}
 				$A$ & $B$ & $C$ & $D$\\
 				$2\times 4$ & $4\times 6$ & $6\times 3$ & $3\times 7$\\
@@ -106,7 +106,7 @@ Dynamic Programming Steps
 	\end{minipage}} \begin{table}[H] %$#1\tablefootnote{#2}_{k=#3}$
         \centering
 		\caption{Optimal Binary Search Tree Table: Memory $O\left(\frac{n^{2}}{2}\right)$}
-		\label{tab:}
+		\label{tab:14-2}
 		\begin{tabular}{|cc|c|c|c|c|c|c}
 			\toprule
 			& & 1 & 2	&	3	& 4 \\

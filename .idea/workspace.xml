@@ -5,8 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Uploaded Templates for Lecture Activities 21 and 22.">
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/21.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/21.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/22.1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity11.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity11.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity12.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity12.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity13.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity13.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity16.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity16.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity17.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity17.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity18.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity18.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity19.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity19.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity11.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity11.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity12.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity12.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity13.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity13.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity14.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity14.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity16.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity16.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity17.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity17.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity18.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity18.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity19.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity19.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +97,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/mnt/d/Academic/cs430/src/recitations",
+    "git-widget-placeholder": "public",
+    "last_opened_file_path": "/mnt/d/Academic/cs430/.idea/workspace.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -106,14 +129,14 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.Recitation 10">
+  <component name="RunManager" selected="LaTeX.All Lecture Activities">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex</main-file>
@@ -134,7 +157,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitation.tex</main-file>
@@ -155,7 +178,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/homework/washington-homework1.tex</main-file>
@@ -176,7 +199,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/homework/washington-homework2.tex</main-file>
@@ -197,7 +220,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/homework/washington-homework3.tex</main-file>
@@ -218,7 +241,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/homework/washington-homework4.tex</main-file>
@@ -239,7 +262,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/homework/washington-homework5.tex</main-file>
@@ -260,7 +283,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/homework/washington-homework6.tex</main-file>
@@ -281,7 +304,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/homework/washington-homework7.tex</main-file>
@@ -302,7 +325,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity1.tex</main-file>
@@ -323,7 +346,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex</main-file>
@@ -344,7 +367,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity11.tex</main-file>
@@ -365,7 +388,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity12.tex</main-file>
@@ -386,7 +409,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity13.tex</main-file>
@@ -407,7 +430,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity14.tex</main-file>
@@ -428,7 +451,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity15.tex</main-file>
@@ -449,7 +472,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity16.tex</main-file>
@@ -470,7 +493,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity17.tex</main-file>
@@ -491,7 +514,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity18.tex</main-file>
@@ -512,7 +535,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity19.tex</main-file>
@@ -533,7 +556,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity2.tex</main-file>
@@ -554,7 +577,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity20.tex</main-file>
@@ -575,7 +598,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity21.tex</main-file>
@@ -596,7 +619,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity22.tex</main-file>
@@ -617,7 +640,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity23.tex</main-file>
@@ -638,7 +661,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity24.tex</main-file>
@@ -659,7 +682,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity25.tex</main-file>
@@ -680,7 +703,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity26.tex</main-file>
@@ -701,7 +724,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity27.tex</main-file>
@@ -722,7 +745,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity28.tex</main-file>
@@ -743,7 +766,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity29.tex</main-file>
@@ -764,7 +787,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity3.tex</main-file>
@@ -785,7 +808,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity4.tex</main-file>
@@ -806,7 +829,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity5.tex</main-file>
@@ -827,7 +850,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity6.tex</main-file>
@@ -848,7 +871,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity7.tex</main-file>
@@ -869,7 +892,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity8.tex</main-file>
@@ -890,7 +913,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity9.tex</main-file>
@@ -911,7 +934,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitation1.tex</main-file>
@@ -932,7 +955,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitation10.tex</main-file>
@@ -953,7 +976,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitation2.tex</main-file>
@@ -974,7 +997,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitation3.tex</main-file>
@@ -995,7 +1018,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitation4.tex</main-file>
@@ -1016,7 +1039,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitation6.tex</main-file>
@@ -1037,7 +1060,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitation7.tex</main-file>
@@ -1058,7 +1081,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitation8.tex</main-file>
@@ -1079,7 +1102,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>opener</viewer-command>
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/src/recitations/washington_recitation9.tex</main-file>
@@ -1100,7 +1123,7 @@
         <compiler-path />
         <sumatra-path />
         <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command />
+        <viewer-command>pdfopener</viewer-command>
         <compiler-arguments />
         <envs />
         <main-file />
@@ -1272,6 +1295,10 @@
       <workItem from="1698241504605" duration="3030000" />
       <workItem from="1698254877639" duration="619000" />
       <workItem from="1698415392592" duration="1837000" />
+      <workItem from="1698888671382" duration="1062000" />
+      <workItem from="1698953032449" duration="39000" />
+      <workItem from="1698976408846" duration="677000" />
+      <workItem from="1698978407267" duration="6338000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1441,7 +1468,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698251140935</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Uploaded Templates for Lecture Activities 21 and 22.">
+      <option name="closed" value="true" />
+      <created>1698888779782</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1698888779782</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1479,7 +1514,8 @@
     <MESSAGE value="Uploaded the template for Recitation 9." />
     <MESSAGE value="Added titles to all Lecture Activities, changed the lecture_activity package into a class, changed the format of the full Lecture Activity Notes." />
     <MESSAGE value="Uploaded Lecture Activities 19 and 20." />
-    <option name="LAST_COMMIT_MESSAGE" value="Uploaded Lecture Activities 19 and 20." />
+    <MESSAGE value="Uploaded Templates for Lecture Activities 21 and 22." />
+    <option name="LAST_COMMIT_MESSAGE" value="Uploaded Templates for Lecture Activities 21 and 22." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

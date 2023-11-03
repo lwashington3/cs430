@@ -1,5 +1,5 @@
 %! Author = Len Washington III
-%! Date = 9/12/2023
+%! Date = 10/16/2023
 
 % Preamble
 \documentclass[17]{cs430lecture}
@@ -70,19 +70,30 @@ $C[i,j] = $ the optimal value of the items put into the knapsack from among item
 
 \openingquestions[Greedy Algorithms]
 
-\begin{enumerate}[label=\arabic*.,start=3]
-	\item Briefly explain what two properties a problem must have so that a greedy algorithm approach will work. \answer{Optimal subtructure and the Greedy Choice property.}
-	\item A good cashier gives change using a greedy algorithm to minimize the number of coins they give back. Explain this greedy algorithm. \answer{To prove that there is optimal substructure, you can prove that there is some number of each denomination (pennies, nickels, dimes, quarters) that, with enough, will total some value $k$. The order of the coins doesn't matter, but the size of each denomination does. To prove that this is greedy, you need to be able to show that if you cut out a part of the optimal solution and insert the greedy choice, you will get a better value. For example, if you need 37\cents and you don't have a quarter, you could cut out 25\cents from the value and insert a quarter, removing coins but keeping the same value.}
-	\item For what types of optimization problems does optimal substructure fail? \answer{The subproblems are not independent.}
+\begin{enumerate}[start=3]
+	\item Briefly explain what two properties a problem must have so that a greedy algorithm approach will work.
+	\answer{\hyperref[dfn:optimal-substructure]{Optimal substructure} and the \hyperref[dfn:cut-and-paste]{Greedy Choice property}.}
+	\item A good cashier gives change using a greedy algorithm to minimize the number of coins they give back. Explain this greedy algorithm.
+	\answer{To prove that there is optimal substructure, you can prove that there is some number of each denomination (pennies, nickels, dimes, quarters) that, with enough of each, will total some value $k$.
+	The order of the coins doesn't matter, but the size of each denomination does.
+	To prove that this is greedy, you need to be able to show that if you cut out a part of the optimal solution and insert the greedy choice to get a better value.
+	For example, if you need 37\cents and you don't have a quarter, you could cut out 25\cents from the value and insert a quarter, removing coins but keeping the same value.}
+	\item For what types of optimization problems does optimal substructure fail?
+	\answer{The subproblems are not independent.}
 \end{enumerate}
 
 \section{Activity Selector Problem}\label{sec:activity-selector-problem}
-Given a set $S$ of $n$ activities each with start $S_{i}$, Finish $F_{i}$, find the maximum set of Compatible Activities (non-overlapping). (or could be jobs scheduled with fixed start and end times instead of meetings)
-\begin{enumerate}[label=\arabic*.,start=6]
-	\item The brute force approach would be to find all possible subsets of $n$ activities, eliminate the ones with non-compatible meetings, and find the largest subset. How many subsets are there? \answer{For every meeting, there is a binary choice determining if the meeting is being used, so $2^{n}$}.
-	\item Prove the Activity Selector Problem has optimal substructure (using similar proof by contradiction approach that we used for dynamic programming: assume you have an optimal answer, remove something to get to the largest sub-problem, show that the sub-problem must also be solved optimally). \answer{If you were to choose meetings based off of the time of each meeting, and start with the shortest meeting, this can be countered by the case of having 3 meetings, with the shortest meeting conflicting with the other two longer meetings, whereas those 2 meetings don't overlap. If you choose meetings by the earliest, you could have a meeting that goes all day and excludes all other meetings in the day.} % The answer is earliest end time or latest start time.
+Given a set $S$ of $n$ activities each with start $S_{i}$, Finish $F_{i}$, find the maximum set of Compatible Activities (non-overlapping)%
+\footnote{or could be jobs scheduled with fixed start and end times instead of meetings}.
+\begin{enumerate}[start=6]
+	\item The brute force approach would be to find all possible subsets of $n$ activities, eliminate the ones with non-compatible meetings, and find the largest subset.
+	How many subsets are there?
+	\answer{For every meeting, there is a binary choice determining if the meeting is being used, so $2^{n}$.}
+	\item Prove the Activity Selector Problem has optimal substructure
+	(using similar proof by contradiction approach that we used for dynamic programming: assume you have an optimal answer, remove something to get to the largest sub-problem, show that the sub-problem must also be solved optimally).
+	\answer{If you were to choose meetings based off of the time of each meeting, and start with the shortest meeting, this can be countered by the case of having 3 meetings, with the shortest meeting conflicting with the other two longer meetings, whereas those 2 meetings don't overlap.
+	If you choose meetings by the earliest, you could have a meeting that goes all day and excludes all other meetings in the day.}% The answer is earliest end time or latest start time.
 \end{enumerate}
-
 %</Lecture-Activity-17>
 
 \end{document}

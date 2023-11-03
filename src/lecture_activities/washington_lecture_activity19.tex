@@ -14,8 +14,8 @@
 \maketitle
 \section{Fractional Knapsack Problem}\label{sec:fractional-knapsack-problem}
 \answer{\begin{itemize}
-	\item Prove optimal substructure
-	\item Prove Greedy Choice
+	\item Prove \hyperref[dfn:optimal-substructure]{optimal substructure}
+	\item Prove \hyperref[dfn:cut-and-paste]{Greedy Choice}
 \end{itemize}}
 
 \begin{enumerate}
@@ -54,7 +54,7 @@
 			&\mbox{Assume fractional optimal answer } 0 \leq f \leq 1
 		\end{aligned}
 		\end{equation*}
-		What is the optimal answer does not have the greedy choice?
+		What if the optimal answer does not have the greedy choice?
 		The optimal answer does not contain as much of item \#1 as possible.
 		``\hyperref[dfn:cut-and-paste]{Cut and paste}'' proof
 		Somet\_\_\_\_ greedy choice $w$ of item 1: $w_{1}$ of other items removed and the $value\ out \leq v_{1}$.
@@ -88,7 +88,7 @@ Example
 \begin{table}[H]
     \centering
     \begin{threeparttable}
-		\caption{A character-coding problem. A data file of 100,000 characters containes only the characters a--f, with the frequencies indicated. If each character is assigned a 3-bit codeword, the file can be encoded in 300,000 bits. Using the variable-length code shown, the file can be encoded in 224,000 bits.}
+		\caption{A character-coding problem. A data file of 100,000 characters containes only the characters $a--f$, with the frequencies indicated. If each character is assigned a 3-bit codeword, the file can be encoded in 300,000 bits. Using the variable-length code shown, the file can be encoded in 224,000 bits.}
 		\label{tab:character-encoding-problem}
 		\begin{tabular}{lcccccc}
 						 & $a$ & $b$ & $c$ & $d$ & $e$ & $f$\\
@@ -99,7 +99,7 @@ Example
 		\end{tabular}
 		\begin{tablenotes}
 			\small
-			\item \answer{The 224,000 bit came from multiplying the freqency (in thousands) of each character by the length of the variable codeword, which would represent its height in the binary tree, as described in Figure~\ref{fig:19.1}.
+			\item \answer{The 224,000 bits came from multiplying the freqency (in thousands) of each character by the length of the variable codeword, which would represent its height in the binary tree, as described in Figure~\ref{fig:19.1}.
 			$45(1) + 13(3) + 12(3) + 16(3) + 9(4) + 5(4) = 45 + 39 + 36 + 48 + 36 + 20 = 224$.}
 		\end{tablenotes}
 	\end{threeparttable}
@@ -176,15 +176,16 @@ The greedy approach is: Build the tree bottom up by using a minimum priority que
 		\end{tabular}
 		\begin{tablenotes}
 			\small
-			\item Huffman \url{http://www.cs.auckland.ac.nz/software/AlgAnim/huffman.html}
+			\item Huffman~\url{https://www.cs.auckland.ac.nz/software/AlgAnim/huffman.html}
 		\end{tablenotes}
 	\end{threeparttable}
 \end{table}
 
 \begin{enumerate}[start=4]
-    \item Proof this greedy algorithm leads to an optimal Huffman Code tree: Build the tree bottom up by using a minimum priority queue to merge 2 least frequent objects (objects are leaf nodes or other subtrees) together into a new subtree.
+    \item Prove this greedy algorithm leads to an optimal Huffman Code tree: Build the tree bottom up by using a minimum priority queue to merge 2 least frequent objects (objects are leaf nodes or other subtrees) together into a new subtree.
+	\answer{If you have the optimal answer containing some subtree $k$, and you replace that with the greedy choice $g$ (which has all of the same nodes as $k$ in a different order), but $g$ has a lower cost than $k$, then the problem is greedy.}%
+	\footnote{This answer has not been checked to ensure that it's correct.}
 \end{enumerate}
-
 %</Lecture-Activity-19>
 
 \end{document}

@@ -7,6 +7,7 @@
 \let\originalmaketitle\maketitle
 \renewcommand{\openingquestions}[1][]{\section{Opening Questions \arabic{chapter}\ifx#1\empty\else\ -- #1 \fi}\label{sec:opening-questions-\arabic{chapter}}}
 \renewcommand{\maketitle}{\chapter{Lecture \number\value{chapter}}\label{lecture:\number\value{chapter}}}
+
 \titleformat{\chapter}[block]
 {\LARGE\bfseries}	% format
 {}	% label

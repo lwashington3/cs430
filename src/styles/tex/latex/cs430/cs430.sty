@@ -36,7 +36,6 @@
 \RequirePackage{lipsum}
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
-\RequirePackage{catchfilebetweentags}
 \RequirePackage{multirow}
 \RequirePackage{tikz-qtree}
 \RequirePackage{tikz}
@@ -108,6 +107,13 @@ red/.style={stdNode, fill=red!80!white},
 
 \setlist[enumerate, 2]
 {label=\alph*)}
+
+\RequirePackage{catchfilebetweentags}
+\RequirePackage{etoolbox}
+\makeatletter
+\patchcmd{\CatchFBT@Fin@l}{\endlinechar\m@ne}{}
+  {}{\typeout{Unsuccessful patch!}}
+\makeatother
 
 \RequirePackage{graphicx}
 \graphicspath{{images}}

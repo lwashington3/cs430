@@ -110,11 +110,10 @@ The length of the path from the root $r$ to a node $x$ is the depth of $x$ in $T
 				\State $p \gets$ $root$
 				\State $q \gets$ null\Comment{Following the parent node}
 				\While{$p \neq $ null}
-					\If{$p.val > key$}
-						\State $q\gets$ $p$
+					\State $q\gets$ $p$
+					\If{$key < p.val$}
 						\State $p\gets p.left$ \Comment{Go Left}
 					\Else
-						\State $q\gets$ $p$
 						\State $p\gets p.right$ \Comment{Go Right}
 					\EndIf
 				\EndWhile
@@ -137,7 +136,7 @@ The length of the path from the root $r$ to a node $x$ is the depth of $x$ in $T
 		\end{itemize}
 		\item Two children
 		\begin{itemize}
-			\item Swap the predecessor or successor value into the node, and then deleting the value where the predecessor|successor was.\begin{algorithm}[H]
+			\item Swap the predecessor or successor value into the node, and then deleting the value where the predecessor$|$successor was.\begin{algorithm}[H]
 					\caption{Delete A Node with 2 Children from a BST}\label{alg:bst-delete-2-children}
 					\begin{algorithmic}[1]
 					\Function{Delete2Child}{$p$: Node}

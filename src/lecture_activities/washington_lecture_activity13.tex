@@ -16,7 +16,7 @@ Previously we discussed the order-statistic selection problem: given a collectio
 
 \begin{enumerate}[label=\arabic*.]
 	\item Which of these two methods would you use if you knew you would be asked to find multiple $k$th largest elements from a set of static data? \answer{If you're doing $\geq\lg n$ queries, it would be better to sort the data and then constantly choose the value based off of the index. If you're doing $<\lg n$, it would be better to run the $O(n)$ each time.}
-	\item What if our collection of data is changing (dynamic), would either of these approaches work efficiently for a collection of data that has inserts and deletes happening? \answer{No, you would have to re-run either algorithm for either.}
+	\item What if our collection of data is changing (dynamic), would either of these approaches work efficiently for a collection of data that has inserts and deletes happening? \answer{No, you would have to re-run both algorithms if the data is dynamic.}
 \end{enumerate}
 
 \section{Augmenting Data Structures}\label{sec:augmenting-data-structures}
@@ -97,7 +97,7 @@ For particular applications, it is useful to modify a standard data structure to
 			\EndFunction
 			\end{algorithmic}
 		\end{algorithm}
-		\end{minipage}}}
+		\end{minipage}}}\\
 		\answer{After you would add or delete the node from the BST, when you go back up the recursion, you can re-count the sizes after any rotations that may be necessary. (In any rotations, the only sizes that need to get updated are the nodes that are rotating, the size of the parent would stay the same.)}
 	\item Discuss in general how would you keep the size at a node correct when you delete a node, and possibly rotate to keep the tree balanced? \answer{You can maintain these sizes on deletions and rotations. As the \hyperref[sec:red-black-tree-delete]{Red-Black deletion rules} says, if the node you're deleting has 0 or 1 children, then the node was in the search path. If the node has two children, you would have to find the successor and update the search path.}
 	\item How can we use the augmented data at each node (size) in a balanced binary search tree to solve the $k$th largest item problem? \answer{We can use the size of a node to check how many values are less than or greater than it (by subtracting the size of the subtree from the size of the root), which can help us determine if the required rank is within that subtree. If not, we can cut out that subtree to reduce the runtime.}
