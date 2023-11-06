@@ -13,30 +13,30 @@
 %<*Recitation-2>
 \subsection{After Lecture 03 \& 04} -- Answer any questions on HW1\\
 Practice Problems (all taken from previous exams)
-\begin{enumerate}[label=\arabic*.]
+\begin{enumerate}
     \item Which of the following is time complexity of fun()? \lstinputlisting[language=C,label={lst:fun}]{2_fun.c}
-	\begin{enumerate}[label=\choicelabel]
+	\begin{enumerate}
 	    \item $O(n)$
 	    \item \answer{$O(n^{2})$}
 	    \item $O(n\log n)$
 	    \item $O(n\log(n)\log(n))$
 	\end{enumerate}
 	\item Consider the following function. What is the returned value of the above function? \lstinputlisting[language=C,label={lst:unknown}]{2_unknown.c}
-	\begin{enumerate}[label=\choicelabel]
+	\begin{enumerate}
 	    \item $\Theta(n^{2})$
 	    \item \answer{$\mathbf{\Theta(n^{2}\log n)}$ The outer loop runs $n/2$ or $\Theta(n)$ times. The inner loop runs $O(\log n)$ times (Note that $j$ is multiplied by $2$ in every iteration). So the statement "$k = k + n/2$;" runs $\Theta(n\log n)$ times. The statement increases value of $k$ by $n/2$. So the value of k becomes $n/2\times\Theta(n\log n)$ which is $\Theta(n^2\log n)$.}
 	    \item $\Theta(n^{3})$
 	    \item $\Theta(n^{3}\log n)$
 	\end{enumerate}
 	\item What is the worst-case auxiliary space complexity (including stack space for recursion) of merge sort?
-	\begin{enumerate}[label=\choicelabel]
+	\begin{enumerate}
 	    \item $O(1)$
 	    \item $O(\log n)$
 	    \item \answer{$\mathbf{O(n)}$ The worst case is every item is split into its own array at the lowest level of divide.}
 	    \item $O(n\log n)$
 	\end{enumerate}
 	\item Choose the incorrect statement about merge sort from the following:
-	\begin{enumerate}[label=\choicelabel]
+	\begin{enumerate}
 	    \item It is a comparison-based sort.
 		\item \answer{It's runtime is dependent on input order.}
 		\item It is not an in-place algorithm (all the operations are on the original array).

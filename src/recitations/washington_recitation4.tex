@@ -13,9 +13,9 @@
 %<*Recitation-4>
 \subsection{After Lecture 07 \& 08} -- Answer any questions on HW2 (due today)\\
 Practice Problems (all taken from previous exams)
-\begin{enumerate}[label=\arabic*.]
+\begin{enumerate}
 	\item Which one of the following is false?
-	\begin{enumerate}[label=\choicelabel]
+	\begin{enumerate}
 	    \item Heap sort is an in-place algorithm.
 	    \item Heap sort has $O(n\log n)$ average case time complexity.
 	    \item \answer{Heap sort is a stable sort.} Heap sort is an in-place algorithm as it needs $O(1)$ auxiliary space.
@@ -27,19 +27,19 @@ Practice Problems (all taken from previous exams)
 		\includegraphics[width=0.5\textwidth]{rec4-heap}
 		\label{fig:question-2}
 	\end{figure}
-	\begin{enumerate}[label=\choicelabel]
+	\begin{enumerate}
 	    \item 5
 		\item 8
 		\item \answer{9}
 		\item You cannot call heapify at the node with value 24
 	\end{enumerate}
 	\item Counting sort can be used on any numeric data.
-	\begin{enumerate}[label=\choicelabel]
+	\begin{enumerate}
 	    \item \answer{TRUE}, it can be used, but it is a very bad idea. Counting sort requires a very large range of numbers, counting sort requires a very large array. This reduces its memory efficiency and increases space consumption. So while it \emph{possible} to be used, it isn't a good idea to do so on any numeric data.
 		\item FALSE
 	\end{enumerate}
 	\item Which of the following is not true about all comparison based sorting algorithms?
-	\begin{enumerate}[label=\choicelabel]
+	\begin{enumerate}
 	    \item The minimum possible runtime growth on a random input is $O(n\log n)$.
 		\item Can be made stable by also using position when two elements are compared.
 		\item Counting Sort is not a comparison-based sorting algorithm.
@@ -57,7 +57,7 @@ Practice Problems (all taken from previous exams)
 		\EndFunction
 		\end{algorithmic}
 	\end{algorithm}
-	\begin{enumerate}[label=\choicelabel]
+	\begin{enumerate}
 	    \item Do the procedures BUILD-MAX-HEAP and BUILD-MAX-HEAP1 always create the same heap when run on the same input array? Prove that they do, or provide a counterexample. \answer{The procedures do not always create the same heap when run on the same input array.}
 		\item Show that in the worst case, BUILD-MAX-HEAP1 requires $\Theta(n\lg n)$ time to build an $n$-element heap. \answer{Since all but the last level is always filled, the height $h$ of an $n$ element heap is boundend because $\sum_{i=0}^{h} 2^{i}=2^{h+1}-1=\dots$ }
 	\end{enumerate}

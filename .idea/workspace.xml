@@ -4,30 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Uploaded Templates for Lecture Activities 21 and 22.">
-      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/21.1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/21.2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lecture_activities/images/22.1.png" afterDir="false" />
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Uploading small changes made when reviewing for Exam #2.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity11.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity11.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity12.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity12.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity13.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity13.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity16.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity16.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity17.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity17.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity18.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity18.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity19.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity19.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity11.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity11.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity12.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity12.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity13.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity13.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity14.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity14.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity16.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity16.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity17.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity17.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity18.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity18.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity19.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity19.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity23.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity23.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity24.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity24.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation4.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation6.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation6.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation8.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation8.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +88,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "public",
-    "last_opened_file_path": "/mnt/d/Academic/cs430/.idea/workspace.xml",
+    "last_opened_file_path": "/mnt/d/Academic/cs430/src/recitations",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -129,7 +119,7 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.All Lecture Activities">
+  <component name="RunManager" selected="LaTeX.All Recitations">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -970,6 +960,27 @@
       </texify>
       <method v="2" />
     </configuration>
+    <configuration name="Recitation 12" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>NONE</pdf-viewer>
+        <viewer-command>pdfopener</viewer-command>
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitation12.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/recitations</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
     <configuration name="Recitation 2" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -1213,6 +1224,7 @@
       <item itemvalue="LaTeX.Recitation 8" />
       <item itemvalue="LaTeX.Recitation 9" />
       <item itemvalue="LaTeX.Recitation 10" />
+      <item itemvalue="LaTeX.Recitation 12" />
       <item itemvalue="Makeindex.Lecture Activities MakeIndex" />
       <item itemvalue="Makeindex.washington_lecture_activity1 makeindex" />
     </list>
@@ -1298,7 +1310,9 @@
       <workItem from="1698888671382" duration="1062000" />
       <workItem from="1698953032449" duration="39000" />
       <workItem from="1698976408846" duration="677000" />
-      <workItem from="1698978407267" duration="6338000" />
+      <workItem from="1698978407267" duration="6720000" />
+      <workItem from="1698991275658" duration="7000" />
+      <workItem from="1699227179676" duration="4567000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1476,7 +1490,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698888779782</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Uploading small changes made when reviewing for Exam #2.">
+      <option name="closed" value="true" />
+      <created>1698991068982</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1698991068982</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1515,7 +1537,8 @@
     <MESSAGE value="Added titles to all Lecture Activities, changed the lecture_activity package into a class, changed the format of the full Lecture Activity Notes." />
     <MESSAGE value="Uploaded Lecture Activities 19 and 20." />
     <MESSAGE value="Uploaded Templates for Lecture Activities 21 and 22." />
-    <option name="LAST_COMMIT_MESSAGE" value="Uploaded Templates for Lecture Activities 21 and 22." />
+    <MESSAGE value="Uploading small changes made when reviewing for Exam #2." />
+    <option name="LAST_COMMIT_MESSAGE" value="Uploading small changes made when reviewing for Exam #2." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

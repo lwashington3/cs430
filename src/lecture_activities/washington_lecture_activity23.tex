@@ -1,5 +1,5 @@
 %! Author = Len Washington III
-%! Date = 9/12/2023
+%! Date = 11/05/2023
 
 % Preamble
 \documentclass[23]{cs430lecture}
@@ -11,6 +11,62 @@
 
 %<*Lecture-Activity-23>
 \maketitle
+
+\section{Disjoint-set Data Structure}\label{sec:disjoint-set-data-structure}
+It is useful in many applications to have a structure that handles groups of disjoint sets.
+In particular, we support the following three operations:
+\begin{itemize}
+	\item \Call{Make-Set}{$x$}: Creates a new set consisting of a single element $x$.
+	Since the sets are disjoint, we assume that this element is not already contained in any set.
+	\item \Call{Union}{$x$, $y$}: Given elements in two different sets, forms the union of two existing sets into one new set.
+	\item \Call{Find-Set}{$x$}: Returns a pointer to the representative of the set containing element $x$.
+\end{itemize}
+To identify a set, we return a pointer to any element in the set.
+The only constraint we make on the element chosen is that if the set does not change between calls to \Call{Find-Set}{},
+we must return the same representative.\\
+
+We analyze the algorithms implementing these operations in terms of $n$,
+the number of \Call{Make-Set}{} operations (all \Call{Make-Set}{}s are usually assumed to run first),
+and $m$, the total number of \Call{Make-Set}{}, \Call{Union}{}, and \Call{Find-Set}{} operations $(n \leq m)$.
+
+\begin{enumerate}
+    \item Give then above, how many possible Union operations might there be?
+\end{enumerate}
+
+\section{Disjoint-set Application}\label{sec:disjoint-set-application}
+A graph data structure is a set of vertices and edges between those vertices,
+and supports problems where there can be relationships between any two items (vertices).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{23.1}
+	\label{fig:23.1}
+\end{figure}
+
+\begin{enumerate}
+    \item It is easy to see the disjoint sets (connected components) of the graph.
+	Given a graph $G=(V,E)$ write an algorithm using \Call{Make-Set}{}, \Call{Union}{}, and \Call{Find-Set}{} to find the connected components of any undirected graph.
+\end{enumerate}
+
+\section{Linked-List Representation}\label{sec:linked-list-representation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{23.2}
+	\label{fig:23.2}
+\end{figure}
+One simple approach is to represent a set as an unordered linked list.
+Each element contains two pointers,
+one to the next element (as in a simple linked list) and one to the head of the list.
+The head serves as the set representative.
+
+\begin{enumerate}[start=2]
+    \item Describe the algorithms for \Call{Make-Set}{$x$} and \Call{Find-Set}{$x$} including runtime.
+	For \Call{Find-Set}{$x$}, assume you already have a reference to $x$.
+	\item How do you think \Call{Union}{} is implemented?
+	\item For $n$ total elements, what is the maximum number of \Call{Make-Set}{} and \Call{Union}{} operators that would need to be called in the worst case to get all the elements in one set?
+	What is the maximum amortized runtime of each union?
+	\item For $n$ total elements, what is the minimum number of \Call{Make-Set}{} and \Call{Union}{} operators that would need to be called in the best case to get all the elements in one set?
+	What is the lower bound, worst case amortized runtime of each union?
+\end{enumerate}
 
 %</Lecture-Activity-23>
 
