@@ -1,8 +1,9 @@
 %! Author = Len Washington III
-%! Date = 9/12/2023
+%! Date = 11/12/2023
 
 % Preamble
 \documentclass[25]{cs430lecture}
+\usepackage{algpseudocode}
 
 % Packages
 
@@ -10,8 +11,175 @@
 \begin{document}
 
 %<*Lecture-Activity-25>
+\newcommand{\edges}[1]{\emph{\textbf{#1 edges\label{dfn:#1-edges}}}}%
 \maketitle
+\openingquestions
 
+\begin{enumerate}
+    \item What is the runtime of breadth first search
+	(if you restart the search from a new source if everything was not visited from the first source)?
+	\item Does a breadth-first search always reach all vertices?
+	\item How can you use a breadth-first search to find the shortest path (minimum number of edges) from a given source vertex to all other vertices?
+	\item If you look at the predecessor edges which were used to connect to an unvisited vertex, what do these predecessor edges form?
+	Is it unique for a graph?
+\end{enumerate}
+
+\section{Depth-First Search}\label{sec:depth-first-search}
+\url{https://www.reddit.com/r/dataisbeautiful/comments/7b7aa0/visualizing_the_depthfirst_search_recursive/?st=J9OUDR0O&sh=5b671c59}
+
+As we visit a vertex, we try to move to a new adjacent vertex that hasn't yet been visited,
+until there is nowhere else to go, then backtrack.
+Uses a stack and some way to mark a vertex as visited
+(white initially, gray when first visited and put in stack, black when out of stack),
+label a vertex with a counter for first time seen, and another counter for last time seen
+(we will see why later),
+and label a vertex with how its predecessor vertex was during the traversal.
+
+\begin{enumerate}
+    \item Perform a depth-first search on this graph.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.75\textwidth]{25.1}
+		\label{fig:25.1}
+	\end{figure}
+	\begin{minipage}{0.4\textwidth}
+		\begin{algorithm}[H]
+			\caption{Depth-First Search}\label{alg:dfs}
+			\begin{algorithmic}[1]
+			\Function{DFS}{$G$}
+				\ForAll{vertex $u\in V[G]$}
+					\State \Call{Color}{$u$} $\gets$ WHITE
+					\State \Call{$\pi$}{$u$}$\gets$ NIL
+				\EndFor
+				\State $time\gets0$
+				\ForAll{vertex $u\in V[G]$}
+					\If{\Call{Color}{$u$} == WHITE}
+						\Call{DFS-Visit}{$u$}
+					\EndIf
+				\EndFor
+			\EndFunction
+			\end{algorithmic}
+		\end{algorithm}
+	\end{minipage}%
+	\begin{minipage}{0.6\textwidth}
+		\begin{algorithm}[H]
+			\caption{Depth First Search Visit}\label{alg:dfs-visit}
+			\begin{algorithmic}[1]
+			\Function{DFS-Visit}{$u$}
+				\State \Call{Color}{$u$} $\gets$ GRAY	\Comment{White vertex $u$ has just been discovered.}
+				\State $time\gets time+1$
+				\State $\Call{d}{u}\gets time$
+				\ForAll{$v\in\Call{Adj}{u}$}			\Comment{Explore edge $(u,v)$.}
+					\If{\Call{Color}{$v$} == WHITE}
+						\State \Call{$\pi$}{$v$} $\gets u$
+						\State \Call{DFS-Visit}{$v$}
+					\EndIf
+				\EndFor
+				\State \Call{Color}{$u$} $\gets$ BLACK	\Comment{Blacken $u$; it is finished.}
+				\State $\Call{f}{u}\gets time\gets time+1$
+			\EndFunction
+			\end{algorithmic}
+		\end{algorithm}
+	\end{minipage}
+	\item What is the runtime for \emph{depth}-first search
+	(if you restart the search from a new source if everything was not visited from the first source)?
+\end{enumerate}
+
+Another interesting property of depth-first search is that the search can be used to classify the edges of graph $G$ based on how they are traversed.
+\begin{itemize}
+	\item \edges{Tree} are edges in the depth-first forest $G_{\pi}$.
+	Edge $(u,v)$ is a tree edge if $v$ was first discovered by exploring edge $(u,v)$.
+	\item \edges{Back} are those edges $(u,v)$ connecting a vertex $u$ to an ancestor $v$ in a depth-first tree.
+	Self-loops, which may occur in directed graphs, are considered to be back edges.
+	\item \edges{Forward} are those non-tree edges $(u,v)$ connecting a vertex $u$ to a descendant $v$ in a depth-first tree.
+	\item \edges{Cross} are all other edges.
+	They can go between vertices in the same depth-first tree, as long as one vertex is not an ancestor of the other, or they can go between vertices in different depth-first trees.
+\end{itemize}
+
+\begin{enumerate}[start=3]
+    \item If a graph has no back edges when completing a depth first search,
+	what does that tell us about the graph?
+\end{enumerate}
+
+Demo of BFS/DFS: \url{https://www3.cs.stonybrook.edu/~skiena/combinatorica/animations/search.html}
+
+\section[Topological Sort]{Topological Sort (a DFS application)}\label{sec:topological-sort}
+\begin{itemize}
+	\item A topological sort of a directed acyclic graph\label{dfn:dag}\footnote{sometimes known as a dag}%
+	, $G=(V,E)$ is a linear ordering of all its vertices such that if $G$ contains an edge $(u,v)$, then $u$ appears before $v$ in the ordering.
+	(If the graph is not acyclic, then no linear ordering is possible.)
+	\item A topological sort of a graph can be viewed as an ordering of its vertices along a horizontal line so that all directed edges from left to right.
+	Topological sorting is thus different from the usual kind of ``sorting'' studied earlier.
+	\item Directed acyclic graphs are used in many applications to indicate precedence among events.
+	\item A depth-first search can be used to perform a topological sort of a \hyperref[dfn:dag]{dag}.
+\end{itemize}
+
+\begin{enumerate}[start=4]
+    \item Perform a topological sort on this graph.
+	\begin{table}[H]
+	    \centering
+		\label{tab:topological-sort}
+		\begin{tabular}{|l|l|}
+			\toprule
+			\begin{minipage}{0.45\textwidth}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=\textwidth]{25.2}
+				\label{fig:25.2}
+			\end{figure}
+			\end{minipage}
+			& \begin{minipage}{0.6\textwidth}
+				\begin{algorithm}[H]
+					\caption{Topological Sort}\label{alg:topological-sort}
+					\begin{algorithmic}[1]
+					\Function{Topological-sort}{$G$}
+						\State \Call{DFS}{G} to compute finishing times $\Call{f}{v}$ for each vertex $v$.
+						\State As each vertex is finished, insert it onto the front of a linked list.
+						\State \Return the linked list of vertices
+					\EndFunction
+					\end{algorithmic}
+				\end{algorithm}
+			\end{minipage}
+			\\\bottomrule
+		\end{tabular}
+	\end{table}
+	\item Why does the topological sort work?
+	What is its runtime?
+\end{enumerate}
+
+\section{The Parenthesis Theorem}\label{sec:the-parenthesis-theorem}
+The parenthesis theorem tells us that, for two vertices $u,v\in V$, it cannot be the case the $d[u] < d[v] < f[u] < f[v]$;
+that is, the intervals $\left[ d[u], f[u] \right]$ and $\left[ d[v], f[v] \right]$ are either disjoint or nested.
+This is a simple consequence of the depth-first nature of \Call{DFS}{}.
+If the algorithm discovers $u$ and then discovers $v$, it cannot later back out of $u$ without backing out of $v$.
+
+\section[Strongly Connected Components]{Strongly Connected Components (a DFS application)}\label{sec:strongly-connected-components}
+A graph is said to be strongly connected if every vertex is reachable from every other vertex.
+The strongly connected components of an arbitrary directed graph from a partition into subgraphs that are themselves strongly connected.
+It is possible to test the strong connectivity of a graph, or to find its strongly connected components, in linear time.
+
+\begin{algorithm}[H]
+	\caption{Strongly Connected Components}\label{alg:strongly-connected-components}
+	\begin{algorithmic}[1]
+	\Function{Strongly-Connected-Components}{$G$}
+		\State Call \Call{DFS}{$G$} to compute finishing times $f[u]$ for each vertex $u$.
+		\State Compute $G^{T}$ (the transpose of the graph).
+		\State Call \Call{DFS}{$G^{T}$}, but in the main loop of \Call{DFS}{}, consider the vertices in order of decreasing $f[u]$ (as computed in line 1).
+		\State Output the vertices of each tree in the depth-first forest formed in line 3 as a separate strongly connected component.
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{enumerate}[start=6]
+    \item Find the strongly connected components.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{25.3}
+		\label{fig:25.3}
+	\end{figure}
+	\item Discuss: $G$ and $G^{T}$ will have the same strongly connected components.
+	\item Discuss: The component with the latest finish time vertex will have no edges in the transpose to any other component.
+\end{enumerate}
 %</Lecture-Activity-25>
 
 \end{document}
