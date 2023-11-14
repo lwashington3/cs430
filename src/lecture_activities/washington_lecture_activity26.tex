@@ -25,7 +25,34 @@
     \item Give a definition of a Minimum Spanning Tree, and find an MST of the below graph.
     \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{26.1}
+        \begin{tikzpicture}
+            \begin{scope}[every node/.style={circle,thick,draw}]
+                \node (A) at (0,0) {A};
+                \node (D) at (1,-2.5) {D};
+                \node (F) at (4,-2.75) {F} ;
+                \node (B) at (8,0.5) {B};
+                \node (C) at (2.5,1) {C};
+                \node (E) at (4.25,-0.5) {E};
+            \end{scope}
+
+            \begin{scope}[>={Stealth[black]},
+                every node/.style={fill=white,circle},
+                every edge/.style={draw=black,very thick}]
+                \path (A) edge[bend left=60] node {$5$} (B);
+                \path (A) edge node {$3$} (C);
+                \path (A) edge node {$9$} (D);
+
+                \path (B) edge node {$2$} (C);
+                \path (B) edge node {$1$} (E);
+                \path (B) edge node {$6$} (F);
+
+                \path (C) edge node {$4$} (E);
+
+                \path (D) edge node {$7$} (E);
+
+                \path (E) edge node {$4$} (F);
+            \end{scope}
+        \end{tikzpicture}
         \label{fig:26.1}
     \end{figure}
     \item Prove a Minimum Spanning Tree has \hyperref[dfn:optimal-substructure]{optimal substructure}.
@@ -34,7 +61,50 @@
     \item Demonstrate your MST algorithm on the following graph and write pseudocode.
     \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{26.2}
+        \begin{tikzpicture}
+            \begin{scope}[every node/.style={circle,thick,draw}]
+                \node (a) at (0,0) {a};
+
+                \node (b) at (3,1.5) {b};
+                \node (h) at (3,-1.5) {h};
+
+                \node (i) at (5,0) {i};
+
+                \node (c) at (7,1.5) {c};
+                \node (g) at (7,-1.5) {g};
+
+                \node (d) at (11,1.5) {d};
+                \node (f) at (11,-1.5) {f};
+
+                \node (e) at (14,0) {e};
+            \end{scope}
+
+            \begin{scope}[>={Stealth[black]},
+                every node/.style={fill=white,circle},
+                every edge/.style={draw=black,very thick}]
+                \path (a) edge node {$4$} (b);
+                \path (a) edge node {$8$} (h);
+
+                \path (b) edge node {$11$} (h);
+                \path (b) edge node {$8$} (c);
+
+                \path (h) edge node {$7$} (i);
+                \path (h) edge node {$1$} (g);
+
+                \path (i) edge node {$2$} (c);
+                \path (i) edge node {$6$} (g);
+
+                \path (c) edge node {$7$} (d);
+                \path (c) edge node {$4$} (f);
+
+                \path (g) edge node {$2$} (f);
+
+                \path (d) edge node {$14$} (f);
+                \path (d) edge node {$9$} (e);
+
+                \path (f) edge node {$10$} (e);
+            \end{scope}
+        \end{tikzpicture}
         \label{fig:26.2}
     \end{figure}
 \end{enumerate}

@@ -45,7 +45,7 @@ and label a vertex with how its predecessor vertex was during the traversal.
     \item Perform a depth-first search on this graph.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=.75\textwidth]{25.1}
+		\graphexample
 		\label{fig:25.1}
 	\end{figure}
 	\begin{minipage}{0.4\textwidth}
@@ -194,7 +194,44 @@ It is possible to test the strong connectivity of a graph, or to find its strong
     \item Find the strongly connected components.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{25.3}
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick}]
+				\node (A) at (0,0) {A};
+				\node (B) at (3,0) {B};
+				\node (C) at (6,0) {C};
+				\node (D) at (9,0) {D};
+				\node (E) at (0,-3) {E};
+				\node (F) at (3,-3) {F};
+				\node (G) at (6,-3) {G};
+				\node (H) at (9,-3) {H};
+			\end{scope}
+
+			\begin{scope}[>={Stealth[black]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=black,very thick}]
+				\path [->] (A) edge (B);
+
+				\path [->] (B) edge (C);
+				\path [->] (B) edge (E);
+				\path [->] (B) edge (F);
+
+				\path [->] (C) edge[bend right=7] (D);
+				\path [->] (C) edge (G);
+
+				\path [->] (D) edge[bend right=7] (C);
+				\path [->] (D) edge (H);
+
+				\path [->] (E) edge (A);
+				\path [->] (E) edge (F);
+
+				\path [->] (F) edge[bend right=7] (G);
+
+				\path [->] (G) edge[bend right=7] (F);
+				\path [->] (G) edge (H);
+
+				\path [->] (H) edge[loop right] (H);
+			\end{scope}
+		\end{tikzpicture}
 		\label{fig:25.3}
 	\end{figure}
 	\item Discuss: $G$ and $G^{T}$ will have the same strongly connected components.

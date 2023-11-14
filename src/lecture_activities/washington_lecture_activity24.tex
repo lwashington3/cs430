@@ -187,36 +187,7 @@ label a vertex how far from the source, and label a vertex with how its predeces
     \item Perform a breadth first search on this graph.
 	\begin{figure}[H]
 		\centering
-		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
-				\node (A) at (0,0) {A};
-				\node (B) at (2,-2) {B};
-				\node (C) at (3.5,2) {C};
-				\node (D) at (6,0.5) {D};
-				\node (E) at (6,-2.5) {E};
-				\node (F) at (8,-0.25) {F} ;
-			\end{scope}
-
-			\begin{scope}[>={Stealth[black]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=black,very thick}]
-				\path [->] (A) edge (C);
-
-				\path [->] (B) edge (A);
-				\path [->] (B) edge[bend right=5] (C);
-				\path [->] (B) edge (D);
-
-				\path [->] (C) edge[bend right=5] (B);
-				\path [->] (C) edge (D);
-
-				\path [->] (D) edge (F);
-
-				\path [->] (E) edge (B);
-				\path [->] (E) edge[bend left=80] (A);
-
-				\path [->] (F) edge (E);
-			\end{scope}
-		\end{tikzpicture}
+		\graphexample
 		\label{fig:24.3}
 	\end{figure}
 \end{enumerate}

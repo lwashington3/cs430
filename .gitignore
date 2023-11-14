@@ -12,8 +12,13 @@
 .idea/misc.xml
 .idea/vcs.xml
 .idea/shelf
+**/*.fuse_hidden*
 
 *desktop.ini
+
+### Tikz
+*.figlist
+*.makefile
 
 ### VisualStudioCode template
 .vscode/*
