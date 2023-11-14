@@ -11,12 +11,19 @@
 
 %<*Lecture-Activity-24>
 \maketitle
+\answer{Relationships between items:\begin{itemize}
+	\item[$1-1$] List, Stack, Queue
+	\item[$1-N$] Tree, Hierarchical
+	\item[$N-N$] Any graph item can be related to any other item.
+\end{itemize}}
 \openingquestions
 
 \begin{enumerate}
     \item Give an example NOT discussed in the video lecture of a problem that can be represented by a graph.
+	\answer{The connections between airports.}
 	\item If there is a path in a graph from a vertex back to itself, that is called a
-	\underline{~~~~~~~~~~~~~~~~~~~~}.
+	\answer{\underline{cycle}}%
+	\footnote{A path of one edge is called a self-loop.}.
 	\item Which representation of a graph, adjacency-list and adjacency-matrix, usually uses more memory and why?
 \end{enumerate}
 
@@ -25,6 +32,7 @@
     \item Draw the graph:
 	A directed graph $G=(V,E)$ where $V=\{ 1, 2, 3, 4, 5, 6 \}$ and $E=\{ (1,2), (2,2), (2,4), (2,5), (4,1), (4,5), (5,4), (6,3) \}$.
 	What is the edge $(2,2)$ called?
+	\answer{The edge $(2,2)$ is a self-loop.}
 	\item Draw the graph:
 	An undirected graph $G=(V,E)$ where $V=\{ 1, 2, 3, 4, 5, 6 \}$ and $E=\left\{ \{1,2\}, \{ 1, 5\}, \{ 2, 5\}, \{ 3, 4\} \right\}$.
 	What is vertex $4$ called?
@@ -59,23 +67,105 @@
 	\begin{minipage}{0.5\textwidth}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=\textwidth]{24.1}
+			\begin{tikzpicture}
+				\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (1) at (0,0) {1};
+				\node (2) at (3,0) {2};
+				\node (3) at (5,-1.5) {3};
+				\node (4) at (3,-3) {4};
+				\node (5) at (0,-3) {5};
+				\end{scope}
+
+				\begin{scope}[>={Stealth[black]},
+						  every node/.style={fill=white,circle},
+						  every edge/.style={draw=black,very thick}]
+				\path (1) edge (2);
+				\path (1) edge (5);
+
+				\path (2) edge (3);
+				\path (2) edge (4);
+				\path (2) edge (5);
+
+				\path (3) edge (4);
+				\path (4) edge (5);
+				\end{scope}
+			\end{tikzpicture}
 			\label{fig:24.1}
 		\end{figure}
 	\end{minipage}\begin{minipage}{0.5\textwidth}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=\textwidth]{24.2}
+			\begin{tikzpicture}
+				\begin{scope}[every node/.style={circle,thick,draw}]
+					\node (1) at (0,0) {1};
+					\node (2) at (3,0) {2};
+					\node (3) at (6,0) {3};
+					\node (5) at (0,-3) {5};
+					\node (4) at (3,-3) {4};
+					\node (6) at (6,-3) {6};
+				\end{scope}
+
+				\begin{scope}[>={Stealth[black]},
+							  every node/.style={fill=white,circle},
+							  every edge/.style={draw=black,very thick}]
+					\path [->] (1) edge (2);
+					\path [->] (1) edge (5);
+
+					\path [->] (2) edge (4);
+
+					\path [->] (3) edge (2);
+					\path [->] (3) edge (6);
+
+					\path [->] (4) edge (5);
+					\path [->] (4) edge[bend left=10] (6);
+
+
+					\path [->] (6) edge[bend right=350] (4);
+				\end{scope}
+			\end{tikzpicture}
 			\label{fig:24.2}
 		\end{figure}
 	\end{minipage}
+	\answer{Memory: $O(|V| + |E|)$}
 	\item What is the adjacency matrix implementation of the above two graphs?
+	\answer{Memory: $O(|V|^{2})$
+		\begin{minipage}{0.45\textwidth}
+			\begin{table}[H]
+				\centering
+				\label{tab:}
+				\begin{tabular}{cccccc}
+					  & 1 & 2 & 3 & 4 & 5\\
+					1 & 0 & 1 & 0 & 0 & 1\\
+					2 & 1 & 0 & 1 & 1 & 1\\
+					3 & 0 & 1 & 0 & 1 & 1\\
+					4 & 0 & 1 & 1 & 0 & 1\\
+					5 & 1 & 1 & 0 & 1 & 0
+				\end{tabular}
+			\end{table}
+		\end{minipage}\begin{minipage}{0.55\textwidth}
+			\begin{table}[H]
+				\centering
+				\label{tab:adjacency-matrix-2}
+				\begin{tabular}{ccccccc}
+					  & 1 & 2 & 3 & 4 & 5 & 6\\
+					1 & 0 & 1 & 0 & 0 & 1 & 0\\
+					2 & 0 & 0 & 0 & 1 & 0 & 0\\
+					3 & 0 & 1 & 0 & 0 & 0 & 1\\
+					4 & 0 & 0 & 0 & 0 & 1 & 1\\
+					5 & 0 & 0 & 0 & 0 & 0 & 0\\
+					6 & 0 & 0 & 0 & 1 & 0 & 0\\
+				\end{tabular}
+			\end{table}
+		\end{minipage}
+	}
 	\item How do the two implementations handle a weighted graph?
+	\answer{Edges have numbers, add weights to the adj list and adj matrix.}
 	\item Two different representations of the graph data structure are discussed in the book, adjacency-list and adjacency-matrix.
 	Please briefly discuss the runtime (in terms of $|V|$ and $|E$ of these graph operations/algorithms using each implementation.)
 	Assume vertices are labeled as integers.
 	\begin{itemize}
 		\item What is the worst-case big-O runtime for checking to see if an edge from vertex $u$ to vertex $v$ exists?
+		\answer{Adj list: $O(V)$, Adj matrix: $O(1)$}
 		\item How long does it take to compute the out-degree of every vertex of a directed graph?
 		\item How long does it take to compute the in-degree of every vertex of a directed graph?
 	\end{itemize}
@@ -97,7 +187,36 @@ label a vertex how far from the source, and label a vertex with how its predeces
     \item Perform a breadth first search on this graph.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=\textwidth]{24.3}
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (A) at (0,0) {A};
+				\node (B) at (2,-2) {B};
+				\node (C) at (3.5,2) {C};
+				\node (D) at (6,0.5) {D};
+				\node (E) at (6,-2.5) {E};
+				\node (F) at (8,-0.25) {F} ;
+			\end{scope}
+
+			\begin{scope}[>={Stealth[black]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=black,very thick}]
+				\path [->] (A) edge (C);
+
+				\path [->] (B) edge (A);
+				\path [->] (B) edge[bend right=5] (C);
+				\path [->] (B) edge (D);
+
+				\path [->] (C) edge[bend right=5] (B);
+				\path [->] (C) edge (D);
+
+				\path [->] (D) edge (F);
+
+				\path [->] (E) edge (B);
+				\path [->] (E) edge[bend left=80] (A);
+
+				\path [->] (F) edge (E);
+			\end{scope}
+		\end{tikzpicture}
 		\label{fig:24.3}
 	\end{figure}
 \end{enumerate}
@@ -112,8 +231,8 @@ label a vertex how far from the source, and label a vertex with how its predeces
 			\State $\pi[u] \gets$ NIL
 		\EndFor
 		\State \Call{Color}{$s$} $\gets$ GRAY		\Comment{First time seen, put in queue}
-		\State $d[s]\gets0$
-		\State $\pi[s]\gets$ NIL
+		\State $d[s]\gets0$							\Comment{$d$ is the distance from the start}
+		\State $\pi[s]\gets$ NIL					\Comment{$\pi$ is the predecessor}
 		\State $Q\gets\emptyset$
 		\State \Call{Enqueue}{$Q$, $s$}
 	\While{$Q\neq\emptyset$}

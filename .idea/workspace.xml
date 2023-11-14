@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Uploaded templates for Week 12 (Lecture Activities 23 and 24, Recitation 12). Made some small changes to the format of older Recitations.">
+      <change beforePath="$PROJECT_DIR$/.idea/CS 430 - Introduction to Algorithms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CS 430 - Introduction to Algorithms.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity23.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity23.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity24.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity24.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity25.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity25.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation12.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation12.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/images/24.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/images/24.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/images/24.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity23.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity23.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity24.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity24.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity25.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity25.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity26.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity26.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation12.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation12.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +88,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;public&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/mnt/d/Academic/cs430/src/recitations&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -1119,6 +1129,27 @@
       </texify>
       <method v="2" />
     </configuration>
+    <configuration name="Tikz Playground" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>NONE</pdf-viewer>
+        <viewer-command>pdfopener</viewer-command>
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/tikz-playground.tex</main-file>
+        <output-path>$PROJECT_DIR$/out</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -1168,6 +1199,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="LaTeX.Tikz Playground" />
       <item itemvalue="LaTeX.Homework 1" />
       <item itemvalue="LaTeX.Homework 2" />
       <item itemvalue="LaTeX.Homework 3" />
@@ -1308,6 +1340,7 @@
       <workItem from="1699596114959" duration="117000" />
       <workItem from="1699726416804" duration="14000" />
       <workItem from="1699839153359" duration="4052000" />
+      <workItem from="1699985259649" duration="2037000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
