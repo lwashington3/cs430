@@ -7,176 +7,263 @@
 % Document
 \begin{document}
 
-%<*Lecture-Activity-26>
+	%<*Lecture-Activity-26>
 \maketitle
 \openingquestions
 \begin{enumerate}
-    \item What is the difference between a tree and a graph?
-    \answer{All trees are graphs, but not all graphs are trees.
-    In a tree, there is only 1 path between any 2 vertices.
-    Trees are also acyclic since no item can have multiple parents.}
-    \item Give a recursive definition for a tree.
-    \answer{Base case: single node with no children.
-    A tree is $\dots$ a node pointing to other trees with no cycles.}
-    \item In a weighted undirected graph, what is the difference between a minimum spanning tree and a shortest path in a graph?
-    \item Since the shortest paths contain the shortest sub-paths (\hyperref[dfn:optimal-substructure]{optimal substructure}),
-    name an algorithmic approach that we might try to find a shortest path in a graph.
+	\item What is the difference between a tree and a graph?
+	\begin{newanswer}
+		All trees are graphs, but not all graphs are trees.
+		In a tree, there is only 1 path between any 2 vertices.
+		Trees are also acyclic since no item can have multiple parents.
+		If trees have $|V|$ nodes, then there are $|V|-1$ edges.
+	\end{newanswer}
+	\item Give a recursive definition for a tree.
+	\begin{newanswer}
+		Base case: single node with no children.
+		A tree is $\dots$ a node pointing to other trees with no cycles.
+	\end{newanswer}
+	\item In a weighted undirected graph, what is the difference between a minimum spanning tree and a shortest path in a graph?
+	\begin{newanswer}
+		A minimum spanning tree is made up of the edges of minimum total weight that still span (connect) all vertices in the graph.
+		This does not assure the minimum path between all vertices.
+		A shortest path is the minimum path distance between two vertices.
+	\end{newanswer}
+	\item Since the shortest paths contain the shortest sub-paths (\hyperref[dfn:optimal-substructure]{optimal substructure}),
+	name an algorithmic approach that we might try to find a shortest path in a graph.
+	\begin{newanswer}
+		\hyperref[sec:proving-a-greedy-choice-property]{Greedy algorithms} and \hyperref[sec:dynamic-programming]{Dynamic Programming}.
+	\end{newanswer}
 \end{enumerate}
 
 \section{Minimum Spanning Trees (MST)}\label{sec:minimum-spanning-trees}
 \begin{enumerate}
-    \item Give a definition of a Minimum Spanning Tree, and find an MST of the below graph.
-    \answer{Set of edges that connects all vertices with no cycles.
-        $|V|-1$ edges; not necessarily unique, you could have multiple MSTs for a graph.}
-    \begin{figure}[H]
-        \centering
-        \begin{tikzpicture}
-            \begin{scope}[every node/.style={circle,thick,draw}]
-                \node (A) at (0,0) {A};
-                \node (D) at (1,-2.5) {D};
-                \node (F) at (4,-2.75) {F} ;
-                \node (B) at (8,0.5) {B};
-                \node (C) at (2.5,1) {C};
-                \node (E) at (4.25,-0.5) {E};
-            \end{scope}
-            \begin{scope}[>={Stealth[black]},
-                every node/.style={fill=white,circle},
-                every edge/.style={draw=black,very thick}]
-                \path (A) edge[bend left=60] node {$5$} (B);
-                \path (A) edge node {$3$} (C);
-                \path (A) edge node {$9$} (D);
+	\item Give a definition of a Minimum Spanning Tree, and find an MST of the below graph.
+	\begin{newanswer}
+		An MST is a graph that spans over all vertices with no cycles.
+		$|V|-1$ edges.
+	\end{newanswer}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\colorlet{current}{.}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (A) at (0,0) {A};
+				\node (D) at (1,-2.5) {D};
+				\node (F) at (4,-2.75) {F} ;
+				\node (B) at (8,0.5) {B};
+				\node (C) at (2.5,1) {C};
+				\node (E) at (4.25,-0.5) {E};
+			\end{scope}
+			\begin{scope}[>={Stealth[current]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=current,very thick}]
+				\path (A) edge[bend left=60] node {$5$} (B);
+				\path (A) edge node {$3$} (C);
+				\path (A) edge node {$9$} (D);
 
-                \path (B) edge node {$2$} (C);
-                \path (B) edge node {$1$} (E);
-                \path (B) edge node {$6$} (F);
+				\path (B) edge node {$2$} (C);
+				\path (B) edge node {$1$} (E);
+				\path (B) edge node {$6$} (F);
 
-                \path (C) edge node {$4$} (E);
+				\path (C) edge node {$4$} (E);
 
-                \path (D) edge node {$7$} (E);
+				\path (D) edge node {$7$} (E);
 
-                \path (E) edge node {$4$} (F);
-            \end{scope}
-        \end{tikzpicture}
-        \label{fig:26.1}
-    \end{figure}
-    \item Prove a Minimum Spanning Tree has \hyperref[dfn:optimal-substructure]{optimal substructure}.
-    \answer{Pick any subsets of adjacent vertices in an optimal MST.
-    Those edges that connect that subset of vertices in the MST must also be MST}
-    \item What are some possible greedy approaches to find a Minimum Spanning Tree?
-    Prove correct or show counterexample.
-    \answer{\begin{itemize}
-                \item Grow min edges first; no cycles.
-                \item Prune/remove max edge, but stay connected.
-                \item Creating edges from visited nodes to unvisited nodes.
-                \item \textbf{Prim}\label{dfn:prim}: Min edge from visited vertex set to unvisited vertex set.
-                \item \textbf{Kruskal}\label{dfn:kruskal}:
-                Pick min edge that its vertices are not already in the \hyperref[sec:strongly-connected-components]{connected component}.
-    \end{itemize}}
-    \item Demonstrate your MST algorithm on the following graph and write pseudocode.
-    \begin{figure}[H]
-        \centering
-        \begin{tikzpicture}
-            \begin{scope}[every node/.style={circle,thick,draw}]
-                \node (a) at (0,0) {a};
+				\path (E) edge node {$4$} (F);
+			\end{scope}
+		\end{tikzpicture}
+		\label{fig:26.1}
+	\end{figure}
+	\begin{newanswer}
+		\begin{minipage}{0.5\textwidth}
+			\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}
+				\begin{scope}[every node/.style={circle,thick,draw}]
+					\node (A) at (0,0) {A};
+					\node (C) at (2,0) {C};
+					\node (B) at (4,0) {B};
+					\node (D) at (0,-2) {D};
+					\node (E) at (2,-1.65) {E};
+					\node (F) at (3.5,-3.5) {F} ;
+				\end{scope}
+				\colorlet{current}{.}
+				\begin{scope}[>={Stealth[current]},
+					every node/.style={fill=white,circle},
+					every edge/.style={draw=current,very thick}]
+					\path (A) edge node {$3$} (C);
+					\path (B) edge node {$2$} (C);
+					\path (B) edge node {$1$} (E);
+					\path (D) edge node {$7$} (E);
+					\path (E) edge node {$4$} (F);
+				\end{scope}
+			\end{tikzpicture}
+			\caption{One spanning tree of Figure~\ref{fig:26.1}.\\
+			Total weight: 22.}
+			\label{fig:26.1-spanning-tree-1}
+		\end{figure}
+		\end{minipage}\begin{minipage}{0.5\textwidth}
+			\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}
+				\begin{scope}[every node/.style={circle,thick,draw}]
+					\node (A) at (0,0) {A};
+					\node (D) at (0,-2) {D};
+					\node (E) at (2,-2) {E};
+					\node (C) at (2,0) {C};
+					\node (B) at (4,0) {B};
+					\node (F) at (3,-3.5) {F};
+				\end{scope}
+				\colorlet{current}{.}
+				\begin{scope}[>={Stealth[current]},
+					every node/.style={fill=white,circle},
+					every edge/.style={draw=current,very thick}]
+					\path (A) edge node {$9$} (D);
+					\path (B) edge node {$2$} (C);
+					\path (C) edge node {$4$} (E);
+					\path (D) edge node {$7$} (E);
+					\path (E) edge node {$4$} (F);
+				\end{scope}
+			\end{tikzpicture}
+			\caption{Another spanning tree of Figure~\ref{fig:26.1}.\\
+			Total Weight: 26.}
+			\label{fig:26.1-spanning-tree-2}
+		\end{figure}
+		\end{minipage}
+	\end{newanswer}
+	\item Prove a Minimum Spanning Tree has \hyperref[dfn:optimal-substructure]{optimal substructure}.
+	\begin{newanswer}
+		Pick any subsets of adjacent vertices in an optimal MST.
+		Those edges that connect that subset of vertices in the MST must also be MST.
+	\end{newanswer}
+	\item What are some possible greedy approaches to find a Minimum Spanning Tree?
+	Prove correct or show counterexample.
+	\begin{newanswer}
+		\begin{itemize}
+				\item Grow min edges first; no cycles.
+				\item Prune/remove max edge, but stay connected.
+				\item Creating edges from visited nodes to unvisited nodes.
+				\item \textbf{Prim}\label{dfn:prim}: Min edge from visited vertex set to unvisited vertex set.
+				\item \textbf{Kruskal}\label{dfn:kruskal}:
+				Pick min edge that its vertices are not already in the \hyperref[sec:strongly-connected-components]{connected component}.
+		\end{itemize}
+	\end{newanswer}
+	\item Demonstrate your MST algorithm on the following graph and write pseudocode.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (a) at (0,0) {a};
 
-                \node (b) at (3,1.5) {b};
-                \node (h) at (3,-1.5) {h};
+				\node (b) at (3,1.5) {b};
+				\node (h) at (3,-1.5) {h};
 
-                \node (i) at (5,0) {i};
+				\node (i) at (5,0) {i};
 
-                \node (c) at (7,1.5) {c};
-                \node (g) at (7,-1.5) {g};
+				\node (c) at (7,1.5) {c};
+				\node (g) at (7,-1.5) {g};
 
-                \node (d) at (11,1.5) {d};
-                \node (f) at (11,-1.5) {f};
+				\node (d) at (11,1.5) {d};
+				\node (f) at (11,-1.5) {f};
 
-                \node (e) at (14,0) {e};
-            \end{scope}
+				\node (e) at (14,0) {e};
+			\end{scope}
+			\colorlet{current}{.}
+			\begin{scope}[>={Stealth[current]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=current,very thick}]
+				\path (a) edge node {$4$} (b);
+				\path (a) edge node {$8$} (h);
 
-            \begin{scope}[>={Stealth[black]},
-                every node/.style={fill=white,circle},
-                every edge/.style={draw=black,very thick}]
-                \path (a) edge node {$4$} (b);
-                \path (a) edge node {$8$} (h);
+				\path (b) edge node {$11$} (h);
+				\path (b) edge node {$8$} (c);
 
-                \path (b) edge node {$11$} (h);
-                \path (b) edge node {$8$} (c);
+				\path (h) edge node {$7$} (i);
+				\path (h) edge node {$1$} (g);
 
-                \path (h) edge node {$7$} (i);
-                \path (h) edge node {$1$} (g);
+				\path (i) edge node {$2$} (c);
+				\path (i) edge node {$6$} (g);
 
-                \path (i) edge node {$2$} (c);
-                \path (i) edge node {$6$} (g);
+				\path (c) edge node {$7$} (d);
+				\path (c) edge node {$4$} (f);
 
-                \path (c) edge node {$7$} (d);
-                \path (c) edge node {$4$} (f);
+				\path (g) edge node {$2$} (f);
 
-                \path (g) edge node {$2$} (f);
+				\path (d) edge node {$14$} (f);
+				\path (d) edge node {$9$} (e);
 
-                \path (d) edge node {$14$} (f);
-                \path (d) edge node {$9$} (e);
-
-                \path (f) edge node {$10$} (e);
-            \end{scope}
-        \end{tikzpicture}
-        \label{fig:26.2}
-    \end{figure}
-    \answer{\begin{table}[H]
-                \centering
-                \begin{threeparttable}
-                    \label{tab:mst-example}
-                    \begin{tabular}{c|c}
-                        \textbf{Node} & \textbf{Visited?}\\
-                        \midrule
-                        $a$ & \\
-                        $b$ & \\
-                        $c$ & Visited\\
-                        $d$ & \\
-                        $e$ & \\
-                        $f$ & \\
-                        $g$ & \\
-                        $h$ & \\
-                        $i$ & \\
-                    \end{tabular}
-                    \begin{tablenotes}
-                        \small
-                        \item Started at $c$.
-                    \end{tablenotes}
-                \end{threeparttable}
-    \end{table}
-    }
+				\path (f) edge node {$10$} (e);
+			\end{scope}
+		\end{tikzpicture}
+		\label{fig:26.2}
+	\end{figure}
+	\begin{newanswer}
+		\begin{table}[H]
+			\centering
+			\begin{threeparttable}
+				\label{tab:mst-example}
+				\begin{tabular}{c|c}
+					\textbf{Node} & \textbf{Visited?}\\
+					\midrule
+					$a$ & \\
+					$b$ & \\
+					$c$ & Visited\\
+					$d$ & \\
+					$e$ & \\
+					$f$ & \\
+					$g$ & \\
+					$h$ & \\
+					$i$ & \\
+				\end{tabular}
+				\begin{tablenotes}
+					\small
+					\item Started at $c$.
+				\end{tablenotes}
+			\end{threeparttable}
+	\end{table}
+	\end{newanswer}
 \end{enumerate}
 
-\answer{\begin{minipage}{0.5\textwidth}
-    \begin{algorithm}[H]
-        \caption{Prim's Algorithm (MST)}\label{alg:mst-prim}
-        \begin{algorithmic}[1]
-        \Function{MST-Prim}{$G$, $w$, $r$}
-            \ForAll{$u\in G.V$}
-                \State $u.key\gets\infty$
-                \State $u.\pi \gets $ NIL
-            \EndFor
-            \State $r.key\gets0$
-            \State $Q\gets G.B$
-            \While{$Q\neq\emptyset$}
-                \State
-            \EndWhile
-        \EndFunction
-        \end{algorithmic}
-    \end{algorithm}
-\end{minipage}\begin{minipage}{0.5\textwidth}
-\begin{algorithm}[H]
-	\caption{Kruskal's Algorithm (MST)}\label{alg:mst-kruskal}
-	\begin{algorithmic}[1]
-	\Function{MST-Kruskal}{}
-        \State
-	\EndFunction
-	\end{algorithmic}
-\end{algorithm}\end{minipage}}
+\begin{newanswer}
+	\begin{minipage}{0.5\textwidth}
+		\begin{algorithm}[H]
+			\caption{Prim's Algorithm (MST)}\label{alg:mst-prim}
+			\begin{algorithmic}[1]
+				\Function{MST-Prim}{$G$, W, $r$}
+					\ForAll{$u\in G.V$}
+						\State $u.key\gets\infty$
+						\State $u.\pi \gets $ NIL
+					\EndFor
+					\State $r.key\gets0$
+					\State $Q\gets G.B$
+					\While{$Q\neq\emptyset$}
+						\State $u\gets\Call{\hyperref[subsec:Extract-Min]{Extract-Min}}{Q}$
+						\ForAll{$v\in G.Adj[u]$}
+							\If{$v\in Q$ and $\Call{w}{u,v} < v.key$}
+								\State $v.\pi\gets u$
+								\State $v.key\gets \Call{w}{u,v}$
+							\EndIf
+						\EndFor
+					\EndWhile
+				\EndFunction
+			\end{algorithmic}
+		\end{algorithm}
+	\end{minipage}%
+	\begin{minipage}{0.5\textwidth}
+		\begin{algorithm}[H]
+			\caption{Kruskal's Algorithm (MST)}\label{alg:mst-kruskal}
+			\begin{algorithmic}[1]
+				\Function{MST-Kruskal}{}
+				\State
+				\EndFunction
+			\end{algorithmic}
+		\end{algorithm}\end{minipage}
+\end{newanswer}
 
 Demonstration of Prim (Deleted): \url{http://en.wikipedia.org/wiki/File:Prim-algorithm-animation-2.gif}
 
 Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kruskal.html}
-%</Lecture-Activity-26>
+	%</Lecture-Activity-26>
 
 \end{document}

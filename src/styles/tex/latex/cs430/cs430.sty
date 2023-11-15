@@ -201,3 +201,11 @@ red/.style={stdNode, fill=red!80!white},
 
 \RequirePackage{tablefootnote}
 \newcommand{\element}[2]{$#1_{#2}$}
+
+\RequirePackage{environ}
+\NewEnviron{newanswer}{
+	\colorlet{saved}{.}
+	\color{blue}
+	\BODY
+	\color{saved}
+}
