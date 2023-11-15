@@ -4,8 +4,6 @@
 % Preamble
 \documentclass[26]{cs430lecture}
 
-% Packages
-
 % Document
 \begin{document}
 
@@ -14,15 +12,22 @@
 \openingquestions
 \begin{enumerate}
     \item What is the difference between a tree and a graph?
+    \answer{All trees are graphs, but not all graphs are trees.
+    In a tree, there is only 1 path between any 2 vertices.
+    Trees are also acyclic since no item can have multiple parents.}
     \item Give a recursive definition for a tree.
+    \answer{Base case: single node with no children.
+    A tree is $\dots$ a node pointing to other trees with no cycles.}
     \item In a weighted undirected graph, what is the difference between a minimum spanning tree and a shortest path in a graph?
     \item Since the shortest paths contain the shortest sub-paths (\hyperref[dfn:optimal-substructure]{optimal substructure}),
     name an algorithmic approach that we might try to find a shortest path in a graph.
 \end{enumerate}
 
-\section{Minimum Spanning Trees}\label{sec:minimum-spanning-trees}
+\section{Minimum Spanning Trees (MST)}\label{sec:minimum-spanning-trees}
 \begin{enumerate}
     \item Give a definition of a Minimum Spanning Tree, and find an MST of the below graph.
+    \answer{Set of edges that connects all vertices with no cycles.
+        $|V|-1$ edges; not necessarily unique, you could have multiple MSTs for a graph.}
     \begin{figure}[H]
         \centering
         \begin{tikzpicture}
@@ -34,7 +39,6 @@
                 \node (C) at (2.5,1) {C};
                 \node (E) at (4.25,-0.5) {E};
             \end{scope}
-
             \begin{scope}[>={Stealth[black]},
                 every node/.style={fill=white,circle},
                 every edge/.style={draw=black,very thick}]
@@ -56,8 +60,18 @@
         \label{fig:26.1}
     \end{figure}
     \item Prove a Minimum Spanning Tree has \hyperref[dfn:optimal-substructure]{optimal substructure}.
+    \answer{Pick any subsets of adjacent vertices in an optimal MST.
+    Those edges that connect that subset of vertices in the MST must also be MST}
     \item What are some possible greedy approaches to find a Minimum Spanning Tree?
     Prove correct or show counterexample.
+    \answer{\begin{itemize}
+                \item Grow min edges first; no cycles.
+                \item Prune/remove max edge, but stay connected.
+                \item Creating edges from visited nodes to unvisited nodes.
+                \item \textbf{Prim}\label{dfn:prim}: Min edge from visited vertex set to unvisited vertex set.
+                \item \textbf{Kruskal}\label{dfn:kruskal}:
+                Pick min edge that its vertices are not already in the \hyperref[sec:strongly-connected-components]{connected component}.
+    \end{itemize}}
     \item Demonstrate your MST algorithm on the following graph and write pseudocode.
     \begin{figure}[H]
         \centering
@@ -107,7 +121,58 @@
         \end{tikzpicture}
         \label{fig:26.2}
     \end{figure}
+    \answer{\begin{table}[H]
+                \centering
+                \begin{threeparttable}
+                    \label{tab:mst-example}
+                    \begin{tabular}{c|c}
+                        \textbf{Node} & \textbf{Visited?}\\
+                        \midrule
+                        $a$ & \\
+                        $b$ & \\
+                        $c$ & Visited\\
+                        $d$ & \\
+                        $e$ & \\
+                        $f$ & \\
+                        $g$ & \\
+                        $h$ & \\
+                        $i$ & \\
+                    \end{tabular}
+                    \begin{tablenotes}
+                        \small
+                        \item Started at $c$.
+                    \end{tablenotes}
+                \end{threeparttable}
+    \end{table}
+    }
 \end{enumerate}
+
+\answer{\begin{minipage}{0.5\textwidth}
+    \begin{algorithm}[H]
+        \caption{Prim's Algorithm (MST)}\label{alg:mst-prim}
+        \begin{algorithmic}[1]
+        \Function{MST-Prim}{$G$, $w$, $r$}
+            \ForAll{$u\in G.V$}
+                \State $u.key\gets\infty$
+                \State $u.\pi \gets $ NIL
+            \EndFor
+            \State $r.key\gets0$
+            \State $Q\gets G.B$
+            \While{$Q\neq\emptyset$}
+                \State
+            \EndWhile
+        \EndFunction
+        \end{algorithmic}
+    \end{algorithm}
+\end{minipage}\begin{minipage}{0.5\textwidth}
+\begin{algorithm}[H]
+	\caption{Kruskal's Algorithm (MST)}\label{alg:mst-kruskal}
+	\begin{algorithmic}[1]
+	\Function{MST-Kruskal}{}
+        \State
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}\end{minipage}}
 
 Demonstration of Prim (Deleted): \url{http://en.wikipedia.org/wiki/File:Prim-algorithm-animation-2.gif}
 
