@@ -254,16 +254,434 @@
 		\begin{algorithm}[H]
 			\caption{Kruskal's Algorithm (MST)}\label{alg:mst-kruskal}
 			\begin{algorithmic}[1]
-				\Function{MST-Kruskal}{}
-				\State
+				\Function{MST-Kruskal}{$G$, $w$}
+					\State $A\gets\emptyset$
+					\ForAll{vertex $v\in V[G]$}
+						\State \Call{Make-Set}{$v$}
+					\EndFor
+					\State sort the edges of $E$ into increasing
+					\ForAll{edge $(u,v)\in E$, taken in increasing order}
+						\If{$\Call{Find-Set}{u}\neq\Call{Find-Set}{v}$}
+							\State $A\gets A\cup \left\{ (u,v) \right\}$
+							\State \Call{Union}{$u$,$v$}
+						\EndIf
+					\EndFor
 				\EndFunction
 			\end{algorithmic}
-		\end{algorithm}\end{minipage}
+		\end{algorithm}
+		~\\
+	\end{minipage}
 \end{newanswer}
 
 Demonstration of Prim (Deleted): \url{http://en.wikipedia.org/wiki/File:Prim-algorithm-animation-2.gif}
 
-Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kruskal.html}
-	%</Lecture-Activity-26>
+Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kruskal.html}\\
+\newcommand{\stepupcounter}[1]{\stepcounter{#1}\arabic{#1}}
+\newcounter{kruskal}
+\newcommand{\mstcaption}[3]{Connected vertices $#1$ and $#2$ with an edge with weight $#3$.}
+
+\begin{newanswer}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (a) at (0,0) {a};
+
+				\node (b) at (3,1.5) {b};
+				\node (h) at (3,-1.5) {h};
+
+				\node (i) at (5,0) {i};
+
+				\node (c) at (7,1.5) {c};
+				\node (g) at (7,-1.5) {g};
+
+				\node (d) at (11,1.5) {d};
+				\node (f) at (11,-1.5) {f};
+
+				\node (e) at (14,0) {e};
+			\end{scope}
+			\colorlet{current}{.}
+			\begin{scope}[>={Stealth[current]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=current},
+				thickedge/.style={line width=2.5pt}]
+				\path (a) edge node {$4$} (b);
+				\path (a) edge node {$8$} (h);
+
+				\path (b) edge node {$11$} (h);
+				\path (b) edge node {$8$} (c);
+
+				\path (h) edge node {$7$} (i);
+				\path [thickedge] (h) edge node {$1$} (g);
+
+				\path (i) edge node {$2$} (c);
+				\path (i) edge node {$6$} (g);
+
+				\path (c) edge node {$7$} (d);
+				\path (c) edge node {$4$} (f);
+
+				\path (g) edge node {$2$} (f);
+
+				\path (d) edge node {$14$} (f);
+				\path (d) edge node {$9$} (e);
+
+				\path (f) edge node {$10$} (e);
+			\end{scope}
+		\end{tikzpicture}
+		\caption{\mstcaption{h}{g}{3}}
+		\label{fig:kruskal-example-a}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (a) at (0,0) {a};
+
+				\node (b) at (3,1.5) {b};
+				\node (h) at (3,-1.5) {h};
+
+				\node (i) at (5,0) {i};
+
+				\node (c) at (7,1.5) {c};
+				\node (g) at (7,-1.5) {g};
+
+				\node (d) at (11,1.5) {d};
+				\node (f) at (11,-1.5) {f};
+
+				\node (e) at (14,0) {e};
+			\end{scope}
+			\colorlet{current}{.}
+			\begin{scope}[>={Stealth[current]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=current},
+				thickedge/.style={line width=2.5pt}]
+				\path (a) edge node {$4$} (b);
+				\path (a) edge node {$8$} (h);
+
+				\path (b) edge node {$11$} (h);
+				\path (b) edge node {$8$} (c);
+
+				\path (h) edge node {$7$} (i);
+				\path [thickedge] (h) edge node {$1$} (g);
+
+				\path [thickedge] (i) edge node {$2$} (c);
+				\path (i) edge node {$6$} (g);
+
+				\path (c) edge node {$7$} (d);
+				\path (c) edge node {$4$} (f);
+
+				\path (g) edge node {$2$} (f);
+
+				\path (d) edge node {$14$} (f);
+				\path (d) edge node {$9$} (e);
+
+				\path (f) edge node {$10$} (e);
+			\end{scope}
+		\end{tikzpicture}
+		\caption{\mstcaption{c}{i}{3}}
+		\label{fig:kruskal-example-b}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (a) at (0,0) {a};
+
+				\node (b) at (3,1.5) {b};
+				\node (h) at (3,-1.5) {h};
+
+				\node (i) at (5,0) {i};
+
+				\node (c) at (7,1.5) {c};
+				\node (g) at (7,-1.5) {g};
+
+				\node (d) at (11,1.5) {d};
+				\node (f) at (11,-1.5) {f};
+
+				\node (e) at (14,0) {e};
+			\end{scope}
+			\colorlet{current}{.}
+			\begin{scope}[>={Stealth[current]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=current},
+				thickedge/.style={line width=2.5pt}]
+				\path (a) edge node {$4$} (b);
+				\path (a) edge node {$8$} (h);
+
+				\path (b) edge node {$11$} (h);
+				\path (b) edge node {$8$} (c);
+
+				\path (h) edge node {$7$} (i);
+				\path [thickedge] (h) edge node {$1$} (g);
+
+				\path [thickedge] (i) edge node {$2$} (c);
+				\path (i) edge node {$6$} (g);
+
+				\path (c) edge node {$7$} (d);
+				\path (c) edge node {$4$} (f);
+
+				\path [thickedge] (g) edge node {$2$} (f);
+
+				\path (d) edge node {$14$} (f);
+				\path (d) edge node {$9$} (e);
+
+				\path (f) edge node {$10$} (e);
+			\end{scope}
+		\end{tikzpicture}
+		\caption{\mstcaption{g}{f}{3}}
+		\label{fig:kruskal-example-c}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (a) at (0,0) {a};
+
+				\node (b) at (3,1.5) {b};
+				\node (h) at (3,-1.5) {h};
+
+				\node (i) at (5,0) {i};
+
+				\node (c) at (7,1.5) {c};
+				\node (g) at (7,-1.5) {g};
+
+				\node (d) at (11,1.5) {d};
+				\node (f) at (11,-1.5) {f};
+
+				\node (e) at (14,0) {e};
+			\end{scope}
+			\colorlet{current}{.}
+			\begin{scope}[>={Stealth[current]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=current},
+				thickedge/.style={line width=2.5pt}]
+				\path [thickedge] (a) edge node {$4$} (b);
+				\path (a) edge node {$8$} (h);
+
+				\path (b) edge node {$11$} (h);
+				\path (b) edge node {$8$} (c);
+
+				\path (h) edge node {$7$} (i);
+				\path [thickedge] (h) edge node {$1$} (g);
+
+				\path [thickedge] (i) edge node {$2$} (c);
+				\path (i) edge node {$6$} (g);
+
+				\path (c) edge node {$7$} (d);
+				\path (c) edge node {$4$} (f);
+
+				\path [thickedge] (g) edge node {$2$} (f);
+
+				\path (d) edge node {$14$} (f);
+				\path (d) edge node {$9$} (e);
+
+				\path (f) edge node {$10$} (e);
+			\end{scope}
+		\end{tikzpicture}
+		\caption{\mstcaption{a}{b}{3}}
+		\label{fig:kruskal-example-d}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (a) at (0,0) {a};
+
+				\node (b) at (3,1.5) {b};
+				\node (h) at (3,-1.5) {h};
+
+				\node (i) at (5,0) {i};
+
+				\node (c) at (7,1.5) {c};
+				\node (g) at (7,-1.5) {g};
+
+				\node (d) at (11,1.5) {d};
+				\node (f) at (11,-1.5) {f};
+
+				\node (e) at (14,0) {e};
+			\end{scope}
+			\colorlet{current}{.}
+			\begin{scope}[>={Stealth[current]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=current},
+				thickedge/.style={line width=2.5pt}]
+				\path [thickedge] (a) edge node {$4$} (b);
+				\path (a) edge node {$8$} (h);
+
+				\path (b) edge node {$11$} (h);
+				\path (b) edge node {$8$} (c);
+
+				\path (h) edge node {$7$} (i);
+				\path [thickedge] (h) edge node {$1$} (g);
+
+				\path [thickedge] (i) edge node {$2$} (c);
+				\path (i) edge node {$6$} (g);
+
+				\path (c) edge node {$7$} (d);
+				\path [thickedge] (c) edge node {$4$} (f);
+
+				\path [thickedge] (g) edge node {$2$} (f);
+
+				\path (d) edge node {$14$} (f);
+				\path (d) edge node {$9$} (e);
+
+				\path (f) edge node {$10$} (e);
+			\end{scope}
+		\end{tikzpicture}
+		\caption{\mstcaption{c}{f}{3}}
+		\label{fig:kruskal-example-e}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (a) at (0,0) {a};
+
+				\node (b) at (3,1.5) {b};
+				\node (h) at (3,-1.5) {h};
+
+				\node (i) at (5,0) {i};
+
+				\node (c) at (7,1.5) {c};
+				\node (g) at (7,-1.5) {g};
+
+				\node (d) at (11,1.5) {d};
+				\node (f) at (11,-1.5) {f};
+
+				\node (e) at (14,0) {e};
+			\end{scope}
+			\colorlet{current}{.}
+			\begin{scope}[>={Stealth[current]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=current},
+				thickedge/.style={line width=2.5pt}]
+				\path [thickedge] (a) edge node {$4$} (b);
+				\path (a) edge node {$8$} (h);
+
+				\path (b) edge node {$11$} (h);
+				\path (b) edge node {$8$} (c);
+
+				\path (h) edge node {$7$} (i);
+				\path [thickedge] (h) edge node {$1$} (g);
+
+				\path [thickedge] (i) edge node {$2$} (c);
+				\path (i) edge node {$6$} (g);
+
+				\path [thickedge] (c) edge node {$7$} (d);
+				\path [thickedge] (c) edge node {$4$} (f);
+
+				\path [thickedge] (g) edge node {$2$} (f);
+
+				\path (d) edge node {$14$} (f);
+				\path (d) edge node {$9$} (e);
+
+				\path (f) edge node {$10$} (e);
+			\end{scope}
+		\end{tikzpicture}
+		\caption{\mstcaption{c}{d}{3}}
+		\label{fig:kruskal-example-f}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (a) at (0,0) {a};
+
+				\node (b) at (3,1.5) {b};
+				\node (h) at (3,-1.5) {h};
+
+				\node (i) at (5,0) {i};
+
+				\node (c) at (7,1.5) {c};
+				\node (g) at (7,-1.5) {g};
+
+				\node (d) at (11,1.5) {d};
+				\node (f) at (11,-1.5) {f};
+
+				\node (e) at (14,0) {e};
+			\end{scope}
+			\colorlet{current}{.}
+			\begin{scope}[>={Stealth[current]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=current},
+				thickedge/.style={line width=2.5pt}]
+				\path [thickedge] (a) edge node {$4$} (b);
+				\path [thickedge] (a) edge node {$8$} (h);
+
+				\path (b) edge node {$11$} (h);
+				\path (b) edge node {$8$} (c);
+
+				\path (h) edge node {$7$} (i);
+				\path [thickedge] (h) edge node {$1$} (g);
+
+				\path [thickedge] (i) edge node {$2$} (c);
+				\path (i) edge node {$6$} (g);
+
+				\path [thickedge] (c) edge node {$7$} (d);
+				\path [thickedge] (c) edge node {$4$} (f);
+
+				\path [thickedge] (g) edge node {$2$} (f);
+
+				\path (d) edge node {$14$} (f);
+				\path (d) edge node {$9$} (e);
+
+				\path (f) edge node {$10$} (e);
+			\end{scope}
+		\end{tikzpicture}
+		\caption{\mstcaption{a}{h}{3}}
+		\label{fig:kruskal-example-g}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node (a) at (0,0) {a};
+
+				\node (b) at (3,1.5) {b};
+				\node (h) at (3,-1.5) {h};
+
+				\node (i) at (5,0) {i};
+
+				\node (c) at (7,1.5) {c};
+				\node (g) at (7,-1.5) {g};
+
+				\node (d) at (11,1.5) {d};
+				\node (f) at (11,-1.5) {f};
+
+				\node (e) at (14,0) {e};
+			\end{scope}
+			\colorlet{current}{.}
+			\begin{scope}[>={Stealth[current]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=current},
+				thickedge/.style={line width=2.5pt}]
+				\path [thickedge] (a) edge node {$4$} (b);
+				\path [thickedge] (a) edge node {$8$} (h);
+
+				\path (b) edge node {$11$} (h);
+				\path (b) edge node {$8$} (c);
+
+				\path (h) edge node {$7$} (i);
+				\path [thickedge] (h) edge node {$1$} (g);
+
+				\path [thickedge] (i) edge node {$2$} (c);
+				\path (i) edge node {$6$} (g);
+
+				\path [thickedge] (c) edge node {$7$} (d);
+				\path [thickedge] (c) edge node {$4$} (f);
+
+				\path [thickedge] (g) edge node {$2$} (f);
+
+				\path (d) edge node {$14$} (f);
+				\path [thickedge] (d) edge node {$9$} (e);
+
+				\path (f) edge node {$10$} (e);
+			\end{scope}
+		\end{tikzpicture}
+		\caption{\mstcaption{d}{e}{3}}
+		\label{fig:kruskal-example-h}
+	\end{figure}
+\end{newanswer}
+%</Lecture-Activity-26>
 
 \end{document}
