@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Updated some missing info in Homework 6.">
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Uploaded templates for Week 12 (Lecture Activities 23 and 24, Recitation 12). Made some small changes to the format of older Recitations.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation13.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation13.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation13.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation13.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +78,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/mnt/d/Academic/cs430/src/recitations",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -106,7 +110,7 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.All Recitations">
+  <component name="RunManager" selected="LaTeX.Recitation 13">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -968,6 +972,27 @@
       </texify>
       <method v="2" />
     </configuration>
+    <configuration name="Recitation 13" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>NONE</pdf-viewer>
+        <viewer-command>pdfopener</viewer-command>
+        <compiler-arguments />
+        <envs />
+        <main-file>$PROJECT_DIR$/src/recitations/washington_recitation13.tex</main-file>
+        <output-path>$PROJECT_DIR$/out/recitations</output-path>
+        <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>MIKTEX</latex-distribution>
+        <has-been-run>true</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
     <configuration name="Recitation 2" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -1233,13 +1258,13 @@
       <item itemvalue="LaTeX.Recitation 9" />
       <item itemvalue="LaTeX.Recitation 10" />
       <item itemvalue="LaTeX.Recitation 12" />
+      <item itemvalue="LaTeX.Recitation 13" />
       <item itemvalue="LaTeX.Tikz Playground" />
       <item itemvalue="Makeindex.Lecture Activities MakeIndex" />
       <item itemvalue="Makeindex.washington_lecture_activity1 makeindex" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="LaTeX.Lecture Activity 1" />
         <item itemvalue="LaTeX.Lecture Activity 1" />
         <item itemvalue="LaTeX.Homework 1" />
       </list>
@@ -1522,15 +1547,7 @@
       <option name="project" value="LOCAL" />
       <updated>1699232033901</updated>
     </task>
-    <task id="LOCAL-00025" summary="Updated some missing info in Homework 6.">
-      <option name="closed" value="true" />
-      <created>1700240334495</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1700240334495</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1582,8 +1599,7 @@
     <MESSAGE value="Uploaded Templates for Lecture Activities 21 and 22." />
     <MESSAGE value="Uploading small changes made when reviewing for Exam #2." />
     <MESSAGE value="Uploaded templates for Week 12 (Lecture Activities 23 and 24, Recitation 12). Made some small changes to the format of older Recitations." />
-    <MESSAGE value="Updated some missing info in Homework 6." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated some missing info in Homework 6." />
+    <option name="LAST_COMMIT_MESSAGE" value="Uploaded templates for Week 12 (Lecture Activities 23 and 24, Recitation 12). Made some small changes to the format of older Recitations." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

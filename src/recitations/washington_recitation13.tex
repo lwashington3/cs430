@@ -16,7 +16,7 @@ Practice Problems (all taken from previous exams)
 	\item The edges used in a Depth First Search traversal of a graph will result in?
 	\begin{enumerate}
 	    \item Linked List
-		\item Tree
+		\begin{newanswer}\item Tree\end{newanswer}
 		\item Graph with back edges
 		\item Min Heap
 	\end{enumerate}
@@ -24,7 +24,7 @@ Practice Problems (all taken from previous exams)
 	\begin{enumerate}
 	    \item Once
 		\item Twice
-		\item Equivalent to number of indegree of the node
+		\begin{newanswer}\item Equivalent to number of indegree of the node\end{newanswer}
 		\item Thrice
 	\end{enumerate}
 	\item Regarding implementation of Breadth First Search using queues, what is the maximum difference in the distance from the source for two nodes present in the queue?
@@ -32,7 +32,9 @@ Practice Problems (all taken from previous exams)
 	\begin{enumerate}
 	    \item Can be anything
 		\item 0
-		\item At most 1
+		\begin{newanswer}\item At most 1%
+		\footnote{Because the source is moving}
+		\end{newanswer}
 		\item Insufficient information
 	\end{enumerate}
 	\item Topological sort can be applied to which of the following graphs?
@@ -40,7 +42,7 @@ Practice Problems (all taken from previous exams)
 	    \item Undirected Cyclic Graphs
 	    \item Directed Cyclic Graphs
 	    \item Undirected Acyclic Graphs
-	    \item Directed Acyclic Graphs
+	    \begin{newanswer}\item Directed Acyclic Graphs\end{newanswer}
 	\end{enumerate}
 	\item Which of the following is false?
 	\begin{enumerate}
@@ -50,41 +52,45 @@ Practice Problems (all taken from previous exams)
 		(partitions the vertices of a graph into two disjoint subsets),
 		if has the weight smaller than any other edge in the same cut,
 		then the edge $e$ is present in all the MSTs of the graph.
-		\item Removing one edge from the spanning tree will not make the graph disconnected
+		\begin{newanswer}\item Removing one edge from the spanning tree will not make the graph disconnected\end{newanswer}
 	\end{enumerate}
 	\item Which of the following is false about the Kruskal's algorithm?
 	\begin{enumerate}
 	    \item It is a greedy algorithm
 		\item It constructs MST by selecting edges in increasing order of their weights
-		\item It can accept cycles in the MST
+		\begin{newanswer}\item It can accept cycles in the MST\end{newanswer}
 		\item It uses disjoint set data structure
 	\end{enumerate}
 	\item Kruskal's algorithm (pick minimum edge in the graph between two vertices that are not yet in the same connected component)
 	is best suited for the dense graphs than the Prim's algorithm (pick minimum edge from visited to unvisited vertex).
 	\begin{enumerate}
 	    \item True
-		\item False
+		\begin{newanswer}\item False\end{newanswer}
 	\end{enumerate}
 	\item Reword the statement below as a theorem about graphs and then prove it.
 	Assume that is $A$ is a friend of $B$, then $B$ is a friend of $A$ and that for all $A$, $A$ is not a friend of $A$.
 	\begin{itemize}
 		\item In any group of $n\geq2$ people, there are two people with the same number of friends in the group.
 	\end{itemize}
+	\begin{newanswer}
+		Worded
+	\end{newanswer}
 	\item Argue that in a breadth-first search, the value $d[u]$ assigned to a vertex $u$ is independent of the order in which the vertices in each adjacency list are given.
 	Using the graph shown as an example, show that the breadth-first tree computed by BFS can depend on the ordering within adjacency lists.
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
-				\node (r) at (0,0) {$\infty$};
-				\node (v) at (0,-2) {$\infty$};
-				\node[fill=lightgray] (s) at (2,0) {0};
-				\node (w) at (2,-2) {$\infty$};
-				\node (x) at (4,-2) {$\infty$};
-				\node (t) at (4,0) {$\infty$};
-				\node (u) at (6,0) {$\infty$};
-				\node (y) at (6,-2) {$\infty$};
-				\node[fill=lightgray] (Q) at (9,-1) {$0$};
+			\begin{scope}[every node/.style={circle,thick,draw},
+				square/.style={regular polygon,regular polygon sides=4}]
+				\node[label=above:r] (r) at (0,0) {$\infty$};
+				\node[label=below:v] (v) at (0,-2) {$\infty$};
+				\node[label=above:s,fill=lightgray] (s) at (2,0) {0};
+				\node[label=below:w] (w) at (2,-2) {$\infty$};
+				\node[label=below:x] (x) at (4,-2) {$\infty$};
+				\node[label=above:t] (t) at (4,0) {$\infty$};
+				\node[label=above:u] (u) at (6,0) {$\infty$};
+				\node[label=below:y] (y) at (6,-2) {$\infty$};
+				\node[square,label=left:Q,label=below:0,fill=lightgray] (Q) at (9,-1) {$0$};
 			\end{scope}
 			\begin{scope}[>={Stealth[black]},
 				every node/.style={fill=white,circle},
@@ -107,8 +113,10 @@ Practice Problems (all taken from previous exams)
 	\item
 	\begin{enumerate}[label=\arabic{enumi}\alph*.]
 	    \item Show how on a directed graph that depth first search starting at vertex $u$ can result in vertex $v$ not being reachable from $u$ even though both $u$ and $v$ have incoming and outgoing edges.
+		\begin{newanswer}\end{newanswer}
 		\item If a directed graph contains a path from $u$ to $v$, show that it is not necessary that the $\Call{s}{v} < \Call{f}{u}$.
 		$\Call{s}{~}$ is the depth first search start time and $\Call{f}{~}$ is the depth first search finish time.
+		\begin{newanswer}Consider the directed graph below. If we run the DFS on this directed graph from $w$, then we can't visit\end{newanswer}%
 	\end{enumerate}
 	\item Bob loves foreign languages and wants to plan his course schedule to take the following nine language courses: LA15, LA16, LA22, LA31, LA32, LA126, LA127, LA141, and LA169.
 	The course prerequisites are:
@@ -124,9 +132,16 @@ Practice Problems (all taken from previous exams)
 		\item[LA169:] LA32 is prerequisite
 	\end{itemize}
 	Find a sequence of courses that allows Bob to satisfy all the prerequisites.
+	\begin{newanswer}
+		Use the topological sort algorithm.
+	\end{newanswer}
 	\item Let $e$ be a maximum-weight edge on some cycle of $G=(V,E)$.
 	Prove that there is a minimum spanning tree of $G'=(V,E-\{e\})$ that is also a minimum spanning tree of $G$.
 	That is, there is a minimum spanning tree of $G$ that does not include $e$.
+	\begin{newanswer}
+		Firstly consider the graph $G'$.
+		Compute the MST of $G'$, call it $T'.$
+	\end{newanswer}
 	\item In this problem, we give pseudocode for different algorithms.
 	Each one takes a graph as input and returns a set of edges $T$.
 	For each algorithm, you must either prove that $T$ is a minimum spanning tree or prove that $T$ is not a minimum spanning tree.
@@ -137,7 +152,7 @@ Practice Problems (all taken from previous exams)
 		\Function{Maybe-MST-A}{$G$, $w$}
 			\State sort the edges into decreasing order by weight
 			\State $T\gets E$
-			\ForAll{edge $e$, taken in increasing order by weight}
+			\ForAll{edge $e$, taken in decreasing order by weight}
 				\If{$T - \{e\}$ is a connected graph}
 					\State $T\gets T-\{e\}$
 				\EndIf
@@ -146,6 +161,11 @@ Practice Problems (all taken from previous exams)
 		\EndFunction
 		\end{algorithmic}
 	\end{algorithm}
+	\begin{newanswer}
+		Basic idea here is to start MST $T$ containing all edges of the graph $G$, and removing edges in largest first order, making sure that we keep the graph $G$ connected.
+		This will create a valid MST.
+		Implementation with edges in descending sorted order, and to check for connectivity as removing edges using a basic depth first of breadth first search to make sure graph is still connected.
+	\end{newanswer}
 	\begin{algorithm}[H]
 		\caption{Maybe Minimum Spanning Tree B}\label{alg:maybe-mst-b}
 		\begin{algorithmic}[1]
@@ -160,6 +180,8 @@ Practice Problems (all taken from previous exams)
 		\EndFunction
 		\end{algorithmic}
 	\end{algorithm}
+	\begin{newanswer}
+	\end{newanswer}
 	\begin{algorithm}[H]
 		\caption{Maybe Minimum Spanning Tree C}\label{alg:maybe-mst-c}
 		\begin{algorithmic}[1]
@@ -176,6 +198,11 @@ Practice Problems (all taken from previous exams)
 		\EndFunction
 		\end{algorithmic}
 	\end{algorithm}
+	\begin{newanswer}
+		Basic idea here is to start with an empty MST $T$ and in no particular order, add edges to it.
+		If a cycle is formed in $T$, remove the maximum weight edge from the cycle in $T$.
+		As long as you continue for all edges, this will create a valid
+	\end{newanswer}
 \end{enumerate}
 %</Recitation-13>
 
