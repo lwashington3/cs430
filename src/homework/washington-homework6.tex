@@ -9,9 +9,7 @@
 
 % Document
 \begin{document}
-
 \maketitle
-
 \begin{enumerate}[label=\arabic*.]
 	\item (6 points) Assume you are creating an array data structure that has a fixed size of $n$. You want to backup this array after every so many insertion/update operations. Unfortunately, the backup operation is quite expensive, it takes $n$ time to do the backup, regardless of how many items are currently in the data structure. Insertions/updates without a backup just take 1 time unit.
 	\begin{enumerate}[label=\arabic{enumi}\alph*)]
@@ -24,9 +22,43 @@
 	    \item Draw the first seven rooted Fibonacci trees.
 		\item How many vertices, leaves, and internal vertices does the rooted Fibonacci tree $T_{n}$ have, where $n$ is a positive integer? What is its height?
 	\end{enumerate}
-	\item (7 points) Give an example of a series of insert() and extract-min operations on a Fibonacci Heap that will yield a heap of $n$ keys with height $n-1$.
+	\item (7 points) Give an example of a series of \Call{Insert}{} and \Call{Extract-Min}{} operations on a Fibonacci Heap that will yield a heap of $n$ keys with height $n-1$.
 	\item (6 points)
-Show the data structure that results and the answers returned by the FIND-SET operations in the following program. Use the linked-list representation with the weighted-union heuristic.	% FIXME: Add the code and the table
+	\begin{table}[H]
+	    \centering
+	    \begin{threeparttable}
+			\label{tab:}
+			\begin{tabular}{|l|l|}
+				\toprule
+				\begin{minipage}[t]{0.5\textwidth}
+				Show the data structure that results and the answers returned by the FIND-SET operations in the following program. Use the linked-list representation with the weighted-union heuristic.				\end{minipage}
+				& \begin{minipage}[t]{0.5\textwidth}
+					\begin{algorithmic}[1]
+						\For{$i\gets1$ to $16$}
+							\State \Call{Make-Set}{$x_{i}$}
+						\EndFor
+						\For{$i\gets1$ to $15$ by $2$}
+							\State \Call{Union}{$x_{i}$,$x_{i+1}$}
+						\EndFor
+						\For{$i\gets1$ to $13$ by $4$}
+							\State \Call{Union}{$x_{i}$,$x_{i+2}$}
+						\EndFor
+						\State \Call{Union}{$x_{1}$,$x_{5}$}
+						\State \Call{Union}{$x_{11}$,$x_{13}$}
+						\State \Call{Union}{$x_{1}$,$x_{10}$}
+						\State \Call{Find-Set}{$x_{2}$}
+						\State \Call{Find-Set}{$x_{9}$}
+					\end{algorithmic}
+				\end{minipage}
+				\\\bottomrule
+			\end{tabular}
+			\begin{tablenotes}
+				\small
+				\item
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{table}
+
 	\item (7 points) There is an image of ``$n$ by $m$'' pixels. Originally all are white, but then a few black pixels are drawn. You want to determine the size of each white connected component in the final image. Pixels are judged as connected if they share a side.
 \end{enumerate}
 
