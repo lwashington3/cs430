@@ -11,7 +11,59 @@
 
 %<*Lecture-Activity-28>
 \maketitle
+\openingquestions
+\begin{itemize}
+	\item We saw the \hyperref[sec:shortest-path-algorithm-bellman-ford]{Bellman-Ford} algorithm found the
+	shortest path from a source to all other vertices by ``brute force''
+	every edge in the graph in a fixed order $|V|-1$ times.
+	Why did it need to do this $|V|-1$ times?
+	And with this in mind, could we improve on the Bellman-Ford for certain graphs?
+	\begin{newanswer}
+		At least relax edges leaving from source first.
+		Possible that the shortest path $u\leadsto v$ goes through every other vertex $|V|-1$ edges might be relaxed in opposite order.
+	\end{newanswer}
+\end{itemize}
 
+\section{DAG Shortest Path Algorithm}\label{sec:dag-shortest-path-algorithm}
+By relaxing the edges of a weighed DAG (directed acyclic graph) $G=(V,E)$ in topological sort order of its vertices, we can compute shortest paths from a single source.
+Shortest paths are always defined in a DAG, since even if there are negative-weight edges, no negative weight cycles can exist.
+\begin{algorithm}[H]
+	\caption{DAG Shortest Path\begin{newanswer}$O(V^{2})$\end{newanswer}}\label{alg:dag-shortest-path}
+	\begin{algorithmic}[1]
+	\Function{DAG-Shortest-Path}{$G$, $w$, $s$}
+		\State topologically sort the vertices of $G$
+		\State \Call{\hyperref[alg:init-single-source]{Init-Single-Source}}{$G$, $s$}
+		\ForAll{vertex $u$, taken in topologically sorted order}
+			\State \ForAll{vertex $v\in Adj[u]$}
+				\State \Call{\hyperref[alg:relax]{Relax}}{$u$, $v$, $w$}
+			\EndFor
+		\EndFor
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{enumerate}
+    \item Here is the topological sort on a DAG\@.
+	Find the shortest path from $s$ to every other vertex.
+	\item What is the runtime for DAG Shortest Path?
+	\begin{newanswer}$O(V+E)\Rightarrow O(V+V^{2})\Rightarrow O(V^{2})$\end{newanswer}
+	\item Discuss why DAG Shortest Path is correct.
+	\item If we restrict the graph to having no negative edges, given a source $s$, what is the shortest path from $s$ to one of its adjacent vertices?
+\end{enumerate}
+
+\section{Dijkstra's Shortest Path Algorithm}\label{sec:dijkstra's-shortest-path-algorithm}
+\begin{itemize}
+	\item No negative-weight \emph{edges}.
+	\item Essentially a weighted version of breadth-first search.
+	\begin{itemize}
+		\item Instead of a FIFO queue, uses a priority queue.
+		\item Keys are shortest-path weight estimates ($d[v]$).
+	\end{itemize}
+\end{itemize}
+
+Dijkstra's Algorithms\\
+\url{https://www.youtube.com/watch?v=wtdtkJgcYUM}
+\url{https://www.cs.usfca.edu/~galles/visualization/Dijkstra.html}
 %</Lecture-Activity-28>
 
 \end{document}

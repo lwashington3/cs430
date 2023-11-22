@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Uploaded templates for Week 12 (Lecture Activities 23 and 24, Recitation 12). Made some small changes to the format of older Recitations.">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Almost done with Homework 6.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/recitations/washington_recitation13.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/recitations/washington_recitation13.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation13.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation13.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity27.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity27.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity27.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity27.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity28.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity28.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +38,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="private" />
+        <entry key="$PROJECT_DIR$" value="public" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,7 +79,6 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
     "last_opened_file_path": "/mnt/d/Academic/cs430/src/recitations",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -110,7 +110,7 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.Recitation 13">
+  <component name="RunManager" selected="LaTeX.Homework 7">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -972,27 +972,6 @@
       </texify>
       <method v="2" />
     </configuration>
-    <configuration name="Recitation 13" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
-      <texify>
-        <compiler>PDFLATEX</compiler>
-        <compiler-path />
-        <sumatra-path />
-        <pdf-viewer>NONE</pdf-viewer>
-        <viewer-command>pdfopener</viewer-command>
-        <compiler-arguments />
-        <envs />
-        <main-file>$PROJECT_DIR$/src/recitations/washington_recitation13.tex</main-file>
-        <output-path>$PROJECT_DIR$/out/recitations</output-path>
-        <auxil-path>$PROJECT_DIR$/auxil/recitations</auxil-path>
-        <compile-twice>false</compile-twice>
-        <output-format>PDF</output-format>
-        <latex-distribution>MIKTEX</latex-distribution>
-        <has-been-run>true</has-been-run>
-        <bib-run-config>[]</bib-run-config>
-        <makeindex-run-config>[]</makeindex-run-config>
-      </texify>
-      <method v="2" />
-    </configuration>
     <configuration name="Recitation 2" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Recitation">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -1258,7 +1237,6 @@
       <item itemvalue="LaTeX.Recitation 9" />
       <item itemvalue="LaTeX.Recitation 10" />
       <item itemvalue="LaTeX.Recitation 12" />
-      <item itemvalue="LaTeX.Recitation 13" />
       <item itemvalue="LaTeX.Tikz Playground" />
       <item itemvalue="Makeindex.Lecture Activities MakeIndex" />
       <item itemvalue="Makeindex.washington_lecture_activity1 makeindex" />
@@ -1354,6 +1332,17 @@
       <workItem from="1699839153359" duration="4052000" />
       <workItem from="1699985259649" duration="2037000" />
       <workItem from="1700002233044" duration="586000" />
+      <workItem from="1700251800137" duration="1879000" />
+      <workItem from="1700254667877" duration="21000" />
+      <workItem from="1700254912525" duration="5541000" />
+      <workItem from="1700281086369" duration="3685000" />
+      <workItem from="1700347721426" duration="18000" />
+      <workItem from="1700462135626" duration="3026000" />
+      <workItem from="1700489809130" duration="3663000" />
+      <workItem from="1700630328265" duration="136000" />
+      <workItem from="1700631480900" duration="20000" />
+      <workItem from="1700632861444" duration="157000" />
+      <workItem from="1700643981435" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1547,7 +1536,31 @@
       <option name="project" value="LOCAL" />
       <updated>1699232033901</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Synced up the two branches.">
+      <option name="closed" value="true" />
+      <created>1700240826990</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1700240826990</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Worked on Homework 6, made a class for homeworks.">
+      <option name="closed" value="true" />
+      <created>1700258132087</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1700258132087</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Almost done with Homework 6.">
+      <option name="closed" value="true" />
+      <created>1700283104365</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1700283104365</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1576,7 +1589,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit." />
     <MESSAGE value="Merged all the note pdfs into a singular document." />
     <MESSAGE value="Initial commit for the private repo." />
     <MESSAGE value="Updated Lecture Activity 8, simplified the .sty files to remove redundancies." />
@@ -1599,7 +1611,10 @@
     <MESSAGE value="Uploaded Templates for Lecture Activities 21 and 22." />
     <MESSAGE value="Uploading small changes made when reviewing for Exam #2." />
     <MESSAGE value="Uploaded templates for Week 12 (Lecture Activities 23 and 24, Recitation 12). Made some small changes to the format of older Recitations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Uploaded templates for Week 12 (Lecture Activities 23 and 24, Recitation 12). Made some small changes to the format of older Recitations." />
+    <MESSAGE value="Synced up the two branches." />
+    <MESSAGE value="Worked on Homework 6, made a class for homeworks." />
+    <MESSAGE value="Almost done with Homework 6." />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost done with Homework 6." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
