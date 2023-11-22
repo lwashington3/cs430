@@ -3,6 +3,7 @@
 
 % Preamble
 \documentclass[28]{cs430lecture}
+\usepackage{algpseudocode}
 
 % Packages
 
@@ -34,7 +35,7 @@ Shortest paths are always defined in a DAG, since even if there are negative-wei
 		\State topologically sort the vertices of $G$
 		\State \Call{\hyperref[alg:init-single-source]{Init-Single-Source}}{$G$, $s$}
 		\ForAll{vertex $u$, taken in topologically sorted order}
-			\State \ForAll{vertex $v\in Adj[u]$}
+			\ForAll{vertex $v\in Adj[u]$}
 				\State \Call{\hyperref[alg:relax]{Relax}}{$u$, $v$, $w$}
 			\EndFor
 		\EndFor
@@ -59,10 +60,73 @@ Shortest paths are always defined in a DAG, since even if there are negative-wei
 		\item Instead of a FIFO queue, uses a priority queue.
 		\item Keys are shortest-path weight estimates ($d[v]$).
 	\end{itemize}
+	\item Have two sets of vertices:
+	\begin{itemize}
+		\item $S=$ vertices whose final shortest-path weights are determined,
+		\item $Q=$ priority queue = $V-s$.
+	\end{itemize}
+	\item Dijkstra's algorithm can be viewed as greedy, since it always chooses the ``lightest'' (``closest'') vertex in $V-S$ to add to $S$.
 \end{itemize}
 
+\begin{algorithm}[H]
+	\caption{Dijkstra}\label{alg:dijkstra}
+	\begin{algorithmic}[1]
+	\Function{Dijkstra}{$V$, $E$, $w$, $s$}
+		\State \Call{\hyperref[alg:init-single-source]{Init-Single-Source}}{$V$, $s$}
+		\State $S\gets\emptyset$
+		\State $Q\gets V$												\Comment{i.e., insert all vertices into $Q$ by $d$ values}
+		\While{$Q$ is not empty}
+			\State $u\gets\Call{Extract-Min}{Q}$
+			\State $S\gets S \cup \{ u \}$
+			\ForAll{vertex $v\in Adj[u]$}
+				\State \Call{\hyperref[alg:relax]{Relax}}{$u$, $v$, $w$}\Comment{Possibly updates a short path estimate $d$ value and moves the vertex forward in the queue}
+			\EndFor
+		\EndWhile
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{enumerate}[start=5]
+    \item Here is a graph with non negative edges.
+	Find the shortest path from $s$ to every other vertex using Dijkstra's algorithm.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=1.5]
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node[label=left:$s$,fill=gray!80!white] (s) at (-1,0) {$0$};
+				\node[label=above:$t$] (t) at (2,2) {$\infty$};
+				\node[label=above:$x$] (x) at (6,2) {$\infty$};
+				\node[label=below:$y$] (y) at (2,-2) {$\infty$};
+				\node[label=below:$z$] (z) at (6,-2) {$\infty$};
+			\end{scope}
+			\begin{scope}[>={Stealth[black]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw,very thick}]
+				\path [->] (s) edge node {$5$} (y);
+				\path [->] (s) edge node {$10$} (t);
+
+				\path [->] (t) edge node {$1$} (x);
+
+				\path [->] (y) edge node {$2$} (z);
+				\path [->] (y) edge node {$9$} (x);
+
+				\path [->] (z) edge[near start] node {$7$} (s);
+
+				\path [->] (t) edge[bend right=12] node {$2$} (y);
+				\path [->] (y) edge[bend right=12] node {$3$} (t);
+
+				\path [->] (x) edge[bend right=12] node {$4$} (z);
+				\path [->] (z) edge[bend right=12] node {$6$} (x);
+			\end{scope}
+		\end{tikzpicture}
+		\label{fig:dijkstra-algorithm-example}
+	\end{figure}
+	\item What is the runtime for Dijkstra's algorithm?
+	\item Prove the greedy choice in Dijkstra's algorithm (pick the vertex with the smallest shortest path estimate, not including the vertices we are done with) leads to an optimal solution.
+\end{enumerate}
+
 Dijkstra's Algorithms\\
-\url{https://www.youtube.com/watch?v=wtdtkJgcYUM}
+\url{https://www.youtube.com/watch?v=wtdtkJgcYUM}\\
 \url{https://www.cs.usfca.edu/~galles/visualization/Dijkstra.html}
 %</Lecture-Activity-28>
 

@@ -39,9 +39,38 @@ A graph data structure is a set of vertices and edges between those vertices,
 and supports problems where there can be relationships between any two items (vertices).
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{23.1}
+	\begin{tikzpicture}
+		\begin{scope}[every node/.style={circle,thick,draw,fill=gray!20!white}]
+			\node (a) at (0,0) {$a$};
+			\node (b) at (3,0) {$b$};
+			\node (c) at (0,-3) {$c$};
+			\node (d) at (3,-3) {$d$};
+
+			\node (e) at (6,0) {$e$};
+			\node (f) at (9,0) {$f$};
+			\node (g) at (6,-3) {$g$};
+
+			\node (h) at (12,0) {$h$};
+			\node (i) at (12,-3) {$i$};
+
+			\node (j) at (15,0) {$j$};
+		\end{scope}
+		\begin{scope}[>={Stealth[black]},
+			every node/.style={fill=white,circle},
+			every edge/.style={draw,very thick}]
+			\path (a) edge (b);
+			\path (a) edge (c);
+			\path (b) edge (c);
+			\path (b) edge (d);
+
+			\path (e) edge (f);
+			\path (e) edge (g);
+
+			\path (h) edge (i);
+		\end{scope}
+	\end{tikzpicture}
 	\answer{\caption{$V = \{ a, b, c, d, e, f, g, h, i, j \}$, $E=\{ \{a,b\}, \{ a,c \}, \{ c,b \}, \{ b,d \}, \{ e,g \}, \{e,f\}, \{ h,i \} \}$}}
-	\label{fig:23.1}
+	\label{fig:disjoint-set}
 \end{figure}
 
 \begin{enumerate}
@@ -65,8 +94,8 @@ and supports problems where there can be relationships between any two items (ve
 \section{Linked-List Representation}\label{sec:linked-list-representation}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{23.2}
-	\label{fig:23.2}
+	\includegraphics[width=\textwidth]{23.1}
+	\label{fig:23.1}
 \end{figure}
 One simple approach is to represent a set as an unordered linked list.
 Each element contains two pointers,

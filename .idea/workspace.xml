@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Almost done with Homework 6.">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Deleted an unnecessary file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity27.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity27.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity12.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity12.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity23.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity23.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity28.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity28.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/images/10.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/images/12.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/images/23.1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/images/23.1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/images/23.2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity12.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity12.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity23.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity23.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity27.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity27.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity28.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity28.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity29.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity29.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +89,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/mnt/d/Academic/cs430/src/recitations",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -110,7 +121,7 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.Homework 7">
+  <component name="RunManager" selected="LaTeX.All Lecture Activities">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -1343,6 +1354,7 @@
       <workItem from="1700631480900" duration="20000" />
       <workItem from="1700632861444" duration="157000" />
       <workItem from="1700643981435" duration="12000" />
+      <workItem from="1700624675870" duration="4671000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1560,7 +1572,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700283104365</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Added the Lecture Activities from L.A. 27 and the beginning of 28. Updated Homework 7's format, changed the homework style to a class.">
+      <option name="closed" value="true" />
+      <created>1700624786959</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1700624786959</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Deleted an unnecessary file.">
+      <option name="closed" value="true" />
+      <created>1700624882030</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1700624882030</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1589,8 +1617,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merged all the note pdfs into a singular document." />
-    <MESSAGE value="Initial commit for the private repo." />
     <MESSAGE value="Updated Lecture Activity 8, simplified the .sty files to remove redundancies." />
     <MESSAGE value="Created template for Recitation 4." />
     <MESSAGE value="Saving progress for Homework 2. Updated the table of contents for all the lecture activities, fixed some spelling mistakes in Lecture Activity 4." />
@@ -1614,7 +1640,9 @@
     <MESSAGE value="Synced up the two branches." />
     <MESSAGE value="Worked on Homework 6, made a class for homeworks." />
     <MESSAGE value="Almost done with Homework 6." />
-    <option name="LAST_COMMIT_MESSAGE" value="Almost done with Homework 6." />
+    <MESSAGE value="Added the Lecture Activities from L.A. 27 and the beginning of 28. Updated Homework 7's format, changed the homework style to a class." />
+    <MESSAGE value="Deleted an unnecessary file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted an unnecessary file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

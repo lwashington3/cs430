@@ -3,6 +3,9 @@
 
 % Preamble
 \documentclass[29]{cs430lecture}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{algpseudocode}
 
 % Packages
 
@@ -11,6 +14,172 @@
 
 %<*Lecture-Activity-29>
 \maketitle
+
+\section{All-Pairs Shortest Paths Problem}\label{sec:all-pairs-shortest-paths-problem}
+\begin{itemize}
+	\item Given a directed graph $G=(V,E)$, weight function $w: E\rightarrow R$, $|V|=n$,
+	\item Goal: create an $n\times n$ matrix of shortest-path distances from every vertex to every other vertex $\delta(u, v)$,
+	\item Could run \Call{Bellman-Ford} once from each vertex:
+	\begin{itemize}
+		\item $O(V^{2}E)$ which is $O(V^{4})$ if the graph is dense $(E\approxeq V^{2})$.
+	\end{itemize}
+	\item If no negative-weight edges, could run \hyperref[sec:dijkstra's-shortest-path-algorithm]{Dijkstra's algorithm} once from each vertex:
+	\begin{itemize}
+		\item $O(VE\lg V)$ with binary heap--$O(V^{3}\lg V)$ if dense.
+	\end{itemize}
+	\item We'll see how to do in $O(V^{3})$ in all cases with dynamic programming
+	(we have already shown the shortest path problem has optimal substructure.)
+\end{itemize}
+
+The formal problem statement:
+\begin{itemize}
+	\item Assume that $G$ is given as an adjacency matrix of weights: $W=(w_{ij})$, with vertices numbered 1 to $n$.
+	\[ w_{ij} = \left\{ \begin{array}{ll}
+		0 & \mbox{if } i=j,\\
+		\mbox{weight of } (i,j) & \mbox{if } i\neq j, (i,j)\in E,\\
+		\infty & \mbox{if } i\neq j, (i,j)\notin E,\\
+	\end{array} \right. \]
+	\item Output is the shortest path matrix $D=(d_{ij})$, where $d_{ij}=\delta(i,j)$.
+\end{itemize}
+
+Dynamic Programming Steps
+\begin{enumerate}
+    \item Define structure of optimal solution, including what are the largest sub-problems.
+	\item Recursively define optimal solution
+	\item Compute solution using table bottom up
+	\item Construct Optimal solution
+\end{enumerate}
+
+To help us develop the first dynamic programming approach, we can restate the All-Pairs Shortest Paths problems as follow.\\
+
+Find the shortest path from every vertex to every other vertex considering at most paths of $|V|-1$ edges
+(longest simple path for $|V|$ vertices).
+
+\begin{enumerate}
+    \item Define structure of optimal solution.
+	\item Recursively define optimal solution
+\end{enumerate}
+
+\section{Slow All-Pairs Shortest Paths Algorithm}\label{sec:slow-all-pairs-shortest-paths-algorithm}
+\begin{algorithm}[H]
+	\caption{Slow All-Pairs Shortest Paths Algorithm}\label{alg:}
+	\begin{algorithmic}[1]
+	\State Compute a solution bottom-up:
+	Compute $L^{(1)}=W,$ then $L^{(2)}$ from $L^{(1)}$, etc$\dots,L^{(n-1)}$
+	\Function{Extend}{$L$, $W$, $n$}
+		\State $L'\gets$ an $n\times n$ matrix
+		\For{$i\gets1$ to $n$}
+			\For{$j\gets1$ to $n$}
+				\State $L'_{ij}\gets\infty$
+			\EndFor
+			\For{$k\gets1$ to $n$}
+				\State $L'_{ij}\gets\min(L_{ij}',\ L_{ik} + W_{kj})$
+			\EndFor
+		\EndFor
+		\State \Return $L'$
+	\EndFunction\\
+	\Function{Slow-APSP}{$W$, $n$}
+		\State $L^{(1)}\gets W$
+		\For{$m\gets 2$ to $n-1$}
+			\State $L^{(m)}\gets\Call{Extend}{L^{(m-1)},W,n}$
+		\EndFor
+		\State \Return $L^{(n-1)}$
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{enumerate}[start=3]
+    \item What is the runtime of \Call{Extend}{} and \Call{Slow-ASPS}{}?
+\end{enumerate}
+
+\section{Improving on SLOW-ASPS}\label{sec:improving-on-slow-asps}
+Note the code to multiply two $n\times n$ matrices $(AB)$ together to get $C$, an $n\times n$ matrix.
+\begin{algorithm}[H]
+	\caption{Multiply Matricies}\label{alg:multiply-matricies}
+	\begin{algorithmic}[1]
+	\Function{Multiply-Matricies}{$A$, $B$}
+		\For{$i\gets1$ to $n$}
+			\For{$j\gets1$ to $n$}
+				\State $C_{ij}\gets0$
+				\For{$j\gets1$ to $n$}
+					\State $C_{ij}\gets C_{ij} + A_{ik}B_{kj}$
+				\EndFor
+			\EndFor
+		\EndFor
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{enumerate}[start=4]
+    \item How does this matrix multiply code compare to the \Call{Extend}{} code?
+	Why do we care?
+\end{enumerate}
+
+\section{Faster All-Pairs Shortest Paths Algorithm}\label{sec:faster-all-pairs-shortest-paths-algorithm}
+\begin{algorithm}[H]
+	\caption{Faster All-Pairs Shortest Paths Algorithm}\label{alg:}
+	\begin{algorithmic}[1]
+	\State Compute a solution bottom-up:
+	Compute $L^{(1)}=W,$ then $L^{(2)}$ from $L^{(1)}$, then $L^{(4)}$ from $L^{(2)}$, etc$\dots,L^{(n-1)}$
+	\Function{Faster-APSP}{$W$, $n$}
+		\State $L^{(1)}\gets W$
+		\State $m\gets1$
+		\While{$m < n-1$}
+			\State $L^{(2m)}\gets\Call{Extend}{L^{(m)},L^{(m)},n}$
+			\State $m\gets2m$
+		\EndWhile
+		\State \Return $L^{(m)}$
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{enumerate}[start=5]
+    \item What is the runtime of \Call{Faster-ASPS}{}?
+\end{enumerate}
+
+\section{Floyd-Warshall Algorithm}\label{sec:floyd-warshall-algorithm}
+To help us develop another dynamic programming approach,
+we can state the All-Pairs Shortest Paths problem as follows:\\
+Find the shortest path from every vertex to every other vertex considering at most all other vertices intermediate on the paths.
+
+\begin{enumerate}[start=6]
+    \item Define structure of optimal solution.
+	\item Recursively define optimal solution and write pseudocode.
+	\item What is the run time of \Call{Floyd-Warshall}{}?
+	\item Demonstrate \Call{Floyd-Warshall}{}.
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[scale=1.5]
+		\begin{scope}[every node/.style={circle,thick,draw}]
+			\node (1) at (-3,-2) {1};
+			\node (2) at (0,0) {2};
+			\node (3) at (3,-2) {3};
+			\node (4) at (2,-6) {4};
+			\node (5) at (-2,-6) {5};
+		\end{scope}
+
+		\begin{scope}[>={Stealth[black]},
+			every node/.style={fill=white,circle},
+			every edge/.style={draw=black,very thick}]
+			\path [->] (1) edge node {$3$} (2);
+			\path [->] (1) edge[near end] node {$8$} (3);
+			\path [->] (1) edge node {$-4$} (5);
+
+			\path [->] (2) edge[near end] node {$1$} (4);
+			\path [->] (2) edge[near end] node {$7$} (5);
+
+			\path [->] (3) edge node {$4$} (2);
+
+			\path [->] (4) edge[near end] node {$2$} (1);
+			\path [->] (4) edge node {$-5$} (3);
+
+			\path [->] (5) edge node {$6$} (4);
+		\end{scope}
+	\end{tikzpicture}
+	\label{fig:floyd-warshall-example}
+\end{figure}
 
 %</Lecture-Activity-29>
 

@@ -133,33 +133,33 @@ from the source $s$ to $v$ be going through $u$ and taking edge $(u, v)$?
 \textbf{The algorithms differ in the order and how many times they relax each edge.}
 \begin{newanswer}
 	\begin{figure}[H]
-				\centering
-				\begin{tikzpicture}
-					\begin{scope}[every node/.style={circle,thick,draw}]
-						\node[label=left:Source] (S) at (0,0) {$0$};
-						\node[label=above:A] (A) at (2,4) {$\infty$};
-						\node[label=above:B] (B) at (8,0) {$\infty$};
-						\node[label=below:C] (C) at (2,-4) {$\infty$};
-						\node[label=below:D] (D) at (6,-4) {$\infty$};
-					\end{scope}
-					\begin{scope}[>={Stealth[black]},
-						every node/.style={fill=white,circle},
-						every edge/.style={draw=blue,very thick}]
-						\path [->] (A) edge node {$7$} (B);
-						\path [->] (B) edge node {$2$} (D);
-						\path [->] (D) edge node {$2$} (A);
+		\centering
+		\begin{tikzpicture}
+			\begin{scope}[every node/.style={circle,thick,draw}]
+				\node[label=left:Source] (S) at (0,0) {$0$};
+				\node[label=above:A] (A) at (2,4) {$\infty$};
+				\node[label=above:B] (B) at (8,0) {$\infty$};
+				\node[label=below:C] (C) at (2,-4) {$\infty$};
+				\node[label=below:D] (D) at (6,-4) {$\infty$};
+			\end{scope}
+			\begin{scope}[>={Stealth[black]},
+				every node/.style={fill=white,circle},
+				every edge/.style={draw=blue,very thick}]
+				\path [->] (A) edge node {$7$} (B);
+				\path [->] (B) edge node {$2$} (D);
+				\path [->] (D) edge node {$2$} (A);
 
-						\path [->] (D) edge node {$5$} (C);
-						\path [->] (C) edge node {$3$} (D);
+				\path [->] (D) edge node {$5$} (C);
+				\path [->] (C) edge node {$3$} (D);
 
-						\path [->] (S) edge node {$3$} (A);
+				\path [->] (S) edge node {$3$} (A);
 
-						\path [->] (S) edge[bend left=10] node {$-3$} (C);
-						\path [->] (C) edge[bend left=10] node {$4$} (S);
-					\end{scope}
-				\end{tikzpicture}
-				\label{fig:27.example}
-			\end{figure}
+				\path [->] (S) edge[bend left=10] node {$-3$} (C);
+				\path [->] (C) edge[bend left=10] node {$4$} (S);
+			\end{scope}
+		\end{tikzpicture}
+		\label{fig:27.example}
+	\end{figure}
 \end{newanswer}
 
 \section{Shortest Path Algorithm - Bellman-Ford}\label{sec:shortest-path-algorithm-bellman-ford}
