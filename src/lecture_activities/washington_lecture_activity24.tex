@@ -76,9 +76,7 @@
 				\node (5) at (0,-3) {5};
 				\end{scope}
 
-				\begin{scope}[>={Stealth[black]},
-						  every node/.style={fill=white,circle},
-						  every edge/.style={draw=black,very thick}]
+				\begin{scope}\globalpathset
 				\path (1) edge (2);
 				\path (1) edge (5);
 
@@ -104,10 +102,7 @@
 					\node (4) at (3,-3) {4};
 					\node (6) at (6,-3) {6};
 				\end{scope}
-
-				\begin{scope}[>={Stealth[black]},
-							  every node/.style={fill=white,circle},
-							  every edge/.style={draw=black,very thick}]
+				\begin{scope}\globalpathset
 					\path [->] (1) edge (2);
 					\path [->] (1) edge (5);
 

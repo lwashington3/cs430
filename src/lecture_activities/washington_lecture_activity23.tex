@@ -55,9 +55,7 @@ and supports problems where there can be relationships between any two items (ve
 
 			\node (j) at (15,0) {$j$};
 		\end{scope}
-		\begin{scope}[>={Stealth[black]},
-			every node/.style={fill=white,circle},
-			every edge/.style={draw,very thick}]
+		\begin{scope}\globalpathset
 			\path (a) edge (b);
 			\path (a) edge (c);
 			\path (b) edge (c);

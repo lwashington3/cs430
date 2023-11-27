@@ -81,9 +81,7 @@
 				\node (3) at (5,-5) {$v_{3}$};
 				\node (4) at (5,0) {$v_{4}$};
 			\end{scope}
-			\begin{scope}[>={Stealth[black]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=black,very thick}]
+			\begin{scope}\globalpathset
 				\path (1) edge node {$6$} (2);
 				\path (1) edge[near end] node {$1$} (3);
 

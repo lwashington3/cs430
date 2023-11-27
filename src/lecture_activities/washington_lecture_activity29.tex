@@ -160,9 +160,7 @@ Find the shortest path from every vertex to every other vertex considering at mo
 			\node (5) at (-2,-6) {5};
 		\end{scope}
 
-		\begin{scope}[>={Stealth[black]},
-			every node/.style={fill=white,circle},
-			every edge/.style={draw=black,very thick}]
+		\begin{scope}\globalpathset
 			\path [->] (1) edge node {$3$} (2);
 			\path [->] (1) edge[near end] node {$8$} (3);
 			\path [->] (1) edge node {$-4$} (5);

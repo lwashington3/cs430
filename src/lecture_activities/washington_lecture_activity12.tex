@@ -149,9 +149,7 @@ AN AVL tree is a special binary tree in which the difference between the height 
 				\node (c1) at (1.25,-1.25) {$c$};
 				\node (a1) at (2.75,-1.25) {$a$};
 			\end{scope}
-			\begin{scope}[>={Stealth[black]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw,very thick}]
+			\begin{scope}\globalpathset
 				\path (a) edge (b);
 				\path (b) edge (c);
 				\path (a1) edge (b1);
@@ -176,9 +174,7 @@ Perform single right rotation at $c$ (R-rotation)\\Similar idea for single left 
 				\node (a1) at (3.25,-1.25) {$a$};
 				\node (c1) at (4.75,-1.25) {$c$};
 			\end{scope}
-			\begin{scope}[>={Stealth[black]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw,very thick}]
+			\begin{scope}\globalpathset
 				\path (a) edge (c);
 				\path (c) edge (b);
 				\path (a1) edge (b1);

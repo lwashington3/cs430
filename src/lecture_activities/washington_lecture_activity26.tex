@@ -8,18 +8,17 @@
 \begin{document}
 
 %<*Lecture-Activity-26>
-\newcommand{\pathset}{
-	\colorlet{current}{.}
+%\newcommand{\extractRGB}[1]{\extractcolorspecs{#1}{\model}{\mycolor} \convertcolorspec{\model}{\mycolor}{RGB}\printcol \printcol}
+\newcommand{\pathset}{ % FIXME: For some reason, the color is reset to black anytime the figure environment is entered, so the graphs would always be black.
+	\ifinanswer%
+	\colorlet{current}{blue}%
+	\else%
+	\colorlet{current}{.}%
+	\fi%
 	\tikzset{>={Stealth[current]},
 				every node/.style={current,fill=white,circle},
-				every edge/.style={current},
+				every edge/.style={current,draw=current},
 				thickedge/.style={current,line width=2.5pt}}
-}
-\newcommand{\pathsetb}{
-	\colorlet{current}{.}
-	\tikzset{>={Stealth[current]},
-				every node/.style={current,fill=white,circle},
-				every edge/.style={current,very thick}}
 }
 \maketitle
 \openingquestions
@@ -67,7 +66,7 @@
 				\node (C) at (2.5,1) {C};
 				\node (E) at (4.25,-0.5) {E};
 			\end{scope}
-			\begin{scope}\pathsetb
+			\begin{scope}\pathset
 				\path (A) edge[bend left=60] node {$5$} (B);
 				\path (A) edge node {$3$} (C);
 				\path (A) edge node {$9$} (D);
@@ -98,7 +97,7 @@ w
 					\node (E) at (2,-1.65) {E};
 					\node (F) at (3.5,-3.5) {F};
 				\end{scope}
-				\begin{scope}\pathsetb
+				\begin{scope}\globalpathset
 					\path (A) edge node {$3$} (C);
 					\path (B) edge node {$2$} (C);
 					\path (B) edge node {$1$} (E);
@@ -122,7 +121,7 @@ w
 					\node (B) at (4,0) {B};
 					\node (F) at (3,-3.5) {F};
 				\end{scope}
-				\begin{scope}\pathsetb
+				\begin{scope}\globalpathset
 					\path (A) edge node {$9$} (D);
 					\path (B) edge node {$2$} (C);
 					\path (C) edge node {$4$} (E);
@@ -173,7 +172,7 @@ w
 
 				\node (e) at (14,0) {e};
 			\end{scope}
-			\begin{scope}\pathsetb
+			\begin{scope}\globalpathset
 				\path (a) edge node {$4$} (b);
 				\path (a) edge node {$8$} (h);
 

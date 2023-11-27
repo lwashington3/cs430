@@ -204,27 +204,38 @@ red/.style={stdNode, fill=red!80!white},
 \newcommand{\element}[2]{$#1_{#2}$}
 
 \RequirePackage{environ}
+\newboolean{inanswer}
 \NewEnviron{answer}[1][blue]{
+	\setboolean{inanswer}{true}
 	\colorlet{saved}{.}
 	\tikzset{#1,
-	every node/.style={draw=#1},
-	every path/.style={draw=#1}}
+		every node/.style={#1},
+		every path/.style={#1}}
 	\color{#1}
 	\textcolor{#1}{\BODY}
 	\color{saved}
 	\tikzset{saved,
-	every node/.style={saved},
-	every path/.style={saved}}
+		every node/.style={saved},
+		every path/.style={saved}}
+	\setboolean{inanswer}{false}
 }
 
-\newcommand{\globalnodeset}{
-	\colorlet{current}{.}
-	\tikzset{every node/.style={circle,draw=current}}
+\newcommand{\globalnodeset}[1][.]{
+	\ifinanswer%
+	\colorlet{current}{blue}%
+	\else%
+	\colorlet{current}{#1}%
+	\fi%
+	\tikzset{every node/.style={current,circle,draw}}
 }
 
-\newcommand{\globalpathset}{
-	\colorlet{current}{.}
+\newcommand{\globalpathset}[1][.]{
+	\ifinanswer%
+	\colorlet{current}{blue}%
+	\else%
+	\colorlet{current}{#1}%
+	\fi%
 	\tikzset{>={Stealth[current]},
 		every node/.style={current,fill=white,circle},
-		every edge/.style={current,very thick}}
+		every edge/.style={current,draw,very thick}}%draw=current instead of current,draw?
 }

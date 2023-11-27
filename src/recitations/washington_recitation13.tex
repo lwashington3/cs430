@@ -92,9 +92,7 @@ Practice Problems (all taken from previous exams)
 				\node[label=below:y] (y) at (6,-2) {$\infty$};
 				\node[square,label=left:Q,label=below:0,fill=lightgray] (Q) at (9,-1) {$0$};
 			\end{scope}
-			\begin{scope}[>={Stealth[black]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=black,very thick}]
+			\begin{scope}\globalpathset
 				\path (v) edge (r);
 				\path (r) edge (s);
 				\path (s) edge (w);

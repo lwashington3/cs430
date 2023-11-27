@@ -142,9 +142,7 @@ from the source $s$ to $v$ be going through $u$ and taking edge $(u, v)$?
 				\node[label=below:C] (C) at (2,-4) {$\infty$};
 				\node[label=below:D] (D) at (6,-4) {$\infty$};
 			\end{scope}
-			\begin{scope}[>={Stealth[black]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=blue,very thick}]
+			\begin{scope}\globalpathset
 				\path [->] (A) edge node {$7$} (B);
 				\path [->] (B) edge node {$2$} (D);
 				\path [->] (D) edge node {$2$} (A);
@@ -211,9 +209,7 @@ Not a greedy algorithm.
 						\node[label=below:z] (z) at (4,-4) {$\infty$};
 						\node[label=left:s] (s) at (-2,-2) {$0$};
 					\end{scope}
-					\begin{scope}[>={Stealth[black]},
-						every node/.style={fill=white,circle},
-						every edge/.style={draw=black,very thick}]
+					\begin{scope}\globalpathset
 						\path [->] (t) edge[bend left=15] node {$5$} (x);
 						\path [->] (x) edge[bend left=15] node {$-2$} (t);
 
@@ -253,9 +249,7 @@ Not a greedy algorithm.
 				\node[label=below:z] (z) at (4,-4) {$\infty$};
 				\node[label=left:s] (s) at (-2,-2) {$0$};
 			\end{scope}
-			\begin{scope}[>={Stealth[black]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=blue,very thick}]
+			\begin{scope}\globalpathset
 				\path [->] (t) edge[bend left=15] node {$5$} (x);
 				\path [->] (x) edge[bend left=15] node {$-2$} (t);
 

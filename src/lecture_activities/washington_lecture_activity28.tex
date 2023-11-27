@@ -56,15 +56,13 @@ Shortest paths are always defined in a DAG, since even if there are negative-wei
 		\begin{figure}[H]
 			\centering
 			\begin{tikzpicture}[scale=1.5]
-				\begin{scope}
+				\begin{scope}\globalnodeset
 					\node[label=left:Source] (s) at (0,0) {$0$};
 					\node (t) at (2,2) {$\infty$};
 					\node (x) at (2,0) {$\infty$};
 					\node (z) at (2,-2) {$\infty$};
 				\end{scope}
-				\begin{scope}[>={stealth},
-					every node/.style={fill=white,circle},
-					every edge/.style={draw,very thick}]
+				\begin{scope}\globalpathset
 					\path [->] (s) edge node {$3$} (t);
 					\path [->] (s) edge node {$4$} (x);
 					\path [->] (s) edge node {$5$} (z);
@@ -124,9 +122,7 @@ Shortest paths are always defined in a DAG, since even if there are negative-wei
 				\node[label=below:$y$] (y) at (2,-2) {$\infty$};
 				\node[label=below:$z$] (z) at (6,-2) {$\infty$};
 			\end{scope}
-			\begin{scope}[>={Stealth[black]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw,very thick}]
+			\begin{scope}\globalpathset
 				\path [->] (s) edge node {$5$} (y);
 				\path [->] (s) edge node {$10$} (t);
 

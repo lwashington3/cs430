@@ -206,9 +206,7 @@ It is possible to test the strong connectivity of a graph, or to find its strong
 				\node (H) at (9,-3) {H};
 			\end{scope}
 
-			\begin{scope}[>={Stealth[black]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=black,very thick}]
+			\begin{scope}\globalpathset
 				\path [->] (A) edge (B);
 
 				\path [->] (B) edge (C);
