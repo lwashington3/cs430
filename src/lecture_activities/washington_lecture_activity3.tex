@@ -22,14 +22,14 @@ If there exists $C$, $n_{0}$ such that $0 \leq f(n) \leq CG(n)$ when $n \geq n_{
 \begin{enumerate}[label=]
 	\item
     \begin{enumerate}[label=\arabic{enumi}\alph*.]
-        \item Use the definition of big-O to show $2n^{2}$ is big-O $n^{3}$ (find a C and $n_{0}$ that works in the above) \answer{\begin{equation*}
+        \item Use the definition of big-O to show $2n^{2}$ is big-O $n^{3}$ (find a C and $n_{0}$ that works in the above) \oldanswer{\begin{equation*}
         \begin{aligned}
         	f(n)&<cg(n)\\
         	2n^{2}&\leq cn^{3}\mbox{ when }n>n_{0} (n>1) \mbox{ is } 2n^{2}<cn^{3}\\
 			2(2^{2}) &\leq c(2^{3})	% TODO: Get the rest of this
         \end{aligned}
         \end{equation*}}
-		\item Use the definition of big-O to show $T(n)=3n^{3}-4n^{2}+3\lg n-n=O(n^3)$ \answer{\begin{equation*}
+		\item Use the definition of big-O to show $T(n)=3n^{3}-4n^{2}+3\lg n-n=O(n^3)$ \oldanswer{\begin{equation*}
 		\begin{aligned}
 			0 &< 3n^{3}-4n^{2}+3\lg n-n < cn^{3}(\mbox{ find } c>0 \mbox{ and } n_{0}>0 \mbox{ such that } n>n_{0})\\
 			3n^{3}-4n^{2}+3\lg n-n ?&< 3n^{3}\\
@@ -47,7 +47,7 @@ $g(n)=\Omega(g(n))\\
 c?\mbox{~~~~~~~~~}n_{0} < n$
 
 \begin{enumerate}[label=\arabic*., start=2]
-    \item Use the definition of omega to show $n^{\frac{1}{2}}=\Omega(\log n)$ \answer{\begin{equation*}
+    \item Use the definition of omega to show $n^{\frac{1}{2}}=\Omega(\log n)$ \oldanswer{\begin{equation*}
     \begin{aligned}
 		n > n_{0}, c > 0\\
     	c\lg(n) &\leq n^{\frac{1}{2}}\\
@@ -69,7 +69,7 @@ c_{1}?<c_{2}?$
 
 \begin{enumerate}[label=,start=3]
     \item \begin{enumerate}[label=\arabic{enumi}\alph*.]
-        \item Use the definition of theta to show $3n^{3}-4n^{2}+37n=\theta(n^{3})$ \answer{\begin{equation*}
+        \item Use the definition of theta to show $3n^{3}-4n^{2}+37n=\theta(n^{3})$ \oldanswer{\begin{equation*}
         \begin{aligned}
         	c_{1}n^{3} &\leq 3n^{3}-4n^{2}+37n &\leq c_{2}n^{3}\\
         	2n^{3} &?\leq 3n^{3}-4n^{2}+37n \\
@@ -82,7 +82,7 @@ c_{1}?<c_{2}?$
 			c_{1}=2, n_{1}=0, c_{2}=3, n_{2}=10
         \end{aligned}
         \end{equation*}}
-        \item Use the definition of theta to show $n^{2}+3n^{3}=\theta(n^{3})$ \answer{\begin{equation*}
+        \item Use the definition of theta to show $n^{2}+3n^{3}=\theta(n^{3})$ \oldanswer{\begin{equation*}
         \begin{aligned}
         	c_{1}n^{3} &\leq n^{2}+3n^{3} &\leq c_{2}n^{3}\\
         	c_{1}n &\leq 1+3n \leq& c_{2}n\\
@@ -97,7 +97,7 @@ c_{1}?<c_{2}?$
 	\item divide and conquer (and combine) approach, recursive algorithm
 	\item key idea: you can merge sorted lists of total length $n$ in $\theta(n)$ linear time
 	\item base case: a list of length one element is sorted
-	\answer{\item For all sorting algorithms, the base case is $n=1$.}
+	\oldanswer{\item For all sorting algorithms, the base case is $n=1$.}
 \end{itemize}
 
 \begin{enumerate}[label=\arabic*.]

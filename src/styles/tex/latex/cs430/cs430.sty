@@ -20,7 +20,7 @@
 
 \RequirePackage[x11names]{xcolor}
 \definecolor{url-blue}{RGB}{0, 0, 238}
-\newcommand{\answer}[1]{\begin{newanswer}#1\end{newanswer}}
+\newcommand{\oldanswer}[1]{\begin{answer}#1\end{answer}}
 \newcommand{\correction}[1]{\textcolor{red}{#1}}
 \newcommand{\notes}[1]{\textcolor{red}{#1}}
 
@@ -204,9 +204,27 @@ red/.style={stdNode, fill=red!80!white},
 \newcommand{\element}[2]{$#1_{#2}$}
 
 \RequirePackage{environ}
-\NewEnviron{newanswer}{
+\NewEnviron{answer}[1][blue]{
 	\colorlet{saved}{.}
-	\color{blue}
-	\BODY
+	\tikzset{#1,
+	every node/.style={draw=#1},
+	every path/.style={draw=#1}}
+	\color{#1}
+	\textcolor{#1}{\BODY}
 	\color{saved}
+	\tikzset{saved,
+	every node/.style={saved},
+	every path/.style={saved}}
+}
+
+\newcommand{\globalnodeset}{
+	\colorlet{current}{.}
+	\tikzset{every node/.style={circle,draw=current}}
+}
+
+\newcommand{\globalpathset}{
+	\colorlet{current}{.}
+	\tikzset{>={Stealth[current]},
+		every node/.style={current,fill=white,circle},
+		every edge/.style={current,very thick}}
 }

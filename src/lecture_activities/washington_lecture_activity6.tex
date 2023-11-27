@@ -14,15 +14,15 @@
 \maketitle
 \openingquestions
 \begin{enumerate}[label=\arabic*.]
-    \item Mergesort is $\Theta(O(n\lg n))$ runtime in best case, worst case and average case. How much memory is needed for Mergesort on input size $n$? \answer{$O(n)$}
-	\item Mergesort does all the work of sorting items in the Merge function, after recursively splitting the collection down to the base case. Briefly explain the difference with Quicksort. \answer{All the work for Mergesort is being done after the recursive calls, where as Quicksort does the work before the recursive calls.}
+    \item Mergesort is $\Theta(O(n\lg n))$ runtime in best case, worst case and average case. How much memory is needed for Mergesort on input size $n$? \oldanswer{$O(n)$}
+	\item Mergesort does all the work of sorting items in the Merge function, after recursively splitting the collection down to the base case. Briefly explain the difference with Quicksort. \oldanswer{All the work for Mergesort is being done after the recursive calls, where as Quicksort does the work before the recursive calls.}
 \end{enumerate}
 
 \section{Quicksort}\label{sec:quicksort}
 \noindent A recursive divide and conquer algorithm.
 \begin{itemize}
 	\item base case: a list of length one element is sorted.
-	\item Divide ``Partition'' array into 2 sub-arrays with small \#'s in the beginning, large \#'s in second and known index dividing them \answer{What defines small and large? The dividing index may not be the middle.}
+	\item Divide ``Partition'' array into 2 sub-arrays with small \#'s in the beginning, large \#'s in second and known index dividing them \oldanswer{What defines small and large? The dividing index may not be the middle.}
 	\item Conquer - recursively sort each sub-array
 	\item Combine - Nothing to do
 \end{itemize}
@@ -95,7 +95,7 @@
 					 &= \log_{\frac{10}{9}}(n)\\
 					 &= O(n\lg n)
     	\end{aligned}
-    	\end{equation*} \answer{As long as the split is some sort of ratio, you get $O(n\lg n)$ as the runtime for quicksort. Only in the rare case of all the data being on one side of the partition that gives $O(n^{2})$ as the partition. To fix this, pick 3 items randomly, chose the middle of those 3, swap that middle with the last index and you'll be guaranteed to have $O(n\lg n)$.}\begin{algorithm}[H]
+    	\end{equation*} \oldanswer{As long as the split is some sort of ratio, you get $O(n\lg n)$ as the runtime for quicksort. Only in the rare case of all the data being on one side of the partition that gives $O(n^{2})$ as the partition. To fix this, pick 3 items randomly, chose the middle of those 3, swap that middle with the last index and you'll be guaranteed to have $O(n\lg n)$.}\begin{algorithm}[H]
     		\caption{Partition Improved}\label{alg:partition-improved}
     		\begin{algorithmic}[1]
     		\Function{PartitionI}{A,p,r}

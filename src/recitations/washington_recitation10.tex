@@ -18,12 +18,12 @@ Practice Problems (all taken from previous exams)
 	\begin{enumerate}
 	    \item Breaking items into fractions.
 		\item Adding items into the knapsack.
-		\item \answer{Sorting.}
+		\item \oldanswer{Sorting.}
 		\item Looping through sorted items.
 	\end{enumerate}
 	\item How many bits are needed for fixed length encoding if the size of the character set is $X$?
 	\begin{enumerate}
-	    \item \answer{$\lg X$}
+	    \item \oldanswer{$\lg X$}
 		\item $X+1$
 		\item $2X$
 		\item $X^{2}$
@@ -31,7 +31,7 @@ Practice Problems (all taken from previous exams)
 	\item The characters $a$ to $h$ have the set of frequencies based on the first 8 Fibonacci numbers as follows: $a$: 1, $b$: 1, $c$: 2, $d$: 3, $e$: 5, $f$: 8, $g$: 13, $h$: 21 \\
 	A Huffman code is used to represent the characters. What is the sequence of characters corresponding to the following code? $110111100111010$
 	\begin{enumerate}
-	    \item \answer{$fdheg$}
+	    \item \oldanswer{$fdheg$}
 		\item $ecgdf$
 		\item $dchfg$
 		\item $fehdg$
@@ -45,14 +45,14 @@ Practice Problems (all taken from previous exams)
 	\end{enumerate}
 	\item A pharmacist has $W$ pills and $n$ empty bottles. Let $\{ p_{1}, p_{2}, p_{3}, \dots, p_{n} \}$ denote the number of pills that each bottle can hold. Describe a greedy algorithm, which, given $W$ and $\{ p_{1}, p_{2}, p_{3}, \dots, p_{n} \}$, determine the fewest number of bottles needed to store pills. Prove that your algorithm is correct.
 	\item How would you modify your pills to bottles algorithm if each bottle also has an associated cost $c_{i}$, and you want to minimize the total cost used to store all the pills. Give a recursive formulation of the problem.
-	\answer{We want to find the minimum cost obtainable when storing $j$ pills using bottles chosen from the set bottle $1$ through bottle $i$. This occurs either with or without bottle $i$.}
+	\oldanswer{We want to find the minimum cost obtainable when storing $j$ pills using bottles chosen from the set bottle $1$ through bottle $i$. This occurs either with or without bottle $i$.}
 	\item You are to maintain a collection of items and support the following operations.
 	\begin{enumerate}[label=(\roman*)]
 	    \item \Call{insert}{item, list}: insert item into list (cost = 1)
 		\item \Call{sum}{list}: sum the items in list, and replace the list with a list containing one items that is the sum (cost = length of list)
 	\end{enumerate}
 	Use the Accounting Method to show that the amortized cost of an insert operation is $O(1)$ and the amortized cost of a sum operation is $O(1)$.
-	\answer{We will maintain the invariant that every item has one credit. \Call{insert}{} gets 2 credits, which covers one for the actual cost and one to satisfy the invariant. \Call{sum}{} gets one credit, because the actual cost of summing is covered by the credits in the list, but then the result of the sum will need one credit to maintain the invariant. A common error was not putting a credit on the newly created sum.}
+	\oldanswer{We will maintain the invariant that every item has one credit. \Call{insert}{} gets 2 credits, which covers one for the actual cost and one to satisfy the invariant. \Call{sum}{} gets one credit, because the actual cost of summing is covered by the credits in the list, but then the result of the sum will need one credit to maintain the invariant. A common error was not putting a credit on the newly created sum.}
 \end{enumerate}
 %</Recitation-10>
 

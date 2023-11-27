@@ -18,20 +18,20 @@ Practice Problems (all taken from previous exams)
 	\begin{enumerate}[label=\alph*)]
 	    \item $\log_{4}(n)$
 	    \item $\log_{2}(n)$
-	    \item \answer{$\log_{\frac{4}{3}}(n)$}
+	    \item \oldanswer{$\log_{\frac{4}{3}}(n)$}
 	    \item $\log_{\frac{1}{3}}(n)$
 	\end{enumerate}
 	\item Under what case of Master's Theorem will the recurrence relation of binary search fail?
 	\begin{enumerate}[label=\choicelabel]
 	    \item 1
-		\item \answer{2}
+		\item \oldanswer{2}
 		\item 3
 		\item It cannot be solved using Master's Theorem.
 	\end{enumerate}
 	\item What is the purpose of using randomized quick sort over standard quick sort?
 	\begin{enumerate}[label=\choicelabel]
 	    \item Improve the worst-case runtime
-		\item \answer{To eliminate the possibility that a particular input order will always yied worst-case runtime}
+		\item \oldanswer{To eliminate the possibility that a particular input order will always yied worst-case runtime}
 		\item To improve accuracy of output
 		\item To improve average case time complexity
 	\end{enumerate}
@@ -44,7 +44,7 @@ Practice Problems (all taken from previous exams)
 	\end{enumerate}
 	\item Give big-O bounds of T(n) in each of the following recurrences. Use induction, iteration or Master Theorem.
 	\begin{enumerate}[label=\arabic{enumi}\choicelabel]
-	    \item \[ T(n) = T(n-1) + n\mbox{;  }T(1)=O(1) \]\answer{\begin{equation*}
+	    \item \[ T(n) = T(n-1) + n\mbox{;  }T(1)=O(1) \]\oldanswer{\begin{equation*}
 	    \begin{aligned}
 	    	T(n) &= n + T(n-1)\\
 	    	T(n) &= n + n-1 + T(n-2)\\
@@ -65,14 +65,14 @@ Practice Problems (all taken from previous exams)
 		\item An array is passed by copying. Time = $\theta(N)$, where $N$ is the size of the array.
 		\item An array is passed by copying only the subrange that might be accessed by the called procedure. Time = $\theta(q - p + 1)$ if the subarray $A[p \dots q]$ is passed. Use $n= q - p + 1$, where $n$ is the size of the subarray passed.
 	\end{enumerate}
-	Consider the recursive binary search algorithm for finding a number in a sorted array. Give recurrences for the worst-case running times of binary search when arrays are passed using each of the three methods above, and give good upper bounds on the solutions of the recurrences. Let $N$ be the size of the original problem and n be the size of a subproblem. \answer{ Binary search works by comparing the element for which you are searching to the elemenet at index $\frac{p-r}{2}$ of a subarray of size $n$, where $p$ is the first index of the subarray and $r$ is the last index (integer division is used). Therefore, the array passed inot binary search is continually divided in hald.}
-	\answer{\begin{enumerate}[label=\arabic*)]
+	Consider the recursive binary search algorithm for finding a number in a sorted array. Give recurrences for the worst-case running times of binary search when arrays are passed using each of the three methods above, and give good upper bounds on the solutions of the recurrences. Let $N$ be the size of the original problem and n be the size of a subproblem. \oldanswer{ Binary search works by comparing the element for which you are searching to the elemenet at index $\frac{p-r}{2}$ of a subarray of size $n$, where $p$ is the first index of the subarray and $r$ is the last index (integer division is used). Therefore, the array passed inot binary search is continually divided in hald.}
+	\oldanswer{\begin{enumerate}[label=\arabic*)]
 	    \item \[ T(n) = T\left( \frac{n}{2} \right) + O(1)\mbox{ with } T(1) = O(1) \] The array is passed by pointer, which is constant time. Therefore, the time involved in tha
 		\item
 	\end{enumerate}}
-	\item Use the definition of $\Theta$ and induction to prove that the recurrence $T(n) = T(N-1) + \theta(n)$ (worst case Quicksort) has the solution $T(n) = \Theta(n^{2})$. \answer{Since we are not given any boundary conditions, we cann assume the basis step for the inductive proof. Assume the claim is true for $n=k$.\\$T(k) = \theta(k^{2})$, in other words assume $c_{1}k^{2} \leq T(k) \leq c_{2}k^{2}$ for some $c_{1} > 0$, $c_{2} > 0$ and $k$ large enough.\\Use that to prove the claim}
+	\item Use the definition of $\Theta$ and induction to prove that the recurrence $T(n) = T(N-1) + \theta(n)$ (worst case Quicksort) has the solution $T(n) = \Theta(n^{2})$. \oldanswer{Since we are not given any boundary conditions, we cann assume the basis step for the inductive proof. Assume the claim is true for $n=k$.\\$T(k) = \theta(k^{2})$, in other words assume $c_{1}k^{2} \leq T(k) \leq c_{2}k^{2}$ for some $c_{1} > 0$, $c_{2} > 0$ and $k$ large enough.\\Use that to prove the claim}
 	\item What is you are sorting a collection of data that can have multiple entries of some of the values. When calling Quicksort's \Call{Partition}{$A$, $p$, $r$}, where do elements equal to the pivot end up and why?\\
-		How could we modify Quicksort and Partition (write pseudocode) so that if we happen to partition on a pivot that had many duplicate values, we can improve the runtime of Quicksort by having smaller recursive calls?\answer{\begin{algorithm}[H]
+		How could we modify Quicksort and Partition (write pseudocode) so that if we happen to partition on a pivot that had many duplicate values, we can improve the runtime of Quicksort by having smaller recursive calls?\oldanswer{\begin{algorithm}[H]
 					\caption{Quicksort1}\label{alg:quicksort1}
 					\begin{algorithmic}[1]
 					\Function{Quicksort1}{$A,p,r$}\Comment{}

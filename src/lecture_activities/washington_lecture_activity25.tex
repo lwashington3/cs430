@@ -18,16 +18,16 @@
 \begin{enumerate}
     \item What is the runtime of breadth first search
 	(if you restart the search from a new source if everything was not visited from the first source)?
-	\answer{$O(|V|+|E|)$.
+	\oldanswer{$O(|V|+|E|)$.
 	Use a queue for all vertices that haven't been visited.
 	Keep track of $d$-distance to edges and $\pi$-precescessor of which edge got us there.}
 	\item Does a breadth-first search always reach all vertices?
-	\answer{No.}
+	\oldanswer{No.}
 	\item How can you use a breadth-first search to find the shortest path (minimum number of edges) from a given source vertex to all other vertices?
-	\answer{Use the $d$ variable which holds the distance to edges from the source.}
+	\oldanswer{Use the $d$ variable which holds the distance to edges from the source.}
 	\item If you look at the predecessor edges which were used to connect to an unvisited vertex, what do these predecessor edges form?
 	Is it unique for a graph?
-	\answer{They yield a breadth-first tree.}
+	\oldanswer{They yield a breadth-first tree.}
 \end{enumerate}
 
 \section{Depth-First Search}\label{sec:depth-first-search}
@@ -89,7 +89,7 @@ and label a vertex with how its predecessor vertex was during the traversal.
 	\end{minipage}
 	\item What is the runtime for \emph{depth}-first search
 	(if you restart the search from a new source if everything was not visited from the first source)?
-	\answer{$O(|V|+|E|)$, each edge and vertex is checked once before it's not allowed to be re-run again.}
+	\oldanswer{$O(|V|+|E|)$, each edge and vertex is checked once before it's not allowed to be re-run again.}
 \end{enumerate}
 
 Another interesting property of depth-first search is that the search can be used to classify the edges of graph $G$ based on how they are traversed.
@@ -106,13 +106,13 @@ Another interesting property of depth-first search is that the search can be use
 \begin{enumerate}[start=3]
     \item If a graph has no back edges when completing a depth-first search,
 	what does that tell us about the graph?
-	\answer{The graph has no cycles, which means it's acyclic.}
+	\oldanswer{The graph has no cycles, which means it's acyclic.}
 \end{enumerate}
 
 Demo of BFS/DFS: \url{https://www3.cs.stonybrook.edu/~skiena/combinatorica/animations/search.html}
 
 \section[Topological Sort]{Topological Sort (a DFS application)}\label{sec:topological-sort}%
-\answer{Dependency order}
+\oldanswer{Dependency order}
 \begin{itemize}
 	\item A topological sort of a directed acyclic graph\label{dfn:dag}\footnote{sometimes known as a dag}%
 	, $G=(V,E)$ is a linear ordering of all its vertices such that if $G$ contains an edge $(u,v)$, then $u$ appears before $v$ in the ordering.
@@ -156,7 +156,7 @@ Demo of BFS/DFS: \url{https://www3.cs.stonybrook.edu/~skiena/combinatorica/anima
 	\end{table}
 	\item Why does the topological sort work?
 	What is its runtime?
-	\answer{We're doing a depth-first traversal, so any time there's a dependency, we access the dependency before the item that depends on it.
+	\oldanswer{We're doing a depth-first traversal, so any time there's a dependency, we access the dependency before the item that depends on it.
 	$O(|V|+|E|)$.}
 \end{enumerate}
 
@@ -178,12 +178,12 @@ It is possible to test the strong connectivity of a graph, or to find its strong
 		\Function{Strongly-Connected-Components}{$G$}
 			\State Call \Call{DFS}{$G$} to compute finishing times $f[u]$ for each vertex $u$%
 			\footnote{Restart if necessary.}
-			\answer{$O(|V|+|E|)$}.
+			\oldanswer{$O(|V|+|E|)$}.
 			\State Compute $G^{T}$ (the transpose of the graph)%
 			\footnote{Same vertices, edges reversed.}
-			\answer{$O(|E|$)}.
+			\oldanswer{$O(|E|$)}.
 			\State Call \Call{DFS}{$G^{T}$}, but in the main loop of \Call{DFS}{}, consider the vertices in order of decreasing $f[u]$ (as computed in line 1)
-			\answer{$O(|V|+|E|)$}.
+			\oldanswer{$O(|V|+|E|)$}.
 			\State Output the vertices of each tree in the depth-first forest formed in line 3 as a separate strongly connected component.
 		\EndFunction
 		\end{algorithmic}
@@ -235,7 +235,7 @@ It is possible to test the strong connectivity of a graph, or to find its strong
 		\label{fig:25.3}
 	\end{figure}
 	\item Discuss: $G$ and $G^{T}$ will have the same strongly connected components.
-	\answer{Yes, they must have the same connected components.
+	\oldanswer{Yes, they must have the same connected components.
 	They will have the same edges and cycles, they're just traveled in the opposite order.}
 	\item Discuss: The component with the latest finish time vertex will have no edges in the transpose to any other component.
 \end{enumerate}

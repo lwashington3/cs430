@@ -18,8 +18,8 @@
          level distance=1cm}
 \openingquestions
 \begin{enumerate}
-    \item What is the main problem with Binary Search Trees that Red-Black Trees correct? Explain briefly (2--3 sentences) how Red-Black Trees correct this problem with Binary Search Trees. \answer{The biggest problem is that the tree may be a straight line that would cause the height to be $O(n)$. Red-Black trees maintain this balance by keeping track of the colors and allows the tree to be better balanced using a \hyperref[dfn:red-black-tree-properties]{specific set of rules}.}
-	\item For the balanced binary search trees, why is it important that we can show that a rotation at a node is $O(1)$ (i.e. not dependent on the size of the BST) \answer{We want to make fixes that are not dependent on the size of a binary tree.}
+    \item What is the main problem with Binary Search Trees that Red-Black Trees correct? Explain briefly (2--3 sentences) how Red-Black Trees correct this problem with Binary Search Trees. \oldanswer{The biggest problem is that the tree may be a straight line that would cause the height to be $O(n)$. Red-Black trees maintain this balance by keeping track of the colors and allows the tree to be better balanced using a \hyperref[dfn:red-black-tree-properties]{specific set of rules}.}
+	\item For the balanced binary search trees, why is it important that we can show that a rotation at a node is $O(1)$ (i.e. not dependent on the size of the BST) \oldanswer{We want to make fixes that are not dependent on the size of a binary tree.}
 \end{enumerate}
 
 \section{Red-Black Trees}\label{sec:red-black-trees}
@@ -32,7 +32,7 @@ Red-Black Properties
 	\item\label{itm:red-black-tree-property5} For each node, all paths from the node to descendant leaves contain the same number of black nodes (\hyperref[dfn:black-height]{black height})
 \end{enumerate}
 
-\answer{
+\oldanswer{
 	\begin{tikzpicture}
 		\Tree
 		[.\node{ $5$ };
@@ -56,12 +56,12 @@ Red-Black Properties
 		\end{tikzpicture}}\\
 
 black-height of a node\label{dfn:black-height} $bh(x)$ -- The number of black nodes on any path from, but not including, a node $x$ down to a null black leaf node.
-\answer{(Black height counts black nodes including null leaves, height doesn't count null nodes.)}
+\oldanswer{(Black height counts black nodes including null leaves, height doesn't count null nodes.)}
 \begin{enumerate}
-    \item If a node $x$ has $bh(x)=3$, what is its largest and smallest possible height (distance to the farthest leaf) in the BST? \answer{2--5}
-	\item Prove using induction and red-black tree properties. A red-black tree with $n$ internal nodes \answer{(nodes with values), none null nodes} ($n$ key values) has height at most $2\lg(n+1)$
+    \item If a node $x$ has $bh(x)=3$, what is its largest and smallest possible height (distance to the farthest leaf) in the BST? \oldanswer{2--5}
+	\item Prove using induction and red-black tree properties. A red-black tree with $n$ internal nodes \oldanswer{(nodes with values), none null nodes} ($n$ key values) has height at most $2\lg(n+1)$
 	\begin{enumerate}[label=Part \Alph*)]
-	    \item\label{prb:2a} First show the sub-tree rooted at node $x$ has at least $2^{bh(x)}-1$ internal nodes. Use induction. \answer{Relating the black height of a node to how many values at least must be in that subtree.\\
+	    \item\label{prb:2a} First show the sub-tree rooted at node $x$ has at least $2^{bh(x)}-1$ internal nodes. Use induction. \oldanswer{Relating the black height of a node to how many values at least must be in that subtree.\\
 		\textbf{Base Case}: $bh(x)=0$  \\\tikzset{every tree node/.style={minimum width=2em,draw,circle},
          blank/.style={draw=none},
          edge from parent/.style=
@@ -86,7 +86,7 @@ black-height of a node\label{dfn:black-height} $bh(x)$ -- The number of black no
 		\end{equation*}
 		}
 		\item Let $h$ be height of a Red-Black Tree, by \hyperref[itm:red-black-tree-property4]{property four}, at least half of the nodes on path from root to leaf are black \[ bh(root) \geq \frac{h}{2} \]
-		Use that and \hyperref[prb:2a]{Part A} to show \[ h \leq 2\log(n+1) \] \answer{$bh(root)=k$ at least $2^{k}-1$.
+		Use that and \hyperref[prb:2a]{Part A} to show \[ h \leq 2\log(n+1) \] \oldanswer{$bh(root)=k$ at least $2^{k}-1$.
 			\begin{equation*}
 		\begin{aligned}
 			2^{bh(root)} - 1 &\leq n\\
@@ -100,14 +100,14 @@ black-height of a node\label{dfn:black-height} $bh(x)$ -- The number of black no
 	\end{enumerate}
 	\item Which BST operations change for a red-black tree and which do not change? What do the operations that change need to be aware of and why?
 	\begin{itemize}
-		\item Search -- \answer{Won't change, you'd ignore the colors}
-		\item \hyperref[alg:bst-insert]{Insert} -- \answer{Update}
-		\item \hyperref[alg:bst-delete]{Delete} -- \answer{Update}
-		\item Predecessor -- \answer{Won't change}
-		\item \hyperref[alg:bst-successor]{Successor} -- \answer{Won't change} % TODO: Check if he said the runtime changes or the code changes
-		\item Minimum -- \answer{Won't change}
-		\item \hyperref[alg:extractmax]{Maximum} -- \answer{Won't change}
-		\item \hyperref[alg:bst-left-rotate]{Rotations} -- \answer{Update}
+		\item Search -- \oldanswer{Won't change, you'd ignore the colors}
+		\item \hyperref[alg:bst-insert]{Insert} -- \oldanswer{Update}
+		\item \hyperref[alg:bst-delete]{Delete} -- \oldanswer{Update}
+		\item Predecessor -- \oldanswer{Won't change}
+		\item \hyperref[alg:bst-successor]{Successor} -- \oldanswer{Won't change} % TODO: Check if he said the runtime changes or the code changes
+		\item Minimum -- \oldanswer{Won't change}
+		\item \hyperref[alg:extractmax]{Maximum} -- \oldanswer{Won't change}
+		\item \hyperref[alg:bst-left-rotate]{Rotations} -- \oldanswer{Update}
 	\end{itemize}
 \end{enumerate}
 

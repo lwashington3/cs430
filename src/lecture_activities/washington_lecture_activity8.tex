@@ -13,7 +13,7 @@
 \maketitle
 \openingquestions
 \begin{itemize}
-	\item If we have 17 distinct items to sort, what is the height of the decision tree that represents all possible orderings of the 17 items? \answer{The height of the decision tree is $\lceil \log_{2}(17!) \rceil = \lceil 48.337603311133 \rceil = 49$ and the possible orderings of the 17 items is $17!$. However, $\log_{2}(n!) = \theta(n\lg n)$.}
+	\item If we have 17 distinct items to sort, what is the height of the decision tree that represents all possible orderings of the 17 items? \oldanswer{The height of the decision tree is $\lceil \log_{2}(17!) \rceil = \lceil 48.337603311133 \rceil = 49$ and the possible orderings of the 17 items is $17!$. However, $\log_{2}(n!) = \theta(n\lg n)$.}
 \end{itemize}
 
 \section{Comparison Sorts}\label{sec:comparison-sorts}
@@ -32,7 +32,7 @@ The sorted order they determine is based only on comparisons between the input e
 \noindent Each internal node is labeled by indices of array elements \textbf{from their original positions}. Each leaf is labeled by the permutation of orders that the algorithm determines.
 
 \begin{enumerate}[label=\arabic*.]
-    \item How many possible permutations of $n$ items are there (at least one of them must be sorted)? In the decision tree model, how many leaves are there for $n$ items? For a binary tree to have that many leaves, how many levels does it need? Why do we care about how many levels are in the decision tree? \answer{There are n! possible permutations. A binary tree would have $2^{\mbox{height}}$ levels.}
+    \item How many possible permutations of $n$ items are there (at least one of them must be sorted)? In the decision tree model, how many leaves are there for $n$ items? For a binary tree to have that many leaves, how many levels does it need? Why do we care about how many levels are in the decision tree? \oldanswer{There are n! possible permutations. A binary tree would have $2^{\mbox{height}}$ levels.}
 \end{enumerate}
 
 \section{Linear Time Sorting -- Counting Sort}\label{sec:linear-time-sorting-counting-sort}
@@ -52,7 +52,7 @@ If we do not use comparison of keys to sort data, how can we sort data? It seems
 
 
 \begin{enumerate}[label=\arabic*., start=2]
-    \item Write pseudocode for counting sort. \answer{\begin{algorithm}[H]
+    \item Write pseudocode for counting sort. \oldanswer{\begin{algorithm}[H]
     	\caption{Counting Sort}\label{alg:counting-sort}
     	\begin{algorithmic}[1]
     	\Function{CountingSort}{$A$}\Comment{$A$=original array, $B$=size-$k$ counters, $C$=size-$n$ sorted data}
@@ -102,7 +102,7 @@ If we do not use comparison of keys to sort data, how can we sort data? It seems
 		\end{tabular}
 		\begin{tablenotes}
 			\small
-			\item \answer{Each $O(k)$ where $k$ is $0\rightarrow 9$. This makes the overall $O=O(n + \mbox{digits}*k)=O(n + 10k)$, but k is insignificant to $n$, so it's essentially $O(n)$.}
+			\item \oldanswer{Each $O(k)$ where $k$ is $0\rightarrow 9$. This makes the overall $O=O(n + \mbox{digits}*k)=O(n + 10k)$, but k is insignificant to $n$, so it's essentially $O(n)$.}
 		\end{tablenotes}
 	\end{threeparttable}
 \end{table}
@@ -112,11 +112,11 @@ If we do not use comparison of keys to sort data, how can we sort data? It seems
 \begin{enumerate}[label=\arabic*., start=4]
     \item Which of these sorts can be stable:
 	\begin{itemize}
-		\item \answer{Insertion Sort}
-		\item \textcolor{red}{Selection Sort} $\leftarrow$ \answer{you could potentially jump an item passed its duplicate}
-		\item \answer{Bubble Sort}
-		\item {Merge Sort} $\leftarrow$ \answer{depends on the merge}
-		\item \textcolor{red}{Quick Sort} $\leftarrow$ \answer{the paritioning might not be stable and an item can be jumped passed its duplicate.}
+		\item \oldanswer{Insertion Sort}
+		\item \textcolor{red}{Selection Sort} $\leftarrow$ \oldanswer{you could potentially jump an item passed its duplicate}
+		\item \oldanswer{Bubble Sort}
+		\item {Merge Sort} $\leftarrow$ \oldanswer{depends on the merge}
+		\item \textcolor{red}{Quick Sort} $\leftarrow$ \oldanswer{the paritioning might not be stable and an item can be jumped passed its duplicate.}
 		\item \textcolor{red}{Heap Sort}
 	\end{itemize}
 \end{enumerate}

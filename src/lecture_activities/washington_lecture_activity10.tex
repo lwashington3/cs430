@@ -35,8 +35,8 @@
 			\end{tikzpicture}}
 \openingquestions
 \begin{enumerate}[label=\arabic*.]
-    \item In your own words explain how you insert a new key in a binary search tree. \answer{When you have a value, you compare the value you're inserting to the value in the node. If the inserting value is less than the value, you recursively call the Insert function with the left node. If the value was greater, you recursively call Insert on the right node.}
-	\item Give an example of a series of 5 keys inserted one at a time into a binary search tree that will yield a tree of height 5.\answer{\\\globaltikzset
+    \item In your own words explain how you insert a new key in a binary search tree. \oldanswer{When you have a value, you compare the value you're inserting to the value in the node. If the inserting value is less than the value, you recursively call the Insert function with the left node. If the value was greater, you recursively call Insert on the right node.}
+	\item Give an example of a series of 5 keys inserted one at a time into a binary search tree that will yield a tree of height 5.\oldanswer{\\\globaltikzset
 	\begin{tikzpicture}
 		\Tree
 		[.\node{ $5$ };
@@ -61,7 +61,7 @@
 				[.\node{ $b$ }; ]
 				[.\node{ $c$ }; ]
 		]]
-		\end{tikzpicture}\answer{\begin{tikzpicture}
+		\end{tikzpicture}\oldanswer{\begin{tikzpicture}
 		\Tree
 		[.\node{ $Y$ };
 			[.\node{ $X$ };
@@ -84,7 +84,7 @@ The length of the path from the root $r$ to a node $x$ is the depth of $x$ in $T
 
 \section{BST Operations}\label{sec:bst-operations}
 \begin{enumerate}[label=\arabic*)]
-    \item Write pseudocode for BST Successor \answer{(next larger value)} (or Predecessor). Demonstrate on the below tree from node 15 and then node 13.\\\bsttree\\\answer{\begin{algorithm}[H]
+    \item Write pseudocode for BST Successor \oldanswer{(next larger value)} (or Predecessor). Demonstrate on the below tree from node 15 and then node 13.\\\bsttree\\\oldanswer{\begin{algorithm}[H]
     		\caption{Binary Search Tree Successor (Best: $O(1)$, Worst: $O(h)$)}\label{alg:bst-successor}
     		\begin{algorithmic}[1]
     		\Function{Successor}{$p$: Node}\Comment{The Successor is usually the min of the graph in the right node, essentially, right than left-left-$\dots$-left.}
@@ -99,7 +99,7 @@ The length of the path from the root $r$ to a node $x$ is the depth of $x$ in $T
     		\EndFunction
     		\end{algorithmic}
     	\end{algorithm}}
-	\item Write pseudocode for BST Insert. Demonstrate on the below tree to insert 5 and then 19.\\\bsttree\\\answer{\begin{algorithm}[H]
+	\item Write pseudocode for BST Insert. Demonstrate on the below tree to insert 5 and then 19.\\\bsttree\\\oldanswer{\begin{algorithm}[H]
 			\caption{Binary Search Tree Insert ($O(h)$)}\label{alg:bst-insert}
 			\begin{algorithmic}[1]
 			\Function{Insert}{$key$}
@@ -125,7 +125,7 @@ The length of the path from the root $r$ to a node $x$ is the depth of $x$ in $T
 			\EndFunction
 			\end{algorithmic}
 		\end{algorithm}}
-	\item What are the three possible cases when deleting a node from a BST?\\\bsttree\\\answer{\begin{itemize}
+	\item What are the three possible cases when deleting a node from a BST?\\\bsttree\\\oldanswer{\begin{itemize}
 		\item No children
 		\begin{itemize}
 			\item Set the $parent.left$ or $parent.right$ (depending on where you came from) to null; $O(1)$.
@@ -148,7 +148,7 @@ The length of the path from the root $r$ to a node $x$ is the depth of $x$ in $T
 				\end{algorithm}
 		\end{itemize}
 	\end{itemize}}
-	\item Write pseudocode for BST Delete (assume you already have a pointer to the node)\answer{\begin{algorithm}[H]
+	\item Write pseudocode for BST Delete (assume you already have a pointer to the node)\oldanswer{\begin{algorithm}[H]
 			\caption{Binary Search Tree Delete}\label{alg:bst-delete}
 			\begin{algorithmic}[1]
 			\Function{Delete}{$p$: Node}\Comment{}
@@ -196,7 +196,7 @@ $x$ and $y$ are nodes; $a$, $b$, $c$ are sub trees
 %\end{tikzpicture}		% TODO: Fix this
 
 \begin{enumerate}[label=\arabic*.,start=5]
-    \item Write pseudocode for LeftRotate (or RightRotate). What is the worst case runtime?\answer{\begin{algorithm}[H]
+    \item Write pseudocode for LeftRotate (or RightRotate). What is the worst case runtime?\oldanswer{\begin{algorithm}[H]
     		\caption{Binary Search Tree Left Rotate}\label{alg:bst-left-rotate}
     		\begin{algorithmic}[1]
     		\Function{LeftRotate}{$p$:Node, $z$:Node}\Comment{To make this right rotate, switch all lefts with rights and rights with left.}

@@ -12,7 +12,7 @@
 \maketitle
 \newcommand{\sectiontype}{\section}
 \begin{enumerate}[label=\arabic*.]
-    \item A recurrence relation describes runtime function recursively for a recursive algorithm. Write a recurrence relation for the Merge sort algorithm. HINT: try to count the number of executions of each statement and the cost of each \answer{Recurrence relations for \hyperref[alg:merge-sort]{merge sort} lines: $2=c_{1},3=c_{2},4=5=T\left( \frac{n}{2} \right)$ and $O(n)$ as the runtime for merge\begin{equation*}
+    \item A recurrence relation describes runtime function recursively for a recursive algorithm. Write a recurrence relation for the Merge sort algorithm. HINT: try to count the number of executions of each statement and the cost of each \oldanswer{Recurrence relations for \hyperref[alg:merge-sort]{merge sort} lines: $2=c_{1},3=c_{2},4=5=T\left( \frac{n}{2} \right)$ and $O(n)$ as the runtime for merge\begin{equation*}
 			\begin{aligned}
 				T(n)&=c_{1}+c_{2}+T\left( \frac{n}{2} \right)+T\left( \frac{n}{2} \right)+O(n)\\
 				T(n)&=2T\left( \frac{n}{2} \right)+O(n)\\
@@ -24,7 +24,7 @@
 \noindent We solve a recurrence relation to get a function in its closed (non-recursive) form. The recurrence tree method is a visual method of repeatedly substituting in the recurrence relation for $T(n)$ on smaller and smaller $n$ until you reach the base case, and then summing up all the nodes in the tree.
 
 \begin{enumerate}[label=\arabic*., start=2]
-    \item Draw the recurrence tree for Mergesort \answer{$T(n)=2T\left( \frac{n}{2} \right)+\theta(n)$, $T(1)=O(1)$}\\
+    \item Draw the recurrence tree for Mergesort \oldanswer{$T(n)=2T\left( \frac{n}{2} \right)+\theta(n)$, $T(1)=O(1)$}\\
 	\globaltikzset
 	\tikzset{level distance=2.5cm, minimum width=2em}
 			\begin{tikzpicture}
@@ -63,7 +63,7 @@
 Not all problems can be solved with the divide and conquer approach. Maybe sub-problems are not independent, or solutions to sub-problems cannot be combined to find solution to main problem.
 
 \begin{enumerate}[label=\arabic*.,start=3]
-    \item Write a recursive algorithm for Binary Search. Write and solve its recurrence relation.\answer{Divide \& Conquer \& Combine Runtime analysis: \begin{algorithm}[H]
+    \item Write a recursive algorithm for Binary Search. Write and solve its recurrence relation.\oldanswer{Divide \& Conquer \& Combine Runtime analysis: \begin{algorithm}[H]
     		\caption{Binary Search Algorithm}\label{alg:binary-search}
     		\begin{algorithmic}[1]
     		\Function{BS}{$A$,key,$i$,$j$}\Comment{Initial call: \Call{BS}{($A$ (sorted), $key$, 1, $n$)}}
@@ -100,7 +100,7 @@ Not all problems can be solved with the divide and conquer approach. Maybe sub-p
 				\EndIf
     		\EndFunction
     		\end{algorithmic}
-    	\end{algorithm}\answer{Runtime analysis: $T(n)=T(n-1)+O(n)$, $T(1)=O(1)$}
+    	\end{algorithm}\oldanswer{Runtime analysis: $T(n)=T(n-1)+O(n)$, $T(1)=O(1)$}
     \item Describe an efficient divide and conquer algorithm to count the number of times a character appears in a string of length $n$.\begin{algorithm}[H]
     		\caption{Count of char in string}\label{alg:str-count}
     		\begin{algorithmic}[1]
@@ -129,7 +129,7 @@ Not all problems can be solved with the divide and conquer approach. Maybe sub-p
 		\item Prove for base case
 		\item Assume true for $n$, prove for larger $n$
 	\end{itemize}
-    \item Use an inductive proof to show the sum of the first $n$ integers is $\frac{n(n+1)}{2}$\answer{\begin{equation*}
+    \item Use an inductive proof to show the sum of the first $n$ integers is $\frac{n(n+1)}{2}$\oldanswer{\begin{equation*}
     \begin{aligned}
     	\sum_{k=1}^{n}k&=\frac{n(n+1)}{2}\\
     	\sum_{k=1}^{1}k=1&=\frac{1(1+1)}{2}\\

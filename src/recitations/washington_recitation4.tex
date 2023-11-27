@@ -18,7 +18,7 @@ Practice Problems (all taken from previous exams)
 	\begin{enumerate}
 	    \item Heap sort is an in-place algorithm.
 	    \item Heap sort has $O(n\log n)$ average case time complexity.
-	    \item \answer{Heap sort is a stable sort.} Heap sort is an in-place algorithm as it needs $O(1)$ auxiliary space.
+	    \item \oldanswer{Heap sort is a stable sort.} Heap sort is an in-place algorithm as it needs $O(1)$ auxiliary space.
 	    \item Heap sort is a comparison-based sorting algorithm.
 	\end{enumerate}
 	\item Consider the max heap shown below, the node with value 24 violates the max-heap property. Once heapify procedure is applied to it, which position will it be in?
@@ -30,12 +30,12 @@ Practice Problems (all taken from previous exams)
 	\begin{enumerate}
 	    \item 5
 		\item 8
-		\item \answer{9}
+		\item \oldanswer{9}
 		\item You cannot call heapify at the node with value 24
 	\end{enumerate}
 	\item Counting sort can be used on any numeric data.
 	\begin{enumerate}
-	    \item \answer{TRUE}, it can be used, but it is a very bad idea. Counting sort requires a very large range of numbers, counting sort requires a very large array. This reduces its memory efficiency and increases space consumption. So while it \emph{possible} to be used, it isn't a good idea to do so on any numeric data.
+	    \item \oldanswer{TRUE}, it can be used, but it is a very bad idea. Counting sort requires a very large range of numbers, counting sort requires a very large array. This reduces its memory efficiency and increases space consumption. So while it \emph{possible} to be used, it isn't a good idea to do so on any numeric data.
 		\item FALSE
 	\end{enumerate}
 	\item Which of the following is not true about all comparison based sorting algorithms?
@@ -58,10 +58,10 @@ Practice Problems (all taken from previous exams)
 		\end{algorithmic}
 	\end{algorithm}
 	\begin{enumerate}
-	    \item Do the procedures BUILD-MAX-HEAP and BUILD-MAX-HEAP1 always create the same heap when run on the same input array? Prove that they do, or provide a counterexample. \answer{The procedures do not always create the same heap when run on the same input array.}
-		\item Show that in the worst case, BUILD-MAX-HEAP1 requires $\Theta(n\lg n)$ time to build an $n$-element heap. \answer{Since all but the last level is always filled, the height $h$ of an $n$ element heap is boundend because $\sum_{i=0}^{h} 2^{i}=2^{h+1}-1=\dots$ }
+	    \item Do the procedures BUILD-MAX-HEAP and BUILD-MAX-HEAP1 always create the same heap when run on the same input array? Prove that they do, or provide a counterexample. \oldanswer{The procedures do not always create the same heap when run on the same input array.}
+		\item Show that in the worst case, BUILD-MAX-HEAP1 requires $\Theta(n\lg n)$ time to build an $n$-element heap. \oldanswer{Since all but the last level is always filled, the height $h$ of an $n$ element heap is boundend because $\sum_{i=0}^{h} 2^{i}=2^{h+1}-1=\dots$ }
 	\end{enumerate}
-	\item The operation \Call{HEAP-DELETE}{$A$, $i$} deletes the item in node $i$ from heap $A$. Give an implementation of HEAP-DELETE that runs in $O(\lg n)$ time for an $n$-element max-heap.\answer{\begin{algorithm}[H]
+	\item The operation \Call{HEAP-DELETE}{$A$, $i$} deletes the item in node $i$ from heap $A$. Give an implementation of HEAP-DELETE that runs in $O(\lg n)$ time for an $n$-element max-heap.\oldanswer{\begin{algorithm}[H]
 			\caption{HEAP-DELETE}\label{alg:heap-delete}
 			\begin{algorithmic}[1]
 			\Function{HeapDelete}{$A$, $i$}
@@ -75,7 +75,7 @@ Practice Problems (all taken from previous exams)
 			\EndFunction
 			\end{algorithmic}
 		\end{algorithm}}
-	\item Professor Fermat has the policy of giving A's to the top $n^{\frac{1}{2}}=\sqrt{n}$ students of his class, where $n$ is the number of students. The algorithm that he uses to determine the top $n^{\frac{1}{2}}$ students first sorts the list of students by their numerical, real-valued grade, and then picks the top $n^{\frac{1}{2}}$ students from the sorted list. This algorithm has time-complexity $O(n\log n)$ because of the sort. Can you suggest a more efficient algorithm that has time-complexity $O(n)$? Describe your algorithm informally in English and justify its time-complexity. \answer{You can use a MaxHeap to effectively sort the students based off of the students grades which takes $O(n)$. Now perform RemoveMax $\sqrt{n}$ times. Each RemoveMax operation takes time $O(\log N)$. Total time complexity of this algorithm is $O(n) + \log(n)\sqrt{n}=O(n)$ because $\log(n)\sqrt{n}=O(n)$, because $\log(n)=O\left( \sqrt{n} \right)$}
+	\item Professor Fermat has the policy of giving A's to the top $n^{\frac{1}{2}}=\sqrt{n}$ students of his class, where $n$ is the number of students. The algorithm that he uses to determine the top $n^{\frac{1}{2}}$ students first sorts the list of students by their numerical, real-valued grade, and then picks the top $n^{\frac{1}{2}}$ students from the sorted list. This algorithm has time-complexity $O(n\log n)$ because of the sort. Can you suggest a more efficient algorithm that has time-complexity $O(n)$? Describe your algorithm informally in English and justify its time-complexity. \oldanswer{You can use a MaxHeap to effectively sort the students based off of the students grades which takes $O(n)$. Now perform RemoveMax $\sqrt{n}$ times. Each RemoveMax operation takes time $O(\log N)$. Total time complexity of this algorithm is $O(n) + \log(n)\sqrt{n}=O(n)$ because $\log(n)\sqrt{n}=O(n)$, because $\log(n)=O\left( \sqrt{n} \right)$}
 \end{enumerate}
 %</Recitation-4>
 

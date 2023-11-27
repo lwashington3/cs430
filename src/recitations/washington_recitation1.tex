@@ -16,7 +16,7 @@ Practice Problems (all taken from previous exams)
 \begin{enumerate}
     \item Which of the following is not true of improved bubble sort (keep track of last swap position on the inner loop and use that to reduce outer loop iterations) on the case on input elements sorted?
 	\begin{enumerate}
-	    \item \answer{It is stable}
+	    \item \oldanswer{It is stable}
 		\item \correction{\textbf{Consumes less memory}. Optimized Bubble sort is one of the simplest sorting techniques and perhaps the only advantage it has over other techniques is that it can detect whether the input is already sorted. It is faster than other in case of sorted array and consumes less time to describe whether the input array is sorted or not. It consumes same memory than other sorting techniques. Hence it is not an advantage.}
 		\item Detects whether the input is already sorted
 		\item Consumes less time
@@ -28,7 +28,7 @@ Practice Problems (all taken from previous exams)
 	\end{enumerate}
 	\begin{enumerate}
 	    \item Both of the statements are true.
-		\item \answer{\textbf{Statement 1 is true but statement 2 is false}. There may be a smaller value $>m$ indexes from the start of the array, which is why statement 2 is false, however, the first $m$ elements would be sorted amongst themselves.}
+		\item \oldanswer{\textbf{Statement 1 is true but statement 2 is false}. There may be a smaller value $>m$ indexes from the start of the array, which is why statement 2 is false, however, the first $m$ elements would be sorted amongst themselves.}
 		\item Statement 1 is false but statement 2 is true
 		\item Both of the statements are false
 	\end{enumerate}
@@ -58,7 +58,7 @@ Practice Problems (all taken from previous exams)
 \begin{enumerate}
     \item $x$ is the last element of the array $a[]$
     \item $x$ is greater than all elements of the array $a[]$
-	\item \answer{\textbf{Both of the Above} The above program doesn’t work for the cases where element to be searched is the last element of $a$[] or greater than the last element (or maximum element) in $a$[]. For such cases, program goes in an infinite loop because $i$ is assigned value as $k$ in all iterations, and $i$ never becomes equal to or greater than $j$. So the while condition never becomes false.}
+	\item \oldanswer{\textbf{Both of the Above} The above program doesn’t work for the cases where element to be searched is the last element of $a$[] or greater than the last element (or maximum element) in $a$[]. For such cases, program goes in an infinite loop because $i$ is assigned value as $k$ in all iterations, and $i$ never becomes equal to or greater than $j$. So the while condition never becomes false.}
 	\item $x$ is less than the last element of the array $a[]$
 \end{enumerate}
 	\item What's the worst case of insertion sort if the correct position for inserting element is calculated using binary search?
@@ -66,12 +66,12 @@ Practice Problems (all taken from previous exams)
 	    \item $O\left( \log n \right)$
 	    \item $O\left( n \right)$
 	    \item $O\left( n\log n \right)$
-	    \item \answer{$\mathbf{O\left( n^{2} \right)}$ The use of binary search reduces the time of finding the correct position from $O(n)$ to $O(\log n)$. But the worst case of insertion sort remains $O(n^{2})$ because of the series of swaps required for each insertion.}
+	    \item \oldanswer{$\mathbf{O\left( n^{2} \right)}$ The use of binary search reduces the time of finding the correct position from $O(n)$ to $O(\log n)$. But the worst case of insertion sort remains $O(n^{2})$ because of the series of swaps required for each insertion.}
 	\end{enumerate}
 	\item The following routine takes as input a list of $n$ numbers, and returns the first value of $i$ for which $L[i] < L[i-1]$, or $n$ if no such number exists. \lstinputlisting[language=C,label={lst:first-decrease}]{1_first-decrease.c}
 	\begin{enumerate}[label=\arabic{enumi}\alph*)]
-	    \item What is the big-O runtime for the routine, measured as a function of its return value $i$? \answer{$O(n) \rightarrow O(i)$.} \correction{$T(i)=ai+b=O(i)$ ($a$ and $b$ are constants).}
-		\item If the numbers are chosen independently at random, then the probability that firstDecrease($L$) returns $i$ is $\frac{i-1}{i!}$, except for the special case of $i=n+1$ for which the probability is $\frac{1}{n!}$ Use this fact to write an expression for the expected value returned by the algorithm. (Your answer can be expressed as a sum, it does not have to be solved in closed form. Do not use O-notation.) Use expectation \answer{\begin{equation*}
+	    \item What is the big-O runtime for the routine, measured as a function of its return value $i$? \oldanswer{$O(n) \rightarrow O(i)$.} \correction{$T(i)=ai+b=O(i)$ ($a$ and $b$ are constants).}
+		\item If the numbers are chosen independently at random, then the probability that firstDecrease($L$) returns $i$ is $\frac{i-1}{i!}$, except for the special case of $i=n+1$ for which the probability is $\frac{1}{n!}$ Use this fact to write an expression for the expected value returned by the algorithm. (Your answer can be expressed as a sum, it does not have to be solved in closed form. Do not use O-notation.) Use expectation \oldanswer{\begin{equation*}
 		\begin{aligned}
 			\sum_{i=1}^{n+1} \frac{i-1}{i!} &= \frac{1-1}{1!} + \frac{2-1}{2!} + \frac{3-1}{3!} + \dots + \frac{n-1}{n!} +  \frac{(n+1)-1}{(n+1)!}\\
 											&= \frac{0}{1!} + \frac{1}{2!} + \frac{2}{3!} + \dots + \frac{n-1}{n!} +  \frac{n}{(n+1)!}\\
@@ -97,14 +97,14 @@ Practice Problems (all taken from previous exams)
 		\end{aligned}
 		\end{equation*}}
 	\end{enumerate}
-	\item Some sorting algorithms are NOT stable. However if every key in $A[i]$ is changed to $A[i]*n+i-1$ (assume $1 \leq i \leq n$) then all the new elements are distinct (and therefore stability is no longer a concern). After sorting, what transformation will restore the keys back to their original values? What is the effect on the runtime of any of the sorting algorithm if you add this transformation before executing the sort and un-transformation after the sort?\answer{\begin{equation*}
+	\item Some sorting algorithms are NOT stable. However if every key in $A[i]$ is changed to $A[i]*n+i-1$ (assume $1 \leq i \leq n$) then all the new elements are distinct (and therefore stability is no longer a concern). After sorting, what transformation will restore the keys back to their original values? What is the effect on the runtime of any of the sorting algorithm if you add this transformation before executing the sort and un-transformation after the sort?\oldanswer{\begin{equation*}
 	\begin{aligned}
 		A[i] \rightarrow A[i]*n+i-1
 	\end{aligned}
 	\end{equation*}}\correction{To transform back to the original keys replace each $A[i]$ with int$[A[i]/n]$, you cannot use $A[i] = (A[i] - i +1)/n$ because the index $i$ of each value has changed when we sorted. Add $O(2n)$ runtime, which does not affect the runtime of any sort because the growth of those is greater than $O(n)$.}
 	\item
 	\begin{enumerate}[label=\choicelabel]
-	    \item\label{prb:7a} Use pseudocode to specify a brute-force algorithm that determines when a sequence of $n$ positive integers is given as input, whether there are two distinct terms of the sequence that have as sum a third term. The algorithm should loop through all triples of the sequence, checking whether the sum of the first two terms equals the third.\answer{\begin{algorithm}[H]
+	    \item\label{prb:7a} Use pseudocode to specify a brute-force algorithm that determines when a sequence of $n$ positive integers is given as input, whether there are two distinct terms of the sequence that have as sum a third term. The algorithm should loop through all triples of the sequence, checking whether the sum of the first two terms equals the third.\oldanswer{\begin{algorithm}[H]
 	    	\caption{Brute Force Sum}\label{alg:brute-force-sum}
 	    	\begin{algorithmic}[1]
 	    	\Function{BruteForceSum}{$A$:int[], $n$:int}
@@ -121,8 +121,8 @@ Practice Problems (all taken from previous exams)
 	    	\EndFunction
 	    	\end{algorithmic}
 	    \end{algorithm}}
-		\item Give a big-O estimate for the complexity of the brute-force algorithm from \hyperref[prb:7a]{part (a)}.\answer{$O(n) \times O(n) \times O(n) = O(n^{3})$}
-		\item Devise a more efficient algorithm for solving the problem that first sorts the input sequence and then checks for each pair of terms whether their sum is in the sequence.\answer{\begin{algorithm}[H]
+		\item Give a big-O estimate for the complexity of the brute-force algorithm from \hyperref[prb:7a]{part (a)}.\oldanswer{$O(n) \times O(n) \times O(n) = O(n^{3})$}
+		\item Devise a more efficient algorithm for solving the problem that first sorts the input sequence and then checks for each pair of terms whether their sum is in the sequence.\oldanswer{\begin{algorithm}[H]
 	    	\caption{Smart Sum}\label{alg:smart-sum}
 	    	\begin{algorithmic}[1]
 	    	\Function{SmartSum}{$A$:int[], $n$:int}

@@ -13,11 +13,11 @@
 \maketitle
 \openingquestions
 \begin{enumerate}[label=\arabic*.]
-	\item Algorithm A takes 5 seconds to sort 1000 records, and Algorithm B takes 10 seconds to sort 1000 records. You have the code for both algorithms. When deciding which algorithm to use to sort up to 1,000,000 records, why might Algorithm B be the better choice? \answer{Algorithm B might grow slower than algorithm A when more data is added.}
-	\item Why is it helpful to sometimes define a problem in its most basic mathematical terms? \answer{Understanding the problem space might help with thinking of algorithmic solutions since there might be a possible shortcut rather than the brute force algorithm. It also helps to know if the problem is easy, which might mean that the brute force method would work effectively.}
-	\item In your own words, explain what a loop invariant is. \answer{A statement that's true for every iteration of a loop. It never changes. It's a way to prove an iterative algorithm correctly.}
-	\item What are the three kinds of growth in run time analysis we may do on an algorithm. \answer{Best case, worst case, average case.}
-	\item For recursive algorithms, what do we need to define and solve to do the runtime analysis? \answer{Recurrence relation. Base recursive?}
+	\item Algorithm A takes 5 seconds to sort 1000 records, and Algorithm B takes 10 seconds to sort 1000 records. You have the code for both algorithms. When deciding which algorithm to use to sort up to 1,000,000 records, why might Algorithm B be the better choice? \oldanswer{Algorithm B might grow slower than algorithm A when more data is added.}
+	\item Why is it helpful to sometimes define a problem in its most basic mathematical terms? \oldanswer{Understanding the problem space might help with thinking of algorithmic solutions since there might be a possible shortcut rather than the brute force algorithm. It also helps to know if the problem is easy, which might mean that the brute force method would work effectively.}
+	\item In your own words, explain what a loop invariant is. \oldanswer{A statement that's true for every iteration of a loop. It never changes. It's a way to prove an iterative algorithm correctly.}
+	\item What are the three kinds of growth in run time analysis we may do on an algorithm. \oldanswer{Best case, worst case, average case.}
+	\item For recursive algorithms, what do we need to define and solve to do the runtime analysis? \oldanswer{Recurrence relation. Base recursive?}
 \end{enumerate}
 
 \section{Sorting as a Case Study for Algorithms Analysis}\label{sec:sorting-as-a-case-study-for-algorithms-analysis}
@@ -26,12 +26,12 @@
 
 	\item Write the loop invariant for your sort and prove your sort is correct by proving Initialization, Maintenance, and Termination.\\
 
-	An important property of sorting algorithms is whether or not it is stable: numbers with the same value appear in the output array in the same order as they do in the input array. \answer{Before the $i^{th}$ iteration, all of the items that were originally before position $i$ are now sorted.\\After the $i^{th}$ iteration, the original items $1\rightarrow i$ are sorted (that doesn't mean they're in their final position)\\\\\textbf{Initialization}: Before the $i=1$ iteration, $A[0]$ is sorted.\\\textbf{Maintenance}: Line 2 correctly sets the current starting position, lines 3 and 4 verifies the element is in the current position and walks down the item. \\\textbf{Termination}: Before the $i=n$ iteration, which doesn't exist, all items before position $n$ are now sorted.}
-	\item Is your sort stable? (Is the relative order of duplicate values maintained when the algorithm is done?) \answer{This is stable because in line 3, the values are only swapped \emph{if} one value is less than the other. But if the values are the same, the swap won't occur.}\\
+	An important property of sorting algorithms is whether or not it is stable: numbers with the same value appear in the output array in the same order as they do in the input array. \oldanswer{Before the $i^{th}$ iteration, all of the items that were originally before position $i$ are now sorted.\\After the $i^{th}$ iteration, the original items $1\rightarrow i$ are sorted (that doesn't mean they're in their final position)\\\\\textbf{Initialization}: Before the $i=1$ iteration, $A[0]$ is sorted.\\\textbf{Maintenance}: Line 2 correctly sets the current starting position, lines 3 and 4 verifies the element is in the current position and walks down the item. \\\textbf{Termination}: Before the $i=n$ iteration, which doesn't exist, all items before position $n$ are now sorted.}
+	\item Is your sort stable? (Is the relative order of duplicate values maintained when the algorithm is done?) \oldanswer{This is stable because in line 3, the values are only swapped \emph{if} one value is less than the other. But if the values are the same, the swap won't occur.}\\
 
 	Resource (memory or runtime) Use Analysis – Resource use analysis usually depends on the size of the input to the algorithm. You can write a function T(n) that matches the behavior of the resource use of the algorithm.
 	NOTE: For recursive algorithms we develop and solve a recurrence relation to find the T(n), the resource use function.
-	\item For the iterative sort you wrote above, construct a run time analysis function T(n) by assigning a different constant (c1, c2, c3, etc) to each type of statement (the run time for statements of that type), and counting how many times each statement executes for an input size n. Then sum up the constants times the execution counts. You may need to define variables other than n if there are event controlled iterations with an unknown number of loops. \\ \answer{\[T(n)=nc_{1}+(n-1)c_{2}+c_{3}\sum_{i=1}^{n-1}t_{i}+\sum_{i=1}^{n-1}(t_{i}-1)\left[ c_{4}+c_{2} \right] \] where $t_{i}$ depends on initial order of the array. Worst case: opposite order where $t_{i}=i$. Best case: if the array is already sorted where $t_{i}=1$.}
+	\item For the iterative sort you wrote above, construct a run time analysis function T(n) by assigning a different constant (c1, c2, c3, etc) to each type of statement (the run time for statements of that type), and counting how many times each statement executes for an input size n. Then sum up the constants times the execution counts. You may need to define variables other than n if there are event controlled iterations with an unknown number of loops. \\ \oldanswer{\[T(n)=nc_{1}+(n-1)c_{2}+c_{3}\sum_{i=1}^{n-1}t_{i}+\sum_{i=1}^{n-1}(t_{i}-1)\left[ c_{4}+c_{2} \right] \] where $t_{i}$ depends on initial order of the array. Worst case: opposite order where $t_{i}=i$. Best case: if the array is already sorted where $t_{i}=1$.}
 	\begin{table}[H]
 	    \centering
 	    \begin{threeparttable}
@@ -56,7 +56,7 @@
 
 	For a more descriptive analysis we need to consider the various generic execution flows and input structures that result in those generic execution flows. There are 3 more descriptive resource use analyses: 1) worst case (usually used)  2) average case (sometimes used)  3) best case (hardly ever used)
 	\item For your T(n) function from above determine the best case, worst case and average case T(n)s.\\
-		\answer{Best Case ($t_{i}=1$):\begin{equation*}
+		\oldanswer{Best Case ($t_{i}=1$):\begin{equation*}
 	\begin{aligned}
 		T(n)&=nc_{1}+(n-1)c_{2}+c_{3}\sum_{i=1}^{n-1}t_{i}+\sum_{i=1}^{n-1}(t_{i}-1)\left[ c_{4}+c_{2} \right]\\
 			&=nc_{1}+(n-1)c_{2}+c_{3}\sum_{i=1}^{n-1}(1)+\sum_{i=1}^{n-1}(1-1)\left[ c_{4}+c_{2} \right]\\

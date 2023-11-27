@@ -15,13 +15,13 @@
 
 \begin{enumerate}
     \item Review the operations on a min (or max) binary \hyperref[sec:heaps]{heap} and their runtimes.
-	\answer{Insert and Extract-Max which are both $O(\lg n)$.}
+	\oldanswer{Insert and Extract-Max which are both $O(\lg n)$.}
 	\item What if we needed a function to union two min binary heaps?
 	How would you do it and what is the run time?
-	\answer{You would have to call \Call{Extract-Max}{} on each element from the smaller heap and \Call{Insert}{} it into the other heap.}
+	\oldanswer{You would have to call \Call{Extract-Max}{} on each element from the smaller heap and \Call{Insert}{} it into the other heap.}
 	\item Why did we use an array for a binary heap?
 	Does a heap need to be binary?
-	\answer{Heaps match arrays well because both cannot have holes. It doesn't not need to be binary, it could be trinary and have a difference in calling the child nodes ($3n$, $3n+1$, $3n+2$) and the heap would be flatter, but at the tradeoff of \Call{Heapify}{} requiring more time.}
+	\oldanswer{Heaps match arrays well because both cannot have holes. It doesn't not need to be binary, it could be trinary and have a difference in calling the child nodes ($3n$, $3n+1$, $3n+2$) and the heap would be flatter, but at the tradeoff of \Call{Heapify}{} requiring more time.}
 \end{enumerate}
 
 \section{Mergeable (Min) Heaps}\label{sec:mergeable-(min)-heaps}
@@ -63,11 +63,11 @@ They also support these operations.
 			\end{minipage} & \begin{minipage}{0.7\textwidth}
  				\begin{enumerate}
  				    \item How many nodes does $B_{k}$ have, what is its height, and how many children does its root have?
-					\answer{There are $2^{k}$ nodes.
+					\oldanswer{There are $2^{k}$ nodes.
 					Its height is $k$.
 					The root has $k$ children.}
 					\item Why are they called binomial trees?
-					\answer{The binomial numbers represent how many nodes there are on each level.}
+					\oldanswer{The binomial numbers represent how many nodes there are on each level.}
  				\end{enumerate}
 			\end{minipage}\\
 			\bottomrule
@@ -80,7 +80,7 @@ Also, in a binomial heap at most one instance of $B_{i}$ may occur for any $i$.
 
 \begin{enumerate}[start=3]
     \item How many binomial trees are needed at most in the linked list of roots to make a binomial heap of $n$ nodes?
-	\answer{You would need $\lg n$ binomial trees at most to make a binomial heap of $n$ nodes.}
+	\oldanswer{You would need $\lg n$ binomial trees at most to make a binomial heap of $n$ nodes.}
 	\item See \url{https://www.cs.usfca.edu/~galles/visualization/BinomialQueue.html} to help describe how each operation is done, and its run time:
 \end{enumerate}
 
@@ -91,19 +91,19 @@ Linear walk of root list: $O(\lg n)$.
 \binomialqueueop{Union}
 
 \binomialqueueop{Insert}
-\answer{Create a new $B_{0}$ heap and insert it at the front of the root list.
+\oldanswer{Create a new $B_{0}$ heap and insert it at the front of the root list.
 Look at the next Binomial tree in the root list, and if they have the same size, merge the 2 ``heap order'' $O(\lg n)$.}
 
 \binomialqueueop{Extract-Min}
-\answer{It would take $O(\lg n)$ to find the minimum value, and then you merge the children of the max back into the root list.}
+\oldanswer{It would take $O(\lg n)$ to find the minimum value, and then you merge the children of the max back into the root list.}
 
 \binomialqueueop{Decrease-Key}
-\answer{$O(\lg n)$.
+\oldanswer{$O(\lg n)$.
 Assume we are at the node in the binomial heap.
 You remove the node and, if the value of the child is smaller than the value of the root, you would switch the values and keep walking that switch up.}
 
 \binomialqueueop{Delete}
-\answer{$O(\lg n)$.
+\oldanswer{$O(\lg n)$.
 Assume \_\_\_ at that node, make its value $-\infty$, call \Call{Decrease-Key}{} and then \Call{Extract-Min}{} to remove the $-\infty$.}
 
 %</Lecture-Activity-21>

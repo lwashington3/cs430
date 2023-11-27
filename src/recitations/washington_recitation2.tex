@@ -17,14 +17,14 @@ Practice Problems (all taken from previous exams)
     \item Which of the following is time complexity of fun()? \lstinputlisting[language=C,label={lst:fun}]{2_fun.c}
 	\begin{enumerate}
 	    \item $O(n)$
-	    \item \answer{$O(n^{2})$}
+	    \item \oldanswer{$O(n^{2})$}
 	    \item $O(n\log n)$
 	    \item $O(n\log(n)\log(n))$
 	\end{enumerate}
 	\item Consider the following function. What is the returned value of the above function? \lstinputlisting[language=C,label={lst:unknown}]{2_unknown.c}
 	\begin{enumerate}
 	    \item $\Theta(n^{2})$
-	    \item \answer{$\mathbf{\Theta(n^{2}\log n)}$ The outer loop runs $n/2$ or $\Theta(n)$ times. The inner loop runs $O(\log n)$ times (Note that $j$ is multiplied by $2$ in every iteration). So the statement "$k = k + n/2$;" runs $\Theta(n\log n)$ times. The statement increases value of $k$ by $n/2$. So the value of k becomes $n/2\times\Theta(n\log n)$ which is $\Theta(n^2\log n)$.}
+	    \item \oldanswer{$\mathbf{\Theta(n^{2}\log n)}$ The outer loop runs $n/2$ or $\Theta(n)$ times. The inner loop runs $O(\log n)$ times (Note that $j$ is multiplied by $2$ in every iteration). So the statement "$k = k + n/2$;" runs $\Theta(n\log n)$ times. The statement increases value of $k$ by $n/2$. So the value of k becomes $n/2\times\Theta(n\log n)$ which is $\Theta(n^2\log n)$.}
 	    \item $\Theta(n^{3})$
 	    \item $\Theta(n^{3}\log n)$
 	\end{enumerate}
@@ -32,25 +32,25 @@ Practice Problems (all taken from previous exams)
 	\begin{enumerate}
 	    \item $O(1)$
 	    \item $O(\log n)$
-	    \item \answer{$\mathbf{O(n)}$ The worst case is every item is split into its own array at the lowest level of divide.}
+	    \item \oldanswer{$\mathbf{O(n)}$ The worst case is every item is split into its own array at the lowest level of divide.}
 	    \item $O(n\log n)$
 	\end{enumerate}
 	\item Choose the incorrect statement about merge sort from the following:
 	\begin{enumerate}
 	    \item It is a comparison-based sort.
-		\item \answer{It's runtime is dependent on input order.}
+		\item \oldanswer{It's runtime is dependent on input order.}
 		\item It is not an in-place algorithm (all the operations are on the original array).
 		\item It is a stable algorithm.
 	\end{enumerate}
 	\item Use the definition of big-O to prove or disprove.
 	\begin{enumerate}[label=\arabic{enumi}\choicelabel]
-	    \item is $2^{n+1}?=?O\left( 2^{n} \right)$\answer{True: \begin{equation*}
+	    \item is $2^{n+1}?=?O\left( 2^{n} \right)$\oldanswer{True: \begin{equation*}
 	    \begin{aligned}
 	    	2^{n+1}&=C2^{n}\\
 	    	2&=C\mbox{ if c }\geq 2\\
 	    \end{aligned}
 	    \end{equation*}}
-	    \item is $2^{2n}?=?O\left( 2^{n} \right)$\answer{False: \begin{equation*}
+	    \item is $2^{2n}?=?O\left( 2^{n} \right)$\oldanswer{False: \begin{equation*}
 	    \begin{aligned}
 	    	2^{2n}&=C2^{n}\\
 	    	2^{n}&=C\\
@@ -60,13 +60,13 @@ Practice Problems (all taken from previous exams)
 	\end{enumerate}
 	\item Although merge sort runs in $\Theta(n\lg n)$ worst-case time and insertion sort runs in $\Theta(n^{2})$ worst-case time, the constant factors in insertion sort make it faster for small $n$. Thus, it makes sense to use insertion sort within merge sort when sub-problems become sufficiently small. Consider a modification to merge sort in which $n/k$ sub-lists of length $k$ are sorted using insertion sort and then merged using the standard merging mechanism, where $k$ is a value to be determined.
 	\begin{enumerate}[label=\arabic{enumi}\choicelabel]
-	    \item Show the $n/k$ sub-lists; each of length $k$, can be sorted by insertion sort in $\Theta(nk)$ worst-case time.\answer{\begin{equation*}
+	    \item Show the $n/k$ sub-lists; each of length $k$, can be sorted by insertion sort in $\Theta(nk)$ worst-case time.\oldanswer{\begin{equation*}
 	    \begin{aligned}
 	    	k &\rightarrow \Theta\left( k^{2} \right)\\
 			\frac{n}{k} &\rightarrow \Theta\left( \frac{n}{k} \times k^{2} \right)=\Theta(nk)\\
 	    \end{aligned}
 	    \end{equation*}}
-		\item Show that the sub-lists can be merged in $\Theta(n\lg \left( \frac{n}{k} \right))$ worst-case time.\answer{\begin{equation*}
+		\item Show that the sub-lists can be merged in $\Theta(n\lg \left( \frac{n}{k} \right))$ worst-case time.\oldanswer{\begin{equation*}
 		\begin{aligned}
 			\frac{n}{k} \rightarrow \Theta\left( \frac{n}{2k} \right)\mbox{ for merging}\\
 			\Theta(2k) \mbox{ m?? for } 2k \mbox{ elements}\\
@@ -74,7 +74,7 @@ Practice Problems (all taken from previous exams)
 			\Theta\left( \frac{n}{4k}\times4k \right)=\Theta\left( n \right)
 		\end{aligned}
 		\end{equation*}}
-		\item Given that the modified algorithm runs in $\Theta(nk+n\lg\left( \frac{n}{k} \right))$ worst-case time, what is the largest asymptotic ($\Theta$-notation) value of $k$ as a function of $n$ for which the modified algorithm has the same asymptotic running time as standard merge sort?\answer{\begin{equation*}
+		\item Given that the modified algorithm runs in $\Theta(nk+n\lg\left( \frac{n}{k} \right))$ worst-case time, what is the largest asymptotic ($\Theta$-notation) value of $k$ as a function of $n$ for which the modified algorithm has the same asymptotic running time as standard merge sort?\oldanswer{\begin{equation*}
 		\begin{aligned}
 			nk + n\lg\left( \frac{n}{k} \right) &\leq n\lg n\\
 			k + \lg\left( \frac{n}{k} \right) &\leq \lg n\\

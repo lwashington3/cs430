@@ -13,14 +13,14 @@
 \maketitle
 \openingquestions
 \begin{enumerate}[label=\arabic*.]
-    \item In the Optimal Binary Search Tree problem we are not just trying to balance the tree, instead we are trying to minimize what? \answer{We're trying to minimize expected search times.}
+    \item In the Optimal Binary Search Tree problem we are not just trying to balance the tree, instead we are trying to minimize what? \oldanswer{We're trying to minimize expected search times.}
     \item What is different about the 0-1 knapsack problem as compared to the other problems we solved with dynamic programming?
 \end{enumerate}
 
 \section{Optimal Binary Search Tree}\label{sec:optimal-binary-search-tree}
 The Optimal Binary Search Tree problem is a special case of a BST where the data is static (no inserts or deletes) and we know the probability of each key in the data being searched for.
 We want to minimize total expected search time for the BST. Recall expectation \[ E(X) = \sum_{s\in S} X(s)p(s) \]
-\answer{\[ A=\frac{1}{3}, B=\frac{1}{2}, C=\frac{1}{6} \]\\\globaltikzset
+\oldanswer{\[ A=\frac{1}{3}, B=\frac{1}{2}, C=\frac{1}{6} \]\\\globaltikzset
 	\begin{figure}[H]
 		\centering
 		\caption{Example of Optimal Binary Search Tree}
@@ -43,9 +43,9 @@ We want to minimize total expected search time for the BST. Recall expectation \
 		\end{aligned}
 		\end{equation*}}
 \begin{enumerate}[label=\arabic*.]
-    \item Apply the expectation formula to the Optimal Binary Search Tree problem with $n$ keys and $C(i)$ is how deep item $i$ is. $P(i)$ is probability of search for item $i$. \answer{Minimize $\sum_{keys}P(key)C(key)$ where $C$ is the number of compares}
-    \item The brute force approach (generate all possibilities, pick the optimal) would be to find all possible BSTs, find the expected search time of each and pick the minimum one. How many BSTs are there? \answer{Inserting each permutation of $n$ keys might lead a different structure, and this would be $O(n!)$.}
-    \item Step 1: Generically define the structure of the optimal solution to the Optimal Binary Search Tree problem. The optimal binary search tree with $n$ keys and $C(i)$ is how deep item $i$ is and $P(i)$ is probability of search for item $i$ is: \answer{$k_{1}\dots k_{n}$ where $k_{1} < k_{2} < \dots < k_{n}$ and $p_{1}\dots p_{n}$. Assume $k_{x}$ as root yields BST with minimal expected search time.\begin{equation*}
+    \item Apply the expectation formula to the Optimal Binary Search Tree problem with $n$ keys and $C(i)$ is how deep item $i$ is. $P(i)$ is probability of search for item $i$. \oldanswer{Minimize $\sum_{keys}P(key)C(key)$ where $C$ is the number of compares}
+    \item The brute force approach (generate all possibilities, pick the optimal) would be to find all possible BSTs, find the expected search time of each and pick the minimum one. How many BSTs are there? \oldanswer{Inserting each permutation of $n$ keys might lead a different structure, and this would be $O(n!)$.}
+    \item Step 1: Generically define the structure of the optimal solution to the Optimal Binary Search Tree problem. The optimal binary search tree with $n$ keys and $C(i)$ is how deep item $i$ is and $P(i)$ is probability of search for item $i$ is: \oldanswer{$k_{1}\dots k_{n}$ where $k_{1} < k_{2} < \dots < k_{n}$ and $p_{1}\dots p_{n}$. Assume $k_{x}$ as root yields BST with minimal expected search time.\begin{equation*}
     \begin{aligned}
     	\sum_{all\ keys} p(k_{i})Depth(k_{i}) &= p(k_{x})(1) + \sum_{other\ keys}p(k_{i})Depth(k_{i})\\
     										  &= P(k_{x})(1) + \sum_{keys < k_{x}}P(k_{i})Depth(k_{i}) + \sum_{keys > k_{x}}P(k_{i})Depth(k_{i})\\
@@ -59,7 +59,7 @@ We want to minimize total expected search time for the BST. Recall expectation \
     	A[i,n] = \min_{1\leftrightarrow i \leftrightarrow n}\left\{ A[i,i-1] + A[i+1, n] + (1)\sum_{j=1}^{n}P(j) \right\}
     \end{aligned}
     \end{equation*}}
-    \item\label{question:4} Step 2: Recursively define the optimal solution. Assume $A(i,j)$ is the optimal answer for keys $i$ to $j$. Make sure you include the base case. \answer{For any subproblem: \begin{equation*}
+    \item\label{question:4} Step 2: Recursively define the optimal solution. Assume $A(i,j)$ is the optimal answer for keys $i$ to $j$. Make sure you include the base case. \oldanswer{For any subproblem: \begin{equation*}
     \begin{aligned}
     	A[p,r] &= \min_{p\leftrightarrow i \leftrightarrow r}\left\{ A[p,i-1] + A[i+1, r] + \sum_{j=p}^{r}P(j) \right\}\\
 		A[k,k] &= (1)P(k)\\
@@ -67,7 +67,7 @@ We want to minimize total expected search time for the BST. Recall expectation \
     \end{aligned}
     \end{equation*}}
     \item Use proof by contradiction to show that Optimal Binary Search Tree problem has optimal substructure, i.e.\ the optimal answer to problem must contain optimal answers to sub-problems.
-    \item Step 3: Compute solution using a table bottom up for the Optimal Binary Search Tree problem. Use your answer to question \hyperref[question:4]{4} above. Note the overlapping sub-problems as you go. \answer{\renewcommand{\element}[2]{$#1_{#2}$}\begin{table}[H]
+    \item Step 3: Compute solution using a table bottom up for the Optimal Binary Search Tree problem. Use your answer to question \hyperref[question:4]{4} above. Note the overlapping sub-problems as you go. \oldanswer{\renewcommand{\element}[2]{$#1_{#2}$}\begin{table}[H]
         \centering
         \begin{threeparttable}
     		\caption{Optimal Binary Search Tree Table}

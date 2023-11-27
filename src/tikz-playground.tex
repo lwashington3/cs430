@@ -17,7 +17,7 @@
 
 \begin{document}
 \begin{tikzpicture}
-	\begin{scope}[every node/.style={circle,thick,draw}]
+	\begin{scope}\globalnodeset
 		\node (A) at (0,0) {A};
 		\node (D) at (1,-2.5) {D};
 		\node (F) at (4,-2.75) {F} ;
@@ -26,9 +26,7 @@
 		\node (E) at (4.25,-0.5) {E};
 	\end{scope}
 
-	\begin{scope}[>={Stealth[black]},
-		every node/.style={fill=white,circle},
-		every edge/.style={draw=black,very thick}]
+	\begin{scope}\globalpathset
 		\path (A) edge[bend left=60] node {$5$} (B);
 		\path (A) edge node {$3$} (C);
 		\path (A) edge node {$9$} (D);
@@ -47,7 +45,7 @@
 %\vspace*{0.5em}
 %
 %\begin{tikzpicture}
-%	\begin{scope}[every node/.style={circle,thick,draw}]
+%	\begin{scope}\globalnodeset
 %		\node (A) at (0,0) {A};
 %		\node (B) at (0,3) {B};
 %		\node (C) at (2.5,4) {C};

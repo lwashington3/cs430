@@ -29,7 +29,7 @@
 \noindent \notes{$\Omega$ is lowerbound, O (read as Big-O) is upperbound}
 
 \begin{enumerate}[label=\arabic*.]
-    \item For your best case, average cast, worst case $T(n)$ functions from above, give the asymptotic function ($\Theta$ notation) \answer{\[ T(n)=c_{1}n+c_{2}(n-1)+c_{3}\sum_{i=1}^{n-1}t_{i}+c_{4}\sum_{1}^{n-1}(t_{i}-1)  \] \[ \mbox{Worst case: } t_{i}=i \rightarrow O(n^{2}) \] \[ \mbox{Best case: } t_{i}=i \rightarrow O(n) \]}
+    \item For your best case, average cast, worst case $T(n)$ functions from above, give the asymptotic function ($\Theta$ notation) \oldanswer{\[ T(n)=c_{1}n+c_{2}(n-1)+c_{3}\sum_{i=1}^{n-1}t_{i}+c_{4}\sum_{1}^{n-1}(t_{i}-1)  \] \[ \mbox{Worst case: } t_{i}=i \rightarrow O(n^{2}) \] \[ \mbox{Best case: } t_{i}=i \rightarrow O(n) \]}
 	\item Given the problem sizes and worst case runtime for one of the problem sizes, and what you know about each algorithm, predict the missing runtimes. \begin{table}[H]
 	    \centering
 	    \begin{threeparttable}
@@ -38,11 +38,11 @@
 				\toprule
 				& $n=100 $& $n=200$ & $n=400$ & $n=800$\\
 				\midrule
-				Linear search~\notes{$O(n)$} & 10 seconds & \answer{20} & \answer{40} & \answer{80} \\
+				Linear search~\notes{$O(n)$} & 10 seconds & \oldanswer{20} & \oldanswer{40} & \oldanswer{80} \\
 				\midrule
-				Binary search~\notes{$O(\lg n)$}& \answer{7} & 8 seconds & \answer{9} & \answer{10} \\
+				Binary search~\notes{$O(\lg n)$}& \oldanswer{7} & 8 seconds & \oldanswer{9} & \oldanswer{10} \\
 				\midrule
-				Insertion Sort~\notes{$O(n^{2})$} & \answer{20} & \answer{80} & 320 seconds & \answer{1,280} \\
+				Insertion Sort~\notes{$O(n^{2})$} & \oldanswer{20} & \oldanswer{80} & 320 seconds & \oldanswer{1,280} \\
 				\bottomrule
 			\end{tabular}
 			\begin{tablenotes}
@@ -55,7 +55,7 @@
 
 \openingquestions[Average Case Runtime]
 \begin{enumerate}[label=\arabic*.,start=3]
-    \item How did we approach case runtime analysis of iterative algorithms previously? How can we improve on this? \answer{Insertion sort -- more or less, the inner loop needs to walk half way down on every other iteration.}
+    \item How did we approach case runtime analysis of iterative algorithms previously? How can we improve on this? \oldanswer{Insertion sort -- more or less, the inner loop needs to walk half way down on every other iteration.}
 \end{enumerate}
 
 \section{Expectation of a Random Variable}\label{sec:expectation-of-a-random-variable}
@@ -73,8 +73,8 @@ The expected value of a random variable $X$ is the sum over all outcomes of the 
 \end{itemize}}
 
 \begin{enumerate}[label=\arabic*., start=4]
-    \item What is the expected outcome when you roll a fair die once? What about a loaded die where the probability of a side coming up is the value of the side divided by 21? \answer{\[ 1\left(\frac{1}{6}\right) + 2\left(\frac{1}{6}\right) + 3\left(\frac{1}{6}\right) + 4\left(\frac{1}{6}\right) + 5\left(\frac{1}{6}\right) + 6\left(\frac{1}{6}\right) = \frac{21}{6} = 3.5  \] \[ 1\left( \frac{1}{21} \right) + 2\left( \frac{2}{21} \right) + 3\left( \frac{3}{21} \right) + 4\left( \frac{4}{21} \right) + 5\left( \frac{5}{21} \right) + 6\left( \frac{6}{21} \right) = \frac{1+4+9+16+25+36}{21} = \frac{91}{21}=\frac{13}{3}= 4.\bar{3}  \] } % FIXME: Repetition for .3 not showing
-	\item Calculate the expected outcome when you roll a fair die twice and sum the results. Do this two different ways. \answer{There are 36 possible combinations of rolls. $2=(\{1,1\})=\frac{1}{36},3=(\{1,2\};\{2,1\}\})=\frac{2}{36},\dots$}
+    \item What is the expected outcome when you roll a fair die once? What about a loaded die where the probability of a side coming up is the value of the side divided by 21? \oldanswer{\[ 1\left(\frac{1}{6}\right) + 2\left(\frac{1}{6}\right) + 3\left(\frac{1}{6}\right) + 4\left(\frac{1}{6}\right) + 5\left(\frac{1}{6}\right) + 6\left(\frac{1}{6}\right) = \frac{21}{6} = 3.5  \] \[ 1\left( \frac{1}{21} \right) + 2\left( \frac{2}{21} \right) + 3\left( \frac{3}{21} \right) + 4\left( \frac{4}{21} \right) + 5\left( \frac{5}{21} \right) + 6\left( \frac{6}{21} \right) = \frac{1+4+9+16+25+36}{21} = \frac{91}{21}=\frac{13}{3}= 4.\bar{3}  \] } % FIXME: Repetition for .3 not showing
+	\item Calculate the expected outcome when you roll a fair die twice and sum the results. Do this two different ways. \oldanswer{There are 36 possible combinations of rolls. $2=(\{1,1\})=\frac{1}{36},3=(\{1,2\};\{2,1\}\})=\frac{2}{36},\dots$}
 \end{enumerate}
 
 \noindent Now let's use expectation of a random variable to improve our average case runtime for insertion sort (similar for bubble sort or selection sort).
@@ -89,7 +89,7 @@ $E(X_{i})$ is the expected number of comparisons to insert $a_{i}$ into the prop
 \begin{enumerate}[label=\arabic*., start=6]
     \item Write equations for the following and simplify. \notes{\[ \sum_{j=1}^{n}j=\frac{(n)(n+1)}{2}  \]}
 	\begin{itemize}
-		\item $E(X_{i})$\answer{Outcomes: $1, 2, 3,\dots, (i-1)$, Probability for each: $\frac{1}{i-1}$ \begin{equation*}
+		\item $E(X_{i})$\oldanswer{Outcomes: $1, 2, 3,\dots, (i-1)$, Probability for each: $\frac{1}{i-1}$ \begin{equation*}
 		\begin{aligned}
 			E(X_{i})&=\left( \frac{1}{i-1} \right)1+\left( \frac{1}{i-1} \right)2+\left( \frac{1}{i-1} \right)3+\dots+\left( \frac{1}{i-1} \right)(i-1)\\
 					&=\left( \frac{1}{i-1} \right)\sum_{j=1}^{i-1}j\\
@@ -97,7 +97,7 @@ $E(X_{i})$ is the expected number of comparisons to insert $a_{i}$ into the prop
 					&= \frac{(i)(i+1)}{2(i-1)}-\frac{i}{i-1}  \\
 		\end{aligned}
 		\end{equation*}}
-		\item $E(X)$ \answer{\[ \sum_{i=2}^{n}\left( \frac{i}{2} \right)=O(n^{2})  \]}	% TODO: Get these papers and write this out
+		\item $E(X)$ \oldanswer{\[ \sum_{i=2}^{n}\left( \frac{i}{2} \right)=O(n^{2})  \]}	% TODO: Get these papers and write this out
 	\end{itemize}
 	\item What if the data is not random?
 \end{enumerate}

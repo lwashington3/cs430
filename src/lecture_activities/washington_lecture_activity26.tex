@@ -7,61 +7,71 @@
 % Document
 \begin{document}
 
-	%<*Lecture-Activity-26>
+%<*Lecture-Activity-26>
+\newcommand{\pathset}{
+	\colorlet{current}{.}
+	\tikzset{>={Stealth[current]},
+				every node/.style={current,fill=white,circle},
+				every edge/.style={current},
+				thickedge/.style={current,line width=2.5pt}}
+}
+\newcommand{\pathsetb}{
+	\colorlet{current}{.}
+	\tikzset{>={Stealth[current]},
+				every node/.style={current,fill=white,circle},
+				every edge/.style={current,very thick}}
+}
 \maketitle
 \openingquestions
 \begin{enumerate}
 	\item What is the difference between a tree and a graph?
-	\begin{newanswer}
+	\begin{answer}
 		All trees are graphs, but not all graphs are trees.
 		In a tree, there is only 1 path between any 2 vertices.
 		Trees are also acyclic since no item can have multiple parents.
 		If trees have $|V|$ nodes, then there are $|V|-1$ edges.
-	\end{newanswer}
+	\end{answer}
 	\item Give a recursive definition for a tree.
-	\begin{newanswer}
+	\begin{answer}
 		Base case: single node with no children.
 		A tree is $\dots$ a node pointing to other trees with no cycles.
-	\end{newanswer}
+	\end{answer}
 	\item In a weighted undirected graph, what is the difference between a minimum spanning tree and a shortest path in a graph?
-	\begin{newanswer}
+	\begin{answer}
 		A minimum spanning tree is made up of the edges of minimum total weight that still span (connect) all vertices in the graph.
 		This does not assure the minimum path between all vertices.
 		A shortest path is the minimum path distance between two vertices.
-	\end{newanswer}
+	\end{answer}
 	\item Since the shortest paths contain the shortest sub-paths (\hyperref[dfn:optimal-substructure]{optimal substructure}),
 	name an algorithmic approach that we might try to find a shortest path in a graph.
-	\begin{newanswer}
+	\begin{answer}
 		\hyperref[sec:proving-a-greedy-choice-property]{Greedy algorithms} and \hyperref[sec:dynamic-programming]{Dynamic Programming}.
-	\end{newanswer}
+	\end{answer}
 \end{enumerate}
 
 \section{Minimum Spanning Trees (MST)}\label{sec:minimum-spanning-trees}
 \begin{enumerate}
 	\item Give a definition of a Minimum Spanning Tree, and find an MST of the below graph.
-	\begin{newanswer}
+	\begin{answer}
 		An MST is a graph that spans over all vertices with no cycles.
 		$|V|-1$ edges.
-	\end{newanswer}
+	\end{answer}
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\colorlet{current}{.}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (A) at (0,0) {A};
 				\node (D) at (1,-2.5) {D};
-				\node (F) at (4,-2.75) {F} ;
+				\node (F) at (4,-2.75) {F};
 				\node (B) at (8,0.5) {B};
 				\node (C) at (2.5,1) {C};
 				\node (E) at (4.25,-0.5) {E};
 			\end{scope}
-			\begin{scope}[>={Stealth[current]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=current,very thick}]
+			\begin{scope}\pathsetb
 				\path (A) edge[bend left=60] node {$5$} (B);
 				\path (A) edge node {$3$} (C);
 				\path (A) edge node {$9$} (D);
-
+w
 				\path (B) edge node {$2$} (C);
 				\path (B) edge node {$1$} (E);
 				\path (B) edge node {$6$} (F);
@@ -75,23 +85,20 @@
 		\end{tikzpicture}
 		\label{fig:26.1}
 	\end{figure}
-	\begin{newanswer}
+	\begin{answer}
 		\begin{minipage}{0.5\textwidth}
 			\begin{figure}[H]
 			\centering
 			\begin{tikzpicture}
-				\begin{scope}[every node/.style={circle,thick,draw}]
+				\begin{scope}\globalnodeset
 					\node (A) at (0,0) {A};
 					\node (C) at (2,0) {C};
 					\node (B) at (4,0) {B};
 					\node (D) at (0,-2) {D};
 					\node (E) at (2,-1.65) {E};
-					\node (F) at (3.5,-3.5) {F} ;
+					\node (F) at (3.5,-3.5) {F};
 				\end{scope}
-				\colorlet{current}{.}
-				\begin{scope}[>={Stealth[current]},
-					every node/.style={fill=white,circle},
-					every edge/.style={draw=current,very thick}]
+				\begin{scope}\pathsetb
 					\path (A) edge node {$3$} (C);
 					\path (B) edge node {$2$} (C);
 					\path (B) edge node {$1$} (E);
@@ -107,7 +114,7 @@
 			\begin{figure}[H]
 			\centering
 			\begin{tikzpicture}
-				\begin{scope}[every node/.style={circle,thick,draw}]
+				\begin{scope}\globalnodeset
 					\node (A) at (0,0) {A};
 					\node (D) at (0,-2) {D};
 					\node (E) at (2,-2) {E};
@@ -115,10 +122,7 @@
 					\node (B) at (4,0) {B};
 					\node (F) at (3,-3.5) {F};
 				\end{scope}
-				\colorlet{current}{.}
-				\begin{scope}[>={Stealth[current]},
-					every node/.style={fill=white,circle},
-					every edge/.style={draw=current,very thick}]
+				\begin{scope}\pathsetb
 					\path (A) edge node {$9$} (D);
 					\path (B) edge node {$2$} (C);
 					\path (C) edge node {$4$} (E);
@@ -131,15 +135,15 @@
 			\label{fig:26.1-spanning-tree-2}
 		\end{figure}
 		\end{minipage}
-	\end{newanswer}
+	\end{answer}
 	\item Prove a Minimum Spanning Tree has \hyperref[dfn:optimal-substructure]{optimal substructure}.
-	\begin{newanswer}
+	\begin{answer}
 		Pick any subsets of adjacent vertices in an optimal MST.
 		Those edges that connect that subset of vertices in the MST must also be MST.
-	\end{newanswer}
+	\end{answer}
 	\item What are some possible greedy approaches to find a Minimum Spanning Tree?
 	Prove correct or show counterexample.
-	\begin{newanswer}
+	\begin{answer}
 		\begin{itemize}
 				\item Grow min edges first; no cycles.
 				\item Prune/remove max edge, but stay connected.
@@ -148,12 +152,12 @@
 				\item \textbf{Kruskal}\label{dfn:kruskal}:
 				Pick min edge that its vertices are not already in the \hyperref[sec:strongly-connected-components]{connected component}.
 		\end{itemize}
-	\end{newanswer}
+	\end{answer}
 	\item Demonstrate your MST algorithm on the following graph and write pseudocode.
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (a) at (0,0) {a};
 
 				\node (b) at (3,1.5) {b};
@@ -169,10 +173,7 @@
 
 				\node (e) at (14,0) {e};
 			\end{scope}
-			\colorlet{current}{.}
-			\begin{scope}[>={Stealth[current]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=current,very thick}]
+			\begin{scope}\pathsetb
 				\path (a) edge node {$4$} (b);
 				\path (a) edge node {$8$} (h);
 
@@ -198,7 +199,7 @@
 		\end{tikzpicture}
 		\label{fig:26.2}
 	\end{figure}
-	\begin{newanswer}
+	\begin{answer}
 		\begin{table}[H]
 			\centering
 			\begin{threeparttable}
@@ -222,10 +223,10 @@
 				\end{tablenotes}
 			\end{threeparttable}
 	\end{table}
-	\end{newanswer}
+	\end{answer}
 \end{enumerate}
 
-\begin{newanswer}
+\begin{answer}
 	\begin{minipage}{0.5\textwidth}
 		\begin{algorithm}[H]
 			\caption{Prim's Algorithm (MST)}\label{alg:mst-prim}
@@ -271,7 +272,7 @@
 		\end{algorithm}
 		~\\
 	\end{minipage}
-\end{newanswer}
+\end{answer}
 
 Demonstration of Prim (Deleted): \url{http://en.wikipedia.org/wiki/File:Prim-algorithm-animation-2.gif}
 
@@ -280,11 +281,11 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 \newcounter{kruskal}
 \newcommand{\mstcaption}[3]{Connected vertices $#1$ and $#2$ with an edge with weight $#3$.}
 
-\begin{newanswer}
+\begin{answer}
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (a) at (0,0) {a};
 
 				\node (b) at (3,1.5) {b};
@@ -300,11 +301,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 
 				\node (e) at (14,0) {e};
 			\end{scope}
-			\colorlet{current}{.}
-			\begin{scope}[>={Stealth[current]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=current},
-				thickedge/.style={line width=2.5pt}]
+			\begin{scope}\pathset
 				\path (a) edge node {$4$} (b);
 				\path (a) edge node {$8$} (h);
 
@@ -334,7 +331,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (a) at (0,0) {a};
 
 				\node (b) at (3,1.5) {b};
@@ -350,11 +347,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 
 				\node (e) at (14,0) {e};
 			\end{scope}
-			\colorlet{current}{.}
-			\begin{scope}[>={Stealth[current]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=current},
-				thickedge/.style={line width=2.5pt}]
+			\begin{scope}\pathset
 				\path (a) edge node {$4$} (b);
 				\path (a) edge node {$8$} (h);
 
@@ -384,7 +377,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (a) at (0,0) {a};
 
 				\node (b) at (3,1.5) {b};
@@ -400,11 +393,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 
 				\node (e) at (14,0) {e};
 			\end{scope}
-			\colorlet{current}{.}
-			\begin{scope}[>={Stealth[current]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=current},
-				thickedge/.style={line width=2.5pt}]
+			\begin{scope}\pathset
 				\path (a) edge node {$4$} (b);
 				\path (a) edge node {$8$} (h);
 
@@ -434,7 +423,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (a) at (0,0) {a};
 
 				\node (b) at (3,1.5) {b};
@@ -450,11 +439,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 
 				\node (e) at (14,0) {e};
 			\end{scope}
-			\colorlet{current}{.}
-			\begin{scope}[>={Stealth[current]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=current},
-				thickedge/.style={line width=2.5pt}]
+			\begin{scope}\pathset
 				\path [thickedge] (a) edge node {$4$} (b);
 				\path (a) edge node {$8$} (h);
 
@@ -484,7 +469,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (a) at (0,0) {a};
 
 				\node (b) at (3,1.5) {b};
@@ -500,11 +485,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 
 				\node (e) at (14,0) {e};
 			\end{scope}
-			\colorlet{current}{.}
-			\begin{scope}[>={Stealth[current]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=current},
-				thickedge/.style={line width=2.5pt}]
+			\begin{scope}\pathset
 				\path [thickedge] (a) edge node {$4$} (b);
 				\path (a) edge node {$8$} (h);
 
@@ -534,7 +515,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (a) at (0,0) {a};
 
 				\node (b) at (3,1.5) {b};
@@ -550,11 +531,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 
 				\node (e) at (14,0) {e};
 			\end{scope}
-			\colorlet{current}{.}
-			\begin{scope}[>={Stealth[current]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=current},
-				thickedge/.style={line width=2.5pt}]
+			\begin{scope}\pathset
 				\path [thickedge] (a) edge node {$4$} (b);
 				\path (a) edge node {$8$} (h);
 
@@ -584,7 +561,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (a) at (0,0) {a};
 
 				\node (b) at (3,1.5) {b};
@@ -600,11 +577,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 
 				\node (e) at (14,0) {e};
 			\end{scope}
-			\colorlet{current}{.}
-			\begin{scope}[>={Stealth[current]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=current},
-				thickedge/.style={line width=2.5pt}]
+			\begin{scope}\pathset
 				\path [thickedge] (a) edge node {$4$} (b);
 				\path [thickedge] (a) edge node {$8$} (h);
 
@@ -634,7 +607,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (a) at (0,0) {a};
 
 				\node (b) at (3,1.5) {b};
@@ -650,11 +623,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 
 				\node (e) at (14,0) {e};
 			\end{scope}
-			\colorlet{current}{.}
-			\begin{scope}[>={Stealth[current]},
-				every node/.style={fill=white,circle},
-				every edge/.style={draw=current},
-				thickedge/.style={line width=2.5pt}]
+			\begin{scope}\pathset
 				\path [thickedge] (a) edge node {$4$} (b);
 				\path [thickedge] (a) edge node {$8$} (h);
 
@@ -681,7 +650,7 @@ Demonstration of Kruskal: \url{https://www.cs.usfca.edu/~galles/visualization/Kr
 		\caption{\mstcaption{d}{e}{3}}
 		\label{fig:kruskal-example-h}
 	\end{figure}
-\end{newanswer}
+\end{answer}
 %</Lecture-Activity-26>
 
 \end{document}

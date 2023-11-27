@@ -13,7 +13,7 @@
 \begin{enumerate}[label=\arabic*.]
 	\item What do you think the issue we need to handle when deleting a node from a red-black tree?
 	How does red-black delete differ from a \hyperref[alg:bst-delete]{BST delete}?
-	\answer{If the actaul node deleted is red, then you're done.
+	\oldanswer{If the actaul node deleted is red, then you're done.
 	If the node you're deleting is black, then you potentially could have two red nodes in a row.
 	If you color the deleted nodes child black (if it was red), then you're done.
 	There would only be 0 or 1 children, not 2.
@@ -140,7 +140,7 @@ AN AVL tree is a special binary tree in which the difference between the height 
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (c) at (0,0) {$c$};
 				\node (b) at (-0.4,-1.25) {$b$};
 				\node (a) at (-0.8,-2.5) {$a$};
@@ -167,7 +167,7 @@ Perform single right rotation at $c$ (R-rotation)\\Similar idea for single left 
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node (a) at (0,0) {$a$};
 				\node (c) at (0.5,-1) {$c$};
 				\node (b) at (0.25,-2) {$b$};

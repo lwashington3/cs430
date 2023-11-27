@@ -31,7 +31,7 @@ and $m$, the total number of \Call{Make-Set}{}, \Call{Union}{}, and \Call{Find-S
 
 \begin{enumerate}
     \item Give then above, how many possible \Call{Union}{} operations might there be?
-	\answer{$n$ make sets; $n-1$ unions; findsets?}
+	\oldanswer{$n$ make sets; $n-1$ unions; findsets?}
 \end{enumerate}
 
 \section{Disjoint-set Application}\label{sec:disjoint-set-application}
@@ -69,14 +69,14 @@ and supports problems where there can be relationships between any two items (ve
 			\path (h) edge (i);
 		\end{scope}
 	\end{tikzpicture}
-	\answer{\caption{$V = \{ a, b, c, d, e, f, g, h, i, j \}$, $E=\{ \{a,b\}, \{ a,c \}, \{ c,b \}, \{ b,d \}, \{ e,g \}, \{e,f\}, \{ h,i \} \}$}}
+	\oldanswer{\caption{$V = \{ a, b, c, d, e, f, g, h, i, j \}$, $E=\{ \{a,b\}, \{ a,c \}, \{ c,b \}, \{ b,d \}, \{ e,g \}, \{e,f\}, \{ h,i \} \}$}}
 	\label{fig:disjoint-set}
 \end{figure}
 
 \begin{enumerate}
     \item It is easy to see the disjoint sets (connected components) of the graph.
 	Given a graph $G=(V,E)$ write an algorithm using \Call{Make-Set}{}, \Call{Union}{}, and \Call{Find-Set}{} to find the connected components of any undirected graph.
-	\answer{\begin{algorithm}[H]
+	\oldanswer{\begin{algorithm}[H]
 		\caption{}\label{alg:connected-components}
 		\begin{algorithmic}[1]
 		\Function{ConnectedComponents}{$V$, $E$}
@@ -105,16 +105,16 @@ The head serves as the set representative.
 \begin{enumerate}[start=2]
     \item Describe the algorithms for \Call{Make-Set}{$x$} and \Call{Find-Set}{$x$} including runtime.
 	For \Call{Find-Set}{$x$}, assume you already have a reference to $x$.
-	\answer{\Call{Make-Set}{} runs in $O(1)$, since you're creating the element, setting the $tail$ pointer to this new element, and creating a pointer back to the head.
+	\oldanswer{\Call{Make-Set}{} runs in $O(1)$, since you're creating the element, setting the $tail$ pointer to this new element, and creating a pointer back to the head.
 	\Call{Find-Set}{} also runs in $O(1)$, since the function is not searching for a set element, instead it follows the back pointer to head to get the set label.}
 	\item How do you think \Call{Union}{$x$, $y$} is implemented?
-	\answer{\begin{itemize}
+	\oldanswer{\begin{itemize}
 				\item Link the two set element lists $O(1)$ together.
 				\item Update the back pointers $O(\mbox{length of the 2nd list of elments})$
 	\end{itemize}}
 	\item For $n$ total elements, what is the maximum number of \Call{Make-Set}{} and \Call{Union}{} operators that would need to be called in the worst case to get all the elements in one set?
 	What is the maximum amortized runtime of each union?
-	\answer{\begin{equation*}
+	\oldanswer{\begin{equation*}
 	\begin{aligned}
 		n\ &\Call{Make-Set}{}s\ O(1) \mbox{ each}\\
 		n-1\ &\Call{Union}{}s \mbox{ depend on how many back pointers need updating} \Rightarrow \frac{O(n^{2})}{n-1} &= O(n)\mbox{ amortized.}
@@ -122,7 +122,7 @@ The head serves as the set representative.
 	\end{equation*}}
 	\item For $n$ total elements, what is the minimum number of \Call{Make-Set}{} and \Call{Union}{} operators that would need to be called in the best case to get all the elements in one set?
 	What is the lower bound, worst case amortized runtime of each union?
-	\answer{Try the ``pairwise approach'' to get a lower bound.\begin{table}[H]
+	\oldanswer{Try the ``pairwise approach'' to get a lower bound.\begin{table}[H]
 	    \centering
 	    \begin{threeparttable}
 			\caption{}

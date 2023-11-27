@@ -18,25 +18,25 @@ Practice Problems (all taken from previous exams)
 	\begin{enumerate}
 	    \item Saving value property
 		\item Storing value property
-		\item \answer{Memoization}
+		\item \oldanswer{Memoization}
 		\item Mapping
 	\end{enumerate}
 	\item What is the time complexity of the brute force algorithm used to find the longest common subsequence for sequence length $m$ and sequence length $n$ ($m < n$)?
 	\begin{enumerate}
 	    \item $O(mn)$
 	    \item $O((mn)^{2})$
-	    \item \answer{$O(n2^{m})$}
+	    \item \oldanswer{$O(n2^{m})$}
 	    \item $O(2^{m}2^{n})$
 	\end{enumerate}
 	\item When dynamic programming is used, it takes less time compared to algorithmic methods that don't utilize overlapping subproblems.
 	\begin{enumerate}
-	    \item \answer{True}.
+	    \item \oldanswer{True}.
 		\item False.
 	\end{enumerate}
 	\item Using the dynamic programming solution, determine an LCS of $\{ 1, 0, 0, 1, 0, 1, 0, 1 \}$ and $\{ 0, 1, 0, 1, 1, 0, 1, 1, 0 \}$. Show all your work.
 	\item Given a sequence of $n$ numbers $a_{1}$, $a_{2}$, $a_{3}$, $\dots$, $a_{n}$ (some of them might be negative) stored in an array, we want to find two indicies $i \leq j$ such that the sum of the numbers from $a_{i}$ to $a_{j}$ is maximum, among all possible $i$ $j$ pairs $1 \leq i \leq j \leq n$.
 	\begin{enumerate}[label=\arabic{enumi}\alph*)]
-	    \item Write pseudocode to sum each contiguous subsequence (from $a_{i}$ to $a_{j}$) and keep track of the maximum one. What is the runtime of your algorithm? \answer{The runtime is $O(n^{2})$ \begin{algorithm}[H]
+	    \item Write pseudocode to sum each contiguous subsequence (from $a_{i}$ to $a_{j}$) and keep track of the maximum one. What is the runtime of your algorithm? \oldanswer{The runtime is $O(n^{2})$ \begin{algorithm}[H]
 	    		\caption{Maximum Subsequence}\label{alg:max-suqsequence}
 	    		\begin{algorithmic}[1]
 	    		\Function{MaxSubsequence}{}
@@ -61,7 +61,7 @@ Practice Problems (all taken from previous exams)
 	    		\EndFunction
 	    		\end{algorithmic}
 	    	\end{algorithm}}
-		\item Now find an $O(n)$ algorithm. Give pseudocode.\answer{\begin{algorithm}[H]
+		\item Now find an $O(n)$ algorithm. Give pseudocode.\oldanswer{\begin{algorithm}[H]
 				\caption{Improved Maximum Subsequence}\label{alg:improved-max-subsequence}
 				\begin{algorithmic}[1]
 				\Function{ImprovedMaximumSubsequence}{}
@@ -72,7 +72,7 @@ Practice Problems (all taken from previous exams)
 				\end{algorithmic}
 			\end{algorithm}}
 	\end{enumerate}
-	\item Prove that a binary tree that is not full (every node has 0 or 2 children) cannot correspond to an optimal prefix code. \answer{An optimal prefix code is a predix code that gives the shortest possible encoded file length. If we have a prefix code that corresponds to a binary tree that is not full, let $n$ be a node that only has 1 child. Then we could form another binary tree by removing $n$ and moving up $n$'s child. The codewords of all the characters that were descendants of $n$ have now all be decreased by 1, and so the original binary tree could not correspond to an optimal prefix code.}
+	\item Prove that a binary tree that is not full (every node has 0 or 2 children) cannot correspond to an optimal prefix code. \oldanswer{An optimal prefix code is a predix code that gives the shortest possible encoded file length. If we have a prefix code that corresponds to a binary tree that is not full, let $n$ be a node that only has 1 child. Then we could form another binary tree by removing $n$ and moving up $n$'s child. The codewords of all the characters that were descendants of $n$ have now all be decreased by 1, and so the original binary tree could not correspond to an optimal prefix code.}
 \end{enumerate}
 %</Recitation-8>
 

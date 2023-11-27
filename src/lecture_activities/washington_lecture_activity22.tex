@@ -51,22 +51,22 @@ In essence, a Fibonacci heap is a ``lazy'' binomial heap in which the necessary 
 \end{enumerate}
 
 \binomialqueueop{Make-Heap}
-\answer{$O(1)$ Makes a single node heap.}
+\oldanswer{$O(1)$ Makes a single node heap.}
 
 \binomialqueueop{Insert}
-\answer{$O(1)$ Make single node heap, put in the (bidirectional linked) list to left of current min.
+\oldanswer{$O(1)$ Make single node heap, put in the (bidirectional linked) list to left of current min.
 Update min pointer if necessary.}
 
 \binomialqueueop{Minimum}
-\answer{$O(1)$ We maintain a pointer to the min.}
+\oldanswer{$O(1)$ We maintain a pointer to the min.}
 
 \binomialqueueop{Union}
-\answer{$O(1)$ Link the two root lists together%
+\oldanswer{$O(1)$ Link the two root lists together%
 \footnote{You don't need to walk either to do that.}%
 , and then update the min pointer to point to the smaller of the two previous mins.}
 
 \binomialqueueop{Extract-Min}
-\answer{Find min is $O(\log n)$%
+\oldanswer{Find min is $O(\log n)$%
 \footnote{The name Fibnoacci comes from the fact that the base in the $\log n$ is the golden ratio. The maximum degree of any node in the root list is also related to Fibonacci.}
 because we have a pointer to the min.
 Remove min from root list (saving the value to return).
@@ -75,10 +75,10 @@ If the min had children, put those children in the root list.
 \footnote{Use array of rank on last node}}
 
 \binomialqueueop{Decrease-Key}
-%\answer{``Walk it up''.
+%\oldanswer{``Walk it up''.
 %The maximum height is $O(\lg n)$.
 %If get up to root list, check if new node in root list is smaller than the current min, if so, move the min pointer.}
-\answer{$O(1)$ Reduce value at that node, move it and its subtree to root list, check if new min value pointer.
+\oldanswer{$O(1)$ Reduce value at that node, move it and its subtree to root list, check if new min value pointer.
 Breaking that binomial heap by removing a subtree%
 \footnote{Do not \Call{Consolidate}{} yet.}.
 Wait for a marked node to lose a 2nd child, move to root list, don't \Call{Consolidate}{} yet.

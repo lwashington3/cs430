@@ -16,22 +16,22 @@
 \begin{enumerate}[label=\arabic*.]
     \item Order Statistics: Select the $i$th smallest of $n$ elements (the element with rank $i$)
 	\begin{itemize}
-		\item $i=1$: minimum; \answer{$1^{\mbox{st}}$ order statistic, $O(n)$}
-		\item $i=n$: maximum; \answer{$n^{\mbox{st}}$ order statistic, $O(n)$}
-		\item $i=\lfloor \frac{n+1}{2} \rfloor$ or $\lceil \frac{n+1}{2} \rceil$: median   \answer{Sort: $O(n\lg n)$, then take $A\left[ \frac{n}{2} \right]$ for the median, $O(1)$}
+		\item $i=1$: minimum; \oldanswer{$1^{\mbox{st}}$ order statistic, $O(n)$}
+		\item $i=n$: maximum; \oldanswer{$n^{\mbox{st}}$ order statistic, $O(n)$}
+		\item $i=\lfloor \frac{n+1}{2} \rfloor$ or $\lceil \frac{n+1}{2} \rceil$: median   \oldanswer{Sort: $O(n\lg n)$, then take $A\left[ \frac{n}{2} \right]$ for the median, $O(1)$}
 	\end{itemize}
 \end{enumerate}
 How fast can we solve the problem for various $i$ values?
 
 \section{Randomized Algorithm for finding the $i$th Element}\label{sec:randomized-algorithm-for-finding-the-ith-element}
 \begin{enumerate}[label=\arabic*.]
-    \item Think about partition (with a random choice of the pivot\answer{``median of 3''}) from quicksort. Can you think of a way to use that and comparing the final location of the pivot to $i$, and then divide and conquer?
+    \item Think about partition (with a random choice of the pivot\oldanswer{``median of 3''}) from quicksort. Can you think of a way to use that and comparing the final location of the pivot to $i$, and then divide and conquer?
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth]{9.1}
 		\caption{}
 		\label{fig:9.1}
-	\end{figure}\answer{Most cases $O(n)$, $A[k]=x$, the pivot. Three possibilities:\begin{itemize}
+	\end{figure}\oldanswer{Most cases $O(n)$, $A[k]=x$, the pivot. Three possibilities:\begin{itemize}
 		\item[$i=k$] Done, $A[k]$ is the $i$ smallest value
 		\item[$i<k$] Redo Partition from indexes $p$ to $k-1$, because we know that the $i$th smallest must be smaller than the pivot at index $k$, still looking for the $i$th smallest.
 		\item[$i>k$] Redo Partition from indexes $k+1$ to $q$, not looking for the $i-k$ smallest, since we threw out $k$ elements that we know are smaller than the $i$th element.
@@ -54,7 +54,7 @@ How fast can we solve the problem for various $i$ values?
 		\includegraphics[width=\textwidth]{9.2}
 		\caption{}
 		\label{fig:9.2}
-	\end{figure}\answer{\begin{algorithm}[H]
+	\end{figure}\oldanswer{\begin{algorithm}[H]
 			\caption{Statistical Order to find the Smallest Element in Linear Time}\label{alg:orderstat}
 			\begin{algorithmic}[1]
 			\Function{OrderStat}{$A$, $p$, $q$, $i$}\Comment{Initial call: \Call{OrderStat}{$A$, $1$, $n$, $i$}}
@@ -124,7 +124,7 @@ How fast can we solve the problem for various $i$ values?
 			 &= cn - \left( \frac{1}{10}cn - \Theta(n) \right)\\
 			 &\leq cn
 	\end{aligned}
-	\end{equation*}} \answer{if \textcolor{recgreen}{$c$} is chosen large enough to handle the \textcolor{recgreen}{$\Theta(n)$}.}\\\\ In practice, this algorithm runs slowly, because the constant in front of $n$ is large.\\\\Would we use this approach to find the median to partition around in Quicksort, and achieve in worst-case $\Theta(n\log n)$ time? \answer{\textbf{No}, too many calls to $O(cn)$ \hyperref[alg:select]{Select} with a big $c$. We can do this if we need to find the median once or a couple of times, but not inside of Partition.}
+	\end{equation*}} \oldanswer{if \textcolor{recgreen}{$c$} is chosen large enough to handle the \textcolor{recgreen}{$\Theta(n)$}.}\\\\ In practice, this algorithm runs slowly, because the constant in front of $n$ is large.\\\\Would we use this approach to find the median to partition around in Quicksort, and achieve in worst-case $\Theta(n\log n)$ time? \oldanswer{\textbf{No}, too many calls to $O(cn)$ \hyperref[alg:select]{Select} with a big $c$. We can do this if we need to find the median once or a couple of times, but not inside of Partition.}
 \end{enumerate}
 
 %</Lecture-Activity-9>

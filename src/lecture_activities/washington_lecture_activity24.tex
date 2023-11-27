@@ -11,7 +11,7 @@
 
 %<*Lecture-Activity-24>
 \maketitle
-\answer{Relationships between items:\begin{itemize}
+\oldanswer{Relationships between items:\begin{itemize}
 	\item[$1-1$] List, Stack, Queue
 	\item[$1-N$] Tree, Hierarchical
 	\item[$N-N$] Any graph item can be related to any other item.
@@ -20,9 +20,9 @@
 
 \begin{enumerate}
     \item Give an example NOT discussed in the video lecture of a problem that can be represented by a graph.
-	\answer{The connections between airports.}
+	\oldanswer{The connections between airports.}
 	\item If there is a path in a graph from a vertex back to itself, that is called a
-	\answer{\underline{cycle}}%
+	\oldanswer{\underline{cycle}}%
 	\footnote{A path of one edge is called a self-loop.}.
 	\item Which representation of a graph, adjacency-list and adjacency-matrix, usually uses more memory and why?
 \end{enumerate}
@@ -32,7 +32,7 @@
     \item Draw the graph:
 	A directed graph $G=(V,E)$ where $V=\{ 1, 2, 3, 4, 5, 6 \}$ and $E=\{ (1,2), (2,2), (2,4), (2,5), (4,1), (4,5), (5,4), (6,3) \}$.
 	What is the edge $(2,2)$ called?
-	\answer{The edge $(2,2)$ is a self-loop.}
+	\oldanswer{The edge $(2,2)$ is a self-loop.}
 	\item Draw the graph:
 	An undirected graph $G=(V,E)$ where $V=\{ 1, 2, 3, 4, 5, 6 \}$ and $E=\left\{ \{1,2\}, \{ 1, 5\}, \{ 2, 5\}, \{ 3, 4\} \right\}$.
 	What is vertex $4$ called?
@@ -68,7 +68,7 @@
 		\begin{figure}[H]
 			\centering
 			\begin{tikzpicture}
-				\begin{scope}[every node/.style={circle,thick,draw}]
+				\begin{scope}\globalnodeset
 				\node (1) at (0,0) {1};
 				\node (2) at (3,0) {2};
 				\node (3) at (5,-1.5) {3};
@@ -96,7 +96,7 @@
 		\begin{figure}[H]
 			\centering
 			\begin{tikzpicture}
-				\begin{scope}[every node/.style={circle,thick,draw}]
+				\begin{scope}\globalnodeset
 					\node (1) at (0,0) {1};
 					\node (2) at (3,0) {2};
 					\node (3) at (6,0) {3};
@@ -126,9 +126,9 @@
 			\label{fig:24.2}
 		\end{figure}
 	\end{minipage}
-	\answer{Memory: $O(|V| + |E|)$}
+	\oldanswer{Memory: $O(|V| + |E|)$}
 	\item What is the adjacency matrix implementation of the above two graphs?
-	\answer{Memory: $O(|V|^{2})$
+	\oldanswer{Memory: $O(|V|^{2})$
 		\begin{minipage}{0.45\textwidth}
 			\begin{table}[H]
 				\centering
@@ -159,13 +159,13 @@
 		\end{minipage}
 	}
 	\item How do the two implementations handle a weighted graph?
-	\answer{Edges have numbers, add weights to the adj list and adj matrix.}
+	\oldanswer{Edges have numbers, add weights to the adj list and adj matrix.}
 	\item Two different representations of the graph data structure are discussed in the book, adjacency-list and adjacency-matrix.
 	Please briefly discuss the runtime (in terms of $|V|$ and $|E$ of these graph operations/algorithms using each implementation.)
 	Assume vertices are labeled as integers.
 	\begin{itemize}
 		\item What is the worst-case big-O runtime for checking to see if an edge from vertex $u$ to vertex $v$ exists?
-		\answer{Adj list: $O(V)$, Adj matrix: $O(1)$}
+		\oldanswer{Adj list: $O(V)$, Adj matrix: $O(1)$}
 		\item How long does it take to compute the out-degree of every vertex of a directed graph?
 		\item How long does it take to compute the in-degree of every vertex of a directed graph?
 	\end{itemize}

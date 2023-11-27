@@ -13,13 +13,13 @@
 %<*Lecture-Activity-19>
 \maketitle
 \section{Fractional Knapsack Problem}\label{sec:fractional-knapsack-problem}
-\answer{\begin{itemize}
+\oldanswer{\begin{itemize}
 	\item Prove \hyperref[dfn:optimal-substructure]{optimal substructure}
 	\item Prove \hyperref[dfn:cut-and-paste]{Greedy Choice}
 \end{itemize}}
 
 \begin{enumerate}
-    \item Prove that the Fractional Knapsack Problem has optimal substructure. \answer{\begin{itemize}
+    \item Prove that the Fractional Knapsack Problem has optimal substructure. \oldanswer{\begin{itemize}
         \item What is the problem?
 		\item Assume you have an optimal answer.
 		\begin{equation*}
@@ -32,7 +32,7 @@
 		\end{aligned}
 		\end{equation*}
     \end{itemize}}
-	\item Try various ``common sense'' greedy approaches that divide the problem into a sub-problem(s) and try to come up with counter-examples or prove the greedy choice is correct using the ``\hyperref[dfn:cut-and-paste]{cut and paste}'' proof.\answer{\begin{itemize}
+	\item Try various ``common sense'' greedy approaches that divide the problem into a sub-problem(s) and try to come up with counter-examples or prove the greedy choice is correct using the ``\hyperref[dfn:cut-and-paste]{cut and paste}'' proof.\oldanswer{\begin{itemize}
 		\item Max Value First -- if you fill the ``bag'' up immediately, you may miss out on a better value combination.\begin{table}[H]
 		    \centering
 		    \begin{threeparttable}
@@ -99,7 +99,7 @@ Example
 		\end{tabular}
 		\begin{tablenotes}
 			\small
-			\item \answer{The 224,000 bits came from multiplying the freqency (in thousands) of each character by the length of the variable codeword, which would represent its height in the binary tree, as described in Figure~\ref{fig:19.1}.
+			\item \oldanswer{The 224,000 bits came from multiplying the freqency (in thousands) of each character by the length of the variable codeword, which would represent its height in the binary tree, as described in Figure~\ref{fig:19.1}.
 			$45(1) + 13(3) + 12(3) + 16(3) + 9(4) + 5(4) = 45 + 39 + 36 + 48 + 36 + 20 = 224$.}
 		\end{tablenotes}
 	\end{threeparttable}
@@ -113,7 +113,7 @@ Example
 \end{figure}
 \begin{enumerate}[start=3]
     \item Prove that the Huffman Codes Problem has optimal substructure.\\
-	\answer{Problem \begin{equation*}
+	\oldanswer{Problem \begin{equation*}
 	\begin{aligned}
 		&c_{1}, c_{2}, \dots, c_{n} & \mbox{ characters}\\
 		&f_{1}, f_{2}, \dots, f_{n} & \mbox{ frequency}\\
@@ -183,7 +183,7 @@ The greedy approach is: Build the tree bottom up by using a minimum priority que
 
 \begin{enumerate}[start=4]
     \item Prove this greedy algorithm leads to an optimal Huffman Code tree: Build the tree bottom up by using a minimum priority queue to merge 2 least frequent objects (objects are leaf nodes or other subtrees) together into a new subtree.
-	\answer{If you have the optimal answer containing some subtree $k$, and you replace that with the greedy choice $g$ (which has all of the same nodes as $k$ in a different order), but $g$ has a lower cost than $k$, then the problem is greedy.}%
+	\oldanswer{If you have the optimal answer containing some subtree $k$, and you replace that with the greedy choice $g$ (which has all of the same nodes as $k$ in a different order), but $g$ has a lower cost than $k$, then the problem is greedy.}%
 	\footnote{This answer has not been checked to ensure that it's correct.}
 \end{enumerate}
 %</Lecture-Activity-19>

@@ -14,7 +14,7 @@
 \newcommand{\examplesep}{\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }}
 \openingquestions
 \begin{enumerate}[label=\arabic*.]
-    \item Why are optimal solutions to sub-problems stored in dynamic programming solutions?\answer{\ You only have to store the optimal answer for the subproblem because optimal substructure says that the overlapping subproblems only needs to know the optimal solution, not any other solution.}
+    \item Why are optimal solutions to sub-problems stored in dynamic programming solutions?\oldanswer{\ You only have to store the optimal answer for the subproblem because optimal substructure says that the overlapping subproblems only needs to know the optimal solution, not any other solution.}
 \end{enumerate}
 
 Constructing the answer for the Optimal Matrix Chain Multiplication (optimal parenthesization) from the dynamic programming table. See the solution to the example problem
@@ -54,7 +54,7 @@ Constructing the answer for the Optimal Matrix Chain Multiplication (optimal par
 	\end{threeparttable}
 \end{table}
 \begin{enumerate}[label=\arabic*.,start=2]
-    \item Write the optimal parenthesization.\answer{\begin{equation*}
+    \item Write the optimal parenthesization.\oldanswer{\begin{equation*}
     \begin{aligned}
     	A_{1} & A_{2} & A_{3} & A_{4} & A_{5} & A_{6}\\
     	( A_{1} & A_{2} & A_{3} ) & ( A_{4} & A_{5} & A_{6} )\\
@@ -62,7 +62,7 @@ Constructing the answer for the Optimal Matrix Chain Multiplication (optimal par
     	( (A_{1}) & (A_{2} & A_{3}) ) & ( (A_{4} & A_{5}) & A_{6} )\\
     \end{aligned}
     \end{equation*}}
-	\item Write pseudocode to use the root table to print the optimal parenthesization. Then write pseudocode to use the root table to actually perform the multiplications in the optimal parenthesization.\answer{\begin{algorithm}[H]
+	\item Write pseudocode to use the root table to print the optimal parenthesization. Then write pseudocode to use the root table to actually perform the multiplications in the optimal parenthesization.\oldanswer{\begin{algorithm}[H]
 		\caption{Print Optimal Parenthesization for Matrix Chain Multiplication}\label{alg:print-opt-parens}
 		\begin{algorithmic}[1]
 		\Function{PrintOptParens}{$root$, $from$, $to$}\Comment{Initial Call: \Call{PrintOptParens}{$root$, $1$, $n$}}
@@ -101,8 +101,8 @@ $X=ABCBDAB \examplesep Y=BDCABA$
 Length of LCS = 4 $BCBA$ or $BCAB$
 
 \begin{enumerate}[label=\arabic*.]
-    \item The brute force (try all possibilities) approach would be to find all subsequences of one input, see if each exists in other input. How many are there? \answer{Assume $m < n$. You would have the choices: $\frac{2}{1}$ $\frac{2}{2}$ $\frac{2}{3}$ $\frac{2}{4} \dots$ $\frac{2}{m-2}$ $\frac{2}{m-1}$ $\frac{2}{m}$, where the two represents that there are 2 choices for each position, yes or no, including all no's representing the empty set. This means there $2^{m}$ possible subsequences, again assuming that $m$ is smaller than $n$. For each generated subsequence, you have to check if it's in $Y$, which would take $O(n)$ for each check. The total runtime for brute force is $O(n2^{m})$.}
-	\item Step 1: Generically define the structure of the optimal solution to the Longest Common Subsequence problem. The longest common sequence of sequence $X[1\dots m]$ and sequence $Y[1\dots n]$ is: \answer{\begin{figure}[H]
+    \item The brute force (try all possibilities) approach would be to find all subsequences of one input, see if each exists in other input. How many are there? \oldanswer{Assume $m < n$. You would have the choices: $\frac{2}{1}$ $\frac{2}{2}$ $\frac{2}{3}$ $\frac{2}{4} \dots$ $\frac{2}{m-2}$ $\frac{2}{m-1}$ $\frac{2}{m}$, where the two represents that there are 2 choices for each position, yes or no, including all no's representing the empty set. This means there $2^{m}$ possible subsequences, again assuming that $m$ is smaller than $n$. For each generated subsequence, you have to check if it's in $Y$, which would take $O(n)$ for each check. The total runtime for brute force is $O(n2^{m})$.}
+	\item Step 1: Generically define the structure of the optimal solution to the Longest Common Subsequence problem. The longest common sequence of sequence $X[1\dots m]$ and sequence $Y[1\dots n]$ is: \oldanswer{\begin{figure}[H]
 	   \centering
 	   \includegraphics[width=\textwidth]{15.3}
 	\end{figure}
@@ -121,7 +121,7 @@ Length of LCS = 4 $BCBA$ or $BCAB$
 		\EndFunction
 		\end{algorithmic}
 	\end{algorithm}}
-	\item\label{prb:15-3} Step 2: Recursively define the optimal solution. Assume $C(i,j)$ is the optimal answer for up to position $i$ in $X$ and position $j$ in $Y$. Make sure you include the base case. \answer{\begin{equation*}
+	\item\label{prb:15-3} Step 2: Recursively define the optimal solution. Assume $C(i,j)$ is the optimal answer for up to position $i$ in $X$ and position $j$ in $Y$. Make sure you include the base case. \oldanswer{\begin{equation*}
 	\begin{aligned}
 		C(i,j) = \left\{ \begin{array}{ll}
 			C(i-1,j-1) & \mbox{ if } x[i] == y[j]\\
@@ -139,8 +139,8 @@ Length of LCS = 4 $BCBA$ or $BCAB$
 			\item $C(0,0) = 0$
 		\end{itemize}
 	\end{itemize}}
-	\item Use proof by contradiction to show that Longest Common Subsequence problem has optimal substructure, i.e.\ the optimal answer to problem must contain optimal answers to sub-problems. \answer{Assume $z[1\dots k]$ is optimal for $x[1\dots i]$ and $y[1\dots j]$. If $z[k]=x[i]=y[j]$, then we have a subproblem $z[1\dots (k-1)]$ that must be optimal for $x[1\dots (i-1)]$ $y[1\dots (j-1)]$. The contradiction is that if someone said some sequence $w$ with length $k$ (or more) is optimal for $x[1\dots(i-1)]$, $y[1\dots(j-1)]$, which is longer than $z$, then you could add on the end of $w$ the characters that we know matches $(x[i]=y[j])$, then we would get a solution larger than $k$ for this problem. But that's impossible because we assumed $z[1\dots k]$ is the longest possible solution.}
-	\item Step 3: Compute solution using a table bottom up for the Longest Common Subsequence problem. Use your answer to question \hyperref[prb:15-3]{3} above. Note the overlapping sub-problems as you go. \answer{\begin{table}[H]
+	\item Use proof by contradiction to show that Longest Common Subsequence problem has optimal substructure, i.e.\ the optimal answer to problem must contain optimal answers to sub-problems. \oldanswer{Assume $z[1\dots k]$ is optimal for $x[1\dots i]$ and $y[1\dots j]$. If $z[k]=x[i]=y[j]$, then we have a subproblem $z[1\dots (k-1)]$ that must be optimal for $x[1\dots (i-1)]$ $y[1\dots (j-1)]$. The contradiction is that if someone said some sequence $w$ with length $k$ (or more) is optimal for $x[1\dots(i-1)]$, $y[1\dots(j-1)]$, which is longer than $z$, then you could add on the end of $w$ the characters that we know matches $(x[i]=y[j])$, then we would get a solution larger than $k$ for this problem. But that's impossible because we assumed $z[1\dots k]$ is the longest possible solution.}
+	\item Step 3: Compute solution using a table bottom up for the Longest Common Subsequence problem. Use your answer to question \hyperref[prb:15-3]{3} above. Note the overlapping sub-problems as you go. \oldanswer{\begin{table}[H]
 	    \centering
 	    \begin{threeparttable}
 			\begin{tabular}{cc|c|cccccc}
@@ -159,7 +159,7 @@ Length of LCS = 4 $BCBA$ or $BCAB$
 			\end{tabular}
 		\end{threeparttable}\label{tab:longest-common-subsequence-example}
 	\end{table}}
-	\item Step 4: Construct Optimal Solution\answer{\ Walking backwards and adding the character when there was a match, there are 3 answers. $BCBA$, $BDAB$, $BCAB$ all of length 4.}
+	\item Step 4: Construct Optimal Solution\oldanswer{\ Walking backwards and adding the character when there was a match, there are 3 answers. $BCBA$, $BDAB$, $BCAB$ all of length 4.}
 \end{enumerate}
 
 $X=ABCBDAB \examplesep Y=BDCABA$

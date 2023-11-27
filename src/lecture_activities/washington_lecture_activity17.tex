@@ -16,7 +16,7 @@
 DP computes recurrences efficiently by storing partial results. Thus DP can only be efficient when there are not too many partial results to compute. There are $n!$ permutations of an $n$-element set - we cannot use DP to store the best solution to each sub-permutation. There are $2^n$ subsets of an $n$-element set, we cannot use dynamic programming to store the best solution for each subset.\\
 
 Dynamic Programming works best on objects which are linearly ordered and cannot be rearranged, so the number of partial results is not exponential. Characters in a string, matrices in a chain, the left-to-right order of the leaves in a BST. One commonality to all the dynamic programming solutions we explored is that all the problems had some sort of ordering restriction. Here is an example that does not. Because of the constraint on the total weight limit, it is not an exponential enumerate all the subsets of an $n$-element set.
-\answer{\[  \sum_{i\mbox{ items taken}} w_{i} \leq W \&\& \sum_{i\mbox{ items taken}} v_{i} \mbox{ is }\max \]}
+\oldanswer{\[  \sum_{i\mbox{ items taken}} w_{i} \leq W \&\& \sum_{i\mbox{ items taken}} v_{i} \mbox{ is }\max \]}
 
 \section{0-1 Knapsack Problem}\label{sec:0-1-knapsack-problem}
 Given $N$ items and a total weight limit $W$, $v_{i}$ is the value and $w_{i}$ is the weight of item $i$, maximize the total value of items taken.
@@ -27,7 +27,7 @@ $C[i,j] = $ the optimal value of the items put into the knapsack from among item
 
 \begin{enumerate}[label=\arabic*.]
 	\item When you think about calculating $C[i,j]$ there are two options. The $i$th item is in that optimal answer or is not. Write the recurrence relation.
-	\answer{If you remove an item that was in the optimal answer, then you have a new problem where the weight limit is $W - w_{i}$ and items $1\dots i-1$. If you remove an item that was not in the optimal answer, then you have a new problem with items $1\dots i-1$ with the same weight limit $W$.\begin{table}[H]
+	\oldanswer{If you remove an item that was in the optimal answer, then you have a new problem where the weight limit is $W - w_{i}$ and items $1\dots i-1$. If you remove an item that was not in the optimal answer, then you have a new problem with items $1\dots i-1$ with the same weight limit $W$.\begin{table}[H]
 	    \centering
 	    \begin{threeparttable}
 			\caption{}
@@ -46,7 +46,7 @@ $C[i,j] = $ the optimal value of the items put into the knapsack from among item
 		\end{threeparttable}
 	\end{table}%\begin{equation}	C[i,j] = \max \left\{ \right. \label{eq:knapsack-relation}\end{equation}
 	}
-	\item Write pseudocode to fill in the $C[i,j]$ matrix, use your answer from \#7.\answer{\begin{algorithm}[H]
+	\item Write pseudocode to fill in the $C[i,j]$ matrix, use your answer from \#7.\oldanswer{\begin{algorithm}[H]
 			\caption{Knapsack Problem Pseudocode}\label{alg:}
 			\begin{algorithmic}[1]
 			\Function{Knapsack}{}
@@ -72,14 +72,14 @@ $C[i,j] = $ the optimal value of the items put into the knapsack from among item
 
 \begin{enumerate}[start=3]
 	\item Briefly explain what two properties a problem must have so that a greedy algorithm approach will work.
-	\answer{\hyperref[dfn:optimal-substructure]{Optimal substructure} and the \hyperref[dfn:cut-and-paste]{Greedy Choice property}.}
+	\oldanswer{\hyperref[dfn:optimal-substructure]{Optimal substructure} and the \hyperref[dfn:cut-and-paste]{Greedy Choice property}.}
 	\item A good cashier gives change using a greedy algorithm to minimize the number of coins they give back. Explain this greedy algorithm.
-	\answer{To prove that there is optimal substructure, you can prove that there is some number of each denomination (pennies, nickels, dimes, quarters) that, with enough of each, will total some value $k$.
+	\oldanswer{To prove that there is optimal substructure, you can prove that there is some number of each denomination (pennies, nickels, dimes, quarters) that, with enough of each, will total some value $k$.
 	The order of the coins doesn't matter, but the size of each denomination does.
 	To prove that this is greedy, you need to be able to show that if you cut out a part of the optimal solution and insert the greedy choice to get a better value.
 	For example, if you need 37\cents and you don't have a quarter, you could cut out 25\cents from the value and insert a quarter, removing coins but keeping the same value.}
 	\item For what types of optimization problems does optimal substructure fail?
-	\answer{The subproblems are not independent.}
+	\oldanswer{The subproblems are not independent.}
 \end{enumerate}
 
 \section{Activity Selector Problem}\label{sec:activity-selector-problem}
@@ -88,10 +88,10 @@ Given a set $S$ of $n$ activities each with start $S_{i}$, Finish $F_{i}$, find 
 \begin{enumerate}[start=6]
 	\item The brute force approach would be to find all possible subsets of $n$ activities, eliminate the ones with non-compatible meetings, and find the largest subset.
 	How many subsets are there?
-	\answer{For every meeting, there is a binary choice determining if the meeting is being used, so $2^{n}$.}
+	\oldanswer{For every meeting, there is a binary choice determining if the meeting is being used, so $2^{n}$.}
 	\item Prove the Activity Selector Problem has optimal substructure
 	(using similar proof by contradiction approach that we used for dynamic programming: assume you have an optimal answer, remove something to get to the largest sub-problem, show that the sub-problem must also be solved optimally).
-	\answer{If you were to choose meetings based off of the time of each meeting, and start with the shortest meeting, this can be countered by the case of having 3 meetings, with the shortest meeting conflicting with the other two longer meetings, whereas those 2 meetings don't overlap.
+	\oldanswer{If you were to choose meetings based off of the time of each meeting, and start with the shortest meeting, this can be countered by the case of having 3 meetings, with the shortest meeting conflicting with the other two longer meetings, whereas those 2 meetings don't overlap.
 	If you choose meetings by the earliest, you could have a meeting that goes all day and excludes all other meetings in the day.}% The answer is earliest end time or latest start time.
 \end{enumerate}
 %</Lecture-Activity-17>

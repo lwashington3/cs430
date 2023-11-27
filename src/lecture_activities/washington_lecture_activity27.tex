@@ -56,7 +56,7 @@ OK, as long as no negative-weight cycles are reachable from the source.
 
 \begin{enumerate}
     \item What would the brute force approach be to solve the shortest path problem, and what is its run time?
-	\begin{newanswer}
+	\begin{answer}
 		\begin{equation*}
 		\begin{aligned}
 			1 & \mbox{ Path of 1 edge}\\
@@ -66,12 +66,12 @@ OK, as long as no negative-weight cycles are reachable from the source.
 			|V|! & \mbox{ Paths of V edges}\\
 		\end{aligned}
 		\end{equation*}
-	\end{newanswer}
+	\end{answer}
 	\item Prove \hyperref[dfn:optimal-substructure]{optimal substructure} for the shortest path problem.
-	\begin{newanswer}
+	\begin{answer}
 		Since shortest paths contain shortest subpaths (optimal solution to subproblem must in in optimal answer to problem.)
 		$G\{V,E\}$, weight function on edge given source $v$, find shortest path to $u$
-	\end{newanswer}
+	\end{answer}
 \end{enumerate}
 
 Output of single-source shortest-path algorithm
@@ -131,11 +131,11 @@ from the source $s$ to $v$ be going through $u$ and taking edge $(u, v)$?
 \end{table}
 
 \textbf{The algorithms differ in the order and how many times they relax each edge.}
-\begin{newanswer}
+\begin{answer}
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node[label=left:Source] (S) at (0,0) {$0$};
 				\node[label=above:A] (A) at (2,4) {$\infty$};
 				\node[label=above:B] (B) at (8,0) {$\infty$};
@@ -160,11 +160,11 @@ from the source $s$ to $v$ be going through $u$ and taking edge $(u, v)$?
 		\end{tikzpicture}
 		\label{fig:27.example}
 	\end{figure}
-\end{newanswer}
+\end{answer}
 
 \section{Shortest Path Algorithm - Bellman-Ford}\label{sec:shortest-path-algorithm-bellman-ford}
 The most straightforward of the ``relax an edge'' algorithms.%
-\footnote{\begin{newanswer}Works on any graph with no negative cycles, and the algorithm finds the negative cycles.\end{newanswer}}
+\footnote{\begin{answer}Works on any graph with no negative cycles, and the algorithm finds the negative cycles.\end{answer}}
 Relaxes the edges in a fixed order (any fixed order) $|v|-1$ times.%
 \footnote{Most \# of edges on short path.}
 Not a greedy algorithm.
@@ -181,7 +181,7 @@ Not a greedy algorithm.
 		\toprule
 		\begin{minipage}[t]{0.6\textwidth}
 			\begin{algorithm}[H]
-				\caption{Bellman-Form Shortest Path Algorithm \begin{newanswer}$O(VE)=O(V^{3})$\end{newanswer}}\label{alg:bellman-ford}
+				\caption{Bellman-Form Shortest Path Algorithm \begin{answer}$O(VE)=O(V^{3})$\end{answer}}\label{alg:bellman-ford}
 				\begin{algorithmic}[1]
 				\Function{Bellman-Ford}{$V$, $E$, $w$, $s$}
 					\State \Call{Init-Single-Source}{$V$, $s$}
@@ -192,7 +192,7 @@ Not a greedy algorithm.
 					\EndFor
 					\ForAll{edge $(u,v)\in E$}\State\Comment{All edges, in any order, same order each time}
 						\If{$d[v] > d[u] + w(u,v)$}%
-							\begin{newanswer}\Comment{Must be a negative cycle}\end{newanswer}
+							\begin{answer}\Comment{Must be a negative cycle}\end{answer}
 							\State \Return FALSE
 						\EndIf
 					\State \Return TRUE
@@ -204,7 +204,7 @@ Not a greedy algorithm.
 			\begin{figure}[H]
 				\centering
 				\begin{tikzpicture}
-					\begin{scope}[every node/.style={circle,thick,draw}]
+					\begin{scope}\globalnodeset
 						\node[label=above:t] (t) at (0,0) {$\infty$};
 						\node[label=above:x] (x) at (4,0) {$\infty$};
 						\node[label=below:y] (y) at (0,-4) {$\infty$};
@@ -242,11 +242,11 @@ Not a greedy algorithm.
 	Update the $d[v]$ and $\pi[v]$ values for each iteration.
 \end{enumerate}
 
-\begin{newanswer}
+\begin{answer}
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
-			\begin{scope}[every node/.style={circle,thick,draw}]
+			\begin{scope}\globalnodeset
 				\node[label=above:t] (t) at (0,0) {$6$};
 				\node[label=above:x] (x) at (4,0) {$\infty$};
 				\node[label=below:y] (y) at (0,-4) {$7$};
@@ -274,13 +274,13 @@ Not a greedy algorithm.
 		\caption{Example of the Execution of Bellman-Ford Step 1.}
 		\label{fig:bellman-ford-example-1}
 	\end{figure}
-\end{newanswer}
+\end{answer}
 
 \begin{enumerate}[start=4]
 	\item What is the runtime of Bellman-Ford?
-	\begin{newanswer}
+	\begin{answer}
 		$O(VE)=O(V^{3})$
-	\end{newanswer}
+	\end{answer}
 	\item Prove Bellman-Ford is correct.\\
 	Values you get on each pass how quickly it converges depends on order of relaxation.
 	But guaranteed to converged after $|V|-1$ passes, assume no negative-weight cycles.
