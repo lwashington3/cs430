@@ -3,9 +3,6 @@
 
 % Preamble
 \documentclass[29]{cs430lecture}
-\usepackage{amssymb}
-\usepackage{hyperref}
-\usepackage{algpseudocode}
 
 % Packages
 
@@ -110,14 +107,107 @@ Note the code to multiply two $n\times n$ matrices $(AB)$ together to get $C$, a
 	\end{algorithmic}
 \end{algorithm}
 
+\begin{answer}
+	\begin{table}[H]
+		\centering
+		\begin{threeparttable}
+			\caption{The shortest path containing two edges.}
+			\label{tab:slow-apsp-l2}
+			\begin{tabular}{c|ccccc}
+				$L^{(2)}$ & A & B & C & D & E\\
+				\midrule
+				A & 0 & $3_{A}$ & $8_{A}$ & $2_{E}$ & $-4_{A}$\\
+				B & $3_{D}$ & 0 & $-4_{D}$ & 1 & 7\\
+				C & $\infty$ & 4 & 0 & $5_{B}$ & $11_{B}$\\
+				D & 2 & $-1_{C}$ & -5 & 0 & $-2_{A}$\\
+				E & $\infty$ & $\infty$ & $\infty$ & 6 & 0
+			\end{tabular}
+			\begin{tablenotes}
+				\small
+				\item Augmented with $\infty$ when no edge exists
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{table}
+\end{answer}
+
+%\begin{answer}
+%	\begin{minipage}[b]{0.33\textwidth}
+%		\begin{table}[H]
+%			\centering
+%			\begin{threeparttable}
+%				\caption{Adjacency matrix for the \hyperref[fig:floyd-warshall-example]{below graph}.}
+%				\label{tab:slow-apsp-adjacency-matrix}
+%				\begin{tabular}{c|ccccc}
+%					W & A & B & C & D & E\\
+%					\midrule
+%					A & 0 & 3 & 8 & $\infty$ & -4\\
+%					B & $\infty$ & 0 & $\infty$ & 1 & 7\\
+%					C & $\infty$ & 4 & 0 & $\infty$ & $\infty$\\
+%					D & 2 & $\infty$ & -5 & 0 & $\infty$\\
+%					E & $\infty$ & $\infty$ & $\infty$ & 6 & 0
+%				\end{tabular}
+%				\begin{tablenotes}
+%					\small
+%					\item Augmented with $\infty$ when no edge exists
+%				\end{tablenotes}
+%			\end{threeparttable}
+%		\end{table}
+%	\end{minipage}
+%	\begin{minipage}[b]{0.33\textwidth}
+%		\begin{table}[H]
+%			\centering
+%			\begin{threeparttable}
+%				\caption{The shortest path containing 1 edge (which is why it's the same as the adjacency matrix).}
+%				\label{tab:slow-apsp-l1}
+%				\begin{tabular}{c|ccccc}
+%					$L^{(1)}$ & A & B & C & D & E\\
+%					\midrule
+%					A & 0 & $3_{A}$ & $8_{A}$ & $\infty$ & $-4_{A}$\\
+%					B & $\infty$ & 0 & $\infty$ & 1 & 7\\
+%					C & $\infty$ & 4 & 0 & $\infty$ & $\infty$\\
+%					D & 2 & $\infty$ & -5 & 0 & $\infty$\\
+%					E & $\infty$ & $\infty$ & $\infty$ & 6 & 0
+%				\end{tabular}
+%				\begin{tablenotes}
+%					\small
+%					\item Augmented with $\infty$ when no edge exists
+%				\end{tablenotes}
+%			\end{threeparttable}
+%		\end{table}
+%	\end{minipage}
+%	\begin{minipage}[b]{0.33\textwidth}
+%		\begin{table}[H]
+%			\centering
+%			\begin{threeparttable}
+%				\caption{The shortest path containing two edges.}
+%				\label{tab:slow-apsp-l2}
+%				\begin{tabular}{c|ccccc}
+%					$L^{(2)}$ & A & B & C & D & E\\
+%					\midrule
+%					A & 0 & $3_{A}$ & $8_{A}$ & $2_{E}$ & $-4_{A}$\\
+%					B & $3_{D}$ & 0 & $-4_{D}$ & 1 & 7\\
+%					C & $\infty$ & 4 & 0 & $5_{B}$ & $11_{B}$\\
+%					D & 2 & $-1_{C}$ & -5 & 0 & $-2_{A}$\\
+%					E & $\infty$ & $\infty$ & $\infty$ & 6 & 0
+%				\end{tabular}
+%				\begin{tablenotes}
+%					\small
+%					\item Augmented with $\infty$ when no edge exists
+%				\end{tablenotes}
+%			\end{threeparttable}
+%		\end{table}
+%	\end{minipage}
+%\end{answer}
+
 \begin{enumerate}[start=4]
     \item How does this matrix multiply code compare to the \Call{Extend}{} code?
 	Why do we care?
+	\begin{answer}$O(|V|^{4})$\end{answer}
 \end{enumerate}
 
 \section{Faster All-Pairs Shortest Paths Algorithm}\label{sec:faster-all-pairs-shortest-paths-algorithm}
 \begin{algorithm}[H]
-	\caption{Faster All-Pairs Shortest Paths Algorithm}\label{alg:}
+	\caption{Faster All-Pairs Shortest Paths Algorithm}\label{alg:faster-apsp}
 	\begin{algorithmic}[1]
 	\State Compute a solution bottom-up:
 	Compute $L^{(1)}=W,$ then $L^{(2)}$ from $L^{(1)}$, then $L^{(4)}$ from $L^{(2)}$, etc$\dots,L^{(n-1)}$
@@ -135,6 +225,7 @@ Note the code to multiply two $n\times n$ matrices $(AB)$ together to get $C$, a
 
 \begin{enumerate}[start=5]
     \item What is the runtime of \Call{Faster-ASPS}{}?
+	\begin{answer}$O(|V|^{3}\lg |V|)$\end{answer}
 \end{enumerate}
 
 \section{Floyd-Warshall Algorithm}\label{sec:floyd-warshall-algorithm}
@@ -144,6 +235,10 @@ Find the shortest path from every vertex to every other vertex considering at mo
 
 \begin{enumerate}[start=6]
     \item Define structure of optimal solution.
+	\begin{answer}
+		Assume optimal shortest path with possibly all other vertices along the path at most $|V|-2$.
+		Remove a vertex from $k$ along the path, $k$ used or $k$ not user.
+	\end{answer}
 	\item Recursively define optimal solution and write pseudocode.
 	\item What is the run time of \Call{Floyd-Warshall}{}?
 	\item Demonstrate \Call{Floyd-Warshall}{}.
@@ -153,13 +248,12 @@ Find the shortest path from every vertex to every other vertex considering at mo
 	\centering
 	\begin{tikzpicture}[scale=1.5]
 		\begin{scope}\globalnodeset
-			\node (1) at (-3,-2) {1};
-			\node (2) at (0,0) {2};
-			\node (3) at (3,-2) {3};
-			\node (4) at (2,-6) {4};
-			\node (5) at (-2,-6) {5};
+			\node (1) at (-3,-2) {A};
+			\node (2) at (0,0) {B};
+			\node (3) at (3,-2) {C};
+			\node (4) at (2,-6) {D};
+			\node (5) at (-2,-6) {E};
 		\end{scope}
-
 		\begin{scope}\globalpathset
 			\path [->] (1) edge node {$3$} (2);
 			\path [->] (1) edge[near end] node {$8$} (3);

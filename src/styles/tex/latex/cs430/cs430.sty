@@ -5,41 +5,42 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{cs430}[2023/08/22 Len Washington III's base package for styling documents from IIT's CS 430 - Introduction to Algorithms.]
 
-\RequirePackage{titling}
-\RequirePackage{xkeyval}
-
-\DeclareOptionX{mytitle}{
-	\newcommand{\mytitle}{#1}
-	\title{\mytitle}
+\SetupKeyvalOptions{
+	family=cs,
+	prefix=cs@
 }
-\DeclareOptionX{leftlabel}{
-	\newcommand{\leftlabel}{#1}
-	\title{\mytitle}
-}
-\ProcessOptionsX\relax
 
-\RequirePackage[x11names]{xcolor}
+\DeclareStringOption{title}
+\DeclareStringOption{leftlabel}
+\DeclareStringOption[Len Washington III]{author}
+\DeclareStringOption[\today]{date}
+\DeclareStringOption[CS 430 - Introduction to Algorithms]{subject}
+
+\ProcessKeyvalOptions\relax
+
+\RequirePackage[x11names,table]{xcolor}
 \definecolor{url-blue}{RGB}{0, 0, 238}
 \newcommand{\oldanswer}[1]{\begin{answer}#1\end{answer}}
 \newcommand{\correction}[1]{\textcolor{red}{#1}}
 \newcommand{\notes}[1]{\textcolor{red}{#1}}
 
 \RequirePackage[margin=0.8in]{geometry}
-\RequirePackage{enumerate}
-\RequirePackage{threeparttable}
-\RequirePackage{listings}
-\RequirePackage{float}
-\RequirePackage{booktabs}
 \RequirePackage[chapter]{algorithm}
-\RequirePackage{algorithmicx}
-\RequirePackage{algpseudocode}
-\RequirePackage{lipsum}
-\RequirePackage{amssymb}
-\RequirePackage{amsmath}
-\RequirePackage{multirow}
-\RequirePackage{tikz-qtree}
-\RequirePackage{tikz}
-\RequirePackage{latexsym}
+\RequirePackage{enumerate,
+	threeparttable,
+	listings,
+	float,
+	booktabs,
+	algorithmicx,
+	algpseudocode,
+	lipsum,
+	amssymb,
+	amsmath,
+	multirow,
+	tikz-qtree,
+	tikz,
+	latexsym
+}
 \usetikzlibrary{scopes,trees,positioning,graphs,arrows.meta}
 %\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
 \newcommand{\globaltikzset}{
@@ -175,9 +176,6 @@ red/.style={stdNode, fill=red!80!white},
 [] % after-code
 
 
-\author{Len Washington III}
-\date{\today}
-\newcommand{\thesubject}{CS 430 - Introduction to Algorithms}
 \RequirePackage[pdftex,
 	bookmarks=true,
 	bookmarksopen=true,
@@ -186,9 +184,9 @@ red/.style={stdNode, fill=red!80!white},
 	pdfmenubar=true,
 	pdffitwindow=false,
 	pdfstartview={FitH},
-	pdfauthor={\theauthor},
-	pdftitle={\mytitle},
-	pdfsubject={\thesubject},
+	pdfauthor={\cs@author},
+	pdftitle={\cs@title},
+	pdfsubject={\cs@subject},
 	colorlinks=true,
 	urlcolor=url-blue]{hyperref}
 \RequirePackage{bookmark}
@@ -197,7 +195,7 @@ red/.style={stdNode, fill=red!80!white},
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\leftlabel\arabic{chapter}}
-\fancyhead[R]{\theauthor\ - \thepage}
+\fancyhead[R]{\cs@author\ - \thepage}
 \setlength{\headheight}{14.49998pt}
 
 \RequirePackage{tablefootnote}
@@ -207,16 +205,24 @@ red/.style={stdNode, fill=red!80!white},
 \newboolean{inanswer}
 \NewEnviron{answer}[1][blue]{
 	\setboolean{inanswer}{true}
-	\colorlet{saved}{.}
+%	\colorlet{saved}{.}
+	\let\oldtable\table
+	\let\endoldtable\endtable
+	\renewenvironment{table}
+               {\@float{table}\color{blue}}
+               {\end@float}
+%	\renewenvironment{table}{\color{blue}\oldtable}{\endoldtable}
+
+	{\color{#1}
 	\tikzset{#1,
 		every node/.style={#1},
 		every path/.style={#1}}
-	\color{#1}
-	\textcolor{#1}{\BODY}
-	\color{saved}
-	\tikzset{saved,
-		every node/.style={saved},
-		every path/.style={saved}}
+	\textcolor{#1}{\BODY}}
+	\let\table\oldtable
+%	\color{saved}
+%	\tikzset{saved,
+%		every node/.style={saved},
+%		every path/.style={saved}}
 	\setboolean{inanswer}{false}
 }
 
