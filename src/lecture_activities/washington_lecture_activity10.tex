@@ -35,9 +35,12 @@
 			\end{tikzpicture}}
 \openingquestions
 \begin{enumerate}[label=\arabic*.]
-    \item In your own words explain how you insert a new key in a binary search tree. \oldanswer{When you have a value, you compare the value you're inserting to the value in the node. If the inserting value is less than the value, you recursively call the Insert function with the left node. If the value was greater, you recursively call Insert on the right node.}
+    \item In your own words explain how you insert a new key in a binary search tree.
+	\begin{answer} When you have a value, you compare the value you're inserting to the value in the node.
+	If the inserting value is less than the value, you recursively call the Insert function with the left node.
+	If the value was greater, you recursively call Insert on the right node. \end{answer}
 	\item Give an example of a series of 5 keys inserted one at a time into a binary search tree that will yield a tree of height 5.
-	\begin{answer}
+	\begin{answer}\\
 		\globaltikzset
 		\begin{tikzpicture}
 			\Tree
@@ -54,7 +57,7 @@
 					]
 			]]
 			\end{tikzpicture}
-		The runtime of Insert is $O(h)$ where $h$ is the height of the tree.
+		\\The runtime of Insert is $O(h)$ where $h$ is the height of the tree.
 	\end{answer}
 	\item If we do a left rotate on node $X$ below, explain which left and/or right child links need to be changed.\\
 	\begin{tikzpicture}
@@ -65,16 +68,19 @@
 				[.\node{ $b$ }; ]
 				[.\node{ $c$ }; ]
 		]]
-		\end{tikzpicture}\oldanswer{\begin{tikzpicture}
-		\Tree
-		[.\node{ $Y$ };
-			[.\node{ $X$ };
-				[.\node{ $a$ }; ]
-				[.\node{ $b$ }; ]
+	\end{tikzpicture}
+	\begin{answer}
+		\begin{tikzpicture}
+			\Tree
+			[.\node{ $Y$ };
+				[.\node{ $X$ };
+					[.\node{ $a$ }; ]
+					[.\node{ $b$ }; ]
+				]
+				[.\node{ $c$ }; ]
 			]
-			[.\node{ $c$ }; ]
-		]
-		\end{tikzpicture} This tree maintains the relationships of the first tree. $c$ was already larger than $Y$, which is maintained. $b$ was smaller than $Y$ but larger than $X$, which has also been maintained. But now the height of $C$ has been decreased by 1.}
+		\end{tikzpicture} This tree maintains the relationships of the first tree. $c$ was already larger than $Y$, which is maintained. $b$ was smaller than $Y$ but larger than $X$, which has also been maintained. But now the height of $C$ has been decreased by 1.
+	\end{answer}
 \end{enumerate}
 
 \section{Tree depth vs Tree Height}\label{sec:tree-depth-vs-tree-height}
@@ -88,7 +94,11 @@ The length of the path from the root $r$ to a node $x$ is the depth of $x$ in $T
 
 \section{BST Operations}\label{sec:bst-operations}
 \begin{enumerate}[label=\arabic*)]
-    \item Write pseudocode for BST Successor \oldanswer{(next larger value)} (or Predecessor). Demonstrate on the below tree from node 15 and then node 13.\\\bsttree\\\oldanswer{\begin{algorithm}[H]
+    \item Write pseudocode for BST Successor%
+	\footnote{\begin{answer} next larger value\end{answer}} (or Predecessor).
+	Demonstrate on the below tree from node 15 and then node 13.\\\bsttree
+	\begin{answer}
+		\begin{algorithm}[H]
     		\caption{Binary Search Tree Successor (Best: $O(1)$, Worst: $O(h)$)}\label{alg:bst-successor}
     		\begin{algorithmic}[1]
     		\Function{Successor}{$p$: Node}\Comment{The Successor is usually the min of the graph in the right node, essentially, right than left-left-$\dots$-left.}
@@ -102,8 +112,12 @@ The length of the path from the root $r$ to a node $x$ is the depth of $x$ in $T
 				\EndIf
     		\EndFunction
     		\end{algorithmic}
-    	\end{algorithm}}
-	\item Write pseudocode for BST Insert. Demonstrate on the below tree to insert 5 and then 19.\\\bsttree\\\oldanswer{\begin{algorithm}[H]
+    	\end{algorithm}
+	\end{answer}
+	\item Write pseudocode for BST Insert.
+	Demonstrate on the below tree to insert 5 and then 19.\\\bsttree
+	\begin{answer}
+		\begin{algorithm}[H]
 			\caption{Binary Search Tree Insert ($O(h)$)}\label{alg:bst-insert}
 			\begin{algorithmic}[1]
 			\Function{Insert}{$key$}
@@ -128,38 +142,46 @@ The length of the path from the root $r$ to a node $x$ is the depth of $x$ in $T
 				\EndIf
 			\EndFunction
 			\end{algorithmic}
-		\end{algorithm}}
-	\item What are the three possible cases when deleting a node from a BST?\\\bsttree\\\oldanswer{\begin{itemize}
-		\item No children
+		\end{algorithm}
+	\end{answer}
+	\item What are the three possible cases when deleting a node from a BST?
+	\begin{answer}\\
+		\bsttree
 		\begin{itemize}
-			\item Set the $parent.left$ or $parent.right$ (depending on where you came from) to null; $O(1)$.
+			\item No children
+			\begin{itemize}
+				\item Set the $parent.left$ or $parent.right$ (depending on where you came from) to null; $O(1)$.
+			\end{itemize}
+			\item One child
+			\begin{itemize}
+				\item Make the parent of the child point to the child of the node you're deleting (essentially splicing out the node you're deleting); $O(1)$.
+			\end{itemize}
+			\item Two children
+			\begin{itemize}
+				\item Swap the predecessor or successor value into the node, and then deleting the value where the predecessor$|$successor was.\begin{algorithm}[H]
+						\caption{Delete A Node with 2 Children from a BST}\label{alg:bst-delete-2-children}
+						\begin{algorithmic}[1]
+						\Function{Delete2Child}{$p$: Node}
+							\State $successor \gets$ \Call{\hyperref[alg:bst-successor]{Successor}}{$p$} \Comment{Or Predeccesor, $O(h)$}
+							\State $p.value \gets$ $successor.value$\Comment{$O(1)$}
+							\State \Call{\hyperref[alg:bst-delete]{Delete}}{$successor$}\Comment{$O(h)$}
+						\EndFunction
+						\end{algorithmic}
+					\end{algorithm}
+			\end{itemize}
 		\end{itemize}
-		\item One child
-		\begin{itemize}
-			\item Make the parent of the child point to the child of the node you're deleting (essentially splicing out the node you're deleting); $O(1)$.
-		\end{itemize}
-		\item Two children
-		\begin{itemize}
-			\item Swap the predecessor or successor value into the node, and then deleting the value where the predecessor$|$successor was.\begin{algorithm}[H]
-					\caption{Delete A Node with 2 Children from a BST}\label{alg:bst-delete-2-children}
-					\begin{algorithmic}[1]
-					\Function{Delete2Child}{$p$: Node}
-						\State $successor \gets$ \Call{\hyperref[alg:bst-successor]{Successor}}{$p$} \Comment{Or Predeccesor, $O(h)$}
-						\State $p.value \gets$ $successor.value$\Comment{$O(1)$}
-						\State \Call{\hyperref[alg:bst-delete]{Delete}}{$successor$}\Comment{$O(h)$}
-					\EndFunction
-					\end{algorithmic}
-				\end{algorithm}
-		\end{itemize}
-	\end{itemize}}
-	\item Write pseudocode for BST Delete (assume you already have a pointer to the node)\oldanswer{\begin{algorithm}[H]
+	\end{answer}
+	\item Write pseudocode for BST Delete (assume you already have a pointer to the node)
+	\begin{answer}
+		\begin{algorithm}[H]
 			\caption{Binary Search Tree Delete}\label{alg:bst-delete}
 			\begin{algorithmic}[1]
 			\Function{Delete}{$p$: Node}\Comment{}
 				\State
 			\EndFunction
 			\end{algorithmic}
-		\end{algorithm}}
+		\end{algorithm}
+	\end{answer}
 \end{enumerate}
 
 \section{BST Rotations}\label{sec:bst-rotations}
@@ -200,7 +222,9 @@ $x$ and $y$ are nodes; $a$, $b$, $c$ are sub trees
 %\end{tikzpicture}		% TODO: Fix this
 
 \begin{enumerate}[label=\arabic*.,start=5]
-    \item Write pseudocode for LeftRotate (or RightRotate). What is the worst case runtime?\oldanswer{\begin{algorithm}[H]
+    \item Write pseudocode for LeftRotate (or RightRotate). What is the worst case runtime?
+	\begin{answer}
+		\begin{algorithm}[H]
     		\caption{Binary Search Tree Left Rotate}\label{alg:bst-left-rotate}
     		\begin{algorithmic}[1]
     		\Function{LeftRotate}{$p$:Node, $z$:Node}\Comment{To make this right rotate, switch all lefts with rights and rights with left.}
@@ -215,7 +239,8 @@ $x$ and $y$ are nodes; $a$, $b$, $c$ are sub trees
 				\State $savey.left \gets p$
     		\EndFunction
     		\end{algorithmic}
-    	\end{algorithm}}
+    	\end{algorithm}
+	\end{answer}
 \end{enumerate}
 %</Lecture-Activity-10>
 

@@ -41,7 +41,8 @@
 	multirow,
 	tikz-qtree,
 	tikz,
-	latexsym
+	latexsym,
+	hyperref
 }
 \usetikzlibrary{scopes,trees,positioning,graphs,arrows.meta}
 %\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
@@ -178,7 +179,6 @@ red/.style={stdNode, fill=red!80!white},
 [] % after-code
 
 
-\RequirePackage{hyperref}
 \hypersetup{pdftex,
 	bookmarks=true,
 	bookmarksopen=true,
@@ -192,15 +192,12 @@ red/.style={stdNode, fill=red!80!white},
 	pdfsubject={\csalg@subject},
 	colorlinks=true,
 	urlcolor=url-blue}
-\RequirePackage{bookmark}
 
-\RequirePackage{titling}
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\csalg@leftlabel\arabic{chapter}}
-\fancyhead[R]{\csalg@author\ - \thepage
-}
+\fancyhead[R]{\csalg@author\ - \thepage}
 \setlength{\headheight}{14.49998pt}
 
 \RequirePackage{tablefootnote}

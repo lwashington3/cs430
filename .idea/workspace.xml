@@ -4,33 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Submitted Homework 7.">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Changed the value passing for the cs430 package, made the recitation style a class, updated some mistakes from previous lectures.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity20.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity20.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity24.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity24.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity29.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity29.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity9.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity9.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity25.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity25.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity20.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity20.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity24.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity24.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation1.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation10.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation10.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation12.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation12.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation13.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation13.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation2.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation3.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation4.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation6.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation6.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation7.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation7.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation8.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation8.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation9.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation9.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430homework/cs430homework.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430homework/cs430homework.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430lecture/cs430lecture.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430lecture/cs430lecture.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430recitation/cs430recitation.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430recitation/cs430recitation.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +110,7 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.Lecture Activity 25">
+  <component name="RunManager" selected="LaTeX.Lecture Activity 6">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -1368,7 +1347,7 @@
       <workItem from="1701063288093" duration="33000" />
       <workItem from="1701094560933" duration="4528000" />
       <workItem from="1701470767712" duration="377000" />
-      <workItem from="1701812563194" duration="6839000" />
+      <workItem from="1701812563194" duration="7447000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1610,7 +1589,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700629675847</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Changed the value passing for the cs430 package, made the recitation style a class, updated some mistakes from previous lectures.">
+      <option name="closed" value="true" />
+      <created>1701819481586</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1701819481586</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1639,7 +1626,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created template for Recitation 4." />
     <MESSAGE value="Saving progress for Homework 2. Updated the table of contents for all the lecture activities, fixed some spelling mistakes in Lecture Activity 4." />
     <MESSAGE value="Added Lecture Activity 9, figured out how to pass the lecture number as an option to the cs430 lecture package." />
     <MESSAGE value="Added Recitation 4, all recitations for the exam on 9/22 have had their templates uploaded into one file." />
@@ -1664,7 +1650,8 @@
     <MESSAGE value="Added the Lecture Activities from L.A. 27 and the beginning of 28. Updated Homework 7's format, changed the homework style to a class." />
     <MESSAGE value="Deleted an unnecessary file." />
     <MESSAGE value="Added the templates for Lecture Activities 28 and 29. Reworked some images in older Lecture Activities to run off of Tikz instead of screenshots. Deleted the files of the reworked images." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the templates for Lecture Activities 28 and 29. Reworked some images in older Lecture Activities to run off of Tikz instead of screenshots. Deleted the files of the reworked images." />
+    <MESSAGE value="Changed the value passing for the cs430 package, made the recitation style a class, updated some mistakes from previous lectures." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the value passing for the cs430 package, made the recitation style a class, updated some mistakes from previous lectures." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
