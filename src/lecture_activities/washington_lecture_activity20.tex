@@ -18,10 +18,10 @@
 	\item How do you think the allocated size growth of a dynamic array like Java's ArrayList is implemented?
 	How much bigger does it grow when needed?
 	What is the runtime for a sequence of $n$ insertions starting from a default size of 10 considering the worst individual insert?
-	\oldanswer{The first few inserts run in $O(1)$ time in the continious memory that was initially assigned.
+	\begin{answer}The first few inserts run in $O(1)$ time in the continious memory that was initially assigned.
 	When the array runs out of memory, it has to copy all of the current elements into a new, larger set of memory.
 	The amount of time it would take to copy everything fron the initial array would be $O(\#\ of\ copies)$.
-	If the worst case append is $O(n)$, then the runtime would be $nO(n) \rightarrow O(n^{2})$.}
+	If the worst case append is $O(n)$, then the runtime would be $nO(n) \rightarrow O(n^{2})$.\end{answer}
 \end{enumerate}
 
 \section[Amortized Analysis]{Amortized (to pay off gradually) Analysis}\label{sec:amortized-(to-pay-off-gradually)-analysis}
@@ -34,35 +34,37 @@ An amortized analysis is any strategy for analyzing a sequence of operations to 
     \item Can we do a better analysis by amortizing the cost over all inserts?
 	Starting with a table size one and doubling the size when necessary, make a table showing the first 10 inserts and determine a formula for \Call{cost}{$i$} for the cost of the $i$th insert.
 	Then aggregate ``add up'' all the costs and divide by $n$ (aggregate analysis).
-	\oldanswer{\begin{table}[H]
-	    \centering
-	    \begin{threeparttable}
-			\caption{Aggregate Analysis for Appends}
-			\label{tab:aggregate-analysis-for-appends}
-			\begin{tabular}{|r|c|c|c|c|c|c|c|c|c|c|}
-				\toprule
-				\textbf{Append \#:} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
-				\midrule
-				\textbf{Memory Size} & 1 & 2 & 4 & 4 & 8 & 8 & 8 & 8 & 16 & 16\\
-				\midrule
-				\textbf{Total Cost (units)} & 1 & 2 & 3 & 1 & 5 & 1 & 1 & 1 & 9 & 1\\
-				\midrule
-				\textbf{Memory Cost (units)} &   & 1 & 2 &   &   &   &   &   & 8 &  \\
-				\bottomrule
-			\end{tabular}
-			\begin{tablenotes}
-				\small
-				\item The memory cost is the cost in that append of creating a larger volume, it was created by removing the $O(1)$ cost of appending form the total cost row. Any iteration that didn't create more memory is 0, but is shown as blank.
-			\end{tablenotes}
-		\end{threeparttable}
-	\end{table}
-	\begin{equation}
-	\begin{aligned}
-		&\mbox{Append Cost per Operation} + \mbox{Memory Allocation Cost}\\
-		&\sum_{i=1}^{n}1 + \sum_{j=0}^{\lg n} 2^{j}\\
-		&n + \sim 2n = \theta(n)
-	\end{aligned}\label{eq:amortized-cost}
-	\end{equation}The total cost for $n$ appends amortized average cost is $\frac{\theta(n)}{n} = \theta(1)$.}
+	\begin{answer}
+		\begin{table}[H]
+			\centering
+			\begin{threeparttable}
+				\caption{Aggregate Analysis for Appends}
+				\label{tab:aggregate-analysis-for-appends}
+				\begin{tabular}{|r|c|c|c|c|c|c|c|c|c|c|}
+					\toprule
+					\textbf{Append \#:} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
+					\midrule
+					\textbf{Memory Size} & 1 & 2 & 4 & 4 & 8 & 8 & 8 & 8 & 16 & 16\\
+					\midrule
+					\textbf{Total Cost (units)} & 1 & 2 & 3 & 1 & 5 & 1 & 1 & 1 & 9 & 1\\
+					\midrule
+					\textbf{Memory Cost (units)} &   & 1 & 2 &   &   &   &   &   & 8 &  \\
+					\bottomrule
+				\end{tabular}
+				\begin{tablenotes}
+					\small
+					\item The memory cost is the cost in that append of creating a larger volume, it was created by removing the $O(1)$ cost of appending form the total cost row. Any iteration that didn't create more memory is 0, but is shown as blank.
+				\end{tablenotes}
+			\end{threeparttable}
+		\end{table}
+		\begin{equation}
+		\begin{aligned}
+			&\mbox{Append Cost per Operation} + \mbox{Memory Allocation Cost}\\
+			&\sum_{i=1}^{n}1 + \sum_{j=0}^{\lg n} 2^{j}\\
+			&n + \sim 2n = \theta(n)
+		\end{aligned}\label{eq:amortized-cost}
+		\end{equation}The total cost for $n$ appends amortized average cost is $\frac{\theta(n)}{n} = \theta(1)$.
+	\end{answer}
 \end{enumerate}
 
 \section{Accounting Method of Amortized Analysis}\label{sec:accounting-method-of-amortized-analysis}
@@ -71,7 +73,7 @@ Figure out a specific amortized cost to be allocated to each operation to ensure
 Charge $i$th operation a fictitious amortized cost $\hat{c}_{i}$, where \$1 pays for 1 unit of work (i.e., time).
 \begin{itemize}
 	\item This fee is consumed to perform the operation.
-	\item Any amount not immediately consumed is stored in the bank for use by subsequence operations.
+	\item Any amount not immediately consumed is stored in the bank for use by subsequent operations.
 	\item The bank balance must not go negative! We must ensure that for all $n$ \textcolor{seagreen}{\[ \sum_{i=1}^{n}c_{i} \leq \sum_{i=1}^{n}\hat{c}_{i} \]}
 \end{itemize}
 Thus, the amortized costs provide an upper bound on the total true costs.
@@ -162,34 +164,34 @@ Thus, the amortized costs provide an upper bound on the total true costs.
 	\end{equation*}
 	}
 	\item Use the \hyperref[sec:accounting-method-of-amortized-analysis]{accounting method} to perform a more careful analysis for $n$ increments of a binary counter.
-	\oldanswer{Price for each increment = \$2. Cost to flip a bit = \$1
-	\begin{table}[H]
-	    \centering
-	    \begin{threeparttable}
-			\caption{Accounting Cost of Flipping bits}
-			\label{tab:accounting-cost-bit-flip}
-			\begin{tabular}{|r|c|c|c|c|c|c|c|c|}
-				\toprule
-				& 1 & 10 & 11 & 100 & 101 & 110 & 111 & 1000\\
-				\midrule
-				\textbf{Counter} & $0\rightarrow1$ & $1\rightarrow2$ & $2\rightarrow3$ & $3\rightarrow4$ & $4\rightarrow5$ & $5\rightarrow6$ & $6\rightarrow7$ & $7\rightarrow8$\\
-				\midrule
-				\textbf{In (Price)} & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2\\
-				\midrule
-				\textbf{Out Cost}	& 1 & 2 & 1 & 3 & 1 & 2 & 1 & 4\\
-				\midrule
-				\textbf{Balance}	& 1 & 1 & 2 & 1 & 2 & 2 & 3 & 1\\
-				\bottomrule
-			\end{tabular}
-			\begin{tablenotes}
-				\small
-				\item
-			\end{tablenotes}
-		\end{threeparttable}
-	\end{table}
-	}
+	\begin{answer}
+		Price for each increment = \$2. Cost to flip a bit = \$1
+		\begin{table}[H]
+			\centering
+			\begin{threeparttable}
+				\caption{Accounting Cost of Flipping bits}
+				\label{tab:accounting-cost-bit-flip}
+				\begin{tabular}{|r|c|c|c|c|c|c|c|c|}
+					\toprule
+					& 1 & 10 & 11 & 100 & 101 & 110 & 111 & 1000\\
+					\midrule
+					\textbf{Counter} & $0\rightarrow1$ & $1\rightarrow2$ & $2\rightarrow3$ & $3\rightarrow4$ & $4\rightarrow5$ & $5\rightarrow6$ & $6\rightarrow7$ & $7\rightarrow8$\\
+					\midrule
+					\textbf{In (Price)} & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2\\
+					\midrule
+					\textbf{Out Cost}	& 1 & 2 & 1 & 3 & 1 & 2 & 1 & 4\\
+					\midrule
+					\textbf{Balance}	& 1 & 1 & 2 & 1 & 2 & 2 & 3 & 1\\
+					\bottomrule
+				\end{tabular}
+				\begin{tablenotes}
+					\small
+					\item
+				\end{tablenotes}
+			\end{threeparttable}
+		\end{table}
+	\end{answer}
 \end{enumerate}
-
 %</Lecture-Activity-20>
 
 \end{document}

@@ -5,9 +5,11 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{cs430}[2023/08/22 Len Washington III's base package for styling documents from IIT's CS 430 - Introduction to Algorithms.]
 
+\RequirePackage{kvoptions}
+
 \SetupKeyvalOptions{
-	family=cs,
-	prefix=cs@
+	family=csalg,
+	prefix=csalg@
 }
 
 \DeclareStringOption{title}
@@ -16,7 +18,7 @@
 \DeclareStringOption[\today]{date}
 \DeclareStringOption[CS 430 - Introduction to Algorithms]{subject}
 
-\ProcessKeyvalOptions\relax
+\ProcessKeyvalOptions*
 
 \RequirePackage[x11names,table]{xcolor}
 \definecolor{url-blue}{RGB}{0, 0, 238}
@@ -145,10 +147,10 @@ red/.style={stdNode, fill=red!80!white},
 
 \RequirePackage{catchfilebetweentags}
 \RequirePackage{etoolbox}
-\makeatletter
+%\makeatletter
 \patchcmd{\CatchFBT@Fin@l}{\endlinechar\m@ne}{}
   {}{\typeout{Unsuccessful patch!}}
-\makeatother
+%\makeatother
 
 \RequirePackage{graphicx}
 \graphicspath{{images}}
@@ -176,7 +178,8 @@ red/.style={stdNode, fill=red!80!white},
 [] % after-code
 
 
-\RequirePackage[pdftex,
+\RequirePackage{hyperref}
+\hypersetup{pdftex,
 	bookmarks=true,
 	bookmarksopen=true,
 	unicode=false,
@@ -184,18 +187,20 @@ red/.style={stdNode, fill=red!80!white},
 	pdfmenubar=true,
 	pdffitwindow=false,
 	pdfstartview={FitH},
-	pdfauthor={\cs@author},
-	pdftitle={\cs@title},
-	pdfsubject={\cs@subject},
+	pdfauthor={\csalg@author},
+	pdftitle={\csalg@title},
+	pdfsubject={\csalg@subject},
 	colorlinks=true,
-	urlcolor=url-blue]{hyperref}
+	urlcolor=url-blue}
 \RequirePackage{bookmark}
 
+\RequirePackage{titling}
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\leftlabel\arabic{chapter}}
-\fancyhead[R]{\cs@author\ - \thepage}
+\fancyhead[L]{\csalg@leftlabel\arabic{chapter}}
+\fancyhead[R]{\csalg@author\ - \thepage
+}
 \setlength{\headheight}{14.49998pt}
 
 \RequirePackage{tablefootnote}
@@ -203,27 +208,19 @@ red/.style={stdNode, fill=red!80!white},
 
 \RequirePackage{environ}
 \newboolean{inanswer}
-\NewEnviron{answer}[1][blue]{
-	\setboolean{inanswer}{true}
-%	\colorlet{saved}{.}
-	\let\oldtable\table
-	\let\endoldtable\endtable
-	\renewenvironment{table}
-               {\@float{table}\color{blue}}
-               {\end@float}
-%	\renewenvironment{table}{\color{blue}\oldtable}{\endoldtable}
-
-	{\color{#1}
-	\tikzset{#1,
-		every node/.style={#1},
-		every path/.style={#1}}
-	\textcolor{#1}{\BODY}}
-	\let\table\oldtable
-%	\color{saved}
-%	\tikzset{saved,
-%		every node/.style={saved},
-%		every path/.style={saved}}
-	\setboolean{inanswer}{false}
+\NewEnviron{answer}[1][blue]{%
+	\setboolean{inanswer}{true}%
+	\colorlet{saved}{.}%
+	\tikzset{#1,%
+		every node/.style={#1},%
+		every path/.style={#1}}%
+	\color{#1}%
+	\textcolor{#1}{\BODY}%
+	\color{saved}%
+	\tikzset{saved,%
+		every node/.style={saved},%
+		every path/.style={saved}}%
+	\setboolean{inanswer}{false}%
 }
 
 \newcommand{\globalnodeset}[1][.]{

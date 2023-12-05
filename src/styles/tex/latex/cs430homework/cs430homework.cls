@@ -8,6 +8,7 @@
 \LoadClass[12pt]{report}
 
 \RequirePackage{xifthen}
+\RequirePackage{kvoptions}
 \RequirePackage{titling}
 
 \DeclareOption*{
@@ -19,6 +20,7 @@
 	\fi
 }
 \ProcessOptions
+\ProcessKeyvalOptions*
 \setlength{\parindent}{0pt}
 
 \RequirePackage[mytitle=\thetitle,leftlabel={CS 430 - Homework \#}]{cs430}

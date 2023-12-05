@@ -36,22 +36,26 @@
 \openingquestions
 \begin{enumerate}[label=\arabic*.]
     \item In your own words explain how you insert a new key in a binary search tree. \oldanswer{When you have a value, you compare the value you're inserting to the value in the node. If the inserting value is less than the value, you recursively call the Insert function with the left node. If the value was greater, you recursively call Insert on the right node.}
-	\item Give an example of a series of 5 keys inserted one at a time into a binary search tree that will yield a tree of height 5.\oldanswer{\\\globaltikzset
-	\begin{tikzpicture}
-		\Tree
-		[.\node{ $5$ };
-			\edge[blank];\node[blank]{ };
-			[.\node{ $7$ };
+	\item Give an example of a series of 5 keys inserted one at a time into a binary search tree that will yield a tree of height 5.
+	\begin{answer}
+		\globaltikzset
+		\begin{tikzpicture}
+			\Tree
+			[.\node{ $5$ };
 				\edge[blank];\node[blank]{ };
-				[.\node{ $9$ };
-					[.\node{ $8$ };
-						\edge[blank];\node[blank]{ };
-						[.\node{ $8.5$ }; ]
-					]
+				[.\node{ $7$ };
 					\edge[blank];\node[blank]{ };
-				]
-		]]
-		\end{tikzpicture} \\The runtime of Insert is $O(h)$ where $h$ is the height of the tree.}
+					[.\node{ $9$ };
+						[.\node{ $8$ };
+							\edge[blank];\node[blank]{ };
+							[.\node{ $8.5$ }; ]
+						]
+						\edge[blank];\node[blank]{ };
+					]
+			]]
+			\end{tikzpicture}
+		The runtime of Insert is $O(h)$ where $h$ is the height of the tree.
+	\end{answer}
 	\item If we do a left rotate on node $X$ below, explain which left and/or right child links need to be changed.\\
 	\begin{tikzpicture}
 		\Tree

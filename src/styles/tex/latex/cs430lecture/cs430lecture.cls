@@ -21,7 +21,7 @@
 \ProcessOptions
 \setlength{\parindent}{0pt}
 
-\RequirePackage[mytitle=\thetitle,leftlabel={CS 430 - Lecture Activity\ }]{cs430}
+\RequirePackage[title=\thetitle,leftlabel={CS 430 - Lecture Activity\ }]{cs430}
 \newcommand{\openingquestions}[1][]{\section{Opening Questions\ifx#1\empty\else\ -- #1 \fi}\label{sec:opening-questions-\arabic{chapter}}}
 \renewcommand{\maketitle}{\begin{center}{\Large\textbf{CS 430 Lecture \number\value{chapter} Activities}}
 \pdfbookmark[1] % Level

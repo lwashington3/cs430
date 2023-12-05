@@ -3,6 +3,7 @@
 
 % Preamble
 \documentclass[24]{cs430lecture}
+\setcounter{chapter}{24}
 
 % Packages
 
@@ -32,31 +33,115 @@
     \item Draw the graph:
 	A directed graph $G=(V,E)$ where $V=\{ 1, 2, 3, 4, 5, 6 \}$ and $E=\{ (1,2), (2,2), (2,4), (2,5), (4,1), (4,5), (5,4), (6,3) \}$.
 	What is the edge $(2,2)$ called?
-	\oldanswer{The edge $(2,2)$ is a self-loop.}
+	\begin{answer}
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}
+				\begin{scope}\globalnodeset
+					\node (1) at (0,0) {1};
+					\node (2) at (3,0) {2};
+					\node (3) at (6,0) {3};
+					\node (4) at (0,-3) {4};
+					\node (5) at (3,-3) {5};
+					\node (6) at (6,-3) {6};
+				\end{scope}
+				\begin{scope}\globalpathset
+					\path [->] (1) edge (2);
+
+					\path [->] (2) edge[loop above] (2);
+					\path [->] (2) edge (4);
+					\path [->] (2) edge (5);
+
+					\path [->] (4) edge (1);
+					\path [->] (4) edge[bend left=10] (5);
+
+					\path [->] (5) edge[bend left=10] (4);
+
+					\path [->] (6) edge (3);
+				\end{scope}
+			\end{tikzpicture}
+			\label{fig:24-draw-1}
+		\end{figure}
+		The edge $(2,2)$ is a self-loop.
+	\end{answer}
 	\item Draw the graph:
-	An undirected graph $G=(V,E)$ where $V=\{ 1, 2, 3, 4, 5, 6 \}$ and $E=\left\{ \{1,2\}, \{ 1, 5\}, \{ 2, 5\}, \{ 3, 4\} \right\}$.
+	An undirected graph $G=(V,E)$ where $V=\{ 1, 2, 3, 4, 5, 6 \}$ and $E=\left\{ \{1,2\}, \{ 1, 5\}, \{ 2, 5\}, \{ 3, 6\} \right\}$.
 	What is vertex $4$ called?
 	What is the difference about how an edge set $E$ is denoted for an undirected graph?
 	Are self-loops allowed in an undirected graph?
+	\begin{answer}
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}
+				\begin{scope}\globalnodeset
+					\node (1) at (0,0) {1};
+					\node (2) at (3,0) {2};
+					\node (3) at (6,0) {3};
+					\node (4) at (0,-3) {4};
+					\node (5) at (3,-3) {5};
+					\node (6) at (6,-3) {6};
+				\end{scope}
+				\begin{scope}\globalpathset
+					\path (1) edge (2);
+					\path (1) edge (5);
+
+					\path (2) edge (5);
+
+					\path (3) edge (6);
+				\end{scope}
+			\end{tikzpicture}
+			\label{fig:24-draw-2}
+		\end{figure}
+		A vertex that is has no edges (is not connected to anything) is isolated.%
+		\footnote{In a directed graph, if the only connection a node has is to itself (a self-loop), then it is still considered isolated.}
+		The difference between how an edge set $E$ is denoted for an undirected graph versus a directed graph is that the directed graph is a tuple (where order matters) while an undirected graph is a set (where order doesn't matter).
+		Self-loops are not allowed in an undirected graphs.
+	\end{answer}
 	\item Define these terms:
 	\begin{itemize}
 		\item Vertex $v$ is adjacent to vertex $u$ in an undirected graph.
+		\begin{answer} There is an edge $\{ u, v\}$ (which is equivalent to $\{ v, u\}$). \end{answer}
 		\item Vertex $v$ is adjacent to vertex $u$ in a directed graph.
+		\begin{answer} $(u,v): u\rightarrow v$, which is not the same as $(v,u)$. \end{answer}
 		\item The degree of a vertex in an undirected graph.
+		\begin{answer} The number of edges touching the vertex. \end{answer}
 		\item The degree of a vertex in a directed graph.
+		\begin{answer} There are two types of degrees.
+			\begin{description}
+				\item[Out Degree] The number of edges leaving the vertex.
+				\item[In Degree] The number of edges entering the vertex.
+			\end{description}
+			The total degree is the sum of the In Degrees and Out Degrees.
+		\end{answer}
 		\item A path in an undirected graph.
+		\begin{answer} Sequences of edges from a vertex to a vertex where the reuse of edges is okay. \end{answer}
 		\item A path in a directed graph.
+		\begin{answer} Sequence of edges in order of ordered pairs (following arrows). \end{answer}
 		\item The length of a path.
+		\begin{answer} The number of edges on the path. \end{answer}
 		\item $v$ is reachable from $u$.
+		\begin{answer} There is a path from $u$ to $v$. \end{answer}
 		\item A simple path.
+		\begin{answer} A path with no reused vertices OR edges.\end{answer}
 		\item A cycle in an undirected graph.
 		What about a simple cycle?
+		\begin{answer} The path from a vertex to itself.
+		A simple cycle is a cycle that doesn't reuse vertices or edges to get back to the original vertex
+		(simple path back to the same vertex).\end{answer}
 		\item A cycle in a directed graph.
 		What about a simple cycle?
+		\begin{answer} The path in the ordered direction from a vertex to itself. \end{answer}
 		\item Acyclic graph.
+		\begin{answer} No cycles in the graph. \end{answer}
 		\item Connected undirected graph.
+		\begin{answer} Every vertex is reachable from every other vertex. \end{answer}
 		\item Connected directed graph.
+		\begin{answer} Also known as a strongly connected graph.
+		Every vertex is reachable (along edges in the correct direction) from every other vertex.\end{answer}
 		\item Bipartite Graph.
+		\begin{answer} Separate the vertices into 2 sets.
+		All edges go between the 2 sets.
+		There are no edges between vertices in the same set.\end{answer}
 	\end{itemize}
 \end{enumerate}
 
@@ -64,7 +149,7 @@
 \begin{enumerate}[start=4]
     \item What is the adjacency list implementation of these two graphs?
 
-	\begin{minipage}{0.5\textwidth}
+	\begin{minipage}[t]{0.5\textwidth}
 		\begin{figure}[H]
 			\centering
 			\begin{tikzpicture}
@@ -90,7 +175,33 @@
 			\end{tikzpicture}
 			\label{fig:24.1}
 		\end{figure}
-	\end{minipage}\begin{minipage}{0.5\textwidth}
+		\begin{answer}
+			\begin{table}[H]
+			    \centering
+			    \begin{threeparttable}
+					\label{tab:adjacency-list-a}
+					\begin{tabular}{|c|l}
+					\toprule
+					1 & $\rightarrow5\rightarrow2$\\
+					\midrule
+					2 & $\rightarrow1\rightarrow5\rightarrow4$\\
+					\midrule
+					3 & $\rightarrow2\rightarrow4$\\
+					\midrule
+					4 & $\rightarrow2\rightarrow3\rightarrow5$\\
+					\midrule
+					5 & $\rightarrow1\rightarrow2\rightarrow4$\\
+					\bottomrule
+				\end{tabular}
+					\begin{tablenotes}
+						\small
+						\item No order to the list of vertices.
+						\item The arrows are representing a linked list of who the vertex is connected to (NOT a set of edges.)
+					\end{tablenotes}
+				\end{threeparttable}
+			\end{table}
+		\end{answer}
+	\end{minipage}\begin{minipage}[t]{0.5\textwidth}
 		\begin{figure}[H]
 			\centering
 			\begin{tikzpicture}
@@ -114,14 +225,35 @@
 					\path [->] (4) edge (5);
 					\path [->] (4) edge[bend left=10] (6);
 
-
 					\path [->] (6) edge[bend right=350] (4);
 				\end{scope}
 			\end{tikzpicture}
 			\label{fig:24.2}
 		\end{figure}
+		\begin{answer}
+			\begin{table}[H]
+			    \centering
+				\label{tab:adjacency-list-b}
+				\begin{tabular}{|c|l}
+					\toprule
+					1 & $\rightarrow2\rightarrow5$\\
+					\midrule
+					2 & $\rightarrow4$\\
+					\midrule
+					3 & $\rightarrow2\rightarrow6$\\
+					\midrule
+					4 & $\rightarrow5\rightarrow6$\\
+					\midrule
+					5 & \\
+					\midrule
+					6 & $\rightarrow4$\\
+					\bottomrule
+				\end{tabular}
+			\end{table}
+		\end{answer}
 	\end{minipage}
-	\oldanswer{Memory: $O(|V| + |E|)$}
+	\begin{answer}Memory: $O(|V| + |E|)$.
+	Find if edge exists: $O(|V|)$\end{answer}
 	\item What is the adjacency matrix implementation of the above two graphs?
 	\oldanswer{Memory: $O(|V|^{2})$
 		\begin{minipage}{0.45\textwidth}

@@ -1,9 +1,11 @@
-%! Package = cs430recitation
+%! Class = cs430recitation
 %! Author = Len Washington III
 %! Date = 8/22/2023
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{cs430recitation}[2023/08/22 Len Washington III's Package for styling Recitations from IIT's CS 430 - Introduction to Algorithms.]
+\ProvidesClass{cs430recitation}[2023/08/22 Len Washington III's Package for styling Recitations from IIT's CS 430 - Introduction to Algorithms.]
+
+\LoadClass[12pt]{report}
 
 \RequirePackage{xifthen}
 \RequirePackage{titling}

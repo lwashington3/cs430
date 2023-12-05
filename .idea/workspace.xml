@@ -4,12 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added the templates for Lecture Activities 28 and 29. Reworked some images in older Lecture Activities to run off of Tikz instead of screenshots. Deleted the files of the reworked images.">
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Submitted Homework 7.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity10.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity20.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity20.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity24.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity24.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity29.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity29.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity29.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity29.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity9.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity9.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity10.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity20.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity20.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity24.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity24.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation10.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation10.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation12.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation12.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation13.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation13.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation3.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation4.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation6.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation6.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation7.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation7.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation8.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation8.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recitations/washington_recitation9.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/recitations/washington_recitation9.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430/cs430.sty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430homework/cs430homework.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430homework/cs430homework.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430lecture/cs430lecture.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430lecture/cs430lecture.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/tex/latex/cs430recitation/cs430recitation.sty" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/tex/latex/cs430recitation/cs430recitation.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +58,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="public" />
+        <entry key="$PROJECT_DIR$" value="private" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,35 +94,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/d/Academic/cs430/src/recitations&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "public",
+    "last_opened_file_path": "/mnt/d/Academic/cs430/src/lecture_activities",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editing.templates",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/lecture_activities" />
+      <recent name="$PROJECT_DIR$/src/styles/tex/latex/cs430" />
       <recent name="$PROJECT_DIR$/src/recitations" />
       <recent name="$PROJECT_DIR$/src/lecture_activities/images" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/Codes/Codes" />
-      <recent name="$PROJECT_DIR$/src/styles/tex/latex" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/out/recitations" />
@@ -110,7 +131,7 @@
       <recent name="D:\OneDrive - Illinois Institute of Technology\Academic\CS\430 - Introduction to Algorithms\out\homework" />
     </key>
   </component>
-  <component name="RunManager" selected="LaTeX.Lecture Activity 29">
+  <component name="RunManager" selected="LaTeX.Lecture Activity 25">
     <configuration name="All Lecture Activities" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" folderName="Lecture Activities">
       <texify>
         <compiler>PDFLATEX</compiler>
@@ -1347,6 +1368,7 @@
       <workItem from="1701063288093" duration="33000" />
       <workItem from="1701094560933" duration="4528000" />
       <workItem from="1701470767712" duration="377000" />
+      <workItem from="1701812563194" duration="6839000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
