@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Added the Lecture Notes for Lecture Activity 24.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity26.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity26.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity27.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity27.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity28.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity28.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity29.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/lecture_activities/washington_lecture_activity29.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity25.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity25.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity26.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity26.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity27.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity27.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity28.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity28.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity29.tex" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_activities/washington_lecture_activity29.tex" afterDir="false" />
-    </list>
+    <list default="true" id="b42a87ee-c90d-4b4b-b294-c0edbd35e017" name="Changes" comment="Fixed a lot of small issues and added section links before the final." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -1354,7 +1342,7 @@
       <workItem from="1701094560933" duration="4528000" />
       <workItem from="1701470767712" duration="377000" />
       <workItem from="1701812563194" duration="7747000" />
-      <workItem from="1701826505735" duration="13496000" />
+      <workItem from="1701826505735" duration="13790000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -1636,7 +1624,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701843636216</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Fixed a lot of small issues and added section links before the final.">
+      <option name="closed" value="true" />
+      <created>1701847746446</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1701847746446</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1665,7 +1661,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added templates for all homeworks." />
     <MESSAGE value="Fixed most of the binary trees that were malformed within the Lecture Activities." />
     <MESSAGE value="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees where malformed." />
     <MESSAGE value="Added templates for Lecture Activities 13 and 14, started fixing bugs where the trees were malformed." />
@@ -1690,7 +1685,8 @@
     <MESSAGE value="Finally figured out how to make tables appear blue if they're part of an answer." />
     <MESSAGE value="Add the Lecture Notes for Lecture Activity 24." />
     <MESSAGE value="Added the Lecture Notes for Lecture Activity 24." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the Lecture Notes for Lecture Activity 24." />
+    <MESSAGE value="Fixed a lot of small issues and added section links before the final." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a lot of small issues and added section links before the final." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
