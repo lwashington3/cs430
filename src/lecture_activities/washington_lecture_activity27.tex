@@ -43,7 +43,7 @@ Variants
 	\item Single-pair: Find shortest path from $u$ to $v$.
 	No way known that's better in worst case than solving single-source.
 	\item All-pairs: Find shortest path from $u$ to $v$ for all $u,v\in V$.
-	We'll see algorithms for all-pairs in the next chapter.
+	We'll see algorithms for all-pairs in the \hyperref[sec:all-pairs-shortest-paths-problem]{next chapter}.
 \end{itemize}
 
 Negative-weight edges --
@@ -82,7 +82,7 @@ For each vertex $v\in V$:
 	But always maintain $d[v]\gets \delta(s,v)$.
 	Call $d[v]$ a shortest-path estimate.
 	\item $\pi[v] = $ predecessor of $v$ on a shortest path from $s$.
-	If no predecessor, $\pi[v]=NIL$, $\pi$ induces a tree--shortest-path tree.
+	If no predecessor, $\pi[v]=NIL$, $\pi$ induces a tree--\emph{shortest-path tree}.
 \end{itemize}
 
 Initialization -- All the shortest-paths algorithms start with \Call{Init-Single-Source}{}.
@@ -163,7 +163,7 @@ from the source $s$ to $v$ be going through $u$ and taking edge $(u, v)$?
 \section{Shortest Path Algorithm - Bellman-Ford}\label{sec:shortest-path-algorithm-bellman-ford}
 The most straightforward of the ``relax an edge'' algorithms.%
 \footnote{\begin{answer}Works on any graph with no negative cycles, and the algorithm finds the negative cycles.\end{answer}}
-Relaxes the edges in a fixed order (any fixed order) $|v|-1$ times.%
+Relaxes the edges in a fixed order (any fixed order) $|V|-1$ times.%
 \footnote{Most \# of edges on short path.}
 Not a greedy algorithm.
 \begin{itemize}
@@ -179,13 +179,13 @@ Not a greedy algorithm.
 		\toprule
 		\begin{minipage}[t]{0.6\textwidth}
 			\begin{algorithm}[H]
-				\caption{Bellman-Form Shortest Path Algorithm \begin{answer}$O(VE)=O(V^{3})$\end{answer}}\label{alg:bellman-ford}
+				\caption{Bellman-Form Shortest Path Algorithm \begin{answer}$O(|V||E|)=O(|V|^{3})$\end{answer}}\label{alg:bellman-ford}
 				\begin{algorithmic}[1]
 				\Function{Bellman-Ford}{$V$, $E$, $w$, $s$}
-					\State \Call{Init-Single-Source}{$V$, $s$}
+					\State \Call{\hyperref[alg:init-single-source]{Init-Single-Source}}{$V$, $s$}
 					\For{$i\gets1$ to $|V|-1$}%
 						\ForAll{edge $(u,v)\in E$}
-							\State \Call{Relax}{$u$, $v$, $w$}
+							\State \Call{\hyperref[alg:relax]{Relax}}{$u$, $v$, $w$}
 						\EndFor
 					\EndFor
 					\ForAll{edge $(u,v)\in E$}\State\Comment{All edges, in any order, same order each time}
@@ -193,8 +193,8 @@ Not a greedy algorithm.
 							\begin{answer}\Comment{Must be a negative cycle}\end{answer}
 							\State \Return FALSE
 						\EndIf
-					\State \Return TRUE
 					\EndFor
+					\State \Return TRUE
 				\EndFunction
 				\end{algorithmic}
 			\end{algorithm}
@@ -233,7 +233,7 @@ Not a greedy algorithm.
 \end{table}
 
 \begin{enumerate}[start=3]
-    \item Execute Bellman-Ford on the above graph from source $s$ for this edge order
+    \item Execute \Call{Bellman-Ford}{} on the above graph from source $s$ for this edge order
 	$(t,x), (t,y), (t,z), \\(x,t), (y,x), (y,z), (z,x), (z,s), (s,t), (s,y)$.
 	Update the $d[v]$ and $\pi[v]$ values for each iteration.
 \end{enumerate}
@@ -273,7 +273,7 @@ Not a greedy algorithm.
 \begin{enumerate}[start=4]
 	\item What is the runtime of Bellman-Ford?
 	\begin{answer}
-		$O(VE)=O(V^{3})$
+		$O(|V||E|)=O(|V|^{3})$
 	\end{answer}
 	\item Prove Bellman-Ford is correct.\\
 	Values you get on each pass how quickly it converges depends on order of relaxation.

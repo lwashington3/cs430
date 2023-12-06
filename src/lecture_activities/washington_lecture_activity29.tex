@@ -16,21 +16,21 @@
 \begin{itemize}
 	\item Given a directed graph $G=(V,E)$, weight function $w: E\rightarrow R$, $|V|=n$,
 	\item Goal: create an $n\times n$ matrix of shortest-path distances from every vertex to every other vertex $\delta(u, v)$,
-	\item Could run \Call{Bellman-Ford} once from each vertex:
+	\item Could run \Call{\hyperref[sec:shortest-path-algorithm-bellman-ford]{Bellman-Ford}}{} once from each vertex:
 	\begin{itemize}
-		\item $O(V^{2}E)$ which is $O(V^{4})$ if the graph is dense $(E\approxeq V^{2})$.
+		\item $O(|V|^{2}|E|)$ which is $O(|V|^{4})$ if the graph is dense $(|E|\approxeq|V|^{2})$.
 	\end{itemize}
 	\item If no negative-weight edges, could run \hyperref[sec:dijkstra's-shortest-path-algorithm]{Dijkstra's algorithm} once from each vertex:
 	\begin{itemize}
-		\item $O(VE\lg V)$ with binary heap--$O(V^{3}\lg V)$ if dense.
+		\item $O(|V||E|\lg|V|)$ with binary heap--$O(|V|^{3}\lg|V|)$ if dense.
 	\end{itemize}
-	\item We'll see how to do in $O(V^{3})$ in all cases with dynamic programming
+	\item We'll see how to do in $O(|V|^{3})$ in all cases with dynamic programming
 	(we have already shown the shortest path problem has optimal substructure.)
 \end{itemize}
 
 The formal problem statement:
 \begin{itemize}
-	\item Assume that $G$ is given as an adjacency matrix of weights: $W=(w_{ij})$, with vertices numbered 1 to $n$.
+	\item Assume that $G$ is given as an \hyperref[sec:graph-implementations]{adjacency matrix} of weights: $W=(w_{ij})$, with vertices numbered 1 to $n$.
 	\[ w_{ij} = \left\{ \begin{array}{ll}
 		0 & \mbox{if } i=j,\\
 		\mbox{weight of } (i,j) & \mbox{if } i\neq j, (i,j)\in E,\\
@@ -215,7 +215,7 @@ Note the code to multiply two $n\times n$ matrices $(AB)$ together to get $C$, a
 		\State $L^{(1)}\gets W$
 		\State $m\gets1$
 		\While{$m < n-1$}
-			\State $L^{(2m)}\gets\Call{Extend}{L^{(m)},L^{(m)},n}$
+			\State $L^{(2m)}\gets\Call{\hyperref[alg:slow-asps]{Extend}}{L^{(m)},L^{(m)},n}$
 			\State $m\gets2m$
 		\EndWhile
 		\State \Return $L^{(m)}$
@@ -237,7 +237,7 @@ Find the shortest path from every vertex to every other vertex considering at mo
     \item Define structure of optimal solution.
 	\begin{answer}
 		Assume optimal shortest path with possibly all other vertices along the path at most $|V|-2$.
-		Remove a vertex from $k$ along the path, $k$ used or $k$ not user.
+		Remove a vertex from $k$ along the path, $k$ used or $k$ not used.
 	\end{answer}
 	\item Recursively define optimal solution and write pseudocode.
 	\item What is the run time of \Call{Floyd-Warshall}{}?
@@ -273,6 +273,7 @@ Find the shortest path from every vertex to every other vertex considering at mo
 	\label{fig:floyd-warshall-example}
 \end{figure}
 
+An example of \Call{Floyd-Warshall}{}: \url{https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/}
 %</Lecture-Activity-29>
 
 \end{document}

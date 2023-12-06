@@ -31,7 +31,7 @@ Shortest paths are always defined in a DAG, since even if there are negative-wei
 	\caption{DAG Shortest Path\begin{answer}$O(V^{2})$\end{answer}}\label{alg:dag-shortest-path}
 	\begin{algorithmic}[1]
 	\Function{DAG-Shortest-Path}{$G$, $w$, $s$}
-		\State topologically sort the vertices of $G$
+		\State \hyperref[alg:topological-sort]{topologically sort} the vertices of $G$
 		\State \Call{\hyperref[alg:init-single-source]{Init-Single-Source}}{$G$, $s$}
 		\ForAll{vertex $u$, taken in topologically sorted order}
 			\ForAll{vertex $v\in Adj[u]$}
@@ -46,7 +46,7 @@ Shortest paths are always defined in a DAG, since even if there are negative-wei
     \item Here is the topological sort on a DAG\@.
 	Find the shortest path from $s$ to every other vertex.
 	\item What is the runtime for DAG Shortest Path?
-	\begin{answer}$O(V+E)\Rightarrow O(V+V^{2})\Rightarrow O(V^{2})$\end{answer}
+	\begin{answer}$O(|V|+|E|)\Rightarrow O(|V|+|V|^{2})\Rightarrow O(|V|^{2})$\end{answer}
 	\item Discuss why DAG Shortest Path is correct.
 	\begin{answer}
 		Given a source, you relax an edge, the incremental improvement on source path estimate.
@@ -99,7 +99,7 @@ Shortest paths are always defined in a DAG, since even if there are negative-wei
 		\State $S\gets\emptyset$
 		\State $Q\gets V$												\Comment{i.e., insert all vertices into $Q$ by $d$ values}
 		\While{$Q$ is not empty}
-			\State $u\gets\Call{Extract-Min}{Q}$
+			\State $u\gets\Call{\hyperref[subsec:Extract-Min]{Extract-Min}}{Q}$
 			\State $S\gets S \cup \{ u \}$
 			\ForAll{vertex $v\in Adj[u]$}
 				\State \Call{\hyperref[alg:relax]{Relax}}{$u$, $v$, $w$}\Comment{Possibly updates a short path estimate $d$ value and moves the vertex forward in the queue}
