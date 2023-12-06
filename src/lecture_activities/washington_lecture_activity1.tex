@@ -32,7 +32,7 @@
 	Resource (memory or runtime) Use Analysis – Resource use analysis usually depends on the size of the input to the algorithm. You can write a function T(n) that matches the behavior of the resource use of the algorithm.
 	NOTE: For recursive algorithms we develop and solve a recurrence relation to find the T(n), the resource use function.
 	\item For the iterative sort you wrote above, construct a run time analysis function T(n) by assigning a different constant (c1, c2, c3, etc) to each type of statement (the run time for statements of that type), and counting how many times each statement executes for an input size n. Then sum up the constants times the execution counts. You may need to define variables other than n if there are event controlled iterations with an unknown number of loops. \\ \oldanswer{\[T(n)=nc_{1}+(n-1)c_{2}+c_{3}\sum_{i=1}^{n-1}t_{i}+\sum_{i=1}^{n-1}(t_{i}-1)\left[ c_{4}+c_{2} \right] \] where $t_{i}$ depends on initial order of the array. Worst case: opposite order where $t_{i}=i$. Best case: if the array is already sorted where $t_{i}=1$.}
-	\begin{table}[H]
+	\begin{table}
 	    \centering
 	    \begin{threeparttable}
 			\caption{Constants}

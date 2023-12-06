@@ -91,7 +91,7 @@ Dynamic Programming Steps
 	This would contradict our assumption that we already have our most optimal solution at $(A_{1}\dots A_{k})(A_{k+1}\dots A_{n})$.}
 	\item Step 3: Compute solution using a table bottom up for the Matrix Chain Multiplication problem. Use your answer to question \hyperref[prb:3]{3} above. Note the overlapping sub-problems as you go.
 	\item Step 4: Construct Optimal solution
-	\begin{table}[H]
+	\begin{table}
 	    \centering
 	    \begin{threeparttable}
 			\label{tab:14-1}
@@ -103,7 +103,7 @@ Dynamic Programming Steps
 	\end{table}
 	\renewcommand{\element}[3]{\begin{minipage}{0.5in}%
 	{\centering$#1\tablefootnote{#2}$\\\ {\small${k=#3}$}}
-	\end{minipage}} \begin{table}[H] %$#1\tablefootnote{#2}_{k=#3}$
+	\end{minipage}} \begin{table} %$#1\tablefootnote{#2}_{k=#3}$
         \centering
 		\caption{Optimal Binary Search Tree Table: Memory $O\left(\frac{n^{2}}{2}\right)$}
 		\label{tab:14-2}

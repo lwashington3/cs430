@@ -10,6 +10,7 @@
 % Document
 \begin{document}
 
+
 %<*Lecture-Activity-24>
 \maketitle
 \oldanswer{Relationships between items:\begin{itemize}
@@ -176,7 +177,7 @@
 			\label{fig:24.1}
 		\end{figure}
 		\begin{answer}
-			\begin{table}[H]
+			\begin{table}
 			    \centering
 			    \begin{threeparttable}
 					\label{tab:adjacency-list-a}
@@ -231,7 +232,7 @@
 			\label{fig:24.2}
 		\end{figure}
 		\begin{answer}
-			\begin{table}[H]
+			\begin{table}
 			    \centering
 				\label{tab:adjacency-list-b}
 				\begin{tabular}{|c|l}
@@ -253,11 +254,14 @@
 		\end{answer}
 	\end{minipage}
 	\begin{answer}Memory: $O(|V| + |E|)$.
-	Find if edge exists: $O(|V|)$\end{answer}
+	Find if edge exists: $O(|V|)$.
+	Remember, the amount of memory needed for the undirected graph is greater for the undirected graph than the directed graph,
+	since each edge in the undirected graph is represented twice, while each edge in the directed graph is represented once.
+	Find the path using the adjacency list is $O(|V|^{2})$.\end{answer}
 	\item What is the adjacency matrix implementation of the above two graphs?
-	\oldanswer{Memory: $O(|V|^{2})$
+	\begin{answer}Memory: $O(|V|^{2})$
 		\begin{minipage}{0.45\textwidth}
-			\begin{table}[H]
+			\begin{table}
 				\centering
 				\label{tab:}
 				\begin{tabular}{cccccc}
@@ -270,7 +274,7 @@
 				\end{tabular}
 			\end{table}
 		\end{minipage}\begin{minipage}{0.55\textwidth}
-			\begin{table}[H]
+			\begin{table}
 				\centering
 				\label{tab:adjacency-matrix-2}
 				\begin{tabular}{ccccccc}
@@ -284,7 +288,7 @@
 				\end{tabular}
 			\end{table}
 		\end{minipage}
-	}
+	\end{answer}
 	\item How do the two implementations handle a weighted graph?
 	\oldanswer{Edges have numbers, add weights to the adj list and adj matrix.}
 	\item Two different representations of the graph data structure are discussed in the book, adjacency-list and adjacency-matrix.

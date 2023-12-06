@@ -17,7 +17,7 @@ From a theoretical standpoint, Fibonacci heaps are especially desirable when the
 This situation arises in many graph algorithms.\\
 
 In essence, a Fibonacci heap is a ``lazy'' binomial heap in which the necessary housekeeping is delayed until the last possible moment: deletion.
-\begin{table}[H]
+\begin{table}
     \centering
     \begin{threeparttable}
 		\label{tab:}
@@ -86,7 +86,7 @@ Wait for a marked node to lose a 2nd child, move to root list, don't \Call{Conso
 
 \binomialqueueop{Delete}
 
-\begin{table}[H]%
+\begin{table}%
     \centering%
     \begin{threeparttable}%
 		\label{tab:}%

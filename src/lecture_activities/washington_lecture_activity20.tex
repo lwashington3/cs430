@@ -35,7 +35,7 @@ An amortized analysis is any strategy for analyzing a sequence of operations to 
 	Starting with a table size one and doubling the size when necessary, make a table showing the first 10 inserts and determine a formula for \Call{cost}{$i$} for the cost of the $i$th insert.
 	Then aggregate ``add up'' all the costs and divide by $n$ (aggregate analysis).
 	\begin{answer}
-		\begin{table}[H]
+		\begin{table}
 			\centering
 			\begin{threeparttable}
 				\caption{Aggregate Analysis for Appends}
@@ -81,7 +81,7 @@ Thus, the amortized costs provide an upper bound on the total true costs.
 \begin{enumerate}[start=2]
     \item For the previous ArrayList example, determine the amortized cost $\hat{c}_{i}$ necessary.
 	\oldanswer{If we give \$3 per append and each assignment costs \$1. Series of $n$ append (some need growth).
-	\begin{table}[H]
+	\begin{table}
 	    \centering
 	    \begin{threeparttable}
 			\caption{Accounting Analysis for Appends}
@@ -109,7 +109,7 @@ Thus, the amortized costs provide an upper bound on the total true costs.
 	We now want to analyze the cost of counting up from 0 to $n$ (using $k$ bits).\\
 
 	What is the naive worst-case analysis for how many bits we need to flip?
-	\oldanswer{Assuming you have some set of bits that starts with a 0 and every other bit is a 1 $01_{1}1_{2}1_{3}1_{4}\dots1_{k-1}$ (where $k-1$ is only the number of 1's), the next flip would flip all $k$ bits, so we would have $k$ operations $\dots$}
+	\begin{answer}Assuming you have some set of bits that starts with a 0 and every other bit is a 1 $01_{1}1_{2}1_{3}1_{4}\dots1_{k-1}$ (where $k-1$ is only the number of 1's), the next flip would flip all $k$ bits, so we would have $k$ operations $\dots$\end{answer}
 	\end{minipage}\begin{minipage}{0.3\textwidth}
 		\begin{table}[H]
 		    \centering
@@ -133,7 +133,7 @@ Thus, the amortized costs provide an upper bound on the total true costs.
 	\end{minipage}
 	\item Use the \hyperref[sec:aggregate-method-of-amortized-analysis]{aggregate method} to perform a more careful analysis for $n$ increments of a binary counter.
 	\oldanswer{
-	\begin{table}[H]
+	\begin{table}
 	    \centering
 	    \begin{threeparttable}
 			\caption{Amortized Cost of Flipping bits}
@@ -166,7 +166,7 @@ Thus, the amortized costs provide an upper bound on the total true costs.
 	\item Use the \hyperref[sec:accounting-method-of-amortized-analysis]{accounting method} to perform a more careful analysis for $n$ increments of a binary counter.
 	\begin{answer}
 		Price for each increment = \$2. Cost to flip a bit = \$1
-		\begin{table}[H]
+		\begin{table}
 			\centering
 			\begin{threeparttable}
 				\caption{Accounting Cost of Flipping bits}

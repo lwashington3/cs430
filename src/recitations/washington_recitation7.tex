@@ -39,7 +39,7 @@ Practice Problems (all taken from previous exams)
 	    \item $O(n^{3})$
 	\end{enumerate}
 	\item Given an element $x$ in an $n$-node order statistic tree and a natural number $i$, how can we determine the $i$th successor of $x$ in the linear order of the tree in $O(\lg n)$ time? So $x$ is a key in the tree and we want to find the $i$th key after $x$ in linear order. \orderstatistictree \oldanswer{First we determine the rank of $x$ by calling \Call{OS-RANK}{$T$, $x$} and name this number $r$. Then the $i$th successor of $x$ is actually an element in the tree with rank $r+i$. Hence we call \Call{OS-SELECT}{$T.root$, $r+i$}. Both these calls require $O(\lg n)$ time which in total is again $O(\lg n)$.}
-	\item Suppose that the dimensions of the matrices $A$, $B$, $C$, and $D$ are $8\times5$, $5\times11$, $11\times6$, and $6\times9$ respectively, and that we want to parenthesize the product $ABCD$ in a way that minimizes the number of scalar multiplications. Find the $m$ and $s$ tables computed by MATRIX-CHAIN-ORDER to solve this problem and show the optimal parenthesization.\oldanswer{\begin{table}[H]
+	\item Suppose that the dimensions of the matrices $A$, $B$, $C$, and $D$ are $8\times5$, $5\times11$, $11\times6$, and $6\times9$ respectively, and that we want to parenthesize the product $ABCD$ in a way that minimizes the number of scalar multiplications. Find the $m$ and $s$ tables computed by MATRIX-CHAIN-ORDER to solve this problem and show the optimal parenthesization.\oldanswer{\begin{table}
 	    \centering
 	    \begin{threeparttable}
 			\caption{}

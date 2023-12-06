@@ -102,7 +102,7 @@ Initialization -- All the shortest-paths algorithms start with \Call{Init-Single
 Relaxing an edge $(u,v)$ - Can we improve the shortest-path estimate (best seen so far)
 from the source $s$ to $v$ be going through $u$ and taking edge $(u, v)$?
 
-\begin{table}[H]
+\begin{table}
     \centering
 	\label{tab:relax}
 	\begin{tabular}{|c|c|}
@@ -172,7 +172,7 @@ Not a greedy algorithm.
 	\item Returns TRUE if no negative-weight cycles are reachable from $s$, FALSE otherwise.
 \end{itemize}
 
-\begin{table}[H]
+\begin{table}
     \centering
 	\label{tab:bellman-form}
 	\begin{tabular}{|c|c|}

@@ -18,7 +18,7 @@
 \end{enumerate}
 
 Constructing the answer for the Optimal Matrix Chain Multiplication (optimal parenthesization) from the dynamic programming table. See the solution to the example problem
-\begin{table}[H]
+\begin{table}
     \centering
     \begin{threeparttable}
 		\label{tab:optimal-matrix-chain-programming}
@@ -29,7 +29,7 @@ Constructing the answer for the Optimal Matrix Chain Multiplication (optimal par
 	\end{threeparttable}
 \end{table}
 
-\begin{table}[H]
+\begin{table}
     \centering
     \begin{threeparttable}
 		\label{tab:optimal-matrix-chain-images}
@@ -140,7 +140,7 @@ Length of LCS = 4 $BCBA$ or $BCAB$
 		\end{itemize}
 	\end{itemize}}
 	\item Use proof by contradiction to show that Longest Common Subsequence problem has optimal substructure, i.e.\ the optimal answer to problem must contain optimal answers to sub-problems. \oldanswer{Assume $z[1\dots k]$ is optimal for $x[1\dots i]$ and $y[1\dots j]$. If $z[k]=x[i]=y[j]$, then we have a subproblem $z[1\dots (k-1)]$ that must be optimal for $x[1\dots (i-1)]$ $y[1\dots (j-1)]$. The contradiction is that if someone said some sequence $w$ with length $k$ (or more) is optimal for $x[1\dots(i-1)]$, $y[1\dots(j-1)]$, which is longer than $z$, then you could add on the end of $w$ the characters that we know matches $(x[i]=y[j])$, then we would get a solution larger than $k$ for this problem. But that's impossible because we assumed $z[1\dots k]$ is the longest possible solution.}
-	\item Step 3: Compute solution using a table bottom up for the Longest Common Subsequence problem. Use your answer to question \hyperref[prb:15-3]{3} above. Note the overlapping sub-problems as you go. \oldanswer{\begin{table}[H]
+	\item Step 3: Compute solution using a table bottom up for the Longest Common Subsequence problem. Use your answer to question \hyperref[prb:15-3]{3} above. Note the overlapping sub-problems as you go. \oldanswer{\begin{table}
 	    \centering
 	    \begin{threeparttable}
 			\begin{tabular}{cc|c|cccccc}

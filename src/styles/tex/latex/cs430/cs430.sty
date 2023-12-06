@@ -204,19 +204,23 @@ red/.style={stdNode, fill=red!80!white},
 \newcommand{\element}[2]{$#1_{#2}$}
 
 \RequirePackage{environ}
+\RequirePackage{etoolbox}
 \newboolean{inanswer}
-\NewEnviron{answer}[1][blue]{%
+\NewEnviron{answer}{%
 	\setboolean{inanswer}{true}%
+	\colorlet{answercolor}{blue}
 	\colorlet{saved}{.}%
-	\tikzset{#1,%
-		every node/.style={#1},%
-		every path/.style={#1}}%
-	\color{#1}%
-	\textcolor{#1}{\BODY}%
-	\color{saved}%
-	\tikzset{saved,%
-		every node/.style={saved},%
-		every path/.style={saved}}%
+	\tikzset{answercolor,%
+		every node/.style={answercolor},%
+		every path/.style={answercolor}}%
+	{\color{answercolor}%
+	\makeatletter
+	\let\tableorig\table
+%	\def\table@i[#1]{\tableorig[#1]\color{answercolor}}  % with optional argument
+	\def\table@ii{\tableorig[H]\color{answercolor}}  % without optional argument
+	\def\table{\@ifnextchar[\table@i \table@ii}  % Redefine depending on presence of [
+	\makeatother
+	\textcolor{answercolor}{\BODY}}%
 	\setboolean{inanswer}{false}%
 }
 

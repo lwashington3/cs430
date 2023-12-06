@@ -33,7 +33,7 @@
 		\end{equation*}
     \end{itemize}}
 	\item Try various ``common sense'' greedy approaches that divide the problem into a sub-problem(s) and try to come up with counter-examples or prove the greedy choice is correct using the ``\hyperref[dfn:cut-and-paste]{cut and paste}'' proof.\oldanswer{\begin{itemize}
-		\item Max Value First -- if you fill the ``bag'' up immediately, you may miss out on a better value combination.\begin{table}[H]
+		\item Max Value First -- if you fill the ``bag'' up immediately, you may miss out on a better value combination.\begin{table}
 		    \centering
 		    \begin{threeparttable}
 				\label{tab:max-first-counter}
@@ -85,7 +85,7 @@ Huffman Codes
 \end{itemize}
 
 Example
-\begin{table}[H]
+\begin{table}
     \centering
     \begin{threeparttable}
 		\caption{A character-coding problem. A data file of 100,000 characters containes only the characters $a--f$, with the frequencies indicated. If each character is assigned a 3-bit codeword, the file can be encoded in 300,000 bits. Using the variable-length code shown, the file can be encoded in 224,000 bits.}
@@ -132,7 +132,7 @@ Example
 
 The greedy approach is: Build the tree bottom up by using a minimum priority queue to merge 2 least frequent objects (objects are leaf nodes or other subtrees) together into a new subtree.
 
-\begin{table}[H]
+\begin{table}
     \centering
     \begin{threeparttable}
 		\label{tab:}
