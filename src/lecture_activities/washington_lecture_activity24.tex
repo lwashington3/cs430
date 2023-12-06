@@ -3,30 +3,57 @@
 
 % Preamble
 \documentclass[24]{cs430lecture}
-\setcounter{chapter}{24}
 
 % Packages
 
 % Document
 \begin{document}
 
-
 %<*Lecture-Activity-24>
+\let\oldsout\sout
+\renewcommand{\sout}[1]{\textcolor{red}{#1}}
+\newcommand{\queuesep}{\ \ \ }
+\newcommand{\queuepathset}[1][.]{
+	\ifinanswer%
+	\colorlet{current}{blue}%
+	\else%
+	\colorlet{current}{#1}%
+	\fi%
+	\tikzset{>={Stealth[current]},
+		every node/.style={current,fill=white,circle},
+		every edge/.style={current,thin,draw},
+		used/.style={orange,very thick,draw}}%draw=current instead of current,draw?
+}
+\newcommand{\queuenodeset}[1][.]{
+	\ifinanswer%
+	\colorlet{current}{blue}%
+	\else%
+	\colorlet{current}{#1}%
+	\fi%
+	\tikzset{every node/.style={circle,thick,draw},
+	every gray/.style={fill=white!80!black},
+	every black/.style={fill=white!40!black},
+	}%draw=current instead of current,draw?
+}
 \maketitle
-\oldanswer{Relationships between items:\begin{itemize}
-	\item[$1-1$] List, Stack, Queue
-	\item[$1-N$] Tree, Hierarchical
-	\item[$N-N$] Any graph item can be related to any other item.
-\end{itemize}}
+\begin{answer}
+	Relationships between items:
+	\begin{description}
+		\item[$\mathbf{1-1}$] List, Stack, Queue
+		\item[$\mathbf{1-N}$] Tree, Hierarchical
+		\item[$\mathbf{N-N}$] Any graph item can be related to any other item.
+	\end{description}
+\end{answer}
 \openingquestions
 
 \begin{enumerate}
     \item Give an example NOT discussed in the video lecture of a problem that can be represented by a graph.
-	\oldanswer{The connections between airports.}
+	\begin{answer}The connections between airports.\end{answer}
 	\item If there is a path in a graph from a vertex back to itself, that is called a
-	\oldanswer{\underline{cycle}}%
-	\footnote{A path of one edge is called a self-loop.}.
+	\begin{answer}\underline{cycle}%
+	\footnote{A path of one edge is called a self-loop.}\end{answer}.
 	\item Which representation of a graph, adjacency-list and adjacency-matrix, usually uses more memory and why?
+	\begin{answer}The adjacency-matrix usually uses more memory than the adjacency-list because the adjacency matrix represents both the existence of edges and the non-existence of edges.\end{answer}
 \end{enumerate}
 
 \section{Graphs}\label{sec:graphs}
@@ -259,21 +286,26 @@
 	since each edge in the undirected graph is represented twice, while each edge in the directed graph is represented once.
 	Find the path using the adjacency list is $O(|V|^{2})$.\end{answer}
 	\item What is the adjacency matrix implementation of the above two graphs?
-	\begin{answer}Memory: $O(|V|^{2})$
-		\begin{minipage}{0.45\textwidth}
+	\begin{answer}Memory: $O(|V|^{2})$,
+	Time to find if a path exists: $O(1)$.
+	Can find the path using the adjacency matrix, learn that \hyperref[sec:all-pairs-shortest-paths-problem]{later}.
+
+		\begin{minipage}[t]{0.45\textwidth}
 			\begin{table}
 				\centering
-				\label{tab:}
+				\label{tab:adjacency-matrix-1}
 				\begin{tabular}{cccccc}
 					  & 1 & 2 & 3 & 4 & 5\\
 					1 & 0 & 1 & 0 & 0 & 1\\
 					2 & 1 & 0 & 1 & 1 & 1\\
-					3 & 0 & 1 & 0 & 1 & 1\\
+					3 & 0 & 1 & 0 & 1 & 0\\
 					4 & 0 & 1 & 1 & 0 & 1\\
 					5 & 1 & 1 & 0 & 1 & 0
 				\end{tabular}
 			\end{table}
-		\end{minipage}\begin{minipage}{0.55\textwidth}
+			The adjacency matrix for an undirected graph should have all 0's on its main diagonal.
+			A 1 implies a self-loop which wouldn't be allowed.
+		\end{minipage}\begin{minipage}[t]{0.55\textwidth}
 			\begin{table}
 				\centering
 				\label{tab:adjacency-matrix-2}
@@ -290,15 +322,20 @@
 		\end{minipage}
 	\end{answer}
 	\item How do the two implementations handle a weighted graph?
-	\oldanswer{Edges have numbers, add weights to the adj list and adj matrix.}
+	\begin{answer}Edges have numbers, add weights to the adjacency matrix instead of the boolean values of 1/0 representing if there is a weight.
+	If you're using an adjacency list, then each item will have the be an object holding the vertex and the weight to that vertex, instead of just using the vertex label as the element.\end{answer}
 	\item Two different representations of the graph data structure are discussed in the book, adjacency-list and adjacency-matrix.
 	Please briefly discuss the runtime (in terms of $|V|$ and $|E$ of these graph operations/algorithms using each implementation.)
 	Assume vertices are labeled as integers.
 	\begin{itemize}
 		\item What is the worst-case big-O runtime for checking to see if an edge from vertex $u$ to vertex $v$ exists?
-		\oldanswer{Adj list: $O(V)$, Adj matrix: $O(1)$}
+		\begin{answer}Adj list: $O(|V|)$, Adj matrix: $O(1)$\end{answer}
 		\item How long does it take to compute the out-degree of every vertex of a directed graph?
+		\begin{answer} In the adjacency list, you would keep track of it in the item and add or subtract from it when an edge is added or removed.
+		In an adjacency matrix, you would count the number of non-zeroes in each row.\end{answer}
 		\item How long does it take to compute the in-degree of every vertex of a directed graph?
+		\begin{answer}In an adjacency matrix, you would count the number of non-zeroes in each column.
+		In the adjacency matrix, you would have to go through each vertices linked list and check if it connects to 4.\end{answer}
 	\end{itemize}
 \end{enumerate}
 
@@ -310,7 +347,7 @@ There is not a unique answer usually.
 	\item Directed graph - Must be strongly connected to be able to visit all vertices.
 \end{itemize}
 
-Breadth first - visit vertices one edge from a given (or random) source, two edges from source, etc.
+Breadth first\label{dfn:breadth-first-search} - visit vertices one edge from a given (or random) source, two edges from source, etc.
 Uses a queue and some way to make a vertex (white initially, gray when first visited and put in queue, black when out of queue),
 label a vertex how far from the source, and label a vertex with how its predecessor vertex was during the traversal.
 
@@ -321,6 +358,252 @@ label a vertex how far from the source, and label a vertex with how its predeces
 		\graphexample
 		\label{fig:24.3}
 	\end{figure}
+	\begin{answer}
+		\begin{itemize}
+			\item Random source
+			\item Every vertex unvisited (white)
+			\item When first visit a vertex
+			\begin{itemize}
+				\item Add to queue
+				\item Color it gray
+			\end{itemize}
+			\item When done with vertex
+			\begin{itemize}
+				\item Color vertex black
+				\item Remove from queue
+			\end{itemize}
+		\end{itemize}
+		Warning: Bauer forgot about the $(E,A)$ connection in the example he did, so while I drew it, it was not brought into consideration.
+
+		\begin{minipage}{0.5\textwidth}
+			\begin{figure}[H]
+				\centering
+				\begin{tikzpicture}
+					\begin{scope}\queuenodeset
+						\node (A) at (0,0) {$A$};
+						\node (B) at (2,-2) {$B$};
+						\node (C) at (3.5,2) {$C$};
+						\node[label=45:``Random Source'':$D$,black] (D) at (6,0.5) {$D$};
+						\node (E) at (6,-2.5) {$E$};
+						\node (F)[gray] at (8,-0.25) {$F$};
+					\end{scope}
+					\begin{scope}\queuepathset
+						\path [->] (A) edge (C);
+
+						\path [->] (B) edge (A);
+						\path [->] (B) edge[bend right=7] (C);
+						\path [->] (B) edge (D);
+
+						\path [->] (C) edge[bend right=7] (B);
+						\path [->] (C) edge (D);
+
+						\path [->] (D) edge[used] (F);
+
+						\path [->] (E) edge (B);
+						\path [->] (E) edge[bend left=80] (A);
+
+						\path [->] (F) edge (E);
+					\end{scope}
+				\end{tikzpicture}
+				\caption{Queue: $F^{1} \queuesep \sout{D^{0}}$}
+				\label{fig:queue-1}
+			\end{figure}
+		\end{minipage}\begin{minipage}{0.5\textwidth}
+			\begin{figure}[H]
+				\centering
+				\begin{tikzpicture}
+					\begin{scope}\queuenodeset
+						\node (A) at (0,0) {$A$};
+						\node (B) at (2,-2) {$B$};
+						\node (C) at (3.5,2) {$C$};
+						\node[label=45:``Random Source'':$D$,black] (D) at (6,0.5) {$D$};
+						\node (E)[gray] at (6,-2.5) {$E$};
+						\node (F)[black] at (8,-0.25) {$F$};
+					\end{scope}
+					\begin{scope}\queuepathset
+						\path [->] (A) edge (C);
+
+						\path [->] (B) edge (A);
+						\path [->] (B) edge[bend right=7] (C);
+						\path [->] (B) edge (D);
+
+						\path [->] (C) edge[bend right=7] (B);
+						\path [->] (C) edge (D);
+
+						\path [->] (D) edge[used] (F);
+
+						\path [->] (E) edge (B);
+						\path [->] (E) edge[bend left=80] (A);
+
+						\path [->] (F) edge[used] (E);
+					\end{scope}
+				\end{tikzpicture}
+				\caption{Queue: $E^{2} \queuesep \sout{F^{1}} \queuesep \sout{D^{0}}$}
+				\label{fig:queue-2}
+			\end{figure}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{figure}[H]
+				\centering
+				\begin{tikzpicture}
+					\begin{scope}\queuenodeset
+						\node (A) at (0,0) {$A$};
+						\node[gray] (B) at (2,-2) {$B$};
+						\node (C) at (3.5,2) {$C$};
+						\node[label=45:``Random Source'':$D$,black] (D) at (6,0.5) {$D$};
+						\node[black] (E) at (6,-2.5) {$E$};
+						\node[black] (F) at (8,-0.25) {$F$};
+					\end{scope}
+					\begin{scope}\queuepathset
+						\path [->] (A) edge (C);
+
+						\path [->] (B) edge (A);
+						\path [->] (B) edge[bend right=7] (C);
+						\path [->] (B) edge (D);
+
+						\path [->] (C) edge[bend right=7] (B);
+						\path [->] (C) edge (D);
+
+						\path [->] (D) edge[used] (F);
+
+						\path [->] (E) edge[used] (B);
+						\path [->] (E) edge[bend left=80] (A); % FIXME: Just realized Bauer excluded the E->A edge
+
+						\path [->] (F) edge[used] (E);
+					\end{scope}
+				\end{tikzpicture}
+				\caption{Queue: $B^{3} \queuesep \sout{E^{2}} \queuesep \sout{F^{1}} \queuesep \sout{D^{0}}$}
+				\label{fig:queue-3}
+			\end{figure}
+		\end{minipage}\begin{minipage}{0.5\textwidth}
+			\begin{figure}[H]
+				\centering
+				\begin{tikzpicture}
+					\begin{scope}\queuenodeset
+						\node[gray] (A) at (0,0) {$A$};
+						\node[black] (B) at (2,-2) {$B$};
+						\node[gray] (C) at (3.5,2) {$C$};
+						\node[label=45:``Random Source'':$D$,black] (D) at (6,0.5) {$D$};
+						\node[black] (E) at (6,-2.5) {$E$};
+						\node[black] (F) at (8,-0.25) {$F$};
+					\end{scope}
+					\begin{scope}\queuepathset
+						\path [->] (A) edge (C);
+
+						\path [->] (B) edge[used] (A);
+						\path [->] (B) edge[bend right=7,used] (C);
+						\path [->] (B) edge (D);
+
+						\path [->] (C) edge[bend right=7] (B);
+						\path [->] (C) edge (D);
+
+						\path [->] (D) edge[used] (F);
+
+						\path [->] (E) edge[used] (B);
+						\path [->] (E) edge[bend left=80] (A);
+
+						\path [->] (F) edge[used] (E);
+					\end{scope}
+				\end{tikzpicture}
+				\caption{Queue: $C^{4} \queuesep A^{4} \queuesep \sout{B^{3}} \queuesep \sout{E^{2}} \queuesep \sout{F^{1}} \queuesep \sout{D^{0}}$}
+				\label{fig:queue-4}
+			\end{figure}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{figure}[H]
+				\centering
+				\begin{tikzpicture}
+					\begin{scope}\queuenodeset
+						\node[black] (A) at (0,0) {$A$};
+						\node[black] (B) at (2,-2) {$B$};
+						\node[gray] (C) at (3.5,2) {$C$};
+						\node[label=45:``Random Source'':$D$,black] (D) at (6,0.5) {$D$};
+						\node[black] (E) at (6,-2.5) {$E$};
+						\node[black] (F) at (8,-0.25) {$F$};
+					\end{scope}
+					\begin{scope}\queuepathset
+						\path [->] (A) edge (C);
+
+						\path [->] (B) edge[used] (A);
+						\path [->] (B) edge[bend right=7,used] (C);
+						\path [->] (B) edge (D);
+
+						\path [->] (C) edge[bend right=7] (B);
+						\path [->] (C) edge (D);
+
+						\path [->] (D) edge[used] (F);
+
+						\path [->] (E) edge[used] (B);
+						\path [->] (E) edge[bend left=80] (A);
+
+						\path [->] (F) edge[used] (E);
+					\end{scope}
+				\end{tikzpicture}
+				\caption{Queue: $C^{4} \queuesep \sout{A^{4}} \queuesep \sout{B^{3}} \queuesep \sout{E^{2}} \queuesep \sout{F^{1}} \queuesep \sout{D^{0}}$}
+				\label{fig:queue-5}
+			\end{figure}
+		\end{minipage}\begin{minipage}{0.5\textwidth}
+			\begin{figure}[H]
+				\centering
+				\begin{tikzpicture}
+					\begin{scope}\queuenodeset
+						\begin{scope}\queuenodeset
+						\node[black] (A) at (0,0) {$A$};
+						\node[black] (B) at (2,-2) {$B$};
+						\node[black] (C) at (3.5,2) {$C$};
+						\node[label=45:``Random Source'':$D$,black] (D) at (6,0.5) {$D$};
+						\node[black] (E) at (6,-2.5) {$E$};
+						\node[black] (F) at (8,-0.25) {$F$};
+					\end{scope}
+					\end{scope}
+					\begin{scope}\queuepathset
+						\path [->] (A) edge (C);
+
+						\path [->] (B) edge[used] (A);
+						\path [->] (B) edge[bend right=7,used] (C);
+						\path [->] (B) edge (D);
+
+						\path [->] (C) edge[bend right=7] (B);
+						\path [->] (C) edge (D);
+
+						\path [->] (D) edge[used] (F);
+
+						\path [->] (E) edge[used] (B);
+						\path [->] (E) edge[bend left=80] (A);
+
+						\path [->] (F) edge[used] (E);
+					\end{scope}
+				\end{tikzpicture}
+				\caption{Queue: $\sout{C^{4}} \queuesep \sout{A^{4}} \queuesep \sout{B^{3}} \queuesep \sout{E^{2}} \queuesep \sout{F^{1}} \queuesep \sout{D^{0}}$}
+				\label{fig:queue-6}
+			\end{figure}
+		\end{minipage}
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}
+				\tikzset{every node/.style={minimum width=2em,draw,circle},
+					 blank/.style={draw=none},
+					 edge from parent/.style=
+					 {draw,edge from parent path={(\tikzparentnode) -> (\tikzchildnode)}},
+					 level distance=1cm,
+					sibling distance=5mm}
+				\Tree
+				[.\node{ $D$ };
+					[.\node{ $F$ };
+						[.\node{ $E$ };
+							[.\node{ $B$ };
+								[.\node{ $A$ }; ]
+								[.\node{ $C$ }; ]
+							]
+						]
+					]
+				]
+			\end{tikzpicture}
+			\caption{Breadth First Tree from Source $D$. Shows the shortest path (minimum \# edges) from each vertex to the source.}
+			\label{fig:bfs-tree}
+		\end{figure}
+		Breadth-first search gives us the minimum \# of edges to every vertex reachable from the source.
+	\end{answer}
 \end{enumerate}
 
 \begin{algorithm}[H]
@@ -352,6 +635,7 @@ label a vertex how far from the source, and label a vertex with how its predeces
 	\EndFunction
 	\end{algorithmic}
 \end{algorithm}
+\let\sout\oldsout
 %</Lecture-Activity-24>
 
 \end{document}

@@ -107,6 +107,7 @@ red/.style={stdNode, fill=red!80!white},
 \end{figure}}
 
 \newcommand{\graphexample}{
+\colorlet{current}{.}
 \begin{tikzpicture}
 	\begin{scope}[every node/.style={circle,thick,draw}]
 		\node (A) at (0,0) {A};
@@ -114,12 +115,9 @@ red/.style={stdNode, fill=red!80!white},
 		\node (C) at (3.5,2) {C};
 		\node (D) at (6,0.5) {D};
 		\node (E) at (6,-2.5) {E};
-		\node (F) at (8,-0.25) {F} ;
+		\node (F) at (8,-0.25) {F};
 	\end{scope}
-
-	\begin{scope}[>={Stealth[black]},
-		every node/.style={fill=white,circle},
-		every edge/.style={draw=black,very thick}]
+	\begin{scope}\globalpathset
 		\path [->] (A) edge (C);
 
 		\path [->] (B) edge (A);
@@ -208,18 +206,18 @@ red/.style={stdNode, fill=red!80!white},
 \newboolean{inanswer}
 \NewEnviron{answer}{%
 	\setboolean{inanswer}{true}%
-	\colorlet{answercolor}{blue}
+	\colorlet{answercolor}{blue}%
 	\colorlet{saved}{.}%
 	\tikzset{answercolor,%
 		every node/.style={answercolor},%
 		every path/.style={answercolor}}%
 	{\color{answercolor}%
-	\makeatletter
-	\let\tableorig\table
+	\makeatletter%
+	\let\tableorig\table%
 %	\def\table@i[#1]{\tableorig[#1]\color{answercolor}}  % with optional argument
-	\def\table@ii{\tableorig[H]\color{answercolor}}  % without optional argument
-	\def\table{\@ifnextchar[\table@i \table@ii}  % Redefine depending on presence of [
-	\makeatother
+	\def\table@ii{\tableorig[H]\color{answercolor}}% without optional argument
+	\def\table{\@ifnextchar[\table@i \table@ii}% Redefine depending on presence of [
+	\makeatother%
 	\textcolor{answercolor}{\BODY}}%
 	\setboolean{inanswer}{false}%
 }

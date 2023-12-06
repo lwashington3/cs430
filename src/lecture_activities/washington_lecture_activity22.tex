@@ -50,41 +50,41 @@ In essence, a Fibonacci heap is a ``lazy'' binomial heap in which the necessary 
     \item See \url{https://www.cs.usfca.edu/~galles/JavascriptVisual/FibonacciHeap.html} and \url{https://www.cs.princeton.edu/~wayne/cs423/fibonacci/FibonacciHeapAnimation.html} to help describe how each operation is done, and a rough estimate on its run time:
 \end{enumerate}
 
-\binomialqueueop{Make-Heap}
-\oldanswer{$O(1)$ Makes a single node heap.}
+\binomialqueueop{Make-Heap}%
+\begin{answer}$O(1)$ Makes a single node heap.\end{answer}
 
-\binomialqueueop{Insert}
-\oldanswer{$O(1)$ Make single node heap, put in the (bidirectional linked) list to left of current min.
-Update min pointer if necessary.}
+\binomialqueueop{Insert}%
+\begin{answer}$O(1)$ Make single node heap, put in the (bidirectional linked) list to left of current min.
+Update min pointer if necessary.\end{answer}
 
-\binomialqueueop{Minimum}
-\oldanswer{$O(1)$ We maintain a pointer to the min.}
+\binomialqueueop{Minimum}%
+\begin{answer}$O(1)$ We maintain a pointer to the min.\end{answer}
 
-\binomialqueueop{Union}
-\oldanswer{$O(1)$ Link the two root lists together%
+\binomialqueueop{Union}%
+\begin{answer}$O(1)$ Link the two root lists together%
 \footnote{You don't need to walk either to do that.}%
-, and then update the min pointer to point to the smaller of the two previous mins.}
+, and then update the min pointer to point to the smaller of the two previous mins.\end{answer}
 
-\binomialqueueop{Extract-Min}
-\oldanswer{Find min is $O(\log n)$%
+\binomialqueueop{Extract-Min}%
+\begin{answer}Find min is $O(\log n)$%
 \footnote{The name Fibnoacci comes from the fact that the base in the $\log n$ is the golden ratio. The maximum degree of any node in the root list is also related to Fibonacci.}
 because we have a pointer to the min.
 Remove min from root list (saving the value to return).
 If the min had children, put those children in the root list.
 \Call{Consolidate}{} the root list%
-\footnote{Use array of rank on last node}}
+\footnote{Use array of rank on last node}\end{answer}
 
-\binomialqueueop{Decrease-Key}
+\binomialqueueop{Decrease-Key}%
 %\oldanswer{``Walk it up''.
 %The maximum height is $O(\lg n)$.
 %If get up to root list, check if new node in root list is smaller than the current min, if so, move the min pointer.}
-\oldanswer{$O(1)$ Reduce value at that node, move it and its subtree to root list, check if new min value pointer.
+\begin{answer}$O(1)$ Reduce value at that node, move it and its subtree to root list, check if new min value pointer.
 Breaking that binomial heap by removing a subtree%
 \footnote{Do not \Call{Consolidate}{} yet.}.
 Wait for a marked node to lose a 2nd child, move to root list, don't \Call{Consolidate}{} yet.
-}
+\end{answer}
 
-\binomialqueueop{Delete}
+\binomialqueueop{Delete}%
 
 \begin{table}%
     \centering%
